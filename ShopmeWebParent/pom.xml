@@ -61,6 +61,13 @@
 			<artifactId>webjars-locator-core</artifactId>
 		</dependency>
 		
+		<!-- 5 ) Define mysql dependency -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
 	</dependencies>
 
 
