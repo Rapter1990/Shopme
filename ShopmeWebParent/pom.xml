@@ -55,6 +55,12 @@
 			<version>3.4.1</version>
 		</dependency>
 		
+		<!-- 4 ) Define webjars-locator-core dependency -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 
