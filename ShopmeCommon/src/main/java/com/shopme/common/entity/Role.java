@@ -31,6 +31,12 @@ public class Role implements Serializable{
 	
 	@Column(length = 150, nullable = false)
 	private String description;
+	
+	public Role(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
 
 	@Override
 	public int hashCode() {
@@ -61,5 +67,6 @@ public class Role implements Serializable{
 	public String toString() {
 		return this.name;
 	}
+
 
 }
