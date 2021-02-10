@@ -81,6 +81,12 @@
 			<version>0.0.1-SNAPSHOT</version>		
 		</dependency>	
 		
+		<!-- 7 ) Define Spring Sceurity dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 
