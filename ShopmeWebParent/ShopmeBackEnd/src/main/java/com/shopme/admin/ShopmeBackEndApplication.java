@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@EntityScan({"com.shopme.common.entity"})
+@EntityScan({"com.shopme.common.entity","com.shopme.admin.*"})
 @ComponentScan(basePackages = "com.shopme.admin.security")
 public class ShopmeBackEndApplication {
 
