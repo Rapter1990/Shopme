@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EntityScan({"com.shopme.common.entity","com.shopme.admin.*"})
-@ComponentScan(basePackages = "com.shopme.admin.security")
 public class ShopmeBackEndApplication {
 
 	public static void main(String[] args) {
