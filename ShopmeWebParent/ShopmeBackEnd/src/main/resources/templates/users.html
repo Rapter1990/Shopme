@@ -69,8 +69,12 @@
 			<a th:href="@{/users/new}">Create New User</a>
 		</div>
 		
-		<div th:if="${message != null}" class="alert alert-success text-center">
-			[[${message}]]
+		<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
+			[[${messageSuccess}]]
+		</div>
+		
+		<div th:if="${messageError != null}" class="alert alert-danger text-center">
+			[[${messageError}]]
 		</div>
 		
 		
@@ -107,9 +111,8 @@
 						</td>
 					
 						<td>
-							<a class="fas fa-edit fa-2x icon-green" 
-							   href=""
-                               >
+							<a class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
+								title="Edit this user">
 							</a>
 							&nbsp; 
 							<a class="fas fa-trash fa-2x icon-dark link-delete" 
