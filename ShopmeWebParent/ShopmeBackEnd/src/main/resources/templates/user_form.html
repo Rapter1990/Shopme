@@ -92,7 +92,8 @@
 					<div class="col-sm-8">
 						<input th:if="${user.id == null}" type="password"
 							class="form-control" th:field="*{password}" required
-							minlength="8" maxlength="20" /> <input
+							minlength="8" maxlength="20" /> 
+						<input
 							th:if="${user.id != null}" type="password" class="form-control"
 							th:field="*{password}" minlength="8" maxlength="20" />
 					</div>
@@ -159,12 +160,14 @@
 			});
 		});
 		
+		
 		function checkEmailUnique(form) {
 			url = "[[@{/users/check_email}]]";
 			userEmail = $("#email").val();
+			userId = $("#id").val();
 			csrfValue = $("input[name='_csrf']").val();
 			
-			params = {email: userEmail, _csrf: csrfValue};
+			params = {id: userId, email: userEmail, _csrf: csrfValue};
 			
 			$.post(url, params, function(response) {
 				if (response == "OK") {
