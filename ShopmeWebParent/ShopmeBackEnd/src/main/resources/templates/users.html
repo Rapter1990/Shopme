@@ -102,12 +102,16 @@
 						<td th:text="${user.roles}"></td>
 						<td>
 							<a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green" 
-								href=""
-								></a>
+							   th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
+							   style="text-decoration:none;"
+							   title="Disable this user">
+							</a>
 								
 							<a th:if="${user.enabled == false}" class="fas fa-check-circle fa-2x icon-dark" 
-								href=""
-								></a>
+							   th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
+							   style="text-decoration:none;"
+							   title="Enable this user">
+							</a>
 						</td>
 					
 						<td>
