@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.error.UserNotFoundException;
 import com.shopme.admin.service.UserService;
+import com.shopme.admin.util.DirectUtil;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
@@ -112,7 +113,7 @@ public class UserController {
 		
 		redirectAttributes.addFlashAttribute("messageSuccess", "The user has been saved successfully.");
 		
-		return "redirect:/users";
+		return DirectUtil.getRedirectURLtoAffectedUser(user);
 	}
 	
 	@GetMapping("/users/edit/{id}")
