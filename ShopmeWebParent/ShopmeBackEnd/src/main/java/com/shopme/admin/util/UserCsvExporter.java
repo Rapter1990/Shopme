@@ -1,6 +1,8 @@
 package com.shopme.admin.util;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,8 +21,11 @@ public class UserCsvExporter extends AbstractExporter{
 	public void export(List<User> listUsers, HttpServletResponse response) throws IOException {
 		
 		super.setResponseHeader(response, "text/csv", ".csv");
+		
+		Writer writer = new OutputStreamWriter(response.getOutputStream(), "utf-8");
+		writer.write('\uFEFF');
 
-		ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(), 
+		ICsvBeanWriter csvWriter = new CsvBeanWriter(writer, 
 				CsvPreference.STANDARD_PREFERENCE);
 
 		String[] csvHeader = {"User ID", "E-mail", "First Name", "Last Name", "Roles", "Enabled"};
