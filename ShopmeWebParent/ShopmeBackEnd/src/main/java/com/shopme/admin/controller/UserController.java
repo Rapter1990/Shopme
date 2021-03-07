@@ -3,6 +3,8 @@ package com.shopme.admin.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -20,6 +22,8 @@ import com.shopme.admin.error.UserNotFoundException;
 import com.shopme.admin.service.UserService;
 import com.shopme.admin.util.DirectUtil;
 import com.shopme.admin.util.FileUploadUtil;
+import com.shopme.admin.util.UserCsvExporter;
+import com.shopme.admin.util.UserExcelExporter;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
@@ -165,5 +169,20 @@ public class UserController {
 		
 		
 		return "redirect:/users";
+	}
+	
+	@GetMapping("/users/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<User> listUsers = service.listAll();
+		UserCsvExporter exporter = new UserCsvExporter();
+		exporter.export(listUsers, response);
+	}
+	
+	@GetMapping("/users/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		List<User> listUsers = service.listAll();
+
+		UserExcelExporter exporter = new UserExcelExporter();
+		exporter.export(listUsers, response);
 	}
 }
