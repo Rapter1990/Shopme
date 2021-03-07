@@ -15,16 +15,35 @@
 	<name>ShopmeBackEnd</name>
 	
 	<description>Shopme Admin Project</description>
+	
 	<properties>
 		<java.version>15</java.version>
+		<csv.version>2.4.0</csv.version>
+		<poi.version>5.0.0</poi.version>
 	</properties>
 	
 	<dependencies>
 
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-devtools</artifactId>
-	</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		
+		
+		<dependency>
+		    <groupId>net.sf.supercsv</groupId>
+		    <artifactId>super-csv</artifactId>
+		    <version>${csv.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>${poi.version}</version>
+		</dependency>
+		
+		
 	</dependencies>
 
 	<build>
