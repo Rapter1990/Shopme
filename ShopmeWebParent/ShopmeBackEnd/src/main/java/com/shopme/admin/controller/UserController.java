@@ -24,6 +24,7 @@ import com.shopme.admin.util.DirectUtil;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.admin.util.UserCsvExporter;
 import com.shopme.admin.util.UserExcelExporter;
+import com.shopme.admin.util.UserPdfExporter;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
@@ -185,4 +186,12 @@ public class UserController {
 		UserExcelExporter exporter = new UserExcelExporter();
 		exporter.export(listUsers, response);
 	}
+	
+	@GetMapping("/users/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		List<User> listUsers = service.listAll();
+
+		UserPdfExporter exporter = new UserPdfExporter();
+		exporter.export(listUsers, response);
+	}	
 }
