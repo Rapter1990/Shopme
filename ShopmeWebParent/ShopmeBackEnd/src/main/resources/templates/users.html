@@ -66,13 +66,13 @@
 		
 		<div>
 			<h2>Manage Users</h2>	
-			<a th:href="@{/users/new}">Create New User</a>
-			&nbsp;|&nbsp;
-			<a th:href="@{/users/export/csv}">Export to CSV</a>
-			&nbsp;|&nbsp;
-			<a th:href="@{/users/export/excel}">Export to Excel</a>
-			&nbsp;|&nbsp;
-			<a th:href="@{/users/export/pdf}">Export to PDF</a>
+			<a th:href="@{/users/new}" style="text-decoration: none;" class="fas fa-user-plus fa-2x icon-dark mr-2"></a>
+
+			<a th:href="@{/users/export/csv}" style="text-decoration: none;" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
+
+			<a th:href="@{/users/export/excel}" style="text-decoration: none;" class="fas fa-file-excel fa-2x icon-dark mr-2"></a>		
+
+			<a th:href="@{/users/export/pdf}" style="text-decoration: none;" class="fas fa-file-pdf fa-2x icon-dark"></a>	
 		</div>
 		
 		<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
@@ -91,71 +91,83 @@
 				Filter:&nbsp;
 				<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
 				&nbsp;&nbsp;
-				<input type="submit" value="Search" class="btn btn-primary" />
+				<button type="submit" class="btn btn-primary">
+					<i class="fas fa-search"></i>
+				</button>
 				&nbsp;&nbsp;
-				<input type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()" />
+				<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+					<i class="fas fa-eraser"></i>
+				</button>
+				
 			</form>
 		</div>
 		
-		<div>
+		<div class="full-details">
 			<table class="table table-bordered table-striped table-hover table-responsive-xl">
 				<thead class="thead-dark">
 					<tr>
-						<th th:replace="fragments :: column_link('id', 'User ID')" />
+					
+						<th class="hideable-column">
+							<th th:replace="fragments :: column_link('id', 'User ID', 'tag')" />
+						</th>
+						
 						<th>Photos</th>
-						<th th:replace="fragments :: column_link('email', 'E-mail')" />
+						
+						<th class="hideable-column">
+							<th th:replace="fragments :: column_link('email', 'E-mail', 'tag')" />
+						</th>
 	
-						<th th:replace="fragments :: column_link('firstName', 'First Name')" />
-	
-						<th th:replace="fragments :: column_link('lastName', 'Last Name')" />
+						<th th:replace="fragments :: column_link('firstName', 'First Name', 'none')" />
+						<th th:replace="fragments :: column_link('lastName', 'Last Name', 'none')" />
+						
 						<th>Roles</th>
-						<th th:replace="fragments :: column_link('enabled', 'Enabled')" />
+						
+						<th th:replace="fragments :: column_link('enabled', 'Enabled', 'none')" />
+						
 						<th></th>
 					</tr>								
 				</thead>
 				<tbody>
 					<tr th:each="user : ${listUsers}">
-						<td th:text="${user.id}"></td>
+						<td class="hideable-column" th:text="${user.id}"></td>
 						<td>
 							<span th:if="${user.photos == null}" class="fas fa-portrait fa-3x icon-silver"></span>
 							<img th:if="${user.photos != null}" th:src="@{${user.photosImagePath}}"
 								style="width: 100px" />
 						</td>
-						<td th:text="${user.email}"></td>
+						<td class="hideable-column" th:text="${user.email}"></td>
 						<td th:text="${user.firstName}"></td>
 						<td th:text="${user.lastName}"></td>
 						<td th:text="${user.roles}"></td>
 						<td>
-							<a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green" 
-							   th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
-							   style="text-decoration:none;"
-							   title="Disable this user">
-							</a>
-								
-							<a th:if="${user.enabled == false}" class="fas fa-check-circle fa-2x icon-dark" 
-							   th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
-							   style="text-decoration:none;"
-							   title="Enable this user">
-							</a>
+							<div th:replace="fragments :: user_status" />
 						</td>
 					
 						<td>
-							<a class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}"
-							    style="text-decoration:none;"
-								title="Edit this user">
-							</a>
-							&nbsp; 
-							<a class="fas fa-trash fa-2x icon-dark link-delete" 
-								th:href="@{'/users/delete/' + ${user.id}}"
-								th:userId="${user.id}"
-								style="text-decoration:none;"
-								title="Delete this user">
-							</a>
+							<div th:replace="fragments :: user_actions" />
 						</td>
 						
 					</tr>
 				</tbody>
 			</table>
+		</div>
+		
+		<div class="less-details">
+			<div th:each="user : ${listUsers}" class="row m-1">
+				<div class="col-4">
+					<div th:replace="fragments :: user_photos" />			
+				</div>
+				<div class="col-8">
+					<div>[[${user.fullName}]]</div>
+					<div>[[${user.roles}]]</div>
+					<div class="mt-2">
+						<div th:replace="fragments :: user_status" />
+						&nbsp; 			
+						<div th:replace="fragments :: user_actions" />
+					</div>
+				</div>
+				<div>&nbsp;</div>
+			</div>
 		</div>
 		
 		<div class="text-center m-1" th:if="${totalItems > 0}">
@@ -167,7 +179,7 @@
 		
 		<div th:if="${totalPages > 1}">
 			<nav>
-			  <ul class="pagination justify-content-center">
+			  <ul class="pagination justify-content-center flex-wrap">
 			    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
 			    	<a th:replace="fragments :: page_link(1, 'First')"></a>
 			    </li>		  
