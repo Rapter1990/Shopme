@@ -5,6 +5,7 @@
 *.icon-green {color: green}
 *.icon-dark {color: gray}
 
+
 @media screen and (max-width: 768px) {
 	/* small screen */
 	div.full-details { display: none }
