@@ -41,7 +41,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.usernameParameter("email")
 			.permitAll()
 		.and()
-		.logout().permitAll();
+		.logout().permitAll()
+		.and()
+		.rememberMe()
+			.key("AbcDefgKLDSLmvop_0123456789")
+			.tokenValiditySeconds(7 * 24 * 60 * 60); // 7 days 24 hours 60 minutes 60 seconds -> 7days 
+			;
+		
 	}
 	
 	// Before authenticated, all matchers can be ignored and all these are performed.
