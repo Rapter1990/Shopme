@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html  
+    xmlns:th="http://www.thymeleaf.org"
+    >
 <body>
 <div th:fragment="menu">
 	<form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
@@ -21,6 +23,7 @@
 					</li>
 				</th:block>
 				
+
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 					<li class="nav-item">
 						<a class="nav-link" th:href="@{/categories}">Categories</a>
