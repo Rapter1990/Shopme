@@ -12,7 +12,11 @@
 
 
 		<div>
-			<h1>Shopme Control Panel</h1>
+			<h2>Shopme Control Panel</h2>
+			Welcome 
+			<a th:href="@{/account}" 
+				sec:authentication="principal.fullname"></a>	
+			<span sec:authentication="principal.authorities"></span>
 		</div>
 
 		<div th:replace="fragments :: footer"></div>
