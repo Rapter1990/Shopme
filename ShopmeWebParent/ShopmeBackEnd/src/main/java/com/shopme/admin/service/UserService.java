@@ -17,12 +17,13 @@ import org.springframework.stereotype.Service;
 import com.shopme.admin.error.UserNotFoundException;
 import com.shopme.admin.repository.RoleRepository;
 import com.shopme.admin.repository.UserRepository;
+import com.shopme.admin.service.impl.IUserService;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
 @Service
 @Transactional
-public class UserService {
+public class UserService implements IUserService{
 	
 	public static final int USERS_PER_PAGE = 4;
 	
@@ -36,7 +37,7 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	
+	@Override
 	public List<User> listAll() {
 		
 		Sort firstNameSorting =  Sort.by("firstName").ascending();
@@ -46,10 +47,12 @@ public class UserService {
 		return userList;
 	}
 	
+	@Override
 	public List<Role> listRoles() {
 		return (List<Role>) roleRepo.findAll();
 	}
 	
+	@Override
 	public User save(User user) {
 		boolean isUpdatingUser = (user.getId() != null);
 		
@@ -74,6 +77,7 @@ public class UserService {
 		user.setPassword(encodedPassword);
 	}
 	
+	@Override
 	public boolean isEmailUnique(Integer id, String email) {
 		User userByEmail = userRepo.getUserByEmail(email);
 		
@@ -92,6 +96,7 @@ public class UserService {
 		return true;
 	}
 	
+	@Override
 	public User get(Integer id) throws UserNotFoundException {
 		try {
 			return userRepo.findById(id).get();
@@ -100,6 +105,7 @@ public class UserService {
 		}
 	}
 	
+	@Override
 	public void delete(Integer id) throws UserNotFoundException {
 		Long countById = userRepo.countById(id);
 		if (countById == null || countById == 0) {
@@ -109,10 +115,12 @@ public class UserService {
 		userRepo.deleteById(id);
 	}
 	
+	@Override
 	public void updateUserEnabledStatus(Integer id, boolean enabled) {
 		userRepo.updateEnabledStatus(id, enabled);
 	}
 	
+	@Override
 	public Page<User> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
 		Sort sort = Sort.by(sortField);
 
@@ -127,10 +135,12 @@ public class UserService {
 		return userRepo.findAll(pageable);
 	}
 	
+	@Override
 	public User getByEmail(String email) {
 		return userRepo.getUserByEmail(email);
 	}
 	
+	@Override
 	public User updateAccount(User userInForm) {
 		User userInDB = userRepo.findById(userInForm.getId()).get();
 
