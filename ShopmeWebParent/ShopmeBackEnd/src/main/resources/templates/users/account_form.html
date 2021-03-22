@@ -85,57 +85,13 @@
 	</div>
 	</form>
 
-	<div class="modal fade text-center" id="modalDialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="modalTitle">Warning</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-
-				<div class="modal-body">
-					<span id="modalBody"></span>
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div th:replace="fragments :: footer"></div>
 
 </div>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#buttonCancel").on("click", function() {
-			window.location = "[[@{/users}]]";
-		});
 
-		$("#fileImage").change(function() {
-			fileSize = this.files[0].size;
-
-			if (fileSize > 1048576) {
-				this.setCustomValidity("You must choose an image less than 1MB!");
-				this.reportValidity();
-			} else {
-				this.setCustomValidity("");
-				showImageThumbnail(this);				
-			}
-
-		});
-	});
-
-	function showImageThumbnail(fileInput) {
-		var file = fileInput.files[0];
-		var reader = new FileReader();
-		reader.onload = function(e) {
-			$("#thumbnail").attr("src", e.target.result);
-		};
-
-		reader.readAsDataURL(file);
-	}
+	moduleURL = "[[@{/}]]";
 
 	function checkPasswordMatch(confirmPassword) {
 		if (confirmPassword.value != $("#password").val()) {
@@ -146,5 +102,8 @@
 	}
 
 </script>
+<script th:src="@{/js/common_form.js}"></script>
+
+
 </body>
 </html> 
