@@ -263,6 +263,8 @@ public class UserController {
 		LOGGER.info("UserController | exportToCSV | export is starting");
 		
 		exporter.export(listUsers, response);
+		
+		LOGGER.info("UserController | exportToCSV | export completed");
 	}
 	
 	@GetMapping("/users/export/excel")
@@ -279,6 +281,8 @@ public class UserController {
 		LOGGER.info("UserController | exportToExcel | export is starting");
 		
 		exporter.export(listUsers, response);
+		
+		LOGGER.info("UserController | exportToExcel | export completed");
 	}
 	
 	@GetMapping("/users/export/pdf")
@@ -295,5 +299,7 @@ public class UserController {
 		LOGGER.info("UserController | exportToPDF | export is starting");
 		
 		exporter.export(listUsers, response);
+		
+		LOGGER.info("UserController | exportToPDF | export completed");
 	}	
 }
