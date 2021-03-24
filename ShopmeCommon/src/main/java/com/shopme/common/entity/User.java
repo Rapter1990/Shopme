@@ -1,5 +1,6 @@
 package com.shopme.common.entity;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,9 +15,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.JoinColumn;
 
@@ -25,7 +28,8 @@ import javax.persistence.JoinColumn;
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+@ToString
+public class User implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,11 +71,6 @@ public class User {
 		this.roles.add(role);
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", roles=" + roles + "]";
-	}
 	
 	@Transient
 	public String getPhotosImagePath() {
