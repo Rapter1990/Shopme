@@ -187,6 +187,7 @@ public class UserController {
 			model.addAttribute("listRoles", listRoles);
 			
 			return "users/user_form";
+			
 		} catch (UserNotFoundException ex) {
 			
 			LOGGER.error("UserController | editUser | ex.getMessage() : " + ex.getMessage());
