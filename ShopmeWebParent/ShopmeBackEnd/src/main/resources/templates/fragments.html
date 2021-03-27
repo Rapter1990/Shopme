@@ -17,6 +17,7 @@
 
 <body>
 
+	<!-- USER -->
 	<th th:fragment="column_link(fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
 	
 		<a class="text-white"
@@ -61,6 +62,35 @@
 			th:userId="${user.id}"
 			title="Delete this user"></a>	
 	</div>
+	
+	<!-- USER END -->
+	
+	
+	<!-- CATEGORY -->
+	
+	<div th:fragment="category_status" th:remove="tag">
+		<a th:if="${cat.enabled == true}" class="fas fa-check-circle fa-2x icon-green" 
+			th:href="@{'/categories/' + ${cat.id} + '/enabled/false'}"
+			title="Disable this category"
+			></a>
+
+		<a th:if="${cat.enabled == false}" class="fas fa-circle fa-2x icon-dark" 
+			th:href="@{'/categories/' + ${cat.id} + '/enabled/true'}"
+			title="Enable this category"
+			></a>	
+	</div>
+
+	<div th:fragment="category_actions" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
+			title="Edit this category"></a>
+		&nbsp; 
+		<a class="fas fa-trash fa-2x icon-dark link-delete" 
+			th:href="@{'/categories/delete/' + ${cat.id}}"
+			th:catId="${cat.id}"
+			title="Delete this category"></a>	
+	</div>	
+	
+	<!-- CATEGORY END -->
 	
 	
 	<div th:fragment="footer" class="text-center m-3">
