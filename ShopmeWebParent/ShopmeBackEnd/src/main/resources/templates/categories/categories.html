@@ -14,6 +14,10 @@
 
 		<a th:href="@{/categories/export/pdf}" style="text-decoration: none;" class="fas fa-file-pdf fa-2x icon-dark"></a>	
 	</div>
+	
+	<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
+		[[${message}]]
+	</div>
 
 	<div>
 		<form th:action="@{/categories/page/1}" class="form-inline m-3">
