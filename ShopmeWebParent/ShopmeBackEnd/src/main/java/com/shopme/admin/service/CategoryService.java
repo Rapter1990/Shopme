@@ -37,13 +37,13 @@ public class CategoryService implements ICategoryService{
 
 		for (Category category : categoriesInDB) {
 			if (category.getParent() == null) {
-				categoriesUsedInForm.add(new Category(category.getName()));
+				categoriesUsedInForm.add(Category.copyIdAndName(category));
 
 				Set<Category> children = category.getChildren();
 
 				for (Category subCategory : children) {
 					String name = "--" + subCategory.getName();
-					categoriesUsedInForm.add(new Category(name));
+					categoriesUsedInForm.add(Category.copyIdAndName(subCategory.getId(), name));
 
 					listChildren(categoriesUsedInForm, subCategory, 1);
 				}
@@ -64,10 +64,16 @@ public class CategoryService implements ICategoryService{
 			}
 			name += subCategory.getName();
 
-			categoriesUsedInForm.add(new Category(name));
+			categoriesUsedInForm.add(Category.copyIdAndName(subCategory.getId(), name));
 
 			listChildren(categoriesUsedInForm, subCategory, newSubLevel);
 		}		
+	}
+
+	@Override
+	public Category save(Category category) {
+		// TODO Auto-generated method stub
+		return categoryRepository.save(category);
 	}
 
 }
