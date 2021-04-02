@@ -12,11 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.shopme.admin.error.CategoryNotFoundException;
 import com.shopme.admin.service.CategoryService;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Category;
@@ -66,24 +68,57 @@ public class CategoryController {
 		
 		LOGGER.info("CategoryController | saveCategory is started");
 		
-		String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+		LOGGER.info("CategoryController | saveCategory | multipartFile.isEmpty() : " + multipartFile.isEmpty());
 		
-		LOGGER.info("CategoryController | saveCategory | fileName : " + fileName);
-		
-		category.setImage(fileName);
+		if (!multipartFile.isEmpty()) {
+			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+			
+			LOGGER.info("CategoryController | saveCategory | fileName : " + fileName);
+			
+			category.setImage(fileName);
 
-		Category savedCategory = categoryService.save(category);
-		String uploadDir = "../category-images/" + savedCategory.getId();
-		
-		LOGGER.info("CategoryController | saveCategory | savedCategory : " + savedCategory.toString());
-		LOGGER.info("CategoryController | saveCategory | uploadDir : " + uploadDir);
-		
-		FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-		
-		LOGGER.info("CategoryController | saveCategory | uploadDir : " + uploadDir);
-
+			Category savedCategory = categoryService.save(category);
+			String uploadDir = "../category-images/" + savedCategory.getId();
+			
+			LOGGER.info("CategoryController | saveCategory | savedCategory : " + savedCategory.toString());
+			LOGGER.info("CategoryController | saveCategory | uploadDir : " + uploadDir);
+			
+			FileUploadUtil.cleanDir(uploadDir);
+			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+		} else {
+			categoryService.save(category);
+		}
+				
 		ra.addFlashAttribute("messageSuccess", "The category has been saved successfully.");
 		return "redirect:/categories";
+	}
+	
+	@GetMapping("/categories/edit/{id}")
+	public String editCategory(@PathVariable(name = "id") Integer id, Model model,
+			RedirectAttributes ra) {
+		
+		LOGGER.info("CategoryController | editCategory is started");
+		
+		try {
+			Category category = categoryService.get(id);
+			List<Category> listCategories = categoryService.listCategoriesUsedInForm();
+			
+			LOGGER.info("CategoryController | editCategory | category : " + category.toString());
+			LOGGER.info("CategoryController | editCategory | listCategories : " + listCategories.toString());
+			
+
+			model.addAttribute("category", category);
+			model.addAttribute("listCategories", listCategories);
+			model.addAttribute("pageTitle", "Edit Category (ID: " + id + ")");
+
+			return "categories/category_form";			
+			
+		} catch (CategoryNotFoundException ex) {
+			
+			LOGGER.info("CategoryController | editCategory | messageError : " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+			return "redirect:/categories";
+		}
 	}
 	
 	@GetMapping("/categories/export/csv")
