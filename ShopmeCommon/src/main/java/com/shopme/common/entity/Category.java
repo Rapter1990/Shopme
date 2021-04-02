@@ -99,6 +99,9 @@ public class Category implements Serializable{
 	
 	@Transient
 	public String getImagePath() {
+		
+		if (this.id == null) return "/images/image-thumbnail.png";
+		
 		return "/category-images/" + this.id + "/" + this.image;
 	}
 }
