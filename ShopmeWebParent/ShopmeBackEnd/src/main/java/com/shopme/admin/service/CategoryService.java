@@ -2,6 +2,7 @@ package com.shopme.admin.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import javax.transaction.Transactional;
@@ -9,6 +10,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shopme.admin.error.CategoryNotFoundException;
 import com.shopme.admin.repository.CategoryRepository;
 import com.shopme.admin.service.impl.ICategoryService;
 import com.shopme.common.entity.Category;
@@ -112,6 +114,15 @@ public class CategoryService implements ICategoryService{
 	public Category save(Category category) {
 		// TODO Auto-generated method stub
 		return categoryRepository.save(category);
+	}
+	
+	@Override
+	public Category get(Integer id) throws CategoryNotFoundException {
+		try {
+			return categoryRepository.findById(id).get();
+		} catch (NoSuchElementException ex) {
+			throw new CategoryNotFoundException("Could not find any category with ID " + id);
+		}
 	}
 
 }
