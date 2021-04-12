@@ -10,6 +10,7 @@
 
 	<form th:action="@{/categories/save}" method="post" style="max-width: 500px; margin: 0 auto"
 		enctype="multipart/form-data"
+		onsubmit="return checkUnique(this)"
 		th:object="${category}">
 		<input type="hidden" th:field="*{id}" />
 	<div class="border border-secondary rounded p-3">
@@ -71,24 +72,7 @@
 	</div>
 	</form>
 
-	<div class="modal fade text-center" id="modalDialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="modalTitle">Warning</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-
-				<div class="modal-body">
-					<span id="modalBody"></span>
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div th:replace="modal_fragments :: modal_dialog"></div>
 
 	<div th:replace="fragments :: footer"></div>
 
@@ -96,7 +80,34 @@
 <script type="text/javascript">
 	moduleURL = "[[@{/categories}]]";
 
+	function checkUnique(form) {
+		catId = $("#id").val();
+		catName = $("#name").val();
+		catAlias = $("#alias").val();
 
+		csrfValue = $("input[name='_csrf']").val();
+
+		url = "[[@{/categories/check_unique}]]";
+
+		params = {id: catId, name: catName, alias: catAlias, _csrf: csrfValue};
+
+		$.post(url, params, function(response) {
+			if (response == "OK") {
+				form.submit();
+			} else if (response == "DuplicateName") {
+				showWarningModal("There is another category having same name " + catName);	
+			} else if (response == "DuplicateAlias") {
+				showWarningModal("There is another category having same alias " + catAlias);
+			} else {
+				showErrorModal("Unknown response from server");
+			}
+
+		}).fail(function() {
+			showErrorModal("Could not connect to the server");
+		});
+
+		return false;
+	}
 
 </script>
 <script th:src="@{/js/common_form.js}"></script>
