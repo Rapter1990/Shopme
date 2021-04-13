@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -32,14 +33,23 @@ public class CategoryController {
 	private CategoryService categoryService;
 	
 	@GetMapping("/categories")
-	public String listAll(Model model) {
+	public String listAll(@Param("sortDir") String sortDir, Model model) {
 		
 		LOGGER.info("CategoryController | listAll is started");
 		
-		List<Category> listCategories = categoryService.listAll();
-		model.addAttribute("listCategories", listCategories);
+		if (sortDir ==  null || sortDir.isEmpty()) {
+			sortDir = "asc";
+		}
 		
-		LOGGER.info("CategoryController | listAll | listCategories : " +listCategories.toString());
+		List<Category> listCategories = categoryService.listAll(sortDir);
+
+		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
+		
+		model.addAttribute("listCategories", listCategories);
+		model.addAttribute("reverseSortDir", reverseSortDir);
+		
+		LOGGER.info("CategoryController | listAll | listCategories : " + listCategories.toString());
+		LOGGER.info("CategoryController | listAll | reverseSortDir : " + reverseSortDir);
 
 		return "categories/categories";
 	}
