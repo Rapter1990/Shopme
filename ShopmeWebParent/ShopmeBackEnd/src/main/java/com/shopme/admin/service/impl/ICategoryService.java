@@ -7,7 +7,7 @@ import com.shopme.common.entity.Category;
 
 public interface ICategoryService {
 
-	public List<Category> listAll();
+	public List<Category> listAll(String sortDir);
 	
 	public List<Category> listCategoriesUsedInForm();
 	
