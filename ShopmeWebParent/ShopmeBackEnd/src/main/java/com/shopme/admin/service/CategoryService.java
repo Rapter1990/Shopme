@@ -187,4 +187,8 @@ public class CategoryService implements ICategoryService{
 		return sortedChildren;
 	}
 
+	@Override
+	public void updateCategoryEnabledStatus(Integer id, boolean enabled) {
+		categoryRepository.updateEnabledStatus(id, enabled);
+	}
 }
