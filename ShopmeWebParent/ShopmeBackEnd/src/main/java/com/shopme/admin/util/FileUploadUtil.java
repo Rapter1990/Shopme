@@ -92,4 +92,22 @@ public class FileUploadUtil {
 		}
 	}
 	
+	public static void removeDir(String dir) {
+		
+		LOGGER.info("FileUploadUtil | removeDir is started");
+		
+		LOGGER.info("FileUploadUtil | removeDir | dir : " + dir);
+		
+		cleanDir(dir);
+		
+		LOGGER.info("FileUploadUtil | cleanDir(dir) is over");
+
+		try {
+			Files.delete(Paths.get(dir));
+		} catch (IOException e) {
+			LOGGER.error("Could not remove directory: " + dir);
+		}
+
+	}
+	
 }
