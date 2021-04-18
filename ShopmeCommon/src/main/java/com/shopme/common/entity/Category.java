@@ -41,6 +41,9 @@ public class Category implements Serializable{
 
 	private boolean enabled;
 	
+	@Transient
+	private boolean hasChildren;
+	
 	@OneToOne
 	@JoinColumn(name = "parent_id")
 	private Category parent;
@@ -93,7 +96,7 @@ public class Category implements Serializable{
 		copyCategory.setImage(category.getImage());
 		copyCategory.setAlias(category.getAlias());
 		copyCategory.setEnabled(category.isEnabled());
-
+		copyCategory.setHasChildren(category.getChildren().size() > 0);
 		return copyCategory;		
 	}
 
