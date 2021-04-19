@@ -20,11 +20,11 @@ public class UserCsvExporter extends AbstractExporter{
 
 	public void export(List<User> listUsers, HttpServletResponse response) throws IOException {
 		
-		super.setResponseHeader(response, "text/csv", ".csv");
+		super.setResponseHeader(response, "text/csv", ".csv", "users_");
 		
 		Writer writer = new OutputStreamWriter(response.getOutputStream(), "utf-8");
 		writer.write('\uFEFF');
-
+		
 		ICsvBeanWriter csvWriter = new CsvBeanWriter(writer, 
 				CsvPreference.STANDARD_PREFERENCE);
 
