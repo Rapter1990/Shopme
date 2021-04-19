@@ -22,6 +22,7 @@ import com.shopme.admin.repository.CategoryRepository;
 import com.shopme.admin.service.impl.ICategoryService;
 import com.shopme.admin.util.CategoryPageInfo;
 import com.shopme.common.entity.Category;
+import com.shopme.common.entity.User;
 
 @Service
 @Transactional
@@ -30,7 +31,16 @@ public class CategoryService implements ICategoryService{
 	public static final int ROOT_CATEGORIES_PER_PAGE = 4;
 	
 	@Autowired
-	private CategoryRepository categoryRepository;  
+	private CategoryRepository categoryRepository;
+	
+	public List<Category> listAll() {
+		
+		Sort firstNameSorting =  Sort.by("name").ascending();
+		
+		List<Category> categoryList = new ArrayList<>();
+		categoryRepository.findAll(firstNameSorting).forEach(categoryList::add);
+		return categoryList;
+	}
 
 	@Override
 	public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir,
