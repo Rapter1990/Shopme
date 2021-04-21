@@ -20,15 +20,7 @@
 			<a th:href="@{/users/export/pdf}" style="text-decoration: none;" class="fas fa-file-pdf fa-2x icon-dark"></a>	
 		</div>
 		
-		<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
-			[[${messageSuccess}]]
-		</div>
-		
-		<div th:if="${messageError != null}" class="alert alert-danger text-center">
-			[[${messageError}]]
-		</div>
-		
-		<div th:replace="fragments :: search_form('/users/page/1')" />
+		<div th:replace="fragments :: search_form_and_message('/users/page/1')" />
 		
 		<div class="full-details">
 			<table class="table table-bordered table-striped table-hover table-responsive-xl">
@@ -36,21 +28,21 @@
 					<tr>
 					
 						<th class="hideable-column">
-							<th th:replace="fragments :: column_link('id', 'User ID', 'tag')" />
+							<th th:replace="fragments :: column_link('/users', 'id', 'User ID', 'tag')" />
 						</th>
 						
 						<th>Photos</th>
 						
 						<th class="hideable-column">
-							<th th:replace="fragments :: column_link('email', 'E-mail', 'tag')" />
+							<th th:replace="fragments :: column_link('/users', 'email', 'E-mail', 'tag')" />
 						</th>
 	
-						<th th:replace="fragments :: column_link('firstName', 'First Name', 'none')" />
-						<th th:replace="fragments :: column_link('lastName', 'Last Name', 'none')" />
+						<th th:replace="fragments :: column_link('/users', 'firstName', 'First Name', 'none')" />
+						<th th:replace="fragments :: column_link('/users', 'lastName', 'Last Name', 'none')" />
 						
 						<th>Roles</th>
 						
-						<th th:replace="fragments :: column_link('enabled', 'Enabled', 'none')" />
+						<th th:replace="fragments :: column_link('/users', 'enabled', 'Enabled', 'none')" />
 						
 						<th></th>
 					</tr>								
@@ -68,11 +60,13 @@
 						<td th:text="${user.lastName}"></td>
 						<td th:text="${user.roles}"></td>
 						<td>
-							<div th:replace="fragments :: user_status" />
+							<div th:replace="fragments :: status(${user.enabled}, 'user', '/users/' + ${user.id})" />
 						</td>
 					
 						<td>
-							<div th:replace="fragments :: user_actions" />
+							<div th:replace="fragments :: edit('user', '/users/edit/' + ${user.id})" />
+							&nbsp;&nbsp;
+							<div th:replace="fragments :: delete('user', ${user.id}, '/users/delete/' + ${user.id}, true)" />
 						</td>
 						
 					</tr>
@@ -89,9 +83,11 @@
 					<div>[[${user.fullName}]]</div>
 					<div>[[${user.roles}]]</div>
 					<div class="mt-2">
-						<div th:replace="fragments :: user_status" />
+						<div th:replace="fragments :: status(${user.enabled}, 'user', '/users/' + ${user.id})" />
 						&nbsp; 			
-						<div th:replace="fragments :: user_actions" />
+						<div th:replace="fragments :: edit('user', '/users/edit/' + ${user.id})" />
+						&nbsp; 
+						<div th:replace="fragments :: delete('user', ${user.id}, '/users/delete/' + ${user.id}, true)" />
 					</div>
 				</div>
 				<div>&nbsp;</div>
