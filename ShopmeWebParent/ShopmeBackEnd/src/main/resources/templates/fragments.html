@@ -17,83 +17,70 @@
 
 <body>
 
-	<!-- USER -->
-	<th th:fragment="column_link(fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
+	<!-- COLUMN LINK -->
+	<th th:fragment="column_link(moduleURL, fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
 	
 		<a class="text-white"
-			th:href="@{'/users/page/' + ${currentPage} + '?sortField=' + ${fieldName}  +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+			th:href="@{${moduleURL} + '/page/' + ${currentPage} + '?sortField=' + ${fieldName}  +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
 			[[${columnLabel}]]
 		</a>								
 		<span th:if="${sortField == fieldName}"
 			th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}" ></span>	
 							
 	</th>
+	<!-- COLUMN LINK END -->
 	
 	
+	<!-- PAGE LINK -->
 	<a th:fragment="page_link(moduleURL,pageNum, label)" 
 	   class="page-link" 
 	   th:href="@{${moduleURL} + '/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${label}]]</a>
-	   
+	<!-- PAGE LINK END -->   
 	
+	<!-- USER PHOTOS -->
 	<div th:fragment="user_photos" th:remove="tag">
 		<span th:if="${user.photos == null}" class="fas fa-portrait fa-3x icon-silver"></span>
 		<img th:if="${user.photos != null}" th:src="@{${user.photosImagePath}}"
 			style="width: 100px" />	
 	</div>
+    <!-- USER PHOTOS END -->
 
-	<div th:fragment="user_status" th:remove="tag">
-		<a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green" style="text-decoration: none;" 
-			th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
-			title="Disable this user"
+    <!-- STATUS -->
+	<div th:fragment="status(enabled, entityName, entityURL)" th:remove="tag">
+		<a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green" style="text-decoration: none;" 
+			th:href="@{${entityURL} + '/enabled/false'}"
+			th:title="'Disable this ' + ${entityName}"
 			></a>
 
-		<a th:if="${user.enabled == false}" class="fas fa-circle fa-2x icon-dark" style="text-decoration: none;" 
-			th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
-			title="Enable this user"
+		<a th:if="${enabled == false}" class="fas fa-circle fa-2x icon-dark" 
+		    style="text-decoration: none;" 
+			th:href="@{${entityURL} + '/enabled/true'}"
+			th:title="'Enable this ' + ${entityName}"
 			></a>	
 	</div>
 
-	<div th:fragment="user_actions" th:remove="tag">
-		<a class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}" style="text-decoration: none;"
-			title="Edit this user"></a>
-		&nbsp; 
+	<!-- STATUS END -->
+	
+	
+	<!-- EDIT -->
+	
+	<div th:fragment="edit(entityName, editURL)" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{${editURL}}"
+			th:title="'Edit this ' + ${entityName}"></a>
+	</div>
+	
+	<!-- EDIT END -->
+	
+	<!-- DELETE -->
+	<div th:fragment="delete(entityName, entityId, deleteURL, visible)" th:remove="tag">
+		<th:block th:if="${visible}">
 		<a class="fas fa-trash fa-2x icon-dark link-delete" 
-			th:href="@{'/users/delete/' + ${user.id}}"
-			th:entityId="${user.id}"
-			title="Delete this user"></a>	
+		th:href="@{${deleteURL}}"
+			th:entityId="${entityId}"
+			th:title="'Delete this ' + ${entityName}"></a>
+		</th:block>	
 	</div>
-	
-	<!-- USER END -->
-	
-	
-	<!-- CATEGORY -->
-	
-	<div th:fragment="category_status" th:remove="tag">
-		<a th:if="${cat.enabled == true}" class="fas fa-check-circle fa-2x icon-green" 
-			th:href="@{'/categories/' + ${cat.id} + '/enabled/false'}"
-			title="Disable this category"
-			></a>
-
-		<a th:if="${cat.enabled == false}" class="fas fa-circle fa-2x icon-dark" 
-			th:href="@{'/categories/' + ${cat.id} + '/enabled/true'}"
-			title="Enable this category"
-			></a>	
-	</div>
-
-	<div th:fragment="category_actions" th:remove="tag">
-		<a class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/' + ${cat.id}}"
-			title="Edit this category"></a>
-		&nbsp;
-		<th:block th:if="${cat.hasChildren == false}"> 
-			<a class="fas fa-trash fa-2x icon-dark link-delete" 
-				th:href="@{'/categories/delete/' + ${cat.id}}"
-				th:entityId="${cat.id}"
-				title="Delete this category"></a>
-		</th:block>		
-	</div>	
-	
-	<!-- CATEGORY END -->
-	
+	<!-- DELETE END -->
 	
 	<!-- PAGINATION -->
 	<div th:fragment="pagination(moduleURL, entityName)" th:remove="tag">
@@ -133,7 +120,7 @@
 	<!-- PAGINATION END-->
 	
 	<!-- SEARCH FORM -->
-	<div th:fragment="search_form(moduleURL)">
+	<div th:fragment="search_form_and_message(moduleURL)">
 		<form th:action="@{${moduleURL}}" class="form-inline m-3">
 			<input type="hidden" name="sortField" th:value="${sortField}" />
 			<input type="hidden" name="sortDir" th:value="${sortDir}" />
@@ -149,6 +136,15 @@
 				<i class="fas fa-eraser"></i>
 			</button>
 		</form>
+		
+		<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
+			[[${messageSuccess}]]
+		</div>
+		
+		<div th:if="${messageError != null}" class="alert alert-danger text-center">
+			[[${messageError}]]
+		</div>
+				
 	</div>	
 	<!-- SEARCH FORM END-->
 	
