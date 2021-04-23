@@ -42,4 +42,16 @@ public class Brand implements Serializable{
 			inverseJoinColumns = @JoinColumn(name = "category_id")
 			)
 	private Set<Category> categories = new HashSet<>();
+	
+	public Brand(String name) {
+		this.name = name;
+		this.logo = "brand-logo.png";
+	}
+
+	@Override
+	public String toString() {
+		return "Brand [id=" + id + ", name=" + name + ", categories=" + categories + "]";
+	}
+	
+	
 }
