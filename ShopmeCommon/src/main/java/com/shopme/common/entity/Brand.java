@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.JoinColumn;
 
 import lombok.Getter;
@@ -53,5 +54,10 @@ public class Brand implements Serializable{
 		return "Brand [id=" + id + ", name=" + name + ", categories=" + categories + "]";
 	}
 	
-	
+	@Transient
+	public String getLogoPath() {
+		if (this.id == null) return "/images/image-thumbnail.png";
+
+		return "/brand-logos/" + this.id + "/" + this.logo;		
+	}
 }
