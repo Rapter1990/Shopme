@@ -9,7 +9,7 @@
 	</div>
 
 	<form th:action="@{/brands/save}" method="post" style="max-width: 500px; margin: 0 auto"
-		enctype="multipart/form-data"
+		enctype="multipart/form-data" onsubmit="return checkUnique(this)"
 		th:object="${brand}">
 		<input type="hidden" th:field="*{id}" />
 	<div class="border border-secondary rounded p-3">
@@ -87,14 +87,40 @@
 	});
 
 	function showChosenCategories() {
+		
 		dropdownCategories.children("option:selected").each(function() {
 			selectedCategory = $(this);
 			catId = selectedCategory.val();
-			catName = selectedCategory.text().replace(/-/g, "");
+			catName = selectedCategory.text().replace(/-/g, "");	
+			$('#remove-'+catId).remove();
+	        divChosenCategories.append("<span id='remove-"+catId+"' class='badge badge-secondary m-1'>" + catName + "</span>");
+		});
+	}
+	
+	function checkUnique(form) {
+		brandId = $("#id").val();
+		brandName = $("#name").val();
 
-			divChosenCategories.append("<span class='badge badge-secondary m-1'>" + catName + "</span>");
+		csrfValue = $("input[name='_csrf']").val();
+
+		url = "[[@{/brands/check_unique}]]";
+
+		params = {id: brandId, name: brandName, _csrf: csrfValue};
+
+		$.post(url, params, function(response) {
+			if (response == "OK") {
+				form.submit();
+			} else if (response == "Duplicate") {
+				showWarningModal("There is another brand having same name " + brandName);	
+			} else {
+				showErrorModal("Unknown response from server");
+			}
+
+		}).fail(function() {
+			showErrorModal("Could not connect to the server");
 		});
 
+		return false;
 	}
 	
 </script>
