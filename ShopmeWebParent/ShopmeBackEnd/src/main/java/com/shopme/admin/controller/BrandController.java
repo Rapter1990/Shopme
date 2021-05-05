@@ -3,6 +3,8 @@ package com.shopme.admin.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.error.BrandNotFoundException;
+import com.shopme.admin.exportcsv.BrandCsvExporter;
+import com.shopme.admin.exportcsv.CategoryCsvExporter;
+import com.shopme.admin.exportexcel.BrandExcelExporter;
+import com.shopme.admin.exportexcel.CategoryExcelExporter;
+import com.shopme.admin.exportpdf.BrandPdfExporter;
+import com.shopme.admin.exportpdf.CategoryPdfExporter;
 import com.shopme.admin.service.BrandService;
 import com.shopme.admin.service.CategoryService;
 import com.shopme.admin.util.FileUploadUtil;
@@ -161,16 +169,31 @@ public class BrandController {
 			@Param("sortField") String sortField, @Param("sortDir") String sortDir,
 			@Param("keyword") String keyword
 			) {
+		
+		LOGGER.info("BrandController | listByPage is started");
+		
 		Page<Brand> page = brandService.listByPage(pageNum, sortField, sortDir, keyword);
 		List<Brand> listBrands = page.getContent();
+		
+		LOGGER.info("BrandController | listByPage | page : " + page.getSize());
+		LOGGER.info("BrandController | listByPage | listBrands : " + listBrands.size());
 
 		long startCount = (pageNum - 1) * BrandService.BRANDS_PER_PAGE + 1;
 		long endCount = startCount + BrandService.BRANDS_PER_PAGE - 1;
+		
+		LOGGER.info("BrandController | listByPage | startCount : " + startCount);
+		LOGGER.info("BrandController | listByPage | endCount : " + endCount);
+		
+		LOGGER.info("BrandController | listByPage | page.getTotalElements() : " + page.getTotalElements());
+		
 		if (endCount > page.getTotalElements()) {
 			endCount = page.getTotalElements();
 		}
 
 		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
+		
+		
+		LOGGER.info("BrandController | listByPage | reverseSortDir : " + reverseSortDir);
 
 		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("totalPages", page.getTotalPages());
@@ -182,7 +205,69 @@ public class BrandController {
 		model.addAttribute("reverseSortDir", reverseSortDir);
 		model.addAttribute("keyword", keyword);		
 		model.addAttribute("listBrands", listBrands);
+		
+		LOGGER.info("BrandController | listByPage | currentPage : " + pageNum);
+		LOGGER.info("BrandController | listByPage | totalPages : " + page.getTotalPages());
+		LOGGER.info("BrandController | listByPage | totalItems : " + page.getTotalElements() );
+		LOGGER.info("BrandController | listByPage | sortField : " + sortField );
+		LOGGER.info("BrandController | listByPage | sortDir : " + sortDir );
+		LOGGER.info("BrandController | listByPage | keyword : " + keyword);
+		LOGGER.info("BrandController | listByPage | listBrands : " + listBrands.size());
 
 		return "brands/brands";		
+	}
+	
+	@GetMapping("/brands/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		
+		LOGGER.info("BrandController | exportToCSV is started");
+		
+		List<Brand> listBrands = brandService.listAll();
+		
+		LOGGER.info("BrandController | exportToCSV | listBrands : " + listBrands.toString());
+		
+		BrandCsvExporter exporter = new BrandCsvExporter();
+		exporter.export(listBrands, response);
+		
+		LOGGER.info("BrandController | exportToCSV | export completed");
+		
+	}
+	
+	@GetMapping("/brands/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		
+		LOGGER.info("BrandController | exportToExcel is called");
+		
+		List<Brand> listBrands = brandService.listAll();
+		
+		LOGGER.info("BrandController | exportToExcel | listBrands Size : " + listBrands.size());
+
+		BrandExcelExporter exporter = new BrandExcelExporter();
+		
+		LOGGER.info("BrandController | exportToExcel | export is starting");
+		
+		exporter.export(listBrands, response);
+		
+		LOGGER.info("BrandController | exportToExcel | export completed");
+		
+	}
+	
+	@GetMapping("/brands/export/pdf")
+	public void exportToPDF(HttpServletResponse response) throws IOException {
+		
+		LOGGER.info("BrandController | exportToPDF is called");
+		
+		List<Brand> listBrands = brandService.listAll();
+		
+		LOGGER.info("BrandController | exportToPDF | listBrands Size : " + listBrands.size());
+		
+		BrandPdfExporter exporter = new BrandPdfExporter();
+		
+		LOGGER.info("BrandController | exportToPDF | export is starting");
+		
+		exporter.export(listBrands, response);
+		
+		LOGGER.info("BrandController | exportToPDF | export completed");
+		
 	}
 }
