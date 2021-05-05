@@ -1,4 +1,4 @@
-package com.shopme.admin.util;
+package com.shopme.admin.exportcsv;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -11,6 +11,7 @@ import org.supercsv.io.CsvBeanWriter;
 import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
 
+import com.shopme.admin.util.AbstractExporter;
 import com.shopme.common.entity.Category;
 
 public class CategoryCsvExporter extends AbstractExporter {
