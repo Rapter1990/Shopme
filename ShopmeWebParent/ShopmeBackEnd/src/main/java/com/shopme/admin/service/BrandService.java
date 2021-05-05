@@ -1,5 +1,6 @@
 package com.shopme.admin.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -14,6 +15,7 @@ import com.shopme.admin.error.BrandNotFoundException;
 import com.shopme.admin.repository.BrandRepository;
 import com.shopme.admin.service.impl.IBrandService;
 import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.Category;
 
 @Service
 public class BrandService implements IBrandService{
@@ -26,7 +28,13 @@ public class BrandService implements IBrandService{
 	@Override
 	public List<Brand> listAll() {
 		// TODO Auto-generated method stub
-		return (List<Brand>) repo.findAll();
+		
+		Sort firstNameSorting =  Sort.by("name").ascending();
+		
+		List<Brand> brandList = new ArrayList<>();
+		repo.findAll(firstNameSorting).forEach(brandList::add);
+		return brandList;
+	
 	}
 
 	@Override
