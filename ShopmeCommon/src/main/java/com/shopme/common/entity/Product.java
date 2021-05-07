@@ -72,4 +72,10 @@ public class Product implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "brand_id")	
 	private Brand brand;
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + "]";
+	}
+	
 }
