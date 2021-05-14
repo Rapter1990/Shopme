@@ -270,4 +270,5 @@ public class BrandController {
 		LOGGER.info("BrandController | exportToPDF | export completed");
 		
 	}
+	
 }
