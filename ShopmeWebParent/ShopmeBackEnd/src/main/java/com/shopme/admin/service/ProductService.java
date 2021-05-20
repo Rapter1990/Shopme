@@ -1,5 +1,6 @@
 package com.shopme.admin.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -21,5 +22,24 @@ public class ProductService implements IProductService{
 	@Override
 	public List<Product> listAll() {
 		return (List<Product>) repo.findAll();
+	}
+
+	@Override
+	public Product save(Product product) {
+		// TODO Auto-generated method stub
+		if (product.getId() == null) {
+			product.setCreatedTime(new Date());
+		}
+
+		if (product.getAlias() == null || product.getAlias().isEmpty()) {
+			String defaultAlias = product.getName().replaceAll(" ", "-");
+			product.setAlias(defaultAlias);
+		} else {
+			product.setAlias(product.getAlias().replaceAll(" ", "-"));
+		}
+
+		product.setUpdatedTime(new Date());
+
+		return repo.save(product);
 	}
 }
