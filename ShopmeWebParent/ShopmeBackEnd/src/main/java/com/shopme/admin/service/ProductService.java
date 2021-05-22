@@ -42,4 +42,20 @@ public class ProductService implements IProductService{
 
 		return repo.save(product);
 	}
+	
+	@Override
+	public String checkUnique(Integer id, String name) {
+		boolean isCreatingNew = (id == null || id == 0);
+		Product productByName = repo.findByName(name);
+
+		if (isCreatingNew) {
+			if (productByName != null) return "Duplicate";
+		} else {
+			if (productByName != null && productByName.getId() != id) {
+				return "Duplicate";
+			}
+		}
+
+		return "OK";
+	}
 }
