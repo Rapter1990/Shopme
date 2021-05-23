@@ -12,5 +12,7 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, I
 	
 	@Query("UPDATE Product p SET p.enabled = ?2 WHERE p.id = ?1")
 	@Modifying
-	public void updateEnabledStatus(Integer id, boolean enabled);	
+	public void updateEnabledStatus(Integer id, boolean enabled);
+	
+	public Long countById(Integer id);
 }
