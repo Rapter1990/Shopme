@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shopme.admin.error.ProductNotFoundException;
 import com.shopme.admin.repository.ProductRepository;
 import com.shopme.admin.service.impl.IProductService;
 import com.shopme.common.entity.Product;
@@ -62,5 +63,16 @@ public class ProductService implements IProductService{
 	@Override
 	public void updateProductEnabledStatus(Integer id, boolean enabled) {
 		repo.updateEnabledStatus(id, enabled);
+	}
+	
+	@Override
+	public void delete(Integer id) throws ProductNotFoundException {
+		Long countById = repo.countById(id);
+
+		if (countById == null || countById == 0) {
+			throw new ProductNotFoundException("Could not find any product with ID " + id);			
+		}
+
+		repo.deleteById(id);
 	}	
 }
