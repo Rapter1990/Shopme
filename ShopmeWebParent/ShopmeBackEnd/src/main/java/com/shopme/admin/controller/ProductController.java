@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.shopme.admin.error.ProductNotFoundException;
 import com.shopme.admin.service.BrandService;
 import com.shopme.admin.service.ProductService;
 import com.shopme.common.entity.Brand;
@@ -37,11 +38,11 @@ public class ProductController {
 	@GetMapping("/products")
 	public String listAll(Model model) {
 		
-		LOGGER.info("BrandController | listAll is started");
+		LOGGER.info("ProductController | listAll is started");
 		
 		List<Product> listProducts = productService.listAll();
 		
-		LOGGER.info("BrandController | listAll | listProducts size : " + listProducts.size());
+		LOGGER.info("ProductController | listAll | listProducts size : " + listProducts.size());
 
 		model.addAttribute("listProducts", listProducts);
 
@@ -51,7 +52,7 @@ public class ProductController {
 	@GetMapping("/products/new")
 	public String newProduct(Model model) {
 		
-		LOGGER.info("BrandController | newProduct is started");
+		LOGGER.info("ProductController | newProduct is started");
 		
 		List<Brand> listBrands = brandService.listAll();
 
@@ -59,8 +60,8 @@ public class ProductController {
 		product.setEnabled(true);
 		product.setInStock(true);
 		
-		LOGGER.info("BrandController | newProduct | product : " + product);
-		LOGGER.info("BrandController | newProduct | listBrands : " + listBrands.size());
+		LOGGER.info("ProductController | newProduct | product : " + product);
+		LOGGER.info("ProductController | newProduct | listBrands : " + listBrands.size());
 		
 
 		model.addAttribute("product", product);
@@ -73,7 +74,7 @@ public class ProductController {
 	@PostMapping("/products/save")
 	public String saveProduct(Product product, RedirectAttributes ra) {
 		
-		LOGGER.info("BrandController | saveProduct is started");
+		LOGGER.info("ProductController | saveProduct is started");
 		
 		
 		productService.save(product);
@@ -87,11 +88,40 @@ public class ProductController {
 	public String updateCategoryEnabledStatus(@PathVariable("id") Integer id,
 			@PathVariable("status") boolean enabled, RedirectAttributes redirectAttributes) {
 		
+		LOGGER.info("ProductController | updateCategoryEnabledStatus is started");
+		
 		productService.updateProductEnabledStatus(id, enabled);
 		String status = enabled ? "enabled" : "disabled";
+		
+		LOGGER.info("ProductController | updateCategoryEnabledStatus | status : " + status);
+		
 		String message = "The Product ID " + id + " has been " + status;
-		redirectAttributes.addFlashAttribute("message", message);
+		redirectAttributes.addFlashAttribute("messageSuccess", message);
 
 		return "redirect:/products";
-	}	
+	}
+	
+	@GetMapping("/products/delete/{id}")
+	public String deleteProduct(@PathVariable(name = "id") Integer id, 
+			Model model,
+			RedirectAttributes redirectAttributes) {
+		
+		LOGGER.info("ProductController | deleteProduct is started");
+		
+		try {
+			productService.delete(id);
+			
+			LOGGER.info("ProductController | deleteProduct is done");
+			
+			redirectAttributes.addFlashAttribute("messageSuccess", 
+					"The product ID " + id + " has been deleted successfully");
+		} catch (ProductNotFoundException ex) {
+			
+			LOGGER.info("ProductController | deleteProduct | messageError : " + ex.getMessage());
+			
+			redirectAttributes.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return "redirect:/products";
+	}
 }
