@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Ignore Images File Location 
+/brand-logos/
+/category-images/
+/product-images/

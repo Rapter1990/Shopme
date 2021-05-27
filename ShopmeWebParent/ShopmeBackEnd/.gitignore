@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Ignore User Images Location
+/user-photos/
