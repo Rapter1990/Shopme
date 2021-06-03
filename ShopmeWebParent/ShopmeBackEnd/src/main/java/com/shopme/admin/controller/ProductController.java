@@ -78,40 +78,28 @@ public class ProductController {
 
 	@PostMapping("/products/save")
 	public String saveProduct(Product product, RedirectAttributes ra,
-			@RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
+			@RequestParam("fileImage") MultipartFile mainImageMultipart,
+			@RequestParam("extraImage") MultipartFile[] extraImageMultiparts
+			) throws IOException {
 		
 		LOGGER.info("ProductController | saveProduct is started");
 		
-		LOGGER.info("ProductController | saveProduct | multipartFile.isEmpty() : " + multipartFile.isEmpty());
+		LOGGER.info("ProductController | saveProduct | mainImageMultipart.isEmpty() : " + mainImageMultipart.isEmpty());
 		
-		if (!multipartFile.isEmpty()) {
-			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-			
-			LOGGER.info("ProductController | saveProduct | fileName : " + fileName);
-			
-			product.setMainImage(fileName);
-
-			Product savedProduct = productService.save(product);
-			
-			
-			String uploadDir = "../product-images/" + savedProduct.getId();
-			
-			LOGGER.info("ProductController | saveProduct | uploadDir : " + uploadDir);
-
-			FileUploadUtil.cleanDir(uploadDir);
-			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-
-		} else {
-			
-			LOGGER.info("ProductController | saveProduct |  No Image ");
-			
-			productService.save(product);
-		}
+		LOGGER.info("ProductController | saveProduct | extraImageMultiparts size : " + extraImageMultiparts.length);
 		
+		setMainImageName(mainImageMultipart, product);
+		
+		setExtraImageNames(extraImageMultiparts, product);
+		
+		Product savedProduct = productService.save(product);
+
+		saveUploadedImages(mainImageMultipart, extraImageMultiparts, savedProduct);
+
 		ra.addFlashAttribute("messageSuccess", "The product has been saved successfully.");
-		
 
 		return "redirect:/products";
+		
 	}
 	
 	@GetMapping("/products/{id}/enabled/{status}")
@@ -141,6 +129,16 @@ public class ProductController {
 		try {
 			productService.delete(id);
 			
+			String productExtraImagesDir = "../product-images/" + id + "/extras";
+			String productImagesDir = "../product-images/" + id;
+			
+			LOGGER.info("ProductController | deleteProduct | productExtraImagesDir : " + productExtraImagesDir);
+			LOGGER.info("ProductController | deleteProduct | productImagesDir : " + productImagesDir);
+
+			FileUploadUtil.removeDir(productExtraImagesDir);
+			
+			FileUploadUtil.removeDir(productImagesDir);
+			
 			LOGGER.info("ProductController | deleteProduct is done");
 			
 			redirectAttributes.addFlashAttribute("messageSuccess", 
@@ -153,5 +151,102 @@ public class ProductController {
 		}
 
 		return "redirect:/products";
+	}
+	
+	private void setExtraImageNames(MultipartFile[] extraImageMultiparts, Product product) {
+		
+		LOGGER.info("ProductController | setExtraImageNames is started");
+		
+		LOGGER.info("ProductController | setExtraImageNames | extraImageMultiparts.length : " + extraImageMultiparts.length);
+		
+		if (extraImageMultiparts.length > 0) {
+			
+			for (MultipartFile multipartFile : extraImageMultiparts) {
+				
+				LOGGER.info("ProductController | setExtraImageNames | !multipartFile.isEmpty() : " + !multipartFile.isEmpty());
+				
+				if (!multipartFile.isEmpty()) {
+					
+					String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+					
+					LOGGER.info("ProductController | setExtraImageNames | fileName : " + fileName);
+					
+					
+					product.addExtraImage(fileName);
+					
+					
+				}
+			}
+		}
+		
+		LOGGER.info("ProductController | setExtraImageNames is completed");
+	}
+
+	private void setMainImageName(MultipartFile mainImageMultipart, Product product) {
+		
+		LOGGER.info("ProductController | setMainImageName is started");
+		
+		LOGGER.info("ProductController | setMainImageName | !mainImageMultipart.isEmpty() : " + !mainImageMultipart.isEmpty());
+		
+		if (!mainImageMultipart.isEmpty()) {
+			
+			
+			String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+			
+			LOGGER.info("ProductController | setMainImageName | fileName : " + fileName);
+			
+			product.setMainImage(fileName);
+				
+		}
+		
+		
+		LOGGER.info("ProductController | setMainImageName is completed");
+	}
+	
+	private void saveUploadedImages(MultipartFile mainImageMultipart, 
+			MultipartFile[] extraImageMultiparts, Product savedProduct) throws IOException {
+		
+		LOGGER.info("ProductController | saveUploadedImages is started");
+		
+		LOGGER.info("ProductController | setMainImageName | !mainImageMultipart.isEmpty() : " + !mainImageMultipart.isEmpty());
+		
+		if (!mainImageMultipart.isEmpty()) {
+			String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+			
+			LOGGER.info("ProductController | setMainImageName | fileName : " + fileName);
+			
+			String uploadDir = "../product-images/" + savedProduct.getId();
+			
+			LOGGER.info("ProductController | setMainImageName | uploadDir : " + uploadDir);
+
+			FileUploadUtil.cleanDir(uploadDir);
+			
+			FileUploadUtil.saveFile(uploadDir, fileName, mainImageMultipart);
+		}
+		
+		LOGGER.info("ProductController | setMainImageName | extraImageMultiparts.length : " + extraImageMultiparts.length);
+		
+		if (extraImageMultiparts.length > 0) {
+			
+			String uploadDir = "../product-images/" + savedProduct.getId() + "/extras";
+			
+			LOGGER.info("ProductController | setMainImageName | uploadDir : " + uploadDir);
+
+			for (MultipartFile multipartFile : extraImageMultiparts) {
+				
+				LOGGER.info("ProductController | setMainImageName | multipartFile.isEmpty() : " + multipartFile.isEmpty());
+				if (multipartFile.isEmpty()) continue;
+
+				String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+				
+				LOGGER.info("ProductController | setMainImageName | fileName : " + fileName);
+				
+				FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+				
+			}
+		}
+		
+		
+		LOGGER.info("ProductController | saveUploadedImages is completed");
 	}
 }
