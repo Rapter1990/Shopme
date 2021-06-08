@@ -16,4 +16,6 @@ public interface IProductService {
 	public void updateProductEnabledStatus(Integer id, boolean enabled);
 	
 	public void delete(Integer id) throws ProductNotFoundException;
+	
+	public Product get(Integer id) throws ProductNotFoundException;
 }
