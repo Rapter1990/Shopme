@@ -79,7 +79,9 @@ public class ProductController {
 	@PostMapping("/products/save")
 	public String saveProduct(Product product, RedirectAttributes ra,
 			@RequestParam("fileImage") MultipartFile mainImageMultipart,
-			@RequestParam("extraImage") MultipartFile[] extraImageMultiparts
+			@RequestParam("extraImage") MultipartFile[] extraImageMultiparts,
+			@RequestParam(name = "detailNames", required = false) String[] detailNames,
+			@RequestParam(name = "detailValues", required = false) String[] detailValues
 			) throws IOException {
 		
 		LOGGER.info("ProductController | saveProduct is started");
@@ -91,6 +93,8 @@ public class ProductController {
 		setMainImageName(mainImageMultipart, product);
 		
 		setExtraImageNames(extraImageMultiparts, product);
+		
+		setProductDetails(detailNames, detailValues, product);
 		
 		Product savedProduct = productService.save(product);
 
@@ -248,5 +252,30 @@ public class ProductController {
 		
 		
 		LOGGER.info("ProductController | saveUploadedImages is completed");
+	}
+	
+	private void setProductDetails(String[] detailNames, String[] detailValues, Product product) {
+		
+		LOGGER.info("ProductController | setProductDetails is started");
+		
+		LOGGER.info("ProductController | setProductDetails | detailNames : " + detailNames.toString());
+		LOGGER.info("ProductController | setProductDetails | detailNames : " + detailValues.toString());
+		LOGGER.info("ProductController | setProductDetails | product : " + product.toString());
+		
+		
+		if (detailNames == null || detailNames.length == 0) return;
+
+		for (int count = 0; count < detailNames.length; count++) {
+			String name = detailNames[count];
+			String value = detailValues[count];
+
+			if (!name.isEmpty() && !value.isEmpty()) {
+				product.addDetail(name, value);
+			}
+		}
+		
+		LOGGER.info("ProductController | setProductDetails | product with its detail : " + product.getDetails().toString());
+		
+		LOGGER.info("ProductController | setProductDetails is completed");
 	}
 }
