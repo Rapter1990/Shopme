@@ -35,8 +35,8 @@
 					accept="image/png, image/jpeg" />
 			</div>
 
-			<input type="hidden" name="imageIDs" th:id="'imageId' + ${status.index}" />
-			<input type="hidden" name="imageNames" th:id="'imageName' + ${status.index}" />
+			<input type="hidden" name="imageIDs" th:id="'imageId' + ${status.index}" th:value="${productImage.id}"/>
+			<input type="hidden" name="imageNames" th:id="'imageName' + ${status.index}" th:value="${productImage.name}"/>
 
 		</div>		
 		</th:block>
