@@ -34,10 +34,12 @@
 				<input type="file" name="extraImage" 
 					accept="image/png, image/jpeg" />
 			</div>
-
-			<input type="hidden" name="imageIDs" th:id="'imageId' + ${status.index}" th:value="${productImage.id}"/>
-			<input type="hidden" name="imageNames" th:id="'imageName' + ${status.index}" th:value="${productImage.name}"/>
-
+			
+			<input type="hidden" name="imageIDs" th:id="'imageId' + ${status.index}"
+				th:value="${productImage.id}" />
+			<input type="hidden" name="imageNames" th:id="'imageName' + ${status.index}"
+				th:value="${productImage.name}" />
+			
 		</div>		
 		</th:block>
 		
@@ -55,8 +57,7 @@
 					accept="image/png, image/jpeg" />
 			</div>
 		</div>		
-		
 	</div>	
 </div>		
 </body>
-</html> 
+</html>
