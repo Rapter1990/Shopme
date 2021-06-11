@@ -46,4 +46,4 @@ function removeDetailSectionById(id) {
 
 function removeDetailSectionByIndex(index) {
 	$("#divDetail" + index).remove();	
-}  
+} 
