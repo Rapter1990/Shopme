@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -38,6 +39,14 @@ public class ProductDetail implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
+	
+	public ProductDetail(Integer id, String name, String value, Product product) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.value = value;
+		this.product = product;
+	}
 	
 	public ProductDetail(String name, String value, Product product) {
 		this.name = name;
