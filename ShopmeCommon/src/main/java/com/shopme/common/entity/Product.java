@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -82,10 +83,10 @@ public class Product implements Serializable{
 	@JoinColumn(name = "brand_id")	
 	private Brand brand;
 	
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<ProductImage> images = new HashSet<>();
 	
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<ProductDetail> details = new ArrayList<>();
 
 	public void addExtraImage(String imageName) {
@@ -106,6 +107,23 @@ public class Product implements Serializable{
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + "]";
+	}
+	
+	public void addDetail(Integer id, String name, String value) {
+		this.details.add(new ProductDetail(id, name, value, this));
+	}
+
+	public boolean containsImageName(String imageName) {
+		Iterator<ProductImage> iterator = images.iterator();
+
+		while (iterator.hasNext()) {
+			ProductImage image = iterator.next();
+			if (image.getName().equals(imageName)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 	
 }

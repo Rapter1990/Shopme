@@ -1,7 +1,12 @@
 package com.shopme.admin.controller;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +27,7 @@ import com.shopme.admin.service.ProductService;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Product;
+import com.shopme.common.entity.ProductImage;
 
 @Controller
 public class ProductController {
@@ -80,8 +86,11 @@ public class ProductController {
 	public String saveProduct(Product product, RedirectAttributes ra,
 			@RequestParam("fileImage") MultipartFile mainImageMultipart,
 			@RequestParam("extraImage") MultipartFile[] extraImageMultiparts,
+			@RequestParam(name = "detailIDs", required = false) String[] detailIDs,
 			@RequestParam(name = "detailNames", required = false) String[] detailNames,
-			@RequestParam(name = "detailValues", required = false) String[] detailValues
+			@RequestParam(name = "detailValues", required = false) String[] detailValues,
+			@RequestParam(name = "imageIDs", required = false) String[] imageIDs,
+			@RequestParam(name = "imageNames", required = false) String[] imageNames
 			) throws IOException {
 		
 		LOGGER.info("ProductController | saveProduct is started");
@@ -92,13 +101,17 @@ public class ProductController {
 		
 		setMainImageName(mainImageMultipart, product);
 		
-		setExtraImageNames(extraImageMultiparts, product);
+		setExistingExtraImageNames(imageIDs, imageNames, product);
 		
-		setProductDetails(detailNames, detailValues, product);
+		setNewExtraImageNames(extraImageMultiparts, product);
+		
+		setProductDetails(detailIDs, detailNames, detailValues, product);
 		
 		Product savedProduct = productService.save(product);
 
 		saveUploadedImages(mainImageMultipart, extraImageMultiparts, savedProduct);
+		
+		deleteExtraImagesWeredRemovedOnForm(product);
 
 		ra.addFlashAttribute("messageSuccess", "The product has been saved successfully.");
 
@@ -157,26 +170,28 @@ public class ProductController {
 		return "redirect:/products";
 	}
 	
-	private void setExtraImageNames(MultipartFile[] extraImageMultiparts, Product product) {
+	private void setNewExtraImageNames(MultipartFile[] extraImageMultiparts, Product product) {
 		
-		LOGGER.info("ProductController | setExtraImageNames is started");
+		LOGGER.info("ProductController | setNewExtraImageNames is started");
 		
-		LOGGER.info("ProductController | setExtraImageNames | extraImageMultiparts.length : " + extraImageMultiparts.length);
+		LOGGER.info("ProductController | setNewExtraImageNames | extraImageMultiparts.length : " + extraImageMultiparts.length);
 		
 		if (extraImageMultiparts.length > 0) {
 			
 			for (MultipartFile multipartFile : extraImageMultiparts) {
 				
-				LOGGER.info("ProductController | setExtraImageNames | !multipartFile.isEmpty() : " + !multipartFile.isEmpty());
+				LOGGER.info("ProductController | setNewExtraImageNames | !multipartFile.isEmpty() : " + !multipartFile.isEmpty());
 				
 				if (!multipartFile.isEmpty()) {
 					
 					String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 					
-					LOGGER.info("ProductController | setExtraImageNames | fileName : " + fileName);
+					LOGGER.info("ProductController | setNewExtraImageNames | fileName : " + fileName);
 					
 					
-					product.addExtraImage(fileName);
+					if (!product.containsImageName(fileName)) {
+						product.addExtraImage(fileName);
+					}
 					
 					
 				}
@@ -254,7 +269,8 @@ public class ProductController {
 		LOGGER.info("ProductController | saveUploadedImages is completed");
 	}
 	
-	private void setProductDetails(String[] detailNames, String[] detailValues, Product product) {
+	private void setProductDetails(String[] detailIDs, String[] detailNames, 
+			String[] detailValues, Product product) {
 		
 		LOGGER.info("ProductController | setProductDetails is started");
 		
@@ -268,8 +284,11 @@ public class ProductController {
 		for (int count = 0; count < detailNames.length; count++) {
 			String name = detailNames[count];
 			String value = detailValues[count];
+			Integer id = Integer.parseInt(detailIDs[count]);
 
-			if (!name.isEmpty() && !value.isEmpty()) {
+			if (id != 0) {
+				product.addDetail(id, name, value);
+			} else if (!name.isEmpty() && !value.isEmpty()) {
 				product.addDetail(name, value);
 			}
 		}
@@ -311,4 +330,58 @@ public class ProductController {
 			return "redirect:/products";
 		}
 	}
+	
+	private void deleteExtraImagesWeredRemovedOnForm(Product product) {
+		
+		LOGGER.info("ProductController | deleteExtraImagesWeredRemovedOnForm is started");
+		
+		String extraImageDir = "../product-images/" + product.getId() + "/extras";
+		Path dirPath = Paths.get(extraImageDir);
+		
+		LOGGER.info("ProductController | deleteExtraImagesWeredRemovedOnForm | dirPath  : " + dirPath);
+		
+
+		try {
+			Files.list(dirPath).forEach(file -> {
+				String filename = file.toFile().getName();
+
+				if (!product.containsImageName(filename)) {
+					try {
+						Files.delete(file);
+						LOGGER.info("Deleted extra image: " + filename);
+
+					} catch (IOException e) {
+						LOGGER.error("Could not delete extra image: " + filename);
+					}
+				}
+
+			});
+		} catch (IOException ex) {
+			LOGGER.error("Could not list directory: " + dirPath);
+		}
+	}
+
+	private void setExistingExtraImageNames(String[] imageIDs, String[] imageNames, 
+			Product product) {
+		
+		LOGGER.info("ProductController | setExistingExtraImageNames is started");
+		
+		LOGGER.info("ProductController | deleteExtraImagesWeredRemovedOnForm | imageIDs  : " + imageIDs.toString());
+		LOGGER.info("ProductController | deleteExtraImagesWeredRemovedOnForm | imageNames  : " + imageNames.toString());
+		
+		if (imageIDs == null || imageIDs.length == 0) return;
+
+		Set<ProductImage> images = new HashSet<>();
+
+		for (int count = 0; count < imageIDs.length; count++) {
+			Integer id = Integer.parseInt(imageIDs[count]);
+			String name = imageNames[count];
+
+			images.add(new ProductImage(id, name, product));
+		}
+
+		product.setImages(images);
+
+	}
+
 }
