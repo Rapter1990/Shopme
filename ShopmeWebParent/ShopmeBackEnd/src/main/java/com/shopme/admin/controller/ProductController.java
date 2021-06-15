@@ -384,5 +384,30 @@ public class ProductController {
 		product.setImages(images);
 
 	}
+	
+	@GetMapping("/products/detail/{id}")
+	public String viewProductDetails(@PathVariable("id") Integer id, Model model,
+			RedirectAttributes ra) {
+		
+		LOGGER.info("ProductController | viewProductDetails is started");
+		
+		try {
+			Product product = productService.get(id);
+			
+			LOGGER.info("ProductController | viewProductDetails  | product : " + product.toString());
+			
+			model.addAttribute("product", product);		
+
+			return "products/product_detail_modal";
+
+		} catch (ProductNotFoundException e) {
+			
+			LOGGER.info("ProductController | viewProductDetails  | messageError : " + e.getMessage());
+			
+			ra.addFlashAttribute("messageError", e.getMessage());
+
+			return "redirect:/products";
+		}
+	}	
 
 }
