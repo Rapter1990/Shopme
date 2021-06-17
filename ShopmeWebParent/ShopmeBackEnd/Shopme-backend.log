@@ -1,567 +1,149 @@
-2021-06-12 01:20:18.609  INFO 20444 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2462 ms
-2021-06-12 01:20:18.920  INFO 20444 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-12 01:20:19.000  INFO 20444 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-06-12 01:20:19.172  INFO 20444 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-12 01:20:19.354  INFO 20444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-12 01:20:19.710  INFO 20444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-12 01:20:19.731  INFO 20444 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-06-12 01:20:20.861  INFO 20444 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-12 01:20:20.871  INFO 20444 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-12 01:20:20.924  INFO 20444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-12 01:20:21.505  WARN 20444 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-12 01:20:21.821  INFO 20444 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
-2021-06-12 01:20:21.822  INFO 20444 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
-2021-06-12 01:20:21.822  INFO 20444 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
-2021-06-12 01:20:21.860  INFO 20444 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78ebeecd, org.springframework.security.web.context.SecurityContextPersistenceFilter@46397b7e, org.springframework.security.web.header.HeaderWriterFilter@92b84c4, org.springframework.security.web.csrf.CsrfFilter@6ab5b7bd, org.springframework.security.web.authentication.logout.LogoutFilter@77cdf252, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62d28f38, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12d498db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b877166, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@440c3983, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@346f252e, org.springframework.security.web.session.SessionManagementFilter@1995f088, org.springframework.security.web.access.ExceptionTranslationFilter@39e1bb32, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67156d81]
-2021-06-12 01:20:21.998  INFO 20444 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-12 01:20:22.095  INFO 20444 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-06-12 01:20:22.792  INFO 20444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/ShopmeAdmin'
-2021-06-12 01:20:22.802  INFO 20444 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 7.186 seconds (JVM running for 8.571)
-2021-06-12 01:20:22.870  INFO 20444 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-12 01:20:22.870  INFO 20444 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-12 01:20:22.872  INFO 20444 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-06-12 01:20:26.412  INFO 20444 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll is started
-2021-06-12 01:20:26.459  INFO 20444 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 0
-2021-06-12 01:20:31.924  INFO 20444 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | newProduct is started
-2021-06-12 01:20:31.989  INFO 20444 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | newProduct | product : Product [id=null, name=null]
-2021-06-12 01:20:31.989  INFO 20444 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | newProduct | listBrands : 54
-2021-06-12 01:20:32.136 ERROR 20444 --- [http-nio-8081-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-1] Exception processing template "products/product_form": An error happened during template parsing (template: "class path resource [templates/products/product_form.html]")
-
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/product_form.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "numberOfExistingExtraImages + 1" (template: "products/product_images" - line 48, col 27)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	... 95 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "numberOfExistingExtraImages + 1" (template: "products/product_images" - line 48, col 27)
-	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	... 97 common frames omitted
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1030E: The operator 'ADD' is not supported between objects of type 'null' and 'java.lang.Integer'
-	at org.springframework.expression.spel.ExpressionState.operate(ExpressionState.java:240) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.springframework.expression.spel.ast.OpPlus.getValueInternal(OpPlus.java:139) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	... 119 common frames omitted
-
-2021-06-12 01:20:32.142 ERROR 20444 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/ShopmeAdmin] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/product_form.html]")] with root cause
-
-org.springframework.expression.spel.SpelEvaluationException: EL1030E: The operator 'ADD' is not supported between objects of type 'null' and 'java.lang.Integer'
-	at org.springframework.expression.spel.ExpressionState.operate(ExpressionState.java:240) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.springframework.expression.spel.ast.OpPlus.getValueInternal(OpPlus.java:139) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.3.3.jar:5.3.3]
-	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-06-12 01:20:32.184 ERROR 20444 --- [http-nio-8081-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-1] Exception processing template "error": An error happened during template parsing (template: "class path resource [templates/error.html]")
-
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:392) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: org.attoparser.ParseException: Cannot resolve fragment. Signature "page_head (title,remove)" declares 2 parameters, but fragment selection specifies 1 parameters. Fragment selection does not correctly match. (template: "error" - line 4, col 7)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	... 46 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Cannot resolve fragment. Signature "page_head (title,remove)" declares 2 parameters, but fragment selection specifies 1 parameters. Fragment selection does not correctly match. (template: "error" - line 4, col 7)
-	at org.thymeleaf.standard.expression.FragmentSignatureUtils.processParameters(FragmentSignatureUtils.java:190) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:175) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	... 48 common frames omitted
-
-2021-06-12 01:20:32.187 ERROR 20444 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] threw exception
-
-org.thymeleaf.exceptions.TemplateProcessingException: Cannot resolve fragment. Signature "page_head (title,remove)" declares 2 parameters, but fragment selection specifies 1 parameters. Fragment selection does not correctly match. (template: "error" - line 4, col 7)
-	at org.thymeleaf.standard.expression.FragmentSignatureUtils.processParameters(FragmentSignatureUtils.java:190) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:175) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:392) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-06-12 01:20:32.189 ERROR 20444 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
-
-org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error.html]")
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.3.jar:5.3.3]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:392) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error.html]")
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
-	... 35 common frames omitted
-Caused by: org.attoparser.ParseException: Cannot resolve fragment. Signature "page_head (title,remove)" declares 2 parameters, but fragment selection specifies 1 parameters. Fragment selection does not correctly match. (template: "error" - line 4, col 7)
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	... 46 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Cannot resolve fragment. Signature "page_head (title,remove)" declares 2 parameters, but fragment selection specifies 1 parameters. Fragment selection does not correctly match. (template: "error" - line 4, col 7)
-	at org.thymeleaf.standard.expression.FragmentSignatureUtils.processParameters(FragmentSignatureUtils.java:190) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:175) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
-	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
-	... 48 common frames omitted
-
-2021-06-12 01:22:02.106  INFO 20444 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-06-12 01:22:02.152  INFO 20444 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-12 01:22:02.154  INFO 20444 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-12 01:22:02.158  INFO 20444 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-06-12 01:22:02.169  INFO 20444 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-06-12 14:05:01.110  INFO 21292 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Starting ShopmeBackEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 21292 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeBackEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeBackEnd)
-2021-06-12 14:05:01.115  INFO 21292 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : No active profile set, falling back to default profiles: default
-2021-06-12 14:05:01.223  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\xalan\xalan\2.7.2\xalan-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/xalan/xalan/2.7.2/xercesImpl.jar,file:/C:/Users/Noyan/.m2/repository/xalan/xalan/2.7.2/xml-apis.jar,file:/C:/Users/Noyan/.m2/repository/xalan/xalan/2.7.2/serializer.jar
-2021-06-12 14:05:01.224  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\xalan\serializer\2.7.2\serializer-2.7.2.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/xalan/serializer/2.7.2/xml-apis.jar
-2021-06-12 14:05:01.224  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-rasterizer-ext\1.13\batik-rasterizer-ext-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-svgrasterizer-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-parser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-xml-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-transcoder-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-svggen-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-i18n-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-codec-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-extension-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-anim-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-bridge-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-script-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-css-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/xalan-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/serializer-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/xml-apis-1.4.01.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-ext-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-gvt-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/batik-svg-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer-ext/1.13/xml-apis-ext-1.3.04.jar
-2021-06-12 14:05:01.224  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-rasterizer\1.13\batik-rasterizer-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-svgrasterizer-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-parser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-xml-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/xml-apis-ext-1.3.04.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-transcoder-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-anim-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-css-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-ext-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-svg-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-bridge-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-script-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/xalan-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/serializer-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/xml-apis-1.4.01.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-gvt-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-svggen-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-i18n-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/batik-codec-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-rasterizer/1.13/lib/fop-transcoder-allinone-2.5.jar
-2021-06-12 14:05:01.225  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-slideshow\1.13\batik-slideshow-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-bridge-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-anim-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-ext-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-css-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/xalan-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/serializer-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/xml-apis-1.4.01.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-parser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-script-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-svg-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-i18n-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-xml-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-gvt-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-slideshow/1.13/lib/xml-apis-ext-1.3.04.jar
-2021-06-12 14:05:01.225  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-squiggle-ext\1.13\batik-squiggle-ext-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-svgbrowser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-anim-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-bridge-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-script-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/xalan-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/serializer-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/xml-apis-1.4.01.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-gvt-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-swing-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-gui-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-transcoder-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-svggen-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-i18n-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-xml-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/xml-apis-ext-1.3.04.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-extension-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-css-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-ext-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-parser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle-ext/1.13/batik-svg-dom-1.13.jar
-2021-06-12 14:05:01.226  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-squiggle\1.13\batik-squiggle-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-svgbrowser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-anim-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-css-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-ext-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-parser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-svg-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-bridge-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-script-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/xalan-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/serializer-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/xml-apis-1.4.01.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-gvt-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-swing-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-gui-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-transcoder-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-svggen-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-i18n-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/batik-xml-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-squiggle/1.13/lib/xml-apis-ext-1.3.04.jar
-2021-06-12 14:05:01.226  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-svgpp\1.13\batik-svgpp-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-transcoder-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-anim-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-css-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-ext-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-parser-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-svg-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-bridge-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-script-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-dom-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/xalan-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/serializer-2.7.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/xml-apis-1.4.01.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-gvt-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-svggen-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-xml-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/xml-apis-ext-1.3.04.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-svgpp/1.13/lib/batik-i18n-1.13.jar
-2021-06-12 14:05:01.226  INFO 21292 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Noyan\.m2\repository\org\apache\xmlgraphics\batik-ttf2svg\1.13\batik-ttf2svg-1.13.jar referenced one or more files that do not exist: file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/batik-shared-resources-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/batik-svggen-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/batik-awt-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/xmlgraphics-commons-2.4.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/commons-io-1.3.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/commons-logging-1.2.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/batik-util-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/batik-constants-1.13.jar,file:/C:/Users/Noyan/.m2/repository/org/apache/xmlgraphics/batik-ttf2svg/1.13/lib/batik-i18n-1.13.jar
-2021-06-12 14:05:01.227  INFO 21292 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-12 14:05:01.228  INFO 21292 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-12 14:05:03.167  INFO 21292 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-12 14:05:03.359  INFO 21292 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 175 ms. Found 5 JPA repository interfaces.
-2021-06-12 14:05:04.615  INFO 21292 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-06-12 14:05:04.632  INFO 21292 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-12 14:05:04.633  INFO 21292 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-06-12 14:05:04.824  INFO 21292 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring embedded WebApplicationContext
-2021-06-12 14:05:04.825  INFO 21292 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3596 ms
-2021-06-12 14:05:05.239  INFO 21292 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-12 14:05:05.356  INFO 21292 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-06-12 14:05:05.644  INFO 21292 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-12 14:05:05.860  INFO 21292 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-12 14:05:06.451  INFO 21292 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-12 14:05:06.490  INFO 21292 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-06-12 14:05:08.025  INFO 21292 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-12 14:05:08.043  INFO 21292 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-12 14:05:08.114  INFO 21292 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-12 14:05:08.986  WARN 21292 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-12 14:05:09.409  INFO 21292 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
-2021-06-12 14:05:09.410  INFO 21292 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
-2021-06-12 14:05:09.410  INFO 21292 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
-2021-06-12 14:05:09.460  INFO 21292 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dc05e9d, org.springframework.security.web.context.SecurityContextPersistenceFilter@7463f1bf, org.springframework.security.web.header.HeaderWriterFilter@5f59440c, org.springframework.security.web.csrf.CsrfFilter@26013f39, org.springframework.security.web.authentication.logout.LogoutFilter@3203d97e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@608091b0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a67b1b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7761e43, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@b930a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@682c517a, org.springframework.security.web.session.SessionManagementFilter@3ab80421, org.springframework.security.web.access.ExceptionTranslationFilter@682f021e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@687a1bf3]
-2021-06-12 14:05:09.619  INFO 21292 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-12 14:05:09.764  INFO 21292 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-06-12 14:05:10.610  INFO 21292 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/ShopmeAdmin'
-2021-06-12 14:05:10.624  INFO 21292 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 10.184 seconds (JVM running for 13.874)
-2021-06-12 14:05:18.558  INFO 21292 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-12 14:05:18.558  INFO 21292 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-12 14:05:18.561  INFO 21292 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-06-12 14:05:24.858  INFO 21292 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | listAll is started
-2021-06-12 14:05:24.888  INFO 21292 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 0
-2021-06-12 14:05:29.409  INFO 21292 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | newProduct is started
-2021-06-12 14:05:29.448  INFO 21292 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | newProduct | product : Product [id=null, name=null]
-2021-06-12 14:05:29.448  INFO 21292 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | newProduct | listBrands : 54
-2021-06-12 14:07:36.893  INFO 21292 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-06-12 14:07:36.948  INFO 21292 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-06-12 14:07:36.953  INFO 21292 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-12 14:07:36.960  INFO 21292 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-06-12 14:07:36.973  INFO 21292 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-17 12:33:16.760  INFO 24744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 12:33:16.974  INFO 24744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 5 JPA repository interfaces.
+2021-06-17 12:33:18.010  INFO 24744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-06-17 12:33:18.023  INFO 24744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 12:33:18.024  INFO 24744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-06-17 12:33:18.186  INFO 24744 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring embedded WebApplicationContext
+2021-06-17 12:33:18.187  INFO 24744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3022 ms
+2021-06-17 12:33:18.514  INFO 24744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 12:33:18.600  INFO 24744 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-06-17 12:33:18.809  INFO 24744 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 12:33:18.967  INFO 24744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 12:33:19.336  INFO 24744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 12:33:19.365  INFO 24744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-17 12:33:20.598  INFO 24744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 12:33:20.621  INFO 24744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 12:33:20.711  INFO 24744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 12:33:21.269  WARN 24744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 12:33:21.574  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-06-17 12:33:21.575  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-06-17 12:33:21.576  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-06-17 12:33:21.608  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14ab1c72, org.springframework.security.web.context.SecurityContextPersistenceFilter@39d66515, org.springframework.security.web.header.HeaderWriterFilter@20046f5, org.springframework.security.web.csrf.CsrfFilter@45d7adf, org.springframework.security.web.authentication.logout.LogoutFilter@1e23ed5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@633aec2d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d99e622, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fe18d43, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@563d5ccb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3251cbbe, org.springframework.security.web.session.SessionManagementFilter@7ebb55a6, org.springframework.security.web.access.ExceptionTranslationFilter@13dc0064, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66be75d8]
+2021-06-17 12:33:21.730  INFO 24744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-17 12:33:21.851  INFO 24744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-17 12:33:22.546  INFO 24744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/ShopmeAdmin'
+2021-06-17 12:33:22.555  INFO 24744 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 8.137 seconds (JVM running for 9.73)
+2021-06-17 12:33:39.709  INFO 24744 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 12:33:39.710  INFO 24744 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 12:33:39.711  INFO 24744 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-06-17 12:34:01.860  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listFirstPage is started
+2021-06-17 12:34:01.861  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage is started
+2021-06-17 12:34:01.861  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | sortField : firstName
+2021-06-17 12:34:01.861  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | sortDir : asc
+2021-06-17 12:34:01.971  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | listUsers.size() : 4
+2021-06-17 12:34:01.972  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | startCount : 1
+2021-06-17 12:34:01.972  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | endCount : 4
+2021-06-17 12:34:01.972  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | page.getTotalElements() : 5
+2021-06-17 12:34:01.973  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | currentPage : 1
+2021-06-17 12:34:01.973  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | totalPages : 2
+2021-06-17 12:34:01.973  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | startCount : 1
+2021-06-17 12:34:01.973  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | endCount : 4
+2021-06-17 12:34:01.974  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | totalItems : 5
+2021-06-17 12:34:01.975  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | listUsers : [User(id=6, email=annamaria@am.com, password=$2a$10$Om8xyPadNAWAmC7JjH/thujJkAfVjiTTDUsiABfBgKAl5KnLT.DPy, firstName=Anna, lastName=Maria, photos=Anna Maria.jpg, enabled=true, roles=[Assistant, Salesperson, Editor]), User(id=7, email=isaachenry@shopme.com, password=$2a$10$piZMyOe094TpZErVpcTJYe6qna9cdw/1Q0O1ZCe4OBhInceQBBQ2O, firstName=Isaac, lastName=Henry, photos=Isaac Henry.jpg, enabled=true, roles=[Assistant]), User(id=4, email=mikegates@mg.com, password=$2a$10$FcupChoeLf4p.FlVRyrxXOPd5UKyfKQJHVdp92cc1C1Af7NOjw57C, firstName=Mike, lastName=ÜĞİŞÇÖIüğişçöı, photos=null, enabled=true, roles=[Assistant, Admin, Shipper]), User(id=3, email=r@g.com, password=$2a$10$rNUOXbh/m/SJW3gR5tx0X.8DwZQY.my8AfhHi38jVgeq7ynxylF9m, firstName=Remzi, lastName=Güloğlu, photos=null, enabled=false, roles=[Assistant, Editor])]
+2021-06-17 12:34:01.975  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | sortField : firstName
+2021-06-17 12:34:01.976  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | sortDir : asc
+2021-06-17 12:34:01.976  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | reverseSortDir : desc
+2021-06-17 12:34:01.976  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.UserController      : UserController | listByPage | keyword : null
+2021-06-17 12:34:04.870  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listFirstPage is started
+2021-06-17 12:34:04.870  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage is started
+2021-06-17 12:34:04.959  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage | listCategories : [Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones]
+2021-06-17 12:34:04.960  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage | reverseSortDir : desc
+2021-06-17 12:34:04.960  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage | totalPages : 1
+2021-06-17 12:34:04.960  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage | totalItems : 2
+2021-06-17 12:34:04.960  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage | currentPage : 1
+2021-06-17 12:34:04.960  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.CategoryController  : CategoryController | listByPage | sortDir : asc
+2021-06-17 12:34:08.749  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage is started
+2021-06-17 12:34:08.750  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage is started
+2021-06-17 12:34:08.784  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | page : 10
+2021-06-17 12:34:08.784  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | listBrands : 10
+2021-06-17 12:34:08.784  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | startCount : 1
+2021-06-17 12:34:08.784  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | endCount : 10
+2021-06-17 12:34:08.784  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | page.getTotalElements() : 54
+2021-06-17 12:34:08.785  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | reverseSortDir : desc
+2021-06-17 12:34:08.785  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | currentPage : 1
+2021-06-17 12:34:08.785  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | totalPages : 6
+2021-06-17 12:34:08.785  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | totalItems : 54
+2021-06-17 12:34:08.785  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | sortField : name
+2021-06-17 12:34:08.785  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | sortDir : asc
+2021-06-17 12:34:08.786  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | keyword : null
+2021-06-17 12:34:08.786  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage | listBrands : 10
+2021-06-17 12:34:14.049  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:34:14.345  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:34:24.333  INFO 24744 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:34:24.343  INFO 24744 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:35:24.020  INFO 24744 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-17 12:35:24.024  INFO 24744 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 12:35:24.029  INFO 24744 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-17 12:35:24.038  INFO 24744 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-17 12:35:24.154  INFO 24744 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Starting ShopmeBackEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 24744 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeBackEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeBackEnd)
+2021-06-17 12:35:24.154  INFO 24744 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : No active profile set, falling back to default profiles: default
+2021-06-17 12:35:24.517  INFO 24744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 12:35:24.566  INFO 24744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2021-06-17 12:35:24.731  INFO 24744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-06-17 12:35:24.732  INFO 24744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 12:35:24.732  INFO 24744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-06-17 12:35:24.779  INFO 24744 --- [restartedMain] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring embedded WebApplicationContext
+2021-06-17 12:35:24.779  INFO 24744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 618 ms
+2021-06-17 12:35:24.859  INFO 24744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 12:35:24.871  INFO 24744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-06-17 12:35:24.901  INFO 24744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-06-17 12:35:24.903  INFO 24744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-17 12:35:25.150  INFO 24744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 12:35:25.150  INFO 24744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 12:35:25.171  INFO 24744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 12:35:25.286  WARN 24744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 12:35:25.448  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-06-17 12:35:25.448  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-06-17 12:35:25.448  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-06-17 12:35:25.464  INFO 24744 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@725ab76, org.springframework.security.web.context.SecurityContextPersistenceFilter@44f2eb32, org.springframework.security.web.header.HeaderWriterFilter@438b7cb8, org.springframework.security.web.csrf.CsrfFilter@4d7b6435, org.springframework.security.web.authentication.logout.LogoutFilter@3e84703d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@eb12697, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54a9e95a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c5f21cb, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@65a0999e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3fb116b5, org.springframework.security.web.session.SessionManagementFilter@523e778c, org.springframework.security.web.access.ExceptionTranslationFilter@230669a7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35a1b1a6]
+2021-06-17 12:35:25.533  INFO 24744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-17 12:35:25.572  INFO 24744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-17 12:35:26.158  INFO 24744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/ShopmeAdmin'
+2021-06-17 12:35:26.165  INFO 24744 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 2.06 seconds (JVM running for 133.34)
+2021-06-17 12:35:26.170  INFO 24744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-06-17 12:37:38.808  INFO 24744 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 12:37:38.808  INFO 24744 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 12:37:38.810  INFO 24744 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-06-17 12:37:38.814  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | editProduct is started
+2021-06-17 12:37:38.839  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | editProduct | product  : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:37:38.947  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | editProduct | listBrands : [Brand [id=37, name=Acer, categories=[Laptops, Desktops, Tablets]], Brand [id=28, name=Aioneus, categories=[Cables & Adapters]], Brand [id=13, name=AmazonBasics, categories=[Bags & Cases]], Brand [id=43, name=AMD, categories=[CPU Processors Unit, Graphic Cards]], Brand [id=9, name=Apple, categories=[Laptops, Desktops, Tablets, Cell Phones & Accessories, Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=40, name=ASUS, categories=[Laptops, Power Supplies, Sound Cards, Desktops, Tablets, Motherboard, Internal Optical Drives]], Brand [id=17, name=Bosch, categories=[Tripods & Monopods]], Brand [id=12, name=CADeN, categories=[Bags & Cases]], Brand [id=1, name=Canon, categories=[Flashes, Lenses, Digital Cameras, Camera & Photo]], Brand [id=47, name=Cosair, categories=[Power Supplies, Memory]], Brand [id=50, name=Creative, categories=[Sound Cards]], Brand [id=51, name=Crucial, categories=[Memory]], Brand [id=38, name=Dell, categories=[Laptops, Desktops, Tablets]], Brand [id=42, name=DragonTouch, categories=[Tablets]], Brand [id=30, name=Everyworth, categories=[Cables & Adapters]], Brand [id=33, name=Fitfort, categories=[Stands]], Brand [id=2, name=Fujifilm, categories=[Camera & Photo]], Brand [id=53, name=Gigabyte, categories=[Motherboard]], Brand [id=21, name=Google, categories=[Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=19, name=GoPro, categories=[Tripods & Monopods]], Brand [id=27, name=HOVAMP, categories=[Cables & Adapters]], Brand [id=4, name=HP, categories=[Laptops, Desktops]], Brand [id=25, name=Huawei, categories=[Unlocked Cell Phones]], Brand [id=52, name=HyperX, categories=[Memory]], Brand [id=39, name=Intel, categories=[Desktops, CPU Processors Unit]], Brand [id=18, name=Joby, categories=[Tripods & Monopods]], Brand [id=49, name=Kingston, categories=[Solid State Drives, Memory]], Brand [id=36, name=Lenovo, categories=[Laptops, Desktops, Tablets]], Brand [id=31, name=Lexar, categories=[MicroSD Cards]], Brand [id=22, name=LG, categories=[Carrier Cell Phones, Internal Optical Drives]], Brand [id=20, name=Manfrotto, categories=[Tripods & Monopods, Stands]], Brand [id=41, name=Microsoft, categories=[Tablets]], Brand [id=23, name=Motorola, categories=[Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=45, name=MSI, categories=[Graphic Cards, Motherboard]], Brand [id=15, name=Neewer, categories=[Flashes]], Brand [id=14, name=Nikon, categories=[Flashes, Lenses, Digital Cameras]], Brand [id=32, name=Nulaxy, categories=[Stands]], Brand [id=11, name=Olympus, categories=[Digital Cameras]], Brand [id=7, name=Panasonic, categories=[Digital Cameras, Camera & Photo]], Brand [id=24, name=Pantech, categories=[Carrier Cell Phones]], Brand [id=8, name=Pelican, categories=[Bags & Cases, Camera & Photo]], Brand [id=34, name=PopSockets, categories=[Stands]], Brand [id=10, name=Samsung, categories=[Laptops, Desktops, Tablets, Solid State Drives, Memory, Carrier Cell Phones, Internal Hard Drives, Internal Optical Drives, Unlocked Cell Phones, MicroSD Cards]], Brand [id=5, name=SanDisk, categories=[Solid State Drives, Memory, Network Cards, Internal Hard Drives, MicroSD Cards]], Brand [id=46, name=Seagate, categories=[Internal Hard Drives]], Brand [id=35, name=SHAWE, categories=[Stands]], Brand [id=16, name=Sigma, categories=[Lenses]], Brand [id=3, name=Sony, categories=[Flashes, Digital Cameras, Camera & Photo]], Brand [id=48, name=Thermaltake, categories=[Power Supplies]], Brand [id=54, name=TP-Link, categories=[Network Cards]], Brand [id=6, name=Western Digital, categories=[Solid State Drives, Memory, Internal Hard Drives, Electronics]], Brand [id=44, name=XFX, categories=[Graphic Cards]], Brand [id=29, name=XIAE, categories=[Cables & Adapters]], Brand [id=26, name=Xiaomi, categories=[Unlocked Cell Phones]]]
+2021-06-17 12:37:38.948  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | editProduct | numberOfExistingExtraImages : 5
+2021-06-17 12:37:51.390  INFO 24744 --- [http-nio-8081-exec-7] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:37:51.529  INFO 24744 --- [http-nio-8081-exec-7] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:37:55.238  INFO 24744 --- [http-nio-8081-exec-7] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:37:55.243  INFO 24744 --- [http-nio-8081-exec-7] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:38:46.305  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:38:46.403  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:38:50.431  INFO 24744 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:38:50.436  INFO 24744 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:39:22.907  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:39:22.998  INFO 24744 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:39:28.454  INFO 24744 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:39:28.459  INFO 24744 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:40:43.454  INFO 24744 --- [http-nio-8081-exec-4] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:40:43.537  INFO 24744 --- [http-nio-8081-exec-4] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:40:47.404  INFO 24744 --- [http-nio-8081-exec-2] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:40:47.411  INFO 24744 --- [http-nio-8081-exec-2] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:41:02.110  INFO 24744 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:41:02.193  INFO 24744 --- [http-nio-8081-exec-9] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:41:06.295  INFO 24744 --- [http-nio-8081-exec-2] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:41:06.300  INFO 24744 --- [http-nio-8081-exec-2] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:41:49.220  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:41:49.301  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:41:54.042  INFO 24744 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:41:54.047  INFO 24744 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:45:00.015  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:45:00.095  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:45:04.352  INFO 24744 --- [http-nio-8081-exec-4] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:45:04.358  INFO 24744 --- [http-nio-8081-exec-4] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:45:45.833  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:45:45.903  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:46:55.505  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll is started
+2021-06-17 12:46:55.587  INFO 24744 --- [http-nio-8081-exec-1] c.s.admin.controller.BrandController     : ProductController | listAll | listProducts size : 105
+2021-06-17 12:46:59.912  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : ProductController | viewProductDetails is started
+2021-06-17 12:46:59.918  INFO 24744 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : ProductController | viewProductDetails  | product : Product [id=1, name=Canon EOS M50 Mirrorless Vlogging Camera Kit with EF-M 15-45mm lens, Black]
+2021-06-17 12:51:16.863  INFO 24744 --- [RMI TCP Connection(30)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-17 12:51:16.929  INFO 24744 --- [RMI TCP Connection(30)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-17 12:51:16.933  INFO 24744 --- [RMI TCP Connection(30)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 12:51:16.935  INFO 24744 --- [RMI TCP Connection(30)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-06-17 12:51:16.943  INFO 24744 --- [RMI TCP Connection(30)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
