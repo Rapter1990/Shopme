@@ -51,6 +51,9 @@ public class Category implements Serializable{
 	@OneToMany(mappedBy = "parent")
 	private Set<Category> children = new HashSet<>();
 	
+	@Column(name = "all_parent_ids", length = 256, nullable = true)
+	private String allParentIDs;
+	
 	public Category(Integer id) {
 		this.id = id;
 	}
