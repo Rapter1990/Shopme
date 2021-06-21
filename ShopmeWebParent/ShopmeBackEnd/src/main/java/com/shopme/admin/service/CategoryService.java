@@ -165,6 +165,14 @@ public class CategoryService implements ICategoryService{
 	@Override
 	public Category save(Category category) {
 		// TODO Auto-generated method stub
+		
+		Category parent = category.getParent();
+		if (parent != null) {
+			String allParentIds = parent.getAllParentIDs() == null ? "-" : parent.getAllParentIDs();
+			allParentIds += String.valueOf(parent.getId()) + "-";
+			category.setAllParentIDs(allParentIds);
+		}
+		
 		return categoryRepository.save(category);
 	}
 	
