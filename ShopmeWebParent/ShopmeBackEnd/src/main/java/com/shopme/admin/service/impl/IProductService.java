@@ -21,5 +21,6 @@ public interface IProductService {
 	
 	public Product get(Integer id) throws ProductNotFoundException;
 	
-	public Page<Product> listByPage(int pageNum, String sortField, String sortDir, String keyword);
+	public Page<Product> listByPage(int pageNum, String sortField, String sortDir, 
+			String keyword, Integer categoryId);
 }
