@@ -5,7 +5,9 @@
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">Product Name:</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" th:field="*{name}" required minlength="3" maxlength="256"  />
+			<input type="text" class="form-control" th:field="*{name}"
+				th:readonly="${#authorization.expression('hasAuthority(''Salesperson'')')}" 
+				required minlength="3" maxlength="256"  />
 		</div>
 	</div>
 
@@ -13,7 +15,8 @@
 		<label class="col-sm-2 col-form-label">Alias:</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" th:field="*{alias}"
-				placeholder="Default is product name (spaces are replaced by dashes)" 
+				placeholder="Default is product name (spaces are replaced by dashes)"
+				th:readonly="${#authorization.expression('hasAuthority(''Salesperson'')')}"
 				minlength="3" maxlength="256"  />
 		</div>
 	</div>
@@ -21,44 +24,59 @@
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">Brand:</label>
 		<div class="col-sm-10">
-			<select th:field="*{brand}" class="form-control" required>
-				<th:block th:each="brand : ${listBrands}">
-					<option th:value="${brand.id}">[[${brand.name}]]</option>
-				</th:block>
-			</select>
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+				<select th:field="*{brand}" class="form-control" required>
+					<th:block th:each="brand : ${listBrands}">
+						<option th:value="${brand.id}">[[${brand.name}]]</option>
+					</th:block>
+				</select>
+			</th:block>
+			
+			<th:block sec:authorize="hasAuthority('Salesperson')">
+				<input type="text" class="form-control" th:value="${product.brand.name}" readonly />
+			</th:block>
 		</div>
 	</div>
 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">Category:</label>
 		<div class="col-sm-10">
-		
-			<th:block th:if="${product.category != null}">
-			<select th:field="*{category}" class="form-control" required>
-				<th:block th:each="cat : ${product.brand.categories}">
-					<option th:value="${cat.id}">[[${cat.name}]]</option>
-				</th:block>
-			</select>			
-			</th:block>
-		
-			<th:block th:if="${product.category == null}">
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+				<th:block th:if="${product.category != null}">
 				<select th:field="*{category}" class="form-control" required>
-	
-				</select>
+					<th:block th:each="cat : ${product.brand.categories}">
+						<option th:value="${cat.id}">[[${cat.name}]]</option>
+					</th:block>
+				</select>			
+				</th:block>
+				
+				<th:block th:if="${product.category == null}">
+					<select th:field="*{category}" class="form-control" required>
+		
+					</select>
+				</th:block>
+				
+		    </th:block>
+		    
+		    <th:block sec:authorize="hasAuthority('Salesperson')">
+				<input type="text" class="form-control" th:value="${product.category.name}" readonly />
 			</th:block>
+			
 		</div>
 	</div>
 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">Enabled:</label>
 		<div class="col-sm-10">
-			<input type="checkbox" th:field="*{enabled}" />
+			<input type="checkbox" th:field="*{enabled}" 
+				th:disabled="${#authorization.expression('hasAuthority(''Salesperson'')')}"/>
 		</div>
 	</div>
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">In-Stock:</label>
 		<div class="col-sm-10">
-			<input type="checkbox" th:field="*{inStock}" />
+			<input type="checkbox" th:field="*{inStock}"
+				th:disabled="${#authorization.expression('hasAuthority(''Salesperson'')')}" />
 		</div>
 	</div>
 
