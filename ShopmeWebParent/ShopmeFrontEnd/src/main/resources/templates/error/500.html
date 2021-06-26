@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Internal Server Error - Shopme', 'none')" />
+</head>
+<body>
+<div class="container-fluid">
+
+	<div th:replace="navigation :: header_menu"></div>
+	<div class="m-3">
+		<h2>Sorry, the server has encountered an error while processing your request</h2>		
+	</div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+
+</div>
+</body>
+</html> 
