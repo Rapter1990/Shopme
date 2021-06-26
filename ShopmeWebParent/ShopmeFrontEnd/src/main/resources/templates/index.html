@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome to Shopme</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Shopme', 'none')" />
 <body>
-	<h1>Welcome to Shopme eCommerce</h1>
+	<div class="container-fluid">
+		<div th:replace="navigation :: header_menu"></div>
+		<div>
+			<h1>Welcome to Shopme eCommerce</h1>
+		</div>
+	
+		<div th:replace="navigation :: footer_menu"></div>
+	</div>
 </body>
 </html>
