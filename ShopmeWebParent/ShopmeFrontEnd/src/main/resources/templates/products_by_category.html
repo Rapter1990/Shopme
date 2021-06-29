@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: header_menu"></div>
+
+	<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
+		<div class="row">
+			<div class="col">
+				<nav>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a th:href="@{/}">Home</a>
+						</li>
+
+						<th:block th:each="parent : ${listCategoryParents}">
+							<li class="breadcrumb-item">
+								<a th:href="@{'/c/' + ${parent.alias}}">[[${parent.name}]]</a>
+							</li>
+						</th:block>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<div class="row text-center">
+		<th:block th:each="cat : ${category.children}">
+		<div class="col" th:if="${cat.enabled == true}">
+		<a th:href="@{'/c/' + ${cat.alias}}">
+			<img th:src="@{${cat.imagePath}}" height="100" />
+			<br/>
+			<b>[[${cat.name}]]</b>
+		</a>
+		</div>
+		</th:block>
+	</div>
+
+	<div class="row">&nbsp;</div>
+	<div class="row">
+		<th:block th:each="product : ${listProducts}">
+		<div class="col">
+			<div>
+				<img th:src="@{${product.mainImagePath}}" width="150" />
+				<br/>
+				<b>[[${product.name}]]</b>
+			</div>
+			<div th:if="${product.discountPercent <= 0}">
+				<span>$ [[${product.price}]]</span>
+			</div>
+			<div th:if="${product.discountPercent > 0}">
+				<span style="font-size: larger; color: darkred">$ [[${product.discountPrice}]]</span>
+				<del><span>$ [[${product.price}]]</span></del>
+			</div>
+
+		</div>
+		</th:block>
+	</div>
+
+	<div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product')"></div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+</div>	
+</body>
+</html> 
