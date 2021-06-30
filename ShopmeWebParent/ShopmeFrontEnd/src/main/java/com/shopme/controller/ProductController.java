@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Product;
+import com.shopme.common.error.CategoryNotFoundException;
+import com.shopme.common.error.ProductNotFoundException;
 import com.shopme.service.CategoryService;
 import com.shopme.service.ProductService;
 
@@ -31,7 +33,7 @@ public class ProductController {
 	public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
 			Model model) {
 		
-		LOGGER.info("AccountController | viewCategoryFirstPage is called");
+		LOGGER.info("ProductController | viewCategoryFirstPage is called");
 		
 		return viewCategoryByPage(alias, 1, model);
 	}
@@ -41,61 +43,89 @@ public class ProductController {
 			@PathVariable("pageNum") int pageNum,
 			Model model) {
 		
-		LOGGER.info("AccountController | viewCategoryByPage is called");
-		
-		Category category = categoryService.getCategory(alias);
-		
-		LOGGER.info("AccountController | viewCategoryByPage | category : " + category.toString());
-		
-		if (category == null) {
-			LOGGER.info("AccountController | viewCategoryByPage | category == null");
+		try {
+			
+			LOGGER.info("ProductController | viewCategoryByPage is called");
+			
+			Category category = categoryService.getCategory(alias);
+			
+			LOGGER.info("ProductController | viewCategoryByPage | category : " + category.toString());
+			
+
+			List<Category> listCategoryParents = categoryService.getCategoryParents(category);
+			
+			LOGGER.info("ProductController | viewCategoryByPage | listCategoryParents : " + listCategoryParents.toString());
+
+			Page<Product> pageProducts = productService.listByCategory(pageNum, category.getId());
+			
+			List<Product> listProducts = pageProducts.getContent();
+			
+			LOGGER.info("ProductController | viewCategoryByPage | listProducts : " + listProducts.toString());
+
+			long startCount = (pageNum - 1) * ProductService.PRODUCTS_PER_PAGE + 1;
+			long endCount = startCount + ProductService.PRODUCTS_PER_PAGE - 1;
+			
+			LOGGER.info("ProductController | viewCategoryByPage | startCount : " + startCount);
+			LOGGER.info("ProductController | viewCategoryByPage | endCount : " + endCount);
+			
+			LOGGER.info("ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()");
+			if (endCount > pageProducts.getTotalElements()) {
+				LOGGER.info("ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements() | endCount : " + endCount);
+				LOGGER.info("ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements() | pageProducts.getTotalElements() : " + pageProducts.getTotalElements());
+				LOGGER.info("ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()");
+				endCount = pageProducts.getTotalElements();
+			}
+
+			LOGGER.info("ProductController | viewCategoryByPage | currentPage : " + pageNum);
+			LOGGER.info("ProductController | viewCategoryByPage | totalPages : " + pageProducts.getTotalPages());
+			LOGGER.info("ProductController | viewCategoryByPage | startCount : " + startCount);
+			LOGGER.info("ProductController | viewCategoryByPage | endCount : " + endCount);
+			LOGGER.info("ProductController | viewCategoryByPage | totalItems : " + pageProducts.getTotalElements());
+			LOGGER.info("ProductController | viewCategoryByPage | pageTitle : " + category.getName());
+			LOGGER.info("ProductController | viewCategoryByPage | listCategoryParents : " + listCategoryParents);
+			LOGGER.info("ProductController | viewCategoryByPage | listProducts : " + listProducts);
+			LOGGER.info("ProductController | viewCategoryByPage | category : " + category.toString());
+			
+			model.addAttribute("currentPage", pageNum);
+			model.addAttribute("totalPages", pageProducts.getTotalPages());
+			model.addAttribute("startCount", startCount);
+			model.addAttribute("endCount", endCount);
+			model.addAttribute("totalItems", pageProducts.getTotalElements());
+			model.addAttribute("pageTitle", category.getName());
+			model.addAttribute("listCategoryParents", listCategoryParents);
+			model.addAttribute("listProducts", listProducts);
+			model.addAttribute("category", category);
+
+			return "products_by_category";
+			
+			
+		} catch (CategoryNotFoundException ex) {
 			return "error/404";
 		}
+		
+	}
+	
+	@GetMapping("/p/{product_alias}")
+	public String viewProductDetail(@PathVariable("product_alias") String alias, Model model) {
+		
+		LOGGER.info("ProductController | viewProductDetail is called");
+		
+		try {
+			Product product = productService.getProduct(alias);
+			
+			List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
+			
+			LOGGER.info("ProductController | viewProductDetail | listCategoryParents : " + listCategoryParents.toString());
+			LOGGER.info("ProductController | viewProductDetail | product : " + product.toString());
+			LOGGER.info("ProductController | viewCategoryByPage | pageTitle : " + product.getShortName());
+			
+			model.addAttribute("listCategoryParents", listCategoryParents);
+			model.addAttribute("product", product);
+			model.addAttribute("pageTitle", product.getShortName());
 
-		List<Category> listCategoryParents = categoryService.getCategoryParents(category);
-		
-		LOGGER.info("AccountController | viewCategoryByPage | listCategoryParents : " + listCategoryParents.toString());
-
-		Page<Product> pageProducts = productService.listByCategory(pageNum, category.getId());
-		
-		List<Product> listProducts = pageProducts.getContent();
-		
-		LOGGER.info("AccountController | viewCategoryByPage | listProducts : " + listProducts.toString());
-
-		long startCount = (pageNum - 1) * ProductService.PRODUCTS_PER_PAGE + 1;
-		long endCount = startCount + ProductService.PRODUCTS_PER_PAGE - 1;
-		
-		LOGGER.info("AccountController | viewCategoryByPage | startCount : " + startCount);
-		LOGGER.info("AccountController | viewCategoryByPage | endCount : " + endCount);
-		
-		LOGGER.info("AccountController | viewCategoryByPage | endCount > pageProducts.getTotalElements()");
-		if (endCount > pageProducts.getTotalElements()) {
-			LOGGER.info("AccountController | viewCategoryByPage | endCount > pageProducts.getTotalElements() | endCount : " + endCount);
-			LOGGER.info("AccountController | viewCategoryByPage | endCount > pageProducts.getTotalElements() | pageProducts.getTotalElements() : " + pageProducts.getTotalElements());
-			LOGGER.info("AccountController | viewCategoryByPage | endCount > pageProducts.getTotalElements()");
-			endCount = pageProducts.getTotalElements();
+			return "product/product_detail";
+		} catch (ProductNotFoundException e) {
+			return "error/404";
 		}
-
-		LOGGER.info("AccountController | viewCategoryByPage | currentPage : " + pageNum);
-		LOGGER.info("AccountController | viewCategoryByPage | totalPages : " + pageProducts.getTotalPages());
-		LOGGER.info("AccountController | viewCategoryByPage | startCount : " + startCount);
-		LOGGER.info("AccountController | viewCategoryByPage | endCount : " + endCount);
-		LOGGER.info("AccountController | viewCategoryByPage | totalItems : " + pageProducts.getTotalElements());
-		LOGGER.info("AccountController | viewCategoryByPage | pageTitle : " + category.getName());
-		LOGGER.info("AccountController | viewCategoryByPage | listCategoryParents : " + listCategoryParents);
-		LOGGER.info("AccountController | viewCategoryByPage | listProducts : " + listProducts);
-		LOGGER.info("AccountController | viewCategoryByPage | category : " + category.toString());
-		
-		model.addAttribute("currentPage", pageNum);
-		model.addAttribute("totalPages", pageProducts.getTotalPages());
-		model.addAttribute("startCount", startCount);
-		model.addAttribute("endCount", endCount);
-		model.addAttribute("totalItems", pageProducts.getTotalElements());
-		model.addAttribute("pageTitle", category.getName());
-		model.addAttribute("listCategoryParents", listCategoryParents);
-		model.addAttribute("listProducts", listProducts);
-		model.addAttribute("category", category);
-
-		return "products_by_category";
 	}
 }
