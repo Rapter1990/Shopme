@@ -44,7 +44,12 @@ public class ProductService implements IProductService{
 	@Override
 	public Product getProduct(String alias) throws ProductNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		Product product = repo.findByAlias(alias);
+		if (product == null) {
+			throw new ProductNotFoundException("Could not find any product with alias " + alias);
+		}
+
+		return product;
 	}
 
 }
