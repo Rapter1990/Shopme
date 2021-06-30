@@ -96,7 +96,7 @@ public class ProductController {
 			model.addAttribute("listProducts", listProducts);
 			model.addAttribute("category", category);
 
-			return "products_by_category";
+			return "product/products_by_category";
 			
 			
 		} catch (CategoryNotFoundException ex) {
