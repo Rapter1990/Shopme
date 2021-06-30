@@ -24,9 +24,11 @@
 		<th:block th:each="product : ${listProducts}">
 		<div class="col">
 			<div>
-				<img th:src="@{${product.mainImagePath}}" width="150" />
-				<br/>
-				<b>[[${product.name}]]</b>
+				<a th:href="@{'/p/' + ${product.alias}}">
+					<img th:src="@{${product.mainImagePath}}" width="150" />
+					<br/>
+					<b>[[${product.shortName}]]</b>
+				</a>
 			</div>
 			<div th:if="${product.discountPercent <= 0}">
 				<span>$ [[${product.price}]]</span>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: header_menu"></div>
+
+	<div th:replace="breadcrumb :: content"></div>
+
+	<div class="row">
+		<div class="col-sm">
+			<div>
+				<img th:src="@{${product.mainImagePath}}" class="img-fluid" />
+			</div>		
+		</div>
+		<div class="col-sm">
+			<div>
+				<h2>[[${product.name}]]</h2>
+			</div>
+			<div>
+				<span>Brand: [[${product.brand.name}]]</span>
+			</div>
+			<div>
+				List Price:
+				<span th:if="${product.discountPercent <= 0}">$ [[${product.price}]]</span>
+				<del th:if="${product.discountPercent > 0}"><span>$ [[${product.price}]]</span></del>
+			</div>
+			<div th:if="${product.discountPercent > 0}">
+				Price:
+				<span style="font-size: larger; color: darkred">$ [[${product.discountPrice}]]</span>
+				([[${product.discountPercent}]] % off)
+			</div>
+			<div>&nbsp;</div>
+			<div th:utext="${product.shortDescription}"></div>			
+		</div>
+		<div class="col-sm-2">
+			<div>
+				<span th:if="${product.inStock}" class="text-success"><b>In Stock</b></span>
+				<span th:unless="${product.inStock}" class="text-danger"><b>Out of Stock</b></span>
+			</div>
+			<div class="mt-2">
+				<input type="text" size="5" value="1" />
+			</div>
+			<div class="mt-3">
+				<input type="button" value="Add to Cart" class="btn btn-primary" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<div><hr/></div>
+			<div>
+				<h3>Product Description:</h3>
+			</div>
+			<div th:utext="${product.fullDescription}"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<div><hr/></div>
+			<div>
+				<h3>Product Details:</h3>
+			</div>
+			<th:block th:each="detail : ${product.details}">
+			<div>
+				<b>[[${detail.name}]]</b>:
+				<span>[[${detail.value}]]</span>
+			</div>
+			</th:block>
+		</div>
+	</div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+</div>	
+</body>
+</html> 
