@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
-import com.shopme.admin.error.ProductNotFoundException;
 import com.shopme.common.entity.Product;
+import com.shopme.common.error.ProductNotFoundException;
 
 public interface IProductService {
 

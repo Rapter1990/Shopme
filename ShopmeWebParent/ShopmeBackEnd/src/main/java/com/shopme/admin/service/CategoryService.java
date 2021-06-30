@@ -17,12 +17,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.shopme.admin.error.CategoryNotFoundException;
 import com.shopme.admin.repository.CategoryRepository;
 import com.shopme.admin.service.impl.ICategoryService;
 import com.shopme.admin.util.CategoryPageInfo;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.User;
+import com.shopme.common.error.CategoryNotFoundException;
 
 @Service
 @Transactional

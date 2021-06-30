@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.shopme.admin.error.CategoryNotFoundException;
 import com.shopme.admin.exportcsv.CategoryCsvExporter;
 import com.shopme.admin.exportexcel.CategoryExcelExporter;
 import com.shopme.admin.exportexcel.UserExcelExporter;
@@ -30,6 +29,7 @@ import com.shopme.admin.util.CategoryPageInfo;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.User;
+import com.shopme.common.error.CategoryNotFoundException;
 
 @Controller
 public class CategoryController {

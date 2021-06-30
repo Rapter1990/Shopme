@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.shopme.admin.error.ProductNotFoundException;
 import com.shopme.admin.helper.ProductSaveHelper;
 import com.shopme.admin.security.ShopmeUserDetails;
 import com.shopme.admin.service.BrandService;
@@ -35,6 +34,7 @@ import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Product;
 import com.shopme.common.entity.ProductImage;
+import com.shopme.common.error.ProductNotFoundException;
 
 @Controller
 public class ProductController {
