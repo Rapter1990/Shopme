@@ -5,25 +5,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: header_menu"></div>
 
-	<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
-		<div class="row">
-			<div class="col">
-				<nav>
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item">
-							<a th:href="@{/}">Home</a>
-						</li>
-
-						<th:block th:each="parent : ${listCategoryParents}">
-							<li class="breadcrumb-item">
-								<a th:href="@{'/c/' + ${parent.alias}}">[[${parent.name}]]</a>
-							</li>
-						</th:block>
-					</ol>
-				</nav>
-			</div>
-		</div>
-	</div>
+	<div th:replace="breadcrumb :: content"></div>
 
 	<div class="row text-center">
 		<th:block th:each="cat : ${category.children}">
