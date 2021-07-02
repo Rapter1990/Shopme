@@ -1,0 +1,393 @@
+2021-06-30 12:27:36.448  INFO 18328 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:27:36.453  INFO 18328 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:27:36.454  INFO 18328 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-06-30 12:27:36.461  INFO 18328 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-06-30 12:27:36.564  INFO 18328 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Starting ShopmeFrontEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 18328 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd)
+2021-06-30 12:27:36.570  INFO 18328 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : No active profile set, falling back to default profiles: default
+2021-06-30 12:27:36.918  INFO 18328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-30 12:27:36.951  INFO 18328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2021-06-30 12:27:37.080  INFO 18328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-06-30 12:27:37.081  INFO 18328 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-30 12:27:37.081  INFO 18328 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-06-30 12:27:37.113  INFO 18328 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring embedded WebApplicationContext
+2021-06-30 12:27:37.113  INFO 18328 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 536 ms
+2021-06-30 12:27:37.156  INFO 18328 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-30 12:27:37.164  INFO 18328 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-06-30 12:27:37.182  INFO 18328 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-06-30 12:27:37.183  INFO 18328 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-30 12:27:37.375  INFO 18328 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-30 12:27:37.376  INFO 18328 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:27:37.395  INFO 18328 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-30 12:27:37.516  WARN 18328 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-30 12:27:37.532  INFO 18328 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8b89ed0b-2f65-4de0-ad14-0e8f5afcad19
+
+2021-06-30 12:27:37.534  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-06-30 12:27:37.534  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-06-30 12:27:37.534  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-06-30 12:27:37.541  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41f7c0ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c4b9cfd, org.springframework.security.web.header.HeaderWriterFilter@2369e489, org.springframework.security.web.csrf.CsrfFilter@3fbfb4f4, org.springframework.security.web.authentication.logout.LogoutFilter@62680e21, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c389275, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@709960d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3eacd780, org.springframework.security.web.session.SessionManagementFilter@5e919bcf, org.springframework.security.web.access.ExceptionTranslationFilter@c0166f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27134da0]
+2021-06-30 12:27:37.575  INFO 18328 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:27:37.589  INFO 18328 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-30 12:27:37.841  INFO 18328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/Shopme'
+2021-06-30 12:27:37.847  INFO 18328 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Started ShopmeFrontEndApplication in 1.327 seconds (JVM running for 142.681)
+2021-06-30 12:27:37.849  INFO 18328 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-06-30 12:27:48.812  INFO 2052 --- [main] c.shopme.product.ProductRepositoryTests  : Starting ProductRepositoryTests using Java 15.0.1 on DESKTOP-E7L6HLO with PID 2052 (started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd)
+2021-06-30 12:27:48.817  INFO 2052 --- [main] c.shopme.product.ProductRepositoryTests  : No active profile set, falling back to default profiles: default
+2021-06-30 12:27:49.329  INFO 2052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-30 12:27:49.433  INFO 2052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+2021-06-30 12:27:50.082  INFO 2052 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-30 12:27:50.156  INFO 2052 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-06-30 12:27:50.337  INFO 2052 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-30 12:27:50.576  INFO 2052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-30 12:27:51.025  INFO 2052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-30 12:27:51.045  INFO 2052 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-30 12:27:52.295  INFO 2052 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-30 12:27:52.308  INFO 2052 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:27:53.179  INFO 2052 --- [main] c.shopme.product.ProductRepositoryTests  : Started ProductRepositoryTests in 4.943 seconds (JVM running for 6.878)
+2021-06-30 12:27:53.214  INFO 2052 --- [main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@21a21c64 testClass = ProductRepositoryTests, testInstance = com.shopme.product.ProductRepositoryTests@22d7b4f8, testMethod = testFindByAlias@ProductRepositoryTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7803bfd testClass = ProductRepositoryTests, locations = '{}', classes = '{class com.shopme.ShopmeFrontEndApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@42bc14c1 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@766653e6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7fc4780b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@704deff2, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@6986852, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@400e1483, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5be49b60, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@41f23499]; rollback [true]
+2021-06-30 12:27:53.626  INFO 2052 --- [main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@21a21c64 testClass = ProductRepositoryTests, testInstance = com.shopme.product.ProductRepositoryTests@22d7b4f8, testMethod = testFindByAlias@ProductRepositoryTests, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@7803bfd testClass = ProductRepositoryTests, locations = '{}', classes = '{class com.shopme.ShopmeFrontEndApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@42bc14c1 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@766653e6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7fc4780b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@704deff2, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@6986852, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@400e1483, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5be49b60, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2021-06-30 12:27:53.643  INFO 2052 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:27:53.647  INFO 2052 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-30 12:27:53.657  INFO 2052 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-30 12:28:04.652  INFO 18328 --- [http-nio-80-exec-1] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-30 12:28:04.652  INFO 18328 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-30 12:28:04.653  INFO 18328 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-06-30 12:28:04.658  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryFirstPage is called
+2021-06-30 12:28:04.658  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage is called
+2021-06-30 12:28:04.664  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:28:04.664  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:28:04.664  INFO 18328 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory is called
+2021-06-30 12:28:04.665  INFO 18328 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory | categoryId : 14
+2021-06-30 12:28:04.665  INFO 18328 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory | categoryIdMatch : -14-
+2021-06-30 12:28:04.665  INFO 18328 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory | pageable : Page request [number: 0, size 10, sort: UNSORTED]
+2021-06-30 12:28:04.677  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | currentPage : 1
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalPages : 1
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalItems : 10
+2021-06-30 12:28:04.678  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Carrier Cell Phones
+2021-06-30 12:28:04.679  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:28:04.679  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:28:04.679  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:28:08.018  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryFirstPage is called
+2021-06-30 12:28:08.019  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage is called
+2021-06-30 12:28:08.024  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:28:08.024  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:28:08.024  INFO 18328 --- [http-nio-80-exec-6] com.shopme.service.ProductService        : ProductService | listByCategory is called
+2021-06-30 12:28:08.024  INFO 18328 --- [http-nio-80-exec-6] com.shopme.service.ProductService        : ProductService | listByCategory | categoryId : 14
+2021-06-30 12:28:08.024  INFO 18328 --- [http-nio-80-exec-6] com.shopme.service.ProductService        : ProductService | listByCategory | categoryIdMatch : -14-
+2021-06-30 12:28:08.024  INFO 18328 --- [http-nio-80-exec-6] com.shopme.service.ProductService        : ProductService | listByCategory | pageable : Page request [number: 0, size 10, sort: UNSORTED]
+2021-06-30 12:28:08.038  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:28:08.038  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:28:08.038  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:28:08.038  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()
+2021-06-30 12:28:08.038  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | currentPage : 1
+2021-06-30 12:28:08.038  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalPages : 1
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalItems : 10
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Carrier Cell Phones
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:28:08.039  INFO 18328 --- [http-nio-80-exec-6] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:28:11.703  INFO 18328 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewProductDetail is called
+2021-06-30 12:28:11.712 ERROR 18328 --- [http-nio-80-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/Shopme] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "com.shopme.common.entity.Product.getCategory()" because "product" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.shopme.common.entity.Product.getCategory()" because "product" is null
+	at com.shopme.controller.ProductController.viewProductDetail(ProductController.java:116) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-06-30 12:29:13.858  INFO 18328 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:29:13.859  INFO 18328 --- [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:29:13.861  INFO 18328 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-06-30 12:29:13.867  INFO 18328 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-06-30 12:29:13.997  INFO 18328 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Starting ShopmeFrontEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 18328 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd)
+2021-06-30 12:29:13.998  INFO 18328 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : No active profile set, falling back to default profiles: default
+2021-06-30 12:29:14.291  INFO 18328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-30 12:29:14.312  INFO 18328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2021-06-30 12:29:14.449  INFO 18328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-06-30 12:29:14.449  INFO 18328 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-30 12:29:14.450  INFO 18328 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-06-30 12:29:14.479  INFO 18328 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring embedded WebApplicationContext
+2021-06-30 12:29:14.479  INFO 18328 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 476 ms
+2021-06-30 12:29:14.529  INFO 18328 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-30 12:29:14.536  INFO 18328 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-06-30 12:29:14.559  INFO 18328 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-06-30 12:29:14.560  INFO 18328 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-30 12:29:14.772  INFO 18328 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-30 12:29:14.772  INFO 18328 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:29:14.793  INFO 18328 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-30 12:29:14.913  WARN 18328 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-30 12:29:14.926  INFO 18328 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b9b6675c-c8be-46e5-9f93-78ddd5665ba6
+
+2021-06-30 12:29:14.928  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-06-30 12:29:14.928  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-06-30 12:29:14.928  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-06-30 12:29:14.935  INFO 18328 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40f2268a, org.springframework.security.web.context.SecurityContextPersistenceFilter@36f65b33, org.springframework.security.web.header.HeaderWriterFilter@5952e550, org.springframework.security.web.csrf.CsrfFilter@50a5b627, org.springframework.security.web.authentication.logout.LogoutFilter@37f83abd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48088c3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63e9809, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@167eab5, org.springframework.security.web.session.SessionManagementFilter@4b1fc8f9, org.springframework.security.web.access.ExceptionTranslationFilter@3c484911, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1235482e]
+2021-06-30 12:29:14.964  INFO 18328 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:29:14.980  INFO 18328 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-30 12:29:15.208  INFO 18328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/Shopme'
+2021-06-30 12:29:15.214  INFO 18328 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Started ShopmeFrontEndApplication in 1.27 seconds (JVM running for 240.048)
+2021-06-30 12:29:15.217  INFO 18328 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-06-30 12:30:35.906  INFO 18328 --- [RMI TCP Connection(25)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-30 12:30:35.946  INFO 18328 --- [RMI TCP Connection(25)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:30:35.948  INFO 18328 --- [RMI TCP Connection(25)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:30:35.950  INFO 18328 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-06-30 12:30:35.954  INFO 18328 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-06-30 12:30:52.657  INFO 10844 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Starting ShopmeFrontEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 10844 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd)
+2021-06-30 12:30:52.661  INFO 10844 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : No active profile set, falling back to default profiles: default
+2021-06-30 12:30:52.724  INFO 10844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-30 12:30:52.725  INFO 10844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-30 12:30:53.877  INFO 10844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-30 12:30:53.995  INFO 10844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 2 JPA repository interfaces.
+2021-06-30 12:30:54.961  INFO 10844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-06-30 12:30:54.978  INFO 10844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-30 12:30:54.979  INFO 10844 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-06-30 12:30:55.137  INFO 10844 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring embedded WebApplicationContext
+2021-06-30 12:30:55.138  INFO 10844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2413 ms
+2021-06-30 12:30:55.477  INFO 10844 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-30 12:30:55.564  INFO 10844 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-06-30 12:30:55.846  INFO 10844 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-30 12:30:56.135  INFO 10844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-30 12:30:56.764  INFO 10844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-30 12:30:56.791  INFO 10844 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-06-30 12:30:58.489  INFO 10844 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-30 12:30:58.507  INFO 10844 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:30:58.572  INFO 10844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-30 12:30:59.249  WARN 10844 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-30 12:30:59.329  INFO 10844 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4227713e-7999-4a64-90eb-45d403db1aad
+
+2021-06-30 12:30:59.406  INFO 10844 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-06-30 12:30:59.407  INFO 10844 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-06-30 12:30:59.407  INFO 10844 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-06-30 12:30:59.457  INFO 10844 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@726609de, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ad0caad, org.springframework.security.web.header.HeaderWriterFilter@346e33c, org.springframework.security.web.csrf.CsrfFilter@411ed314, org.springframework.security.web.authentication.logout.LogoutFilter@1102df60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@374c169f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@613a101a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1051639a, org.springframework.security.web.session.SessionManagementFilter@67b1714d, org.springframework.security.web.access.ExceptionTranslationFilter@59b45d86, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@636121b3]
+2021-06-30 12:30:59.585  INFO 10844 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:30:59.674  INFO 10844 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-30 12:31:00.266  INFO 10844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/Shopme'
+2021-06-30 12:31:00.279  INFO 10844 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Started ShopmeFrontEndApplication in 8.24 seconds (JVM running for 9.668)
+2021-06-30 12:31:12.850  INFO 10844 --- [http-nio-80-exec-1] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-30 12:31:12.851  INFO 10844 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-30 12:31:12.853  INFO 10844 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-06-30 12:31:12.915  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryFirstPage is called
+2021-06-30 12:31:12.916  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage is called
+2021-06-30 12:31:12.994  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:31:12.995  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:31:12.995  INFO 10844 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory is called
+2021-06-30 12:31:12.996  INFO 10844 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory | categoryId : 14
+2021-06-30 12:31:12.996  INFO 10844 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory | categoryIdMatch : -14-
+2021-06-30 12:31:12.997  INFO 10844 --- [http-nio-80-exec-1] com.shopme.service.ProductService        : ProductService | listByCategory | pageable : Page request [number: 0, size 10, sort: UNSORTED]
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | currentPage : 1
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalPages : 1
+2021-06-30 12:31:13.030  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:31:13.031  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:31:13.031  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalItems : 10
+2021-06-30 12:31:13.031  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Carrier Cell Phones
+2021-06-30 12:31:13.031  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:31:13.031  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:31:13.031  INFO 10844 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:31:18.744  INFO 10844 --- [http-nio-80-exec-5] com.shopme.controller.ProductController  : ProductController | viewProductDetail is called
+2021-06-30 12:31:18.765  INFO 10844 --- [http-nio-80-exec-5] com.shopme.controller.ProductController  : ProductController | viewProductDetail | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:31:18.766  INFO 10844 --- [http-nio-80-exec-5] com.shopme.controller.ProductController  : ProductController | viewProductDetail | product : Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB]
+2021-06-30 12:31:18.766  INFO 10844 --- [http-nio-80-exec-5] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Google Pixel 3a XL Verizon Just Black, 64GB
+2021-06-30 12:31:26.114  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryFirstPage is called
+2021-06-30 12:31:26.114  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage is called
+2021-06-30 12:31:26.120  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:31:26.120  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:31:26.121  INFO 10844 --- [http-nio-80-exec-9] com.shopme.service.ProductService        : ProductService | listByCategory is called
+2021-06-30 12:31:26.121  INFO 10844 --- [http-nio-80-exec-9] com.shopme.service.ProductService        : ProductService | listByCategory | categoryId : 14
+2021-06-30 12:31:26.121  INFO 10844 --- [http-nio-80-exec-9] com.shopme.service.ProductService        : ProductService | listByCategory | categoryIdMatch : -14-
+2021-06-30 12:31:26.122  INFO 10844 --- [http-nio-80-exec-9] com.shopme.service.ProductService        : ProductService | listByCategory | pageable : Page request [number: 0, size 10, sort: UNSORTED]
+2021-06-30 12:31:26.141  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:31:26.141  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:31:26.141  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | currentPage : 1
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalPages : 1
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalItems : 10
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Carrier Cell Phones
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB], Product [id=30, name=LG G Flex, Titan Silver 32GB (AT&T)], Product [id=32, name=LG G6 H872 32GB T-Mobile Carrier Android Phone], Product [id=31, name=LG Optimus Exceed 2 (Verizon Prepaid)], Product [id=34, name=Pantech Pocket, Black (AT&T)], Product [id=7, name=Samsung Galaxy Note II, White 16GB (AT&T)], Product [id=28, name=Samsung Galaxy S6 Edge, Black Sapphire 32GB (AT&T)], Product [id=27, name=Samsung Galaxy S7 G930P 32GB, Black Onyx - Sprint], Product [id=33, name=TracFone Motorola Moto G6 4G LTE Prepaid], Product [id=6, name=Verizon Prepaid - Apple iPhone 6S (32GB) - Space Gray]]
+2021-06-30 12:31:26.142  INFO 10844 --- [http-nio-80-exec-9] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Carrier Cell Phones
+2021-06-30 12:31:49.150  INFO 10844 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewProductDetail is called
+2021-06-30 12:31:49.158  INFO 10844 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewProductDetail | listCategoryParents : [Electronics, Cell Phones & Accessories, Carrier Cell Phones]
+2021-06-30 12:31:49.158  INFO 10844 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewProductDetail | product : Product [id=29, name=Google Pixel 3a XL Verizon Just Black, 64GB]
+2021-06-30 12:31:49.158  INFO 10844 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Google Pixel 3a XL Verizon Just Black, 64GB
+2021-06-30 12:31:59.371  INFO 10844 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-06-30 12:31:59.433  INFO 10844 --- [RMI TCP Connection(8)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-30 12:31:59.436  INFO 10844 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-30 12:31:59.443  INFO 10844 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-30 12:31:59.459  INFO 10844 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-01 11:24:41.702  INFO 4968 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Starting ShopmeFrontEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 4968 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd)
+2021-07-01 11:24:41.713  INFO 4968 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : No active profile set, falling back to default profiles: default
+2021-07-01 11:24:41.810  INFO 4968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-01 11:24:41.811  INFO 4968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-01 11:24:43.387  INFO 4968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-01 11:24:43.500  INFO 4968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 2 JPA repository interfaces.
+2021-07-01 11:24:44.400  INFO 4968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-07-01 11:24:44.418  INFO 4968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-01 11:24:44.419  INFO 4968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-01 11:24:44.578  INFO 4968 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring embedded WebApplicationContext
+2021-07-01 11:24:44.578  INFO 4968 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2766 ms
+2021-07-01 11:24:44.967  INFO 4968 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-01 11:24:45.078  INFO 4968 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-07-01 11:24:45.411  INFO 4968 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-01 11:24:45.651  INFO 4968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-01 11:24:46.256  INFO 4968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-01 11:24:46.298  INFO 4968 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-07-01 11:24:47.796  INFO 4968 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-01 11:24:47.809  INFO 4968 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-01 11:24:47.860  INFO 4968 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-01 11:24:48.598  WARN 4968 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-01 11:24:48.687  INFO 4968 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: baeecd3b-912f-477d-8727-5819fc032df6
+
+2021-07-01 11:24:48.787  INFO 4968 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-07-01 11:24:48.788  INFO 4968 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-07-01 11:24:48.788  INFO 4968 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-07-01 11:24:48.856  INFO 4968 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28e23f85, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a4f41b9, org.springframework.security.web.header.HeaderWriterFilter@1ab64ebf, org.springframework.security.web.csrf.CsrfFilter@2b2cbd34, org.springframework.security.web.authentication.logout.LogoutFilter@3f15c1da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ceba0ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7de9f617, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d1ecceb, org.springframework.security.web.session.SessionManagementFilter@423a24f7, org.springframework.security.web.access.ExceptionTranslationFilter@51fd2283, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@680e6428]
+2021-07-01 11:24:49.038  INFO 4968 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-01 11:24:49.175  INFO 4968 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-01 11:24:49.812  INFO 4968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/Shopme'
+2021-07-01 11:24:49.827  INFO 4968 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Started ShopmeFrontEndApplication in 8.933 seconds (JVM running for 10.539)
+2021-07-01 11:25:07.920  INFO 4968 --- [http-nio-80-exec-1] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-01 11:25:07.921  INFO 4968 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-01 11:25:07.923  INFO 4968 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-01 11:25:12.968  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryFirstPage is called
+2021-07-01 11:25:12.968  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage is called
+2021-07-01 11:25:12.977  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Bags & Cases
+2021-07-01 11:25:12.978  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Camera & Photo, Bags & Cases]
+2021-07-01 11:25:12.978  INFO 4968 --- [http-nio-80-exec-4] com.shopme.service.ProductService        : ProductService | listByCategory is called
+2021-07-01 11:25:12.979  INFO 4968 --- [http-nio-80-exec-4] com.shopme.service.ProductService        : ProductService | listByCategory | categoryId : 9
+2021-07-01 11:25:12.979  INFO 4968 --- [http-nio-80-exec-4] com.shopme.service.ProductService        : ProductService | listByCategory | categoryIdMatch : -9-
+2021-07-01 11:25:12.979  INFO 4968 --- [http-nio-80-exec-4] com.shopme.service.ProductService        : ProductService | listByCategory | pageable : Page request [number: 0, size 10, sort: UNSORTED]
+2021-07-01 11:25:13.006  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=14, name=AmazonBasics Large DSLR Camera Gadget Bag], Product [id=12, name=CADeN Camera Backpack Bag], Product [id=5, name=Pelican 1040 Micro Case (Black/Clear)], Product [id=4, name=Pelican 1200 Case With Foam (Black)]]
+2021-07-01 11:25:13.007  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-07-01 11:25:13.007  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 10
+2021-07-01 11:25:13.007  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()
+2021-07-01 11:25:13.007  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements() | endCount : 10
+2021-07-01 11:25:13.007  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements() | pageProducts.getTotalElements() : 4
+2021-07-01 11:25:13.007  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount > pageProducts.getTotalElements()
+2021-07-01 11:25:13.008  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | currentPage : 1
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalPages : 1
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | startCount : 1
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | endCount : 4
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | totalItems : 4
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : Bags & Cases
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listCategoryParents : [Electronics, Camera & Photo, Bags & Cases]
+2021-07-01 11:25:13.009  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | listProducts : [Product [id=14, name=AmazonBasics Large DSLR Camera Gadget Bag], Product [id=12, name=CADeN Camera Backpack Bag], Product [id=5, name=Pelican 1040 Micro Case (Black/Clear)], Product [id=4, name=Pelican 1200 Case With Foam (Black)]]
+2021-07-01 11:25:13.010  INFO 4968 --- [http-nio-80-exec-4] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | category : Bags & Cases
+2021-07-01 11:25:16.342  INFO 4968 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewProductDetail is called
+2021-07-01 11:25:16.363  INFO 4968 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewProductDetail | listCategoryParents : [Electronics, Camera & Photo, Bags & Cases]
+2021-07-01 11:25:16.363  INFO 4968 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewProductDetail | product : Product [id=14, name=AmazonBasics Large DSLR Camera Gadget Bag]
+2021-07-01 11:25:16.363  INFO 4968 --- [http-nio-80-exec-1] com.shopme.controller.ProductController  : ProductController | viewCategoryByPage | pageTitle : AmazonBasics Large DSLR Camera Gadget Bag
+2021-07-01 11:26:57.113  INFO 4968 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-01 11:26:57.149  INFO 4968 --- [RMI TCP Connection(12)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-01 11:26:57.151  INFO 4968 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-01 11:26:57.156  INFO 4968 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-01 11:26:57.167  INFO 4968 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
