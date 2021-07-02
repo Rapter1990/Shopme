@@ -20,6 +20,7 @@ public class ProductService implements IProductService{
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductService.class);
 
 	public static final int PRODUCTS_PER_PAGE = 10;
+	public static final int SEARCH_RESULTS_PER_PAGE = 10;
 
 	@Autowired 
 	private ProductRepository repo;
@@ -50,6 +51,13 @@ public class ProductService implements IProductService{
 		}
 
 		return product;
+	}
+
+	@Override
+	public Page<Product> search(String keyword, int pageNum) {
+		// TODO Auto-generated method stub
+		Pageable pageable = PageRequest.of(pageNum - 1, SEARCH_RESULTS_PER_PAGE);
+		return repo.search(keyword, pageable);
 	}
 
 }
