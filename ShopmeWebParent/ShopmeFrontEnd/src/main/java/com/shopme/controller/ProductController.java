@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -127,5 +128,65 @@ public class ProductController {
 		} catch (ProductNotFoundException e) {
 			return "error/404";
 		}
+	}
+	
+	@GetMapping("/search")
+	public String searchFirstPage(@Param("keyword") String keyword, Model model) {
+		
+		LOGGER.info("ProductController | searchFirstPage is called");
+		
+		return searchByPage(keyword, 1, model);
+	}
+
+	@GetMapping("/search/page/{pageNum}")
+	public String searchByPage(@Param("keyword") String keyword,
+			@PathVariable("pageNum") int pageNum,
+			Model model) {
+		
+		LOGGER.info("ProductController | searchByPage is called");
+		
+		Page<Product> pageProducts = productService.search(keyword, pageNum);
+		List<Product> listResult = pageProducts.getContent();
+		
+		LOGGER.info("ProductController | searchByPage | pageProducts : " + pageProducts.toString());
+		LOGGER.info("ProductController | searchByPage | listResult : "  + listResult.toString());
+
+		long startCount = (pageNum - 1) * ProductService.SEARCH_RESULTS_PER_PAGE + 1;
+		long endCount = startCount + ProductService.SEARCH_RESULTS_PER_PAGE - 1;
+		
+		
+		LOGGER.info("ProductController | searchByPage | startCount : " + startCount);
+		LOGGER.info("ProductController | searchByPage | endCount : " + endCount);
+		
+		if (endCount > pageProducts.getTotalElements()) {
+			
+			LOGGER.info("ProductController | searchByPage | endCount > pageProducts.getTotalElements() | endCount : " + endCount);
+			LOGGER.info("ProductController | searchByPage | endCount > pageProducts.getTotalElements() | pageProducts.getTotalElements() : " + pageProducts.getTotalElements());
+			LOGGER.info("ProductController | searchByPage | endCount > pageProducts.getTotalElements()");
+			
+			endCount = pageProducts.getTotalElements();
+		}
+		
+		LOGGER.info("ProductController | viewCategoryByPage | currentPage : " + pageNum);
+		LOGGER.info("ProductController | viewCategoryByPage | totalPages : " + pageProducts.getTotalPages());
+		LOGGER.info("ProductController | viewCategoryByPage | startCount : " + startCount);
+		LOGGER.info("ProductController | viewCategoryByPage | endCount : " + endCount);
+		LOGGER.info("ProductController | viewCategoryByPage | totalItems : " + pageProducts.getTotalElements());
+		LOGGER.info("ProductController | viewCategoryByPage | pageTitle : " + keyword + " - Search Result");
+
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("totalPages", pageProducts.getTotalPages());
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", pageProducts.getTotalElements());
+		model.addAttribute("pageTitle", keyword + " - Search Result");
+
+		LOGGER.info("ProductController | viewCategoryByPage | keyword : " + keyword);
+		LOGGER.info("ProductController | searchByPage | listResult : "  + listResult.toString());
+		
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("listResult", listResult);
+
+		return "product/search_result";
 	}
 }
