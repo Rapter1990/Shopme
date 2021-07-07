@@ -37,4 +37,9 @@ public class Currency {
 		this.symbol = symbol;
 		this.code = code;
 	}
+	
+	@Override
+	public String toString() {
+		return name + " - " + code + " - " + symbol;
+	}
 }
