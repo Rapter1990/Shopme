@@ -4,7 +4,7 @@
 <div th:fragment="header_menu">
 	<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
 		<a class="navbar-brand" th:href="@{/}">
-			<img th:src="@{/images/ShopmeAdminSmall.png}" />
+			<img th:src="@{${SITE_LOGO}}" />
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar , #searchNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
 		</nav>
 	</div>
 	<div th:fragment="footer" class="text-center m-3">
-		<p>Shopme - Copyright &copy; Shopme Ltd.</p>
+		<p>[[${COPYRIGHT}]]</p>
 	</div>	
 </div>
 </body>
