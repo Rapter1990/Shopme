@@ -39,6 +39,16 @@ public class Country {
 		this.name = name;
 		this.code = code;
 	}
+	
+	public Country(Integer id, String name, String code) {
+		this.id = id;
+		this.name = name;
+		this.code = code;
+	}
+	
+	public Country(String name) {
+		this.name = name;
+	}
 
 	@Override
 	public String toString() {
