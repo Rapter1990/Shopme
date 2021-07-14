@@ -34,7 +34,6 @@ public class Country {
 	@OneToMany(mappedBy = "country")
 	private Set<State> states;
 
-
 	public Country(String name, String code) {
 		this.name = name;
 		this.code = code;
@@ -48,6 +47,10 @@ public class Country {
 	
 	public Country(String name) {
 		this.name = name;
+	}
+	
+	public Country(Integer id) {
+		this.id = id;
 	}
 
 	@Override
