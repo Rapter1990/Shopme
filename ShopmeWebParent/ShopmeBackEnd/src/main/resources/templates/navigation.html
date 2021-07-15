@@ -97,7 +97,16 @@
 				
 				<th:block sec:authorize="hasAnyAuthority('Admin')">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/settings}">Settings</a>
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" 
+						th:href="@{/settings}">Settings</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{/settings#general}">General</a>
+							<a class="dropdown-item" th:href="@{/settings#countries}">Countries</a>
+							<a class="dropdown-item" th:href="@{/settings#states}">States</a>
+							<a class="dropdown-item" th:href="@{/settings#mailServer}">Mail Server</a>
+							<a class="dropdown-item" th:href="@{/settings#mailTemplate}">Mail Templates</a>
+							<a class="dropdown-item" th:href="@{/settings#payment}">Payment</a>
+						</div>
 					</li>
 				</th:block>	
 					
