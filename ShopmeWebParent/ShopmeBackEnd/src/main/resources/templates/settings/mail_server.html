@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" th:remove="tag">
+	<form th:action="@{/settings/save_mail_server}" method="post">
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">SMTP Server Host Name:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="MAIL_HOST" 
+				th:value="${MAIL_HOST}" required  />
+		</div>
+	</div>	
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">Port Number:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="MAIL_PORT" 
+				th:value="${MAIL_PORT}" required  />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">Username:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="MAIL_USERNAME" 
+				th:value="${MAIL_USERNAME}" required  />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">Password:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="MAIL_PASSWORD" 
+				th:value="${MAIL_PASSWORD}" required  />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">Server Authentication Required:</label>
+		<div class="col-sm-8">
+			<select name="SMTP_AUTH" class="form-control">
+				<option value="true" th:selected="(${SMTP_AUTH} == 'true')">True</option>
+				<option value="false" th:selected="(${SMTP_AUTH} == 'false')">False</option>
+			</select>			
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">Server Requires Secured Connection (TLS):</label>
+		<div class="col-sm-8">
+			<select name="SMTP_SECURED" class="form-control">
+				<option value="true" th:selected="(${SMTP_SECURED} == 'true')">True</option>
+				<option value="false" th:selected="(${SMTP_SECURED} == 'false')">False</option>
+			</select>			
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">From E-mail Address:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="MAIL_FROM" 
+				th:value="${MAIL_FROM}" required  />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">Sender Name:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="MAIL_SENDER_NAME" 
+				th:value="${MAIL_SENDER_NAME}" required  />
+		</div>
+	</div>
+
+	<div class="text-center">
+		<input type="submit" value="Save" class="btn btn-primary m-3" />
+	</div>	
+	</form>
+</div>
+</body>
+</html>
