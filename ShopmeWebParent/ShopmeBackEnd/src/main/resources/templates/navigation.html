@@ -95,20 +95,18 @@
 					</li>
 				</th:block>
 				
-				<th:block sec:authorize="hasAnyAuthority('Admin')">
-					<li class="nav-item">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" 
+				<li class="nav-item dropdown" sec:authorize="hasAuthority('Admin')">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" 
 						th:href="@{/settings}">Settings</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" th:href="@{/settings#general}">General</a>
-							<a class="dropdown-item" th:href="@{/settings#countries}">Countries</a>
-							<a class="dropdown-item" th:href="@{/settings#states}">States</a>
-							<a class="dropdown-item" th:href="@{/settings#mailServer}">Mail Server</a>
-							<a class="dropdown-item" th:href="@{/settings#mailTemplate}">Mail Templates</a>
-							<a class="dropdown-item" th:href="@{/settings#payment}">Payment</a>
-						</div>
-					</li>
-				</th:block>	
+					<div class="dropdown-menu">
+						<a class="dropdown-item" th:href="@{/settings#general}">General</a>
+						<a class="dropdown-item" th:href="@{/settings#countries}">Countries</a>
+						<a class="dropdown-item" th:href="@{/settings#states}">States</a>
+						<a class="dropdown-item" th:href="@{/settings#mailServer}">Mail Server</a>
+						<a class="dropdown-item" th:href="@{/settings#mailTemplate}">Mail Templates</a>
+						<a class="dropdown-item" th:href="@{/settings#payment}">Payment</a>
+					</div>
+				</li>	
 					
 				<li>				
 					<span class="fas fa-user fa-2x icon-silver"></span>
