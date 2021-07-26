@@ -41,4 +41,14 @@ public class SettingService implements ISettingService{
 	public void saveAll(Iterable<Setting> settings) {
 		repo.saveAll(settings);
 	}
+	
+	@Override
+	public List<Setting> getMailServerSettings() {
+		return repo.findByCategory(SettingCategory.MAIL_SERVER);
+	}
+
+	@Override
+	public List<Setting> getMailTemplateSettings() {
+		return repo.findByCategory(SettingCategory.MAIL_TEMPLATES);
+	}	
 }
