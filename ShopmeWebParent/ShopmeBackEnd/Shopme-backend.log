@@ -1,16 +1,20 @@
-2021-07-14 09:33:51.655  INFO 3888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-14 09:33:51.711  WARN 3888 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-07-14 09:33:51.836  INFO 3888 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
-2021-07-14 09:33:51.836  INFO 3888 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
-2021-07-14 09:33:51.842  INFO 3888 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
-2021-07-14 09:33:51.846  INFO 3888 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34779797, org.springframework.security.web.context.SecurityContextPersistenceFilter@1723feb, org.springframework.security.web.header.HeaderWriterFilter@1a5c2cef, org.springframework.security.web.csrf.CsrfFilter@2fafb5f0, org.springframework.security.web.authentication.logout.LogoutFilter@138c4f03, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5318714b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ba037a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50605d6b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5254bc56, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ea2899d, org.springframework.security.web.session.SessionManagementFilter@53a0105a, org.springframework.security.web.access.ExceptionTranslationFilter@493c7891, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d00eff3]
-2021-07-14 09:33:51.863  INFO 3888 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-07-14 09:33:51.874  INFO 3888 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-07-14 09:33:52.076  INFO 3888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/ShopmeAdmin'
-2021-07-14 09:33:52.079  INFO 3888 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 0.911 seconds (JVM running for 444.379)
-2021-07-14 09:33:52.080  INFO 3888 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-07-14 09:37:19.108  INFO 3888 --- [RMI TCP Connection(37)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-07-14 09:37:19.138  INFO 3888 --- [RMI TCP Connection(37)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-07-14 09:37:19.139  INFO 3888 --- [RMI TCP Connection(37)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-07-14 09:37:19.140  INFO 3888 --- [RMI TCP Connection(37)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
-2021-07-14 09:37:19.143  INFO 3888 --- [RMI TCP Connection(37)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2021-07-19 11:59:25.307  INFO 11532 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/ShopmeAdmin'
+2021-07-19 11:59:25.318  INFO 11532 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 1.876 seconds (JVM running for 520.991)
+2021-07-19 11:59:25.321  INFO 11532 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-19 12:04:06.261  INFO 11532 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/ShopmeAdmin]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-19 12:04:06.268  INFO 11532 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-19 12:04:06.271  INFO 11532 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-07-19 12:04:06.273  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listFirstPage is started
+2021-07-19 12:04:06.273  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | listProducts size : 5
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | startCount : 1
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | endCount : 5
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | page.getTotalElements() : 105
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | endCount : 5
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | reverseSortDir : desc
+2021-07-19 12:04:06.358  INFO 11532 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage | categoryId : 0
+2021-07-19 12:04:32.296  INFO 11532 --- [RMI TCP Connection(25)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-19 12:04:32.342  INFO 11532 --- [RMI TCP Connection(25)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-19 12:04:32.348  INFO 11532 --- [RMI TCP Connection(25)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-19 12:04:32.349  INFO 11532 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-07-19 12:04:32.354  INFO 11532 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
