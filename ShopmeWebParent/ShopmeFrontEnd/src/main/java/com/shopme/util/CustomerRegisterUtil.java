@@ -93,7 +93,7 @@ public class CustomerRegisterUtil {
 		
 		LOGGER.info("CustomerRegisterUtil | sendVerificationEmail | MimeMessage message : " + message.toString());
 		
-		MimeMessageHelper helper = new MimeMessageHelper(message);
+		MimeMessageHelper helper = new MimeMessageHelper(message, "UTF-8");
 		
 		LOGGER.info("CustomerRegisterUtil | sendVerificationEmail | MimeMessageHelper helper : " + helper.toString());
 
