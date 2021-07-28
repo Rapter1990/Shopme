@@ -72,4 +72,8 @@ public class Customer implements Serializable{
 	public String toString() {
 		return "Customer [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
+	
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
 }
