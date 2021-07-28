@@ -104,15 +104,16 @@
 		<div class="form-group row">
 			<label class="col-sm-4 col-form-label">State/Province:</label>
 			<div class="col-sm-8">
-				<input type="text" th:field="*{state}" class="form-control"
+			    <!-- 1. Option Dependent Dropdown-->
+				<!-- <input type="text" th:field="*{state}" class="form-control"
 					maxlength="45" minlength="3" list="listStates" />
-				<datalist id="listStates"></datalist>
+				  <datalist id="listStates"></datalist> -->
 				
-                 <!-- 2.Option Dependent Dropdown
+                 <!-- 2.Option Dependent Dropdown -->
                  <select th:field="*{state}" class="form-control"  id="stateList">
                  
                  </select>
-                 -->
+                 
 			</div>
 		</div>
 
