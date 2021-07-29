@@ -1,5 +1,6 @@
 package com.shopme.common.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -10,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,8 +22,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Country {
+public class Country implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -31,6 +36,7 @@ public class Country {
 	@Column(nullable = false, length = 5)
 	private String code;
 
+	@JsonBackReference
 	@OneToMany(mappedBy = "country")
 	private Set<State> states;
 
