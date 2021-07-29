@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,5 +63,17 @@ public class CustomerController {
 		model.addAttribute("pageTitle", "Registration Succeeded!");
 
 		return "/register/register_success";
+	}
+	
+	@GetMapping("/verify")
+	public String verifyAccount(@Param("code") String code, Model model) {
+		
+		LOGGER.info("CustomerRegisterUtil | verifyAccount is called");
+		
+		boolean verified = customerService.verify(code);
+		
+		LOGGER.info("CustomerRegisterUtil | verifyAccount | verified : " + verified);
+
+		return "register/" + (verified ? "verify_success" : "verify_fail");
 	}
 }

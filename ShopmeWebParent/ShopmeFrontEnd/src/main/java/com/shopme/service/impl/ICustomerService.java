@@ -10,4 +10,5 @@ public interface ICustomerService {
 	public List<Country> listAllCountries();
 	public boolean isEmailUnique(String email);
 	public void registerCustomer(Customer customer);
+	public boolean verify(String verificationCode);
 }
