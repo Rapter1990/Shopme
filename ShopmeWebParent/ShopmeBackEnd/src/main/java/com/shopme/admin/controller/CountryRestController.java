@@ -34,4 +34,21 @@ public class CountryRestController {
 	public void delete(@PathVariable("id") Integer id) {
 		repo.deleteById(id);
 	}
+	
+	@PostMapping("/countries/check_unique")
+	public String checkUnique(Integer id, String name) {
+		boolean isCreatingNew = (id == null || id == 0);
+		Country productByName = repo.findByName(name);
+		
+		if (isCreatingNew) {
+			if (productByName != null) return "Duplicate";
+		} else {
+			if (productByName != null && productByName.getId() != id) {
+				return "Duplicate";
+			}
+		}
+		
+		return "OK";
+	}
+	
 }

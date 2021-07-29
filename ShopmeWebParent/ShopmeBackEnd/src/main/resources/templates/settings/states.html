@@ -25,17 +25,21 @@
 			</select>
 		</div>
 	</div>	
-	<div class="form-group row">
-		<label class="col-sm-2 col-form-label mt-2" id="labelStateName">State/Province Name:</label>
-		<div class="col-sm-6">
-			<input type="text" class="form-control mt-2" id="fieldStateName" />
-		</div>	
-		<div class="col-lg-4 mt-2">
-			<input type="button" id="buttonAddState" value="New" class="btn btn-secondary mr-2" />
-			<input type="button" id="buttonUpdateState" value="Update" class="btn btn-secondary mr-2" disabled="disabled" />
-			<input type="button" id="buttonDeleteState" value="Delete" class="btn btn-secondary" disabled="disabled" />
-		</div>	
-	</div>
+	
+	<form id="formState">
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label mt-2" id="labelStateName">State/Province Name:</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control mt-2" id="fieldStateName"
+				required minlength="3" maxlength="45" />
+			</div>	
+			<div class="col-lg-4 mt-2">
+				<input type="button" id="buttonAddState" value="New" class="btn btn-secondary mr-2" />
+				<input type="button" id="buttonUpdateState" value="Update" class="btn btn-secondary mr-2" disabled="disabled" />
+				<input type="button" id="buttonDeleteState" value="Delete" class="btn btn-secondary" disabled="disabled" />
+			</div>	
+		</div>
+	</form>
 </div>
 </body>
 </html> 

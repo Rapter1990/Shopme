@@ -64,6 +64,9 @@ function deleteCountry() {
 }
 
 function updateCountry() {
+	
+	if (!validateFormCountry()) return;
+	
 	url = contextPath + "countries/save";
 	countryName = fieldCountryName.val();
 	countryCode = fieldCountryCode.val();
@@ -92,6 +95,9 @@ function updateCountry() {
 }
 
 function addCountry() {
+	
+	if (!validateFormCountry()) return;
+	
 	url = contextPath + "countries/save";
 	countryName = fieldCountryName.val();
 	countryCode = fieldCountryCode.val();
@@ -154,12 +160,12 @@ function loadCountries() {
 	url = contextPath + "countries/list";
 	$.get(url, function(responseJSON) {
 		dropDownCountry.empty();
-
+		
 		$.each(responseJSON, function(index, country) {
 			optionValue = country.id + "-" + country.code;
 			$("<option>").val(optionValue).text(country.name).appendTo(dropDownCountry);
 		});
-
+		
 	}).done(function() {
 		buttonLoad.val("Refresh Country List");
 		showToastMessage("All countries have been loaded");
@@ -171,4 +177,41 @@ function loadCountries() {
 function showToastMessage(message) {
 	$("#toastMessage").text(message);
 	$(".toast").toast('show');
-} 
+}
+
+function validateFormCountry() {
+	formCountry = document.getElementById("formCountry");
+	if (!formCountry.checkValidity()) {
+		formCountry.reportValidity();
+		return false;
+	}	
+
+	return true;
+}
+
+
+function checkUnique(form) {
+	countryId = $("#id").val();
+	countryName = $("#name").val();
+	
+	csrfValue = $("input[name='_csrf']").val();
+	
+	params = {id: countryId, name: countryName, _csrf: csrfValue};
+	
+	checkUniqueUrl = "/countries/check_unique";
+	
+	$.post(checkUniqueUrl, params, function(response) {
+		if (response == "OK") {
+			form.submit();
+		} else if (response == "Duplicate") {
+			showToastMessage("Country already added :  " + countryName);	
+		} else {
+			showToastMessage("Unknown response from server");
+		}
+		
+	}).fail(function() {
+		showToastMessage("Could not connect to the server");
+	});
+	
+	return false;
+}	 

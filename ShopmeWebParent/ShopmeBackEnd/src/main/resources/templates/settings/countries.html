@@ -15,21 +15,25 @@
 		<select class="form-control m-2" style="height: 300px" size="3" id="dropDownCountries">
 		</select>
 	</div>
-	<div class="form-group row ml-2">
-		<label class="col-form-label mt-2" id="labelCountryName">Country Name:</label>
-		<div class="col-md">
-			<input type="text" class="form-control mt-2" id="fieldCountryName" />
+	
+	<form id="formCountry" onsubmit="return checkUnique(this)">
+		<div class="form-group row ml-2">
+			<label class="col-form-label mt-2" id="labelCountryName">Country Name:</label>
+			<div class="col-md">
+				<input type="text" class="form-control mt-2" id="fieldCountryName" required minlength="3" maxlength="45"/>
+			</div>
+			<label class="col-form-label mt-2">Code:</label>
+			<div class="col-md">
+				<input type="text" class="form-control mt-2" id="fieldCountryCode" required minlength="3" maxlength="45"/>
+			</div>	
+			<div class="col-lg-4 mt-2">
+				<input type="button" id="buttonAddCountry" value="New" class="btn btn-secondary mr-2" />
+				<input type="button" id="buttonUpdateCountry" value="Update" class="btn btn-secondary mr-2" disabled="disabled" />
+				<input type="button" id="buttonDeleteCountry" value="Delete" class="btn btn-secondary" disabled="disabled" />
+			</div>	
 		</div>
-		<label class="col-form-label mt-2">Code:</label>
-		<div class="col-md">
-			<input type="text" class="form-control mt-2" id="fieldCountryCode" />
-		</div>	
-		<div class="col-lg-4 mt-2">
-			<input type="button" id="buttonAddCountry" value="New" class="btn btn-secondary mr-2" />
-			<input type="button" id="buttonUpdateCountry" value="Update" class="btn btn-secondary mr-2" disabled="disabled" />
-			<input type="button" id="buttonDeleteCountry" value="Delete" class="btn btn-secondary" disabled="disabled" />
-		</div>	
-	</div>
+	</form>
+	
 </div>
 </body>
 </html> 
