@@ -56,6 +56,7 @@ public class CustomerRegisterUtil {
 		mailSender.setPort(settings.getPort());
 		mailSender.setUsername(settings.getUsername());
 		mailSender.setPassword(settings.getPassword());
+		mailSender.setDefaultEncoding("utf-8");
 
 		Properties mailProperties = new Properties();
 		mailProperties.setProperty("mail.smtp.auth", settings.getSmtpAuth());
