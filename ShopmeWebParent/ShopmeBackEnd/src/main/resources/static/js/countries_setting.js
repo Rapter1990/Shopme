@@ -27,7 +27,9 @@ $(document).ready(function() {
 
 	buttonAddCountry.click(function() {
 		if (buttonAddCountry.val() == "Add") {
-			addCountry();
+			if(checkUnique()){
+				addCountry();
+			}
 		} else {
 			changeFormStateToNewCountry();
 		}
@@ -190,7 +192,7 @@ function validateFormCountry() {
 }
 
 
-function checkUnique(form) {
+function checkUnique() {
 	countryId = $("#id").val();
 	countryName = $("#fieldCountryName").val();
 	
@@ -200,17 +202,27 @@ function checkUnique(form) {
 	
 	checkUniqueUrl = contextPath + "countries/check_unique";
 	
-	$.post(checkUniqueUrl, params, function(response) {
+	$.ajax({
+		type: 'POST',
+		url: url,
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader(csrfHeaderName, csrfValue);
+		},
+		data: JSON.stringify(jsonData),
+		contentType: 'application/json'
+	}).done(function(response) {
 		if (response == "OK") {
-			form.submit();
+			return true;
 		} else if (response == "Duplicate") {
-			showToastMessage("Country already added :  " + countryName);	
+			showToastMessage("Country already added :  " + countryName);
+			return false;	
 		} else {
 			showToastMessage("Unknown response from server");
+			return false;
 		}
-		
 	}).fail(function() {
-		showToastMessage("Could not connect to the server");
+		showToastMessage("ERROR: Could not connect to server or server encountered an error");
+		return false;
 	});
 	
 	return false;
