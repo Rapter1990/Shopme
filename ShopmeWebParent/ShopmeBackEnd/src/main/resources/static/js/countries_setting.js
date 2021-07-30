@@ -204,7 +204,7 @@ function checkUnique() {
 	
 	$.ajax({
 		type: 'POST',
-		url: url,
+		url: checkUniqueUrl,
 		beforeSend: function(xhr) {
 			xhr.setRequestHeader(csrfHeaderName, csrfValue);
 		},
