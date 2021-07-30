@@ -16,6 +16,9 @@ $(document).ready(function() {
 	labelCountryName = $("#labelCountryName");
 	fieldCountryName = $("#fieldCountryName");
 	fieldCountryCode = $("#fieldCountryCode");
+	
+	fieldCountryName.prop("disabled", true);
+	fieldCountryCode.prop("disabled", true);
 
 	buttonLoad.click(function() {
 		loadCountries();
@@ -29,7 +32,7 @@ $(document).ready(function() {
 		if (buttonAddCountry.val() == "Add") {
 			if(checkUnique()){
 				addCountry();
-			}
+			}	
 		} else {
 			changeFormStateToNewCountry();
 		}
@@ -136,8 +139,11 @@ function changeFormStateToNewCountry() {
 	buttonAddCountry.val("Add");
 	labelCountryName.text("Country Name:");
 
-	buttonUpdateCountry.prop("disabled", true);
-	buttonDeleteCountry.prop("disabled", true);
+	fieldCountryName.prop("disabled", false);
+	fieldCountryCode.prop("disabled", false);
+
+	buttonUpdateCountry.prop("disabled", false);
+	buttonDeleteCountry.prop("disabled", false);
 
 	fieldCountryCode.val("");
 	fieldCountryName.val("").focus();	
@@ -145,6 +151,10 @@ function changeFormStateToNewCountry() {
 
 function changeFormStateToSelectedCountry() {
 	buttonAddCountry.prop("value", "New");
+	
+	fieldCountryName.prop("disabled", false);
+	fieldCountryCode.prop("disabled", false);
+	
 	buttonUpdateCountry.prop("disabled", false);
 	buttonDeleteCountry.prop("disabled", false);
 
@@ -193,12 +203,16 @@ function validateFormCountry() {
 
 
 function checkUnique() {
-	countryId = $("#id").val();
+
+	console.log("checkUnique is working");
+	
 	countryName = $("#fieldCountryName").val();
+	
+	console.log(countryName);
 	
 	csrfValue = $("input[name='_csrf']").val();
 	
-	params = {id: countryId, name: countryName, _csrf: csrfValue};
+	jsonData = {name: countryName, _csrf: csrfValue};
 	
 	checkUniqueUrl = contextPath + "countries/check_unique";
 	

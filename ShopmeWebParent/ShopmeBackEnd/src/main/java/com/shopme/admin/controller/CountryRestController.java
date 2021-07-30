@@ -3,6 +3,7 @@ package com.shopme.admin.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,14 +37,14 @@ public class CountryRestController {
 	}
 	
 	@PostMapping("/countries/check_unique")
-	public String checkUnique(Integer id, String name) {
-		boolean isCreatingNew = (id == null || id == 0);
+	public String checkUnique(@Param("name") String name) {
 		Country productByName = repo.findByName(name);
+		boolean isCreatingNew = (productByName.getId() != null ? false : true);
 		
 		if (isCreatingNew) {
 			if (productByName != null) return "Duplicate";
 		} else {
-			if (productByName != null && productByName.getId() != id) {
+			if (productByName != null && productByName.getId() != null) {
 				return "Duplicate";
 			}
 		}
