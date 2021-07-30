@@ -192,13 +192,13 @@ function validateFormCountry() {
 
 function checkUnique(form) {
 	countryId = $("#id").val();
-	countryName = $("#name").val();
+	countryName = $("#fieldCountryName").val();
 	
 	csrfValue = $("input[name='_csrf']").val();
 	
 	params = {id: countryId, name: countryName, _csrf: csrfValue};
 	
-	checkUniqueUrl = "/countries/check_unique";
+	checkUniqueUrl = contextPath + "countries/check_unique";
 	
 	$.post(checkUniqueUrl, params, function(response) {
 		if (response == "OK") {
