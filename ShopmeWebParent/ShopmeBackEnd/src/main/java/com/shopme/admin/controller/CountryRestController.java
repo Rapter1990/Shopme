@@ -38,13 +38,13 @@ public class CountryRestController {
 	
 	@PostMapping("/countries/check_unique")
 	public String checkUnique(@Param("name") String name) {
-		Country productByName = repo.findByName(name);
-		boolean isCreatingNew = (productByName.getId() != null ? false : true);
+		Country countryByName = repo.findByName(name);
+		boolean isCreatingNew = (countryByName.getId() != null ? false : true);
 		
 		if (isCreatingNew) {
-			if (productByName != null) return "Duplicate";
+			if (countryByName != null) return "Duplicate";
 		} else {
-			if (productByName != null && productByName.getId() != null) {
+			if (countryByName != null && countryByName.getId() != null) {
 				return "Duplicate";
 			}
 		}
