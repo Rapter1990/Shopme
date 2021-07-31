@@ -39,7 +39,7 @@ public class CountryRestController {
 	@PostMapping("/countries/check_unique")
 	public String checkUnique(@Param("name") String name) {
 		Country countryByName = repo.findByName(name);
-		boolean isCreatingNew = (countryByName.getId() != null ? false : true);
+		boolean isCreatingNew = (countryByName.getId() != null ? true : false);
 		
 		if (isCreatingNew) {
 			if (countryByName != null) return "Duplicate";
