@@ -16,6 +16,8 @@ $(document).ready(function() {
 	buttonDeleteState = $("#buttonDeleteState");
 	labelStateName = $("#labelStateName");
 	fieldStateName = $("#fieldStateName");
+	
+	fieldStateName.prop("disabled", true);
 
 	buttonLoad4States.click(function() {
 		loadCountries4States();
@@ -31,7 +33,9 @@ $(document).ready(function() {
 
 	buttonAddState.click(function() {
 		if (buttonAddState.val() == "Add") {
-			addState();
+			if(checkUnique()){
+				addState();
+			}
 		} else {
 			changeFormStateToNew();
 		}
@@ -141,7 +145,9 @@ function changeFormStateToNew() {
 
 	buttonUpdateState.prop("disabled", true);
 	buttonDeleteState.prop("disabled", true);
-
+	
+	fieldStateName.prop("disabled", false);
+	
 	fieldStateName.val("").focus();	
 }
 
@@ -149,6 +155,8 @@ function changeFormStateToSelectedState() {
 	buttonAddState.prop("value", "New");
 	buttonUpdateState.prop("disabled", false);
 	buttonDeleteState.prop("disabled", false);
+	
+	fieldStateName.prop("disabled", false);
 
 	labelStateName.text("Selected State/Province:");
 
@@ -203,3 +211,43 @@ function validateFormState() {
 
 	return true;
 }
+
+function checkUnique() {
+
+	console.log("checkUnique is working");
+	
+	stateName = $("#fieldStateName").val();
+	
+	console.log(stateName);
+	
+	csrfValue = $("input[name='_csrf']").val();
+	
+	jsonData = {name: stateName, _csrf: csrfValue};
+	
+	checkUniqueUrl = contextPath + "states/check_unique";
+	
+	$.ajax({
+		type: 'POST',
+		url: checkUniqueUrl,
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader(csrfHeaderName, csrfValue);
+		},
+		data: JSON.stringify(jsonData),
+		contentType: 'application/json'
+	}).done(function(response) {
+		if (response == "OK") {
+			return true;
+		} else if (response == "Duplicate") {
+			showToastMessage("State already added :  " + stateName);
+			return false;	
+		} else {
+			showToastMessage("Unknown response from server");
+			return false;
+		}
+	}).fail(function() {
+		showToastMessage("ERROR: Could not connect to server or server encountered an error");
+		return false;
+	});
+	
+	return false;
+}	 

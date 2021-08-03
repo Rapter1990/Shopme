@@ -2,13 +2,17 @@ package com.shopme.admin.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shopme.admin.repository.StateRepository;
@@ -19,6 +23,8 @@ import com.shopme.common.entity.StateDTO;
 @RestController
 public class StateRestController {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(StateRestController.class);
+	
 	@Autowired 
 	private StateRepository repo;
 
@@ -43,5 +49,29 @@ public class StateRestController {
 	@DeleteMapping("/states/delete/{id}")
 	public void delete(@PathVariable("id") Integer id) {
 		repo.deleteById(id);
+	}
+	
+	@PostMapping("/states/check_unique")
+	@ResponseBody
+	public String checkUnique(@RequestBody Map<String,String> data) {
+		
+		String name = data.get("name");
+		
+		LOGGER.info("StateRestController | checkUnique is called");
+		
+		LOGGER.info("StateRestController | checkUnique | name : " + name);
+		
+		State countryByName = repo.findByName(name);
+		boolean isCreatingNew = (countryByName.getId() != null ? true : false);
+		
+		if (isCreatingNew) {
+			if (countryByName != null) return "Duplicate";
+		} else {
+			if (countryByName != null && countryByName.getId() != null) {
+				return "Duplicate";
+			}
+		}
+		
+		return "OK";
 	}
 }
