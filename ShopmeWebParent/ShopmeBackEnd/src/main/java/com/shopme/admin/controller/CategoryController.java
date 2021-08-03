@@ -82,6 +82,7 @@ public class CategoryController {
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("startCount", startCount);
 		model.addAttribute("endCount", endCount);
+		model.addAttribute("moduleURL", "/categories");
 
 		
 		LOGGER.info("CategoryController | listByPage | listCategories : " + listCategories.toString());

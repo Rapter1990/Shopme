@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.shopme.admin.error.UserNotFoundException;
+import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
@@ -24,7 +25,7 @@ public interface IUserService {
 	
 	public void updateUserEnabledStatus(Integer id, boolean enabled);
 	
-	public Page<User> listByPage(int pageNum, String sortField, String sortDir, String keyword);
+	public void listByPage(int pageNum, PagingAndSortingHelper helper);
 	
 	public User getByEmail(String email);
 	

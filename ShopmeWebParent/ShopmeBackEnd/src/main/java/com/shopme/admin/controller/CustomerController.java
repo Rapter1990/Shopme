@@ -21,6 +21,8 @@ import com.shopme.admin.error.CustomerNotFoundException;
 import com.shopme.admin.exportcsv.CustomerCsvExporter;
 import com.shopme.admin.exportexcel.CustomerExcelExporter;
 import com.shopme.admin.exportpdf.CustomerPdfExporter;
+import com.shopme.admin.paging.PagingAndSortingHelper;
+import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.CustomerService;
 import com.shopme.common.entity.Country;
 import com.shopme.common.entity.Customer;
@@ -33,61 +35,22 @@ public class CustomerController {
 	@Autowired 
 	private CustomerService service;
 	
+	private String defaultRedirectURL = "redirect:/customers/page/1?sortField=firstName&sortDir=asc";
+	
 	@GetMapping("/customers")
-	public String listFirstPage(Model model) {
+	public String listFirstPage() {
 		
 		LOGGER.info("CustomerController | listFirstPage is called");
 		
-		return listByPage(model, 1, "firstName", "asc", null);
+		return defaultRedirectURL;
 	}
 
 	@GetMapping("/customers/page/{pageNum}")
-	public String listByPage(Model model, 
-						@PathVariable(name = "pageNum") int pageNum,
-						@Param("sortField") String sortField,
-						@Param("sortDir") String sortDir,
-						@Param("keyword") String keyword
-			) {
+	public String listByPage(
+			@PagingAndSortingParam(listName = "listCustomers", moduleURL = "/customers") PagingAndSortingHelper helper,
+			@PathVariable(name = "pageNum") int pageNum) {
 
-		Page<Customer> page = service.listByPage(pageNum, sortField, sortDir, keyword);
-		List<Customer> listCustomers = page.getContent();
-
-		long startCount = (pageNum - 1) * CustomerService.CUSTOMERS_PER_PAGE + 1;
-		model.addAttribute("startCount", startCount);
-		
-		LOGGER.info("CustomerController | viewDetails | startCount : " + startCount);
-		
-
-		long endCount = startCount + CustomerService.CUSTOMERS_PER_PAGE - 1;
-		
-		LOGGER.info("CustomerController | listByPage | endCount : " + endCount);
-		LOGGER.info("CustomerController | listByPage | page.getTotalElements() : " + page.getTotalElements());
-		
-		
-		if (endCount > page.getTotalElements()) {
-			endCount = page.getTotalElements();
-		}
-		
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("totalItems", page.getTotalElements());
-		model.addAttribute("currentPage", pageNum);
-		model.addAttribute("listCustomers", listCustomers);
-		model.addAttribute("sortField", sortField);
-		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("keyword", keyword);
-		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
-		model.addAttribute("endCount", endCount);
-		
-		LOGGER.info("CustomerController | listByPage | endCount : " + endCount);
-		LOGGER.info("CustomerController | listByPage | totalPages : " + page.getTotalPages());
-		LOGGER.info("CustomerController | listByPage | totalItems : " + page.getTotalElements());
-		LOGGER.info("CustomerController | listByPage | currentPage : " + pageNum);
-		LOGGER.info("CustomerController | listByPage | listCustomers : " + listCustomers);
-		LOGGER.info("CustomerController | listByPage | sortField : " + sortField);
-		LOGGER.info("CustomerController | listByPage | sortDir : " + sortDir);
-		LOGGER.info("CustomerController | listByPage | keyword : " + keyword);
-		LOGGER.info("CustomerController | listByPage | reverseSortDir : " + (sortDir.equals("asc") ? "desc" : "asc") );
-		LOGGER.info("CustomerController | listByPage | endCount : " + endCount);
+		service.listByPage(pageNum, helper);
 
 		return "customers/customers";
 	}
@@ -107,7 +70,7 @@ public class CustomerController {
 		LOGGER.info("CustomerController | listByPage | message : " + message);
 		
 
-		return "redirect:/customers";
+		return defaultRedirectURL;
 	}	
 
 	@GetMapping("/customers/detail/{id}")
@@ -127,7 +90,7 @@ public class CustomerController {
 			
 			LOGGER.info("CustomerController | viewCustomer | message : " + ex.getMessage());
 			
-			return "redirect:/customers";			
+			return defaultRedirectURL;			
 		}
 	}
 
@@ -155,7 +118,7 @@ public class CustomerController {
 			
 			LOGGER.info("CustomerController | editCustomer | message : " + ex.getMessage());
 			
-			return "redirect:/customers";
+			return defaultRedirectURL;
 		}
 	}
 
@@ -169,7 +132,7 @@ public class CustomerController {
 		
 		LOGGER.info("CustomerController | editCustomer | message : " + "The customer ID " + customer.getId() + " has been updated successfully.");
 		
-		return "redirect:/customers";
+		return defaultRedirectURL;
 	}
 
 	@GetMapping("/customers/delete/{id}")
@@ -189,7 +152,7 @@ public class CustomerController {
 			LOGGER.info("CustomerController | deleteCustomer | message : " + ex.getMessage());
 		}
 
-		return "redirect:/customers";
+		return defaultRedirectURL;
 	}
 	
 	@GetMapping("/customers/export/csv")

@@ -25,6 +25,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.helper.ProductSaveHelper;
+import com.shopme.admin.paging.PagingAndSortingHelper;
+import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.security.ShopmeUserDetails;
 import com.shopme.admin.service.BrandService;
 import com.shopme.admin.service.CategoryService;
@@ -47,6 +49,8 @@ public class ProductController {
 	
 	private CategoryService categoryService;
 	
+	private String defaultRedirectURL = "redirect:/products/page/1?sortField=name&sortDir=asc&categoryId=0";
+	
 	
 	@Autowired
 	public ProductController(ProductService productService, BrandService brandService,
@@ -59,64 +63,32 @@ public class ProductController {
 	
 
 	@GetMapping("/products")
-	public String listFirstPage(Model model) {
+	public String listFirstPage() {
 		
 		LOGGER.info("ProductController | listFirstPage is started");
 		
-		return listByPage(1, model, "name", "asc", null, 0);
+		return defaultRedirectURL;
 	}
 	
 	
 	@GetMapping("/products/page/{pageNum}")
 	public String listByPage(
+			@PagingAndSortingParam(listName = "listProducts", moduleURL = "/products") PagingAndSortingHelper helper,
 			@PathVariable(name = "pageNum") int pageNum, Model model,
-			@Param("sortField") String sortField, @Param("sortDir") String sortDir,
-			@Param("keyword") String keyword,
 			@Param("categoryId") Integer categoryId
 			) {
 		
 		LOGGER.info("ProductController | listByPage is started");
 		
-		Page<Product> page = productService.listByPage(pageNum, sortField, sortDir, keyword, categoryId);
-		List<Product> listProducts = page.getContent();
+		productService.listByPage(pageNum, helper, categoryId);
 		
-		List<Category> listCategories = categoryService.listCategoriesUsedInForm();
+		List<Category> listCategories = categoryService.listCategoriesUsedInForm();	
 		
-		LOGGER.info("ProductController | listByPage | listProducts size : " + listProducts.size() );
-
-		long startCount = (pageNum - 1) * ProductService.PRODUCTS_PER_PAGE + 1;
-		long endCount = startCount + ProductService.PRODUCTS_PER_PAGE - 1;
+		if (categoryId != null) model.addAttribute("categoryId", categoryId);
+		model.addAttribute("listCategories", listCategories);
 		
-		LOGGER.info("ProductController | listByPage | startCount : " + startCount );
-		LOGGER.info("ProductController | listByPage | endCount : " + endCount );
-		
-		LOGGER.info("ProductController | listByPage | page.getTotalElements() : " + page.getTotalElements() );
-		
-		if (endCount > page.getTotalElements()) {
-			endCount = page.getTotalElements();
-		}
-		
-		LOGGER.info("ProductController | listByPage | endCount : " + endCount );
-
-		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-		
-		LOGGER.info("ProductController | listByPage | reverseSortDir : " + reverseSortDir );
-		
-		if (categoryId != null) model.addAttribute("categoryId", categoryId); 
-		
-		LOGGER.info("ProductController | listByPage | categoryId : " + categoryId );
-		
-		model.addAttribute("currentPage", pageNum);
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("startCount", startCount);
-		model.addAttribute("endCount", endCount);
-		model.addAttribute("totalItems", page.getTotalElements());
-		model.addAttribute("sortField", sortField);
-		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("reverseSortDir", reverseSortDir);
-		model.addAttribute("keyword", keyword);		
-		model.addAttribute("listProducts", listProducts);
-		model.addAttribute("listCategories", listCategories);	
+		LOGGER.info("ProductController | newProduct | categoryId : " + categoryId);
+		LOGGER.info("ProductController | newProduct | listCategories : " + listCategories.toString());
 
 		return "products/products";	
 	}
@@ -166,10 +138,12 @@ public class ProductController {
 		LOGGER.info("ProductController | saveProduct | loggedUser.getFullname() : " + loggedUser.getFullname());
 		LOGGER.info("ProductController | saveProduct | loggedUser.getAuthorities() : " + loggedUser.getAuthorities());
 		
-		if (loggedUser.hasRole("Salesperson")) {
-			productService.saveProductPrice(product);
-			ra.addFlashAttribute("messageSuccess", "The product has been saved successfully.");			
-			return "redirect:/products";			
+		if (!loggedUser.hasRole("Admin") && !loggedUser.hasRole("Editor")) {
+			if (loggedUser.hasRole("Salesperson")) {
+				productService.saveProductPrice(product);
+				ra.addFlashAttribute("messageSuccess", "The product has been saved successfully.");			
+				return defaultRedirectURL;
+			}
 		}
 		
 		ProductSaveHelper.setMainImageName(mainImageMultipart, product);
@@ -188,7 +162,7 @@ public class ProductController {
 
 		ra.addFlashAttribute("messageSuccess", "The product has been saved successfully.");
 
-		return "redirect:/products";
+		return defaultRedirectURL;
 		
 	}
 	
@@ -206,7 +180,7 @@ public class ProductController {
 		String message = "The Product ID " + id + " has been " + status;
 		redirectAttributes.addFlashAttribute("messageSuccess", message);
 
-		return "redirect:/products";
+		return defaultRedirectURL;
 	}
 	
 	@GetMapping("/products/delete/{id}")
@@ -240,7 +214,7 @@ public class ProductController {
 			redirectAttributes.addFlashAttribute("messageError", ex.getMessage());
 		}
 
-		return "redirect:/products";
+		return defaultRedirectURL;
 	}
 	
 	
@@ -274,7 +248,7 @@ public class ProductController {
 			
 			ra.addFlashAttribute("messageError", e.getMessage());
 
-			return "redirect:/products";
+			return defaultRedirectURL;
 		}
 	}
 	
@@ -300,7 +274,7 @@ public class ProductController {
 			
 			ra.addFlashAttribute("messageError", e.getMessage());
 
-			return "redirect:/products";
+			return defaultRedirectURL;
 		}
 	}	
 

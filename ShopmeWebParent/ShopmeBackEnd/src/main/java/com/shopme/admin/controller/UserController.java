@@ -24,6 +24,8 @@ import com.shopme.admin.error.UserNotFoundException;
 import com.shopme.admin.exportcsv.UserCsvExporter;
 import com.shopme.admin.exportexcel.UserExcelExporter;
 import com.shopme.admin.exportpdf.UserPdfExporter;
+import com.shopme.admin.paging.PagingAndSortingHelper;
+import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.UserService;
 import com.shopme.admin.util.DirectUtil;
 import com.shopme.admin.util.FileUploadUtil;
@@ -38,68 +40,23 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
+	private String defaultRedirectURL = "redirect:/users/page/1?sortField=firstName&sortDir=asc";
+	
 	@GetMapping("/users")
-	public String listFirstPage(Model model) {
+	public String listFirstPage() {
 		
 		LOGGER.info("UserController | listFirstPage is started");
 		
-		return listByPage(1, model, "firstName", "asc", null);
+		return defaultRedirectURL;
 	}
 	
 	@GetMapping("/users/page/{pageNum}")
-	public String listByPage(@PathVariable(name = "pageNum") int pageNum, Model model,
-			@Param("sortField") String sortField, @Param("sortDir") String sortDir,
-			@Param("keyword") String keyword) {
+	public String listByPage(@PagingAndSortingParam(listName = "listUsers", moduleURL = "/users") PagingAndSortingHelper helper,
+			@PathVariable(name = "pageNum") int pageNum) {
 		
 		LOGGER.info("UserController | listByPage is started");
 		
-		LOGGER.info("UserController | listByPage | sortField : " + sortField);
-		LOGGER.info("UserController | listByPage | sortDir : " + sortDir);
-
-		Page<User> page = service.listByPage(pageNum, sortField, sortDir, keyword);
-		
-	
-		List<User> listUsers = page.getContent();
-		
-		LOGGER.info("UserController | listByPage | listUsers.size() : " + listUsers.size());
-
-		long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
-		long endCount = startCount + UserService.USERS_PER_PAGE - 1;
-		
-		LOGGER.info("UserController | listByPage | startCount : " + startCount);
-		LOGGER.info("UserController | listByPage | endCount : " + endCount);
-		
-		LOGGER.info("UserController | listByPage | page.getTotalElements() : " + page.getTotalElements());
-		
-		if (endCount > page.getTotalElements()) {
-			endCount = page.getTotalElements();
-			LOGGER.info("UserController | listByPage | endCount : " + endCount);
-		}
-		
-		
-		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-		
-		LOGGER.info("UserController | listByPage | currentPage : " + pageNum);
-		LOGGER.info("UserController | listByPage | totalPages : " + page.getTotalPages());
-		LOGGER.info("UserController | listByPage | startCount : " + startCount);
-		LOGGER.info("UserController | listByPage | endCount : " + endCount);
-		LOGGER.info("UserController | listByPage | totalItems : " + page.getTotalElements());
-		LOGGER.info("UserController | listByPage | listUsers : " + listUsers);
-		LOGGER.info("UserController | listByPage | sortField : " + sortField);
-		LOGGER.info("UserController | listByPage | sortDir : " + sortDir);
-		LOGGER.info("UserController | listByPage | reverseSortDir : " + reverseSortDir);
-		LOGGER.info("UserController | listByPage | keyword : " + keyword);
-
-		model.addAttribute("currentPage", pageNum);
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("startCount", startCount);
-		model.addAttribute("endCount", endCount);
-		model.addAttribute("totalItems", page.getTotalElements());
-		model.addAttribute("listUsers", listUsers);
-		model.addAttribute("sortField", sortField);
-		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("reverseSortDir", reverseSortDir);
-		model.addAttribute("keyword", keyword);
+		service.listByPage(pageNum, helper);
 
 		return "users/users";	
 	}
@@ -193,7 +150,7 @@ public class UserController {
 			LOGGER.error("UserController | editUser | ex.getMessage() : " + ex.getMessage());
 			
 			redirectAttributes.addFlashAttribute("messageError", ex.getMessage());
-			return "redirect:/users";
+			return defaultRedirectURL;
 		}
 	}
 	
@@ -218,7 +175,7 @@ public class UserController {
 			redirectAttributes.addFlashAttribute("messageError", ex.getMessage());
 		}
 		
-		return "redirect:/users";
+		return defaultRedirectURL;
 	}
 	
 	@GetMapping("/users/{id}/enabled/{status}")
@@ -246,7 +203,7 @@ public class UserController {
 		}
 		
 		
-		return "redirect:/users";
+		return defaultRedirectURL;
 	}
 	
 	@GetMapping("/users/export/csv")

@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import com.shopme.admin.paging.SearchRepository;
 import com.shopme.common.entity.Customer;
 
-public interface CustomerRepository extends PagingAndSortingRepository<Customer, Integer> {
+public interface CustomerRepository extends SearchRepository<Customer, Integer> {
 
 	@Query("SELECT c FROM Customer c WHERE CONCAT(c.email, ' ', c.firstName, ' ', c.lastName, ' ', "
 			+ "c.addressLine1, ' ', c.addressLine2, ' ', c.city, ' ', c.state, "

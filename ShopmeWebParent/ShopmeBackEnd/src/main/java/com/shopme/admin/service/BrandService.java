@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.shopme.admin.error.BrandNotFoundException;
+import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.repository.BrandRepository;
 import com.shopme.admin.service.impl.IBrandService;
 import com.shopme.common.entity.Brand;
@@ -83,18 +84,7 @@ public class BrandService implements IBrandService{
 	}
 
 	@Override
-	public Page<Brand> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
-		// TODO Auto-generated method stub
-		Sort sort = Sort.by(sortField);
-
-		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-
-		Pageable pageable = PageRequest.of(pageNum - 1, BRANDS_PER_PAGE, sort);
-
-		if (keyword != null) {
-			return repo.findAll(keyword, pageable);
-		}
-
-		return repo.findAll(pageable);		
+	public void listByPage(int pageNum, PagingAndSortingHelper helper) {
+		helper.listEntities(pageNum, BRANDS_PER_PAGE, repo);
 	}
 }

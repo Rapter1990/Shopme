@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.shopme.admin.error.CustomerNotFoundException;
+import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.repository.CountryRepository;
 import com.shopme.admin.repository.CustomerRepository;
 import com.shopme.admin.service.impl.ICustomerService;
@@ -42,18 +43,8 @@ public class CustomerService implements ICustomerService{
 	}
 
 	@Override
-	public Page<Customer> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
-		// TODO Auto-generated method stub
-		Sort sort = Sort.by(sortField);
-		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-
-		Pageable pageable = PageRequest.of(pageNum - 1, CUSTOMERS_PER_PAGE, sort);
-
-		if (keyword != null) {
-			return customerRepo.findAll(keyword, pageable);
-		}
-
-		return customerRepo.findAll(pageable);
+	public void listByPage(int pageNum, PagingAndSortingHelper helper) {
+		helper.listEntities(pageNum, CUSTOMERS_PER_PAGE, customerRepo);
 	}
 
 	@Override

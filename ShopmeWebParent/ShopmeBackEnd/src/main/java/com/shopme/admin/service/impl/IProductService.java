@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
+import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.common.entity.Product;
 import com.shopme.common.error.ProductNotFoundException;
 
@@ -21,8 +22,7 @@ public interface IProductService {
 	
 	public Product get(Integer id) throws ProductNotFoundException;
 	
-	public Page<Product> listByPage(int pageNum, String sortField, String sortDir, 
-			String keyword, Integer categoryId);
+	public void listByPage(int pageNum, PagingAndSortingHelper helper, Integer categoryId);
 	
 	public void saveProductPrice(Product productInForm);
 	
