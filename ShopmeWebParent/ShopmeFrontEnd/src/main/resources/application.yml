@@ -1,0 +1,40 @@
+logging:
+  file:
+    name: Shopme-backend.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: Shopme-frontend-%d{yyyy-MM-dd}.%i.log
+      max-file-size: 100KB
+      max-history: 14
+      total-size-cap: 1MB
+server:
+  port: 80
+  servlet:
+    context-path: /Shopme
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+spring:
+  datasource:
+    password: ippavlova_1990
+    url: jdbc:mysql://localhost:3306/shopmedb?serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 121142809164-lr64lo53fbcglff56ievi86ql4agido9.apps.googleusercontent.com
+            client-secret: uLEo1POj7f0mXo4i0u9jlhxs
+            scope:
+            - email
+            - profile
