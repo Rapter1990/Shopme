@@ -2,6 +2,7 @@ package com.shopme.service.impl;
 
 import java.util.List;
 
+import com.shopme.common.entity.AuthenticationType;
 import com.shopme.common.entity.Country;
 import com.shopme.common.entity.Customer;
 
@@ -11,4 +12,5 @@ public interface ICustomerService {
 	public boolean isEmailUnique(String email);
 	public void registerCustomer(Customer customer);
 	public boolean verify(String verificationCode);
+	public void updateAuthentication(Customer customer, AuthenticationType type);
 }
