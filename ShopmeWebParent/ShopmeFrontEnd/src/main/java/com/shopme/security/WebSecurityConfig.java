@@ -1,5 +1,6 @@
 package com.shopme.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -11,9 +12,25 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.shopme.security.oauth.CustomerOAuth2UserService;
+import com.shopme.security.oauth.OAuth2LoginSuccessHandler;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	private CustomerOAuth2UserService oAuth2UserService;
+	private OAuth2LoginSuccessHandler oauth2LoginHandler;
+	private DatabaseLoginSuccessHandler databaseLoginHandler;
+	
+	@Autowired 
+	public WebSecurityConfig(CustomerOAuth2UserService oAuth2UserService, OAuth2LoginSuccessHandler oauth2LoginHandler,
+			DatabaseLoginSuccessHandler databaseLoginHandler) {
+		super();
+		this.oAuth2UserService = oAuth2UserService;
+		this.oauth2LoginHandler = oauth2LoginHandler;
+		this.databaseLoginHandler = databaseLoginHandler;
+	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -29,7 +46,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.formLogin()
 			.loginPage("/login")
 			.usernameParameter("email")
+			.successHandler(databaseLoginHandler)
 			.permitAll()
+		.and()
+		.oauth2Login()
+			.loginPage("/login")
+			.userInfoEndpoint()
+			.userService(oAuth2UserService)
+			.and()
+			.successHandler(oauth2LoginHandler)
 		.and()
 		.logout().permitAll()
 		.and()

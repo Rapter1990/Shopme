@@ -12,5 +12,8 @@ public interface ICustomerService {
 	public boolean isEmailUnique(String email);
 	public void registerCustomer(Customer customer);
 	public boolean verify(String verificationCode);
-	public void updateAuthentication(Customer customer, AuthenticationType type);
+	public Customer getCustomerByEmail(String email);
+	public void updateAuthenticationType(Customer customer, AuthenticationType type);
+	public void addNewCustomerUponOAuthLogin(String name, String email, String countryCode,
+			AuthenticationType authenticationType);
 }
