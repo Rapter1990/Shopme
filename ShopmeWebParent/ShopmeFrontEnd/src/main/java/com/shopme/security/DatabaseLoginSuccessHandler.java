@@ -38,5 +38,4 @@ public class DatabaseLoginSuccessHandler extends SavedRequestAwareAuthentication
 		super.onAuthenticationSuccess(request, response, authentication);
 	}
 
-
 }

@@ -1,132 +1,147 @@
-2021-08-05 10:52:30.378  INFO 6848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-08-05 10:52:30.451  WARN 6848 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-08-05 10:52:30.517  WARN 6848 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2021-08-05 10:52:30.532  INFO 6848 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
-2021-08-05 10:52:30.533  INFO 6848 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
-2021-08-05 10:52:30.533  INFO 6848 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
-2021-08-05 10:52:30.539  INFO 6848 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f3103cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@634c0918, org.springframework.security.web.header.HeaderWriterFilter@7ae2e1fd, org.springframework.security.web.csrf.CsrfFilter@3a89e7f7, org.springframework.security.web.authentication.logout.LogoutFilter@a6d6b9b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5cd45876, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d1f28a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@609fddff, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@a4a537c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e87c876, org.springframework.security.web.session.SessionManagementFilter@168fe261, org.springframework.security.web.access.ExceptionTranslationFilter@107fd849, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@513a01bc]
-2021-08-05 10:52:30.560  INFO 6848 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-08-05 10:52:30.571  INFO 6848 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-08-05 10:52:30.793  INFO 6848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/Shopme'
-2021-08-05 10:52:30.799  INFO 6848 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Started ShopmeFrontEndApplication in 1.395 seconds (JVM running for 1160.121)
-2021-08-05 10:52:30.801  INFO 6848 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-08-05 10:52:53.977  INFO 6848 --- [Thread-58] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-08-05 10:52:53.981  INFO 6848 --- [Thread-58] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-08-05 10:52:53.982  INFO 6848 --- [Thread-58] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
-2021-08-05 10:52:53.993  INFO 6848 --- [Thread-58] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
-2021-08-05 10:52:54.198  INFO 6848 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Starting ShopmeFrontEndApplication using Java 15.0.1 on DESKTOP-E7L6HLO with PID 6848 (C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd\target\classes started by Noyan in C:\Users\Noyan\Desktop\sts-4.9.0.RELEASE\workspace\Shopme\ShopmeWebParent\ShopmeFrontEnd)
-2021-08-05 10:52:54.198  INFO 6848 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : No active profile set, falling back to default profiles: default
-2021-08-05 10:52:54.461  INFO 6848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-08-05 10:52:54.507  INFO 6848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 6 JPA repository interfaces.
-2021-08-05 10:52:54.623  INFO 6848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
-2021-08-05 10:52:54.623  INFO 6848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-08-05 10:52:54.624  INFO 6848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-08-05 10:52:54.647  INFO 6848 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring embedded WebApplicationContext
-2021-08-05 10:52:54.647  INFO 6848 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 445 ms
-2021-08-05 10:52:54.687  INFO 6848 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-08-05 10:52:54.695  INFO 6848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
-2021-08-05 10:52:54.716  INFO 6848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
-2021-08-05 10:52:54.716  INFO 6848 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2021-08-05 10:52:54.998  INFO 6848 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-08-05 10:52:54.999  INFO 6848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-08-05 10:52:55.124  INFO 6848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-08-05 10:52:55.156  WARN 6848 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerService': Unsatisfied dependency expressed through field 'countryRepo'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository' defined in com.shopme.repository.CountryRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problem: 
-	Query cannot be resolved to a type
-
-2021-08-05 10:52:55.156  INFO 6848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-08-05 10:52:55.156  INFO 6848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
-2021-08-05 10:52:55.160  INFO 6848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
-2021-08-05 10:52:55.162  INFO 6848 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-08-05 10:52:55.171  INFO 6848 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-08-05 10:52:55.210 ERROR 6848 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerService': Unsatisfied dependency expressed through field 'countryRepo'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository' defined in com.shopme.repository.CountryRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problem: 
-	Query cannot be resolved to a type
-
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.2.jar:2.4.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.2.jar:2.4.2]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.2.jar:2.4.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.2.jar:2.4.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) ~[spring-boot-2.4.2.jar:2.4.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.4.2.jar:2.4.2]
-	at com.shopme.ShopmeFrontEndApplication.main(ShopmeFrontEndApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.2.jar:2.4.2]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerService': Unsatisfied dependency expressed through field 'countryRepo'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository' defined in com.shopme.repository.CountryRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problem: 
-	Query cannot be resolved to a type
-
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository' defined in com.shopme.repository.CountryRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.Error: Unresolved compilation problem: 
-	Query cannot be resolved to a type
-
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.3.jar:5.3.3]
-	... 38 common frames omitted
-Caused by: java.lang.Error: Unresolved compilation problem: 
-	Query cannot be resolved to a type
-
-	at com.shopme.repository.CountryRepository.<clinit>(CountryRepository.java:13) ~[classes/:na]
-	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:377) ~[na:na]
-	at com.sun.proxy.$Proxy224.<clinit>(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
-	at java.base/java.lang.reflect.Proxy.newProxyInstance(Proxy.java:1022) ~[na:na]
-	at java.base/java.lang.reflect.Proxy.newProxyInstance(Proxy.java:1008) ~[na:na]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:126) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.ProxyFactory.getProxy(ProxyFactory.java:110) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:309) ~[spring-data-commons-2.4.3.jar:2.4.3]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$6(RepositoryFactoryBeanSupport.java:326) ~[spring-data-commons-2.4.3.jar:2.4.3]
-	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.3.jar:2.4.3]
-	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.3.jar:2.4.3]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.3.jar:2.4.3]
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.3.jar:2.4.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847) ~[spring-beans-5.3.3.jar:5.3.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-5.3.3.jar:5.3.3]
-	... 48 common frames omitted
-
+2021-08-08 23:30:13.558  INFO 14508 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-08-08 23:30:13.602  INFO 14508 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a04da7f, org.springframework.security.web.context.SecurityContextPersistenceFilter@2584b123, org.springframework.security.web.header.HeaderWriterFilter@33547d2e, org.springframework.security.web.csrf.CsrfFilter@3f7997c, org.springframework.security.web.authentication.logout.LogoutFilter@5654d1ed, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@783be9e7, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@af3dc56, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@15ecfe91, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@682c7d40, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f3f8fd, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7d5760e3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e01bc05, org.springframework.security.web.session.SessionManagementFilter@2441a28, org.springframework.security.web.access.ExceptionTranslationFilter@340f2044, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63e09336]
+2021-08-08 23:30:13.682  INFO 14508 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-08 23:30:13.735  INFO 14508 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-08 23:30:14.016  INFO 14508 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/Shopme'
+2021-08-08 23:30:14.023  INFO 14508 --- [restartedMain] com.shopme.ShopmeFrontEndApplication     : Started ShopmeFrontEndApplication in 3.42 seconds (JVM running for 3.975)
+2021-08-08 23:30:18.069  INFO 14508 --- [http-nio-80-exec-1] o.a.c.c.C.[.[localhost].[/Shopme]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-08 23:30:18.069  INFO 14508 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-08 23:30:18.070  INFO 14508 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-08 23:30:18.084  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.084  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/
+2021-08-08 23:30:18.120  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.120  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.120  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.120  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.120  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.120  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.121  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.121  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.121  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-08-08 23:30:18.134  INFO 14508 --- [http-nio-80-exec-1] com.shopme.controller.MainController     : ProductController | viewHomePage is called
+2021-08-08 23:30:18.170  INFO 14508 --- [http-nio-80-exec-1] com.shopme.controller.MainController     : ProductController | viewHomePage | listCategories : 25
+2021-08-08 23:30:18.386  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | getFullName: Anh Le Hoang
+2021-08-08 23:30:18.389  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | getFullName: Anh Le Hoang
+2021-08-08 23:30:18.436  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.501  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.502  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/css/bootstrap.min.css
+2021-08-08 23:30:18.502  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/css/bootstrap.min.css
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/js/bootstrap.min.js
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/fontawesome/all.css
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/js/bootstrap.min.js
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webjars/jquery/3.4.1/jquery.min.js
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/fontawesome/all.css
+2021-08-08 23:30:18.504  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/webjars/jquery/3.4.1/jquery.min.js
+2021-08-08 23:30:18.515  INFO 14508 --- [http-nio-80-exec-3] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.582  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.582  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.582  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/site-logo/ShopmeAdminSmall.png
+2021-08-08 23:30:18.582  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/9/bags_cases.png
+2021-08-08 23:30:18.582  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/site-logo/ShopmeAdminSmall.png
+2021-08-08 23:30:18.582  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/9/bags_cases.png
+2021-08-08 23:30:18.589  INFO 14508 --- [http-nio-80-exec-7] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.589  INFO 14508 --- [http-nio-80-exec-6] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.597  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.597  INFO 14508 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/14/carrier%20cellphones.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/17/cables%20and%20adapters.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/14/carrier%20cellphones.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/17/cables%20and%20adapters.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/20/cellphone%20cases.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/20/cellphone%20cases.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/22/computer%20processors.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/22/computer%20processors.png
+2021-08-08 23:30:18.598  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/5/desktop%20computers.png
+2021-08-08 23:30:18.599  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/5/desktop%20computers.png
+2021-08-08 23:30:18.599  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.599  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/10/digital%20cameras.png
+2021-08-08 23:30:18.599  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/10/digital%20cameras.png
+2021-08-08 23:30:18.600  INFO 14508 --- [http-nio-80-exec-8] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.600  INFO 14508 --- [http-nio-80-exec-9] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.600  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.601  INFO 14508 --- [http-nio-80-exec-10] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.601  INFO 14508 --- [http-nio-80-exec-5] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.601  INFO 14508 --- [http-nio-80-exec-3] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.605  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.605  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.605  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/11/flashes.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/24/internal%20hard%20drive.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/24/internal%20hard%20drive.png
+2021-08-08 23:30:18.605  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/23/graphic%20cards.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/11/flashes.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/6/laptop%20computers.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/23/graphic%20cards.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/25/internal%20optical%20drives.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/21/headphones.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/6/laptop%20computers.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/25/internal%20optical%20drives.png
+2021-08-08 23:30:18.606  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/21/headphones.png
+2021-08-08 23:30:18.608  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.608  INFO 14508 --- [http-nio-80-exec-8] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.609  INFO 14508 --- [http-nio-80-exec-4] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.609  INFO 14508 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.609  INFO 14508 --- [http-nio-80-exec-6] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.609  INFO 14508 --- [http-nio-80-exec-7] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/31/network%20cards.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/31/network%20cards.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/18/microsd%20cards.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/26/power%20supplies.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/12/lenses.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/29/computer%20memory.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/26/power%20supplies.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/18/microsd%20cards.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/30/motherboards.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/12/lenses.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/29/computer%20memory.png
+2021-08-08 23:30:18.614  INFO 14508 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/30/motherboards.png
+2021-08-08 23:30:18.616  INFO 14508 --- [http-nio-80-exec-10] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.616  INFO 14508 --- [http-nio-80-exec-9] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.616  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.616  INFO 14508 --- [http-nio-80-exec-5] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.616  INFO 14508 --- [http-nio-80-exec-3] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.616  INFO 14508 --- [http-nio-80-exec-4] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/13/tripods_monopods.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/19/cellphone_stands.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/28/sound%20cards.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/27/solid%20state%20drives.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/13/tripods_monopods.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/19/cellphone_stands.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/7/tablets.png
+2021-08-08 23:30:18.621  INFO 14508 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/28/sound%20cards.png
+2021-08-08 23:30:18.622  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/category-images/15/unlocked%20cellphones.png
+2021-08-08 23:30:18.622  INFO 14508 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/27/solid%20state%20drives.png
+2021-08-08 23:30:18.622  INFO 14508 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/7/tablets.png
+2021-08-08 23:30:18.622  INFO 14508 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/category-images/15/unlocked%20cellphones.png
+2021-08-08 23:30:18.624  INFO 14508 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.624  INFO 14508 --- [http-nio-80-exec-10] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.624  INFO 14508 --- [http-nio-80-exec-7] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.624  INFO 14508 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.624  INFO 14508 --- [http-nio-80-exec-6] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:18.624  INFO 14508 --- [http-nio-80-exec-8] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-08-08 23:30:31.164  INFO 14508 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-08-08 23:30:31.195  INFO 14508 --- [RMI TCP Connection(8)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-08-08 23:30:31.197  INFO 14508 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-08 23:30:31.200  INFO 14508 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-08 23:30:31.205  INFO 14508 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

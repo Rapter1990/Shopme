@@ -88,6 +88,7 @@ public class CustomerService implements ICustomerService{
 		customerInForm.setEnabled(customerInDB.isEnabled());
 		customerInForm.setCreatedTime(customerInDB.getCreatedTime());
 		customerInForm.setVerificationCode(customerInDB.getVerificationCode());
+		customerInForm.setAuthenticationType(customerInDB.getAuthenticationType());
 		
 		customerRepo.save(customerInForm);
 		

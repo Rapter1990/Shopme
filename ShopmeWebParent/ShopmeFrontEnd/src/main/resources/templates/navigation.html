@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" 
-		xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <body>
 <div th:fragment="header_menu">
 	<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -58,8 +58,11 @@
 				<ul class="navbar-nav">						
 					<th:block sec:authorize="isAuthenticated()">
 					<li class="nav-item">
-						<b><a class="nav-link" th:href="@{/customer}" 
-								sec:authentication="principal.fullName"></a></b>
+						<b>
+						   <a class="nav-link" th:href="@{/account_details}"  
+							  sec:authentication="principal.fullName"></a>
+						</b>
+						<!-- <a class="nav-link" th:href="@{/account_details}" ><b>[[${#request.userPrincipal.principal.fullName}]]</b></a> -->			
 					</li>
 
 					<li class="nav-item">

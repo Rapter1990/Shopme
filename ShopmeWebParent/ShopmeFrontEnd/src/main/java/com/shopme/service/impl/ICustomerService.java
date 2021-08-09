@@ -16,4 +16,5 @@ public interface ICustomerService {
 	public void updateAuthenticationType(Customer customer, AuthenticationType type);
 	public void addNewCustomerUponOAuthLogin(String name, String email, String countryCode,
 			AuthenticationType authenticationType);
+	public void update(Customer customerInForm);
 }
