@@ -29,7 +29,7 @@ import com.shopme.admin.util.CategoryPageInfo;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.User;
-import com.shopme.common.error.CategoryNotFoundException;
+import com.shopme.common.exception.CategoryNotFoundException;
 
 @Controller
 public class CategoryController {

@@ -22,7 +22,7 @@ import com.shopme.admin.service.impl.ICategoryService;
 import com.shopme.admin.util.CategoryPageInfo;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.User;
-import com.shopme.common.error.CategoryNotFoundException;
+import com.shopme.common.exception.CategoryNotFoundException;
 
 @Service
 @Transactional

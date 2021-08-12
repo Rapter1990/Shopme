@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shopme.common.entity.Category;
-import com.shopme.common.error.CategoryNotFoundException;
+import com.shopme.common.exception.CategoryNotFoundException;
 import com.shopme.repository.CategoryRepository;
 import com.shopme.service.impl.ICategoryService;
 
