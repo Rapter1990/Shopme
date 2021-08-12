@@ -74,6 +74,9 @@ public class Customer implements Serializable{
 	@Column(name = "authentication_type", length = 10)
 	private AuthenticationType authenticationType;
 	
+	@Column(name = "reset_password_token", length = 30)
+	private String resetPasswordToken;
+	
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + "]";

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.shopme.common.entity.AuthenticationType;
 import com.shopme.common.entity.Country;
 import com.shopme.common.entity.Customer;
+import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.repository.CountryRepository;
 import com.shopme.repository.CustomerRepository;
 import com.shopme.service.impl.ICustomerService;
@@ -134,7 +135,44 @@ public class CustomerService implements ICustomerService{
 		customerInForm.setCreatedTime(customerInDB.getCreatedTime());
 		customerInForm.setVerificationCode(customerInDB.getVerificationCode());
 		customerInForm.setAuthenticationType(customerInDB.getAuthenticationType());
+		customerInForm.setResetPasswordToken(customerInDB.getResetPasswordToken());
 
 		customerRepo.save(customerInForm);
+	}
+
+	@Override
+	public String updateResetPasswordToken(String email) throws CustomerNotFoundException {
+		// TODO Auto-generated method stub
+		Customer customer = customerRepo.findByEmail(email);
+		if (customer != null) {
+			String token = RandomString.make(30);
+			customer.setResetPasswordToken(token);
+			customerRepo.save(customer);
+
+			return token;
+		} else {
+			throw new CustomerNotFoundException("Could not find any customer with the email " + email);
+		}
+	}
+
+	@Override
+	public Customer getByResetPasswordToken(String token) {
+		// TODO Auto-generated method stub
+		return customerRepo.findByResetPasswordToken(token);
+	}
+
+	@Override
+	public void updatePassword(String token, String newPassword) throws CustomerNotFoundException {
+		// TODO Auto-generated method stub
+		Customer customer = customerRepo.findByResetPasswordToken(token);
+		if (customer == null) {
+			throw new CustomerNotFoundException("No customer found: invalid token");
+		}
+
+		customer.setPassword(newPassword);
+		customer.setResetPasswordToken(null);
+		CustomerRegisterUtil.encodePassword(customer, passwordEncoder);
+
+		customerRepo.save(customer);
 	}	
 }
