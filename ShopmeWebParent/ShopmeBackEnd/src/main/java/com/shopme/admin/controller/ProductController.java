@@ -221,7 +221,9 @@ public class ProductController {
 	
 	@GetMapping("/products/edit/{id}")
 	public String editProduct(@PathVariable("id") Integer id, Model model,
-			RedirectAttributes ra) {
+			RedirectAttributes ra,
+			@AuthenticationPrincipal ShopmeUserDetails loggedUser
+			) {
 		
 		LOGGER.info("ProductController | editProduct is started");
 		
@@ -230,10 +232,23 @@ public class ProductController {
 			List<Brand> listBrands = brandService.listAll();
 			Integer numberOfExistingExtraImages = product.getImages().size();
 			
+			LOGGER.info("ProductController | editProduct | loggedUser  : " + loggedUser.toString());
+			
+			boolean isReadOnlyForSalesperson = false;
+
+			if (!loggedUser.hasRole("Admin") && !loggedUser.hasRole("Editor")) {
+				if (loggedUser.hasRole("Salesperson")) {
+					isReadOnlyForSalesperson = true;
+				}
+			}
+
+			
 			LOGGER.info("ProductController | editProduct | product  : " + product.toString());
 			LOGGER.info("ProductController | editProduct | listBrands : " + listBrands.toString());
 			LOGGER.info("ProductController | editProduct | numberOfExistingExtraImages : " + numberOfExistingExtraImages);
+			LOGGER.info("ProductController | editProduct | isReadOnlyForSalesperson  : " + isReadOnlyForSalesperson);
 
+			model.addAttribute("isReadOnlyForSalesperson", isReadOnlyForSalesperson);
 			model.addAttribute("product", product);
 			model.addAttribute("listBrands", listBrands);
 			model.addAttribute("pageTitle", "Edit Product (ID: " + id + ")");
