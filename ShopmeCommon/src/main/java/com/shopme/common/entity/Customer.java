@@ -77,6 +77,10 @@ public class Customer implements Serializable{
 	@Column(name = "reset_password_token", length = 30)
 	private String resetPasswordToken;
 	
+	public Customer(Integer id) {
+		this.id = id;
+	}
+	
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + "]";
