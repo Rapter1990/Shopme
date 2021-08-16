@@ -1,5 +1,7 @@
 package com.shopme.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,7 @@ public class ShoppingCartService implements IShoppingCartService{
 		
 		Integer updatedQuantity = quantity;
 		
-		LOGGER.info("ShoppingCartService | addProduct | updatedQuantity : " + updatedQuantity);
+		LOGGER.info("ShoppingCartService | addProduct | updatedQuantity(at first) : " + updatedQuantity);
 		
 		Product product = new Product(productId);
 		
@@ -44,7 +46,7 @@ public class ShoppingCartService implements IShoppingCartService{
 			
 			updatedQuantity = cartItem.getQuantity() + quantity;
 			
-			LOGGER.info("ShoppingCartService | addProduct | updatedQuantity : " + updatedQuantity);
+			LOGGER.info("ShoppingCartService | addProduct | updatedQuantity(updated) : " + updatedQuantity);
 
 			if (updatedQuantity > 5) {
 				
@@ -60,6 +62,8 @@ public class ShoppingCartService implements IShoppingCartService{
 			cartItem.setProduct(product);
 		}
 
+		LOGGER.info("ShoppingCartService | addProduct | updatedQuantity(at last) : " + updatedQuantity);
+		
 		cartItem.setQuantity(updatedQuantity);
 		
 		LOGGER.info("ShoppingCartService | addProduct | cartItem : " + cartItem.toString());
@@ -67,6 +71,17 @@ public class ShoppingCartService implements IShoppingCartService{
 		cartRepo.save(cartItem);
 
 		return updatedQuantity;
+	}
+
+	@Override
+	public List<CartItem> listCartItems(Customer customer) {
+		// TODO Auto-generated method stub
+		
+		LOGGER.info("ShoppingCartService | listCartItems is called");
+		
+		LOGGER.info("ShoppingCartService | listCartItems | listCartItems size : " + cartRepo.findByCustomer(customer).size());
+		
+		return cartRepo.findByCustomer(customer);
 	}
 
 }

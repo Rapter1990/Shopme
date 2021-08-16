@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,4 +34,9 @@ public class CartItem implements Serializable{
 	private Product product;
 
 	private int quantity;
+	
+	@Transient
+	public float getSubtotal() {
+		return product.getDiscountPrice() * quantity;
+	}
 }
