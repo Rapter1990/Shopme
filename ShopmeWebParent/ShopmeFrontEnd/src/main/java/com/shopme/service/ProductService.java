@@ -1,5 +1,7 @@
 package com.shopme.service;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import com.shopme.repository.ProductRepository;
 import com.shopme.service.impl.IProductService;
 
 @Service
+@Transactional
 public class ProductService implements IProductService{
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductService.class);

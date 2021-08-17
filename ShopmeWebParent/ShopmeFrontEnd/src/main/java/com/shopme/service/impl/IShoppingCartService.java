@@ -12,4 +12,6 @@ public interface IShoppingCartService {
 			throws ShoppingCartException;
 	
 	public List<CartItem> listCartItems(Customer customer);
+	
+	public float updateQuantity(Integer productId, Integer quantity, Customer customer);
 }

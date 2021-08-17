@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import com.shopme.repository.CategoryRepository;
 import com.shopme.service.impl.ICategoryService;
 
 @Service
+@Transactional
 public class CategoryService implements ICategoryService{
 
 	@Autowired 

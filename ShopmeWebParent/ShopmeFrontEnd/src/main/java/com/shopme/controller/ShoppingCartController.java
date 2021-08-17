@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.shopme.common.entity.CartItem;
 import com.shopme.common.entity.Customer;
@@ -58,6 +60,27 @@ public class ShoppingCartController {
 		LOGGER.info("ShoppingCartController | viewCart | estimatedTotal : " + estimatedTotal);
 
 		return "cart/shopping_cart";
+	}
+	
+	@PostMapping("/cart/update/{productId}/{quantity}")
+	public String updateQuantity(@PathVariable("productId") Integer productId,
+			@PathVariable("quantity") Integer quantity, HttpServletRequest request) {
+		
+		LOGGER.info("ShoppingCartController | updateQuantity is called");
+		
+		try {
+			Customer customer = CustomerShoppingCartUtil.getAuthenticatedCustomer(request,customerService);
+			
+			LOGGER.info("ShoppingCartController | updateQuantity | customer : " + customer.toString());
+			
+			float subtotal = cartService.updateQuantity(productId, quantity, customer);
+			
+			LOGGER.info("ShoppingCartController | updateQuantity | subtotal : " + subtotal);
+
+			return String.valueOf(subtotal);
+		} catch (CustomerNotFoundException ex) {
+			return "You must login to change quantity of product.";
+		}	
 	}
 
 }

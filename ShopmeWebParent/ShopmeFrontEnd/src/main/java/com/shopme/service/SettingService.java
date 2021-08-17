@@ -2,6 +2,8 @@ package com.shopme.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import com.shopme.repository.SettingRepository;
 import com.shopme.service.impl.ISettingService;
 
 @Service
+@Transactional
 public class SettingService implements ISettingService{
 
 	@Autowired 
