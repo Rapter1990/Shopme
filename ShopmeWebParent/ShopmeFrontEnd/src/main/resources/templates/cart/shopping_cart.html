@@ -13,11 +13,12 @@
 	<div class="row m-1">
 		<div class="col-sm-8">
 			<th:block th:each="item, status : ${cartItems}">
-			<div class="row border rounded p-1" th:with="product = ${item.product}">
+			<div class="row border rounded p-1" th:with="product = ${item.product}" th:id="'row' + ${status.count}">
 				<div class="col-1">
-					<div>[[${status.count}]]</div>
+					<div class="divCount">[[${status.count}]]</div>
 					<div>
-						<a class="fas fa-trash" href=""></a>
+						<a class="fas fa-trash icon-dark linkRemove" th:rowNumber="${status.count}" 
+							th:href="@{'/cart/remove/' + ${product.id}}"></a>
 					</div>
 				</div>
 				<div class="col-3">
@@ -50,15 +51,15 @@
 					</div>					
 				</div>
 			</div>
-			<div class="row m-1">&nbsp;</div>
+			<div class="row m-1" th:id="'blankLine' + ${status.count}">&nbsp;</div>
 			</th:block>
 		</div>
 
-		<div class="col-sm-4" th:unless="${#lists.isEmpty(cartItems)}">
+		<div class="col-sm-4" th:unless="${#lists.isEmpty(cartItems)}" id="sectionTotal">
 			<div>
 				<span class="h3">Estimated Total:</span>
 			</div>
-			<div class="mt-2">
+			<div class="mt-2" >
 				<span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">
 					[[${CURRENCY_SYMBOL}]]
 				</span>
@@ -75,7 +76,7 @@
 		</div>
 	</div>	
 
-	<div class="text-center" th:if="${#lists.isEmpty(cartItems)}">
+	<div id="sectionEmptyCartMessage" th:class="'text-center' + ${#lists.isEmpty(cartItems) ? '' : ' d-none'}">
 		<h3>You have not chosen any products yet.</h3>
 	</div>
 

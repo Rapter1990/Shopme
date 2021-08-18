@@ -116,4 +116,13 @@ public class ShoppingCartService implements IShoppingCartService{
 		
 	}
 
+	@Override
+	public void removeProduct(Integer productId, Customer customer) {
+		// TODO Auto-generated method stub
+		
+		LOGGER.info("ShoppingCartService | removeProduct is called");
+		
+		cartRepo.deleteByCustomerAndProduct(customer.getId(), productId);
+	}
+
 }
