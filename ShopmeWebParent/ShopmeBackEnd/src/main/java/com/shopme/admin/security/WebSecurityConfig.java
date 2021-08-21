@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	// Like -> showing image in /login , all images,js and web jars files are detected  
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
+		web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**" , "/css/**");
 	}
 	
 	public DaoAuthenticationProvider authenticationProvider() {

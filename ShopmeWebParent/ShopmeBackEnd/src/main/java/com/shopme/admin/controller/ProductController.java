@@ -75,7 +75,7 @@ public class ProductController {
 	public String listByPage(
 			@PagingAndSortingParam(listName = "listProducts", moduleURL = "/products") PagingAndSortingHelper helper,
 			@PathVariable(name = "pageNum") int pageNum, Model model,
-			@Param("categoryId") Integer categoryId
+			@RequestParam("categoryId") Integer categoryId
 			) {
 		
 		LOGGER.info("ProductController | listByPage is started");

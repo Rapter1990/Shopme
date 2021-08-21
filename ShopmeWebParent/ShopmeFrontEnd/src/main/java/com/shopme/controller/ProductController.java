@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Product;
@@ -131,7 +132,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/search")
-	public String searchFirstPage(@Param("keyword") String keyword, Model model) {
+	public String searchFirstPage(@RequestParam("keyword") String keyword, Model model) {
 		
 		LOGGER.info("ProductController | searchFirstPage is called");
 		
@@ -139,7 +140,7 @@ public class ProductController {
 	}
 
 	@GetMapping("/search/page/{pageNum}")
-	public String searchByPage(@Param("keyword") String keyword,
+	public String searchByPage(@RequestParam("keyword") String keyword,
 			@PathVariable("pageNum") int pageNum,
 			Model model) {
 		

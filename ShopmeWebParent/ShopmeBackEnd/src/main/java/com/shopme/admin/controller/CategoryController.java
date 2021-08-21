@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -40,17 +39,19 @@ public class CategoryController {
 	private CategoryService categoryService;
 	
 	@GetMapping("/categories")
-	public String listFirstPage(@Param("sortDir") String sortDir, Model model) {
+	public String listFirstPage(String sortDir, Model model) {
 		
 		LOGGER.info("CategoryController | listFirstPage is started");
+		
+		LOGGER.info("CategoryController | listFirstPage | sortDir : " + sortDir);
 		
 		return listByPage(1, sortDir, null, model);
 	}
 	
 	@GetMapping("/categories/page/{pageNum}") 
 	public String listByPage(@PathVariable(name = "pageNum") int pageNum, 
-			@Param("sortDir") String sortDir, 
-			@Param("keyword") String keyword,
+			@RequestParam("sortDir") String sortDir, 
+			@RequestParam("keyword") String keyword,
 			Model model) {
 		
 		LOGGER.info("CategoryController | listByPage is started");

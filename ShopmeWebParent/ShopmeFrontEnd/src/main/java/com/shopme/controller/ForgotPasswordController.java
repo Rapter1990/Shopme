@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.EmailSettingBag;
@@ -88,7 +88,7 @@ public class ForgotPasswordController {
 
 
 	@GetMapping("/reset_password")
-	public String showResetForm(@Param("token") String token, Model model) {
+	public String showResetForm(@RequestParam("token") String token, Model model) {
 		
 		LOGGER.info("ForgotPasswordController | showResetForm is called");
 		
@@ -102,6 +102,7 @@ public class ForgotPasswordController {
 			
 			model.addAttribute("token", token);
 		} else {
+			
 			model.addAttribute("pageTitle", "Invalid Token");
 			model.addAttribute("message", "Invalid Token");
 			

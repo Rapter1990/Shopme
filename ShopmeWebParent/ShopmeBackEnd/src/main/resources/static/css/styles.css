@@ -1,10 +1,7 @@
-@charset "UTF-8";
-
 *.icon-white {color: white}
 *.icon-silver {color: silver}
 *.icon-green {color: green}
 *.icon-dark {color: gray}
-
 
 @media screen and (max-width: 768px) {
 	/* small screen */
