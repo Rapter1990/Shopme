@@ -106,8 +106,13 @@
 	<div th:replace="modal_fragments :: modal_dialog"></div>
 
 	<div th:replace="fragments :: footer"></div>
-</div>	
+</div>
+<script>
+	contextPath = "[[@{/}]]";
+	moduleURL = "[[@{/customers}]]";
+</script>	
 <script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/common_form_country_state.js}"></script>
 <script th:src="@{/js/customer_form.js}"></script>		
 </body>
 </html> 
