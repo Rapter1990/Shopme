@@ -1,0 +1,529 @@
+2021-08-24 00:44:02.311  INFO 16468 --- [http-nio-8081-exec-5] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:44:02.313  INFO 16468 --- [http-nio-8081-exec-5] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:44:02.313  INFO 16468 --- [http-nio-8081-exec-5] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:44:02.313  INFO 16468 --- [http-nio-8081-exec-5] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:44:02.320  INFO 16468 --- [http-nio-8081-exec-5] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /products
+2021-08-24 00:44:02.320  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-08-24 00:44:02.320  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:44:02.320  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:44:02.320  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:44:02.320  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 5
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 105
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 21
+2021-08-24 00:44:02.325  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 105
+2021-08-24 00:44:02.326  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black], Product [id=66, name=Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver], Product [id=60, name=Acer Aspire TC-885-UA92 Desktop], Product [id=72, name=Acer Chromebook Spin 11 CP311-1H-C5PN], Product [id=69, name=Acer Swift 3 Thin & Light Laptop]]
+2021-08-24 00:44:02.344  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.controller.ProductController   : ProductController | newProduct | categoryId : 0
+2021-08-24 00:44:02.344  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.controller.ProductController   : ProductController | newProduct | listCategories : [Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones, Camera & Photo, --Bags & Cases, --Digital Cameras, --Flashes, --Lenses, --Tripods & Monopods, Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Cell Phones & Accessories, --Accessories, ----Cables & Adapters, ----Cases, ----Headphones, ----MicroSD Cards, ----Stands, --Carrier Cell Phones, --Unlocked Cell Phones, Desktops, Laptops, Tablets, Computer Components, --CPU Processors Unit, --Graphic Cards, --Internal Hard Drives, --Internal Optical Drives, --Memory, --Motherboard, --Network Cards, --Power Supplies, --Solid State Drives, --Sound Cards, Bags & Cases, Digital Cameras, Flashes, Lenses, Tripods & Monopods, Carrier Cell Phones, Unlocked Cell Phones, Accessories, --Cables & Adapters, --Cases, --Headphones, --MicroSD Cards, --Stands, Cables & Adapters, MicroSD Cards, Stands, Cases, Headphones, CPU Processors Unit, Graphic Cards, Internal Hard Drives, Internal Optical Drives, Power Supplies, Solid State Drives, Sound Cards, Memory, Motherboard, Network Cards]
+2021-08-24 00:44:05.524  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.controller.BrandController     : BrandController | listByPage is started
+2021-08-24 00:44:05.529  INFO 16468 --- [http-nio-8081-exec-3] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /brands
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.controller.BrandController     : BrandController | listByPage is started
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities is started
+2021-08-24 00:44:05.530  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:44:05.531  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:44:05.531  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:44:05.531  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 10
+2021-08-24 00:44:05.533  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities | page : Page 1 of 6 containing com.shopme.common.entity.Brand instances
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities | pageNum : 1
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 54
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 6
+2021-08-24 00:44:05.534  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 54
+2021-08-24 00:44:05.540  INFO 16468 --- [http-nio-8081-exec-3] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Brand [id=37, name=Acer, categories=[Desktops, Tablets, Laptops]], Brand [id=28, name=Aioneus, categories=[Cables & Adapters]], Brand [id=13, name=AmazonBasics, categories=[Bags & Cases]], Brand [id=43, name=AMD, categories=[CPU Processors Unit, Graphic Cards]], Brand [id=9, name=Apple, categories=[Cell Phones & Accessories, Unlocked Cell Phones, Desktops, Tablets, Carrier Cell Phones, Laptops]], Brand [id=40, name=ASUS, categories=[Motherboard, Internal Optical Drives, Power Supplies, Desktops, Tablets, Laptops, Sound Cards]], Brand [id=17, name=Bosch, categories=[Tripods & Monopods]], Brand [id=12, name=CADeN, categories=[Bags & Cases]], Brand [id=1, name=Canon, categories=[Digital Cameras, Lenses, Camera & Photo, Flashes]], Brand [id=47, name=Cosair, categories=[Power Supplies, Memory]]]
+2021-08-24 00:44:07.419  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : BrandController | editBrand is started
+2021-08-24 00:44:07.437  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : BrandController | editBrand | brand : Brand [id=37, name=Acer, categories=[Tablets, Desktops, Laptops]]
+2021-08-24 00:44:07.437  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.BrandController     : BrandController | editBrand | listCategories : [Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones, Camera & Photo, --Bags & Cases, --Digital Cameras, --Flashes, --Lenses, --Tripods & Monopods, Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Cell Phones & Accessories, --Accessories, ----Cables & Adapters, ----Cases, ----Headphones, ----MicroSD Cards, ----Stands, --Carrier Cell Phones, --Unlocked Cell Phones, Desktops, Laptops, Tablets, Computer Components, --CPU Processors Unit, --Graphic Cards, --Internal Hard Drives, --Internal Optical Drives, --Memory, --Motherboard, --Network Cards, --Power Supplies, --Solid State Drives, --Sound Cards, Bags & Cases, Digital Cameras, Flashes, Lenses, Tripods & Monopods, Carrier Cell Phones, Unlocked Cell Phones, Accessories, --Cables & Adapters, --Cases, --Headphones, --MicroSD Cards, --Stands, Cables & Adapters, MicroSD Cards, Stands, Cases, Headphones, CPU Processors Unit, Graphic Cards, Internal Hard Drives, Internal Optical Drives, Power Supplies, Solid State Drives, Sound Cards, Memory, Motherboard, Network Cards]
+2021-08-24 00:44:09.150  INFO 16468 --- [http-nio-8081-exec-6] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:44:09.150  INFO 16468 --- [http-nio-8081-exec-6] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /brands
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.controller.BrandController     : BrandController | listByPage is started
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities is started
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:44:09.151  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 10
+2021-08-24 00:44:09.153  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities | page : Page 1 of 6 containing com.shopme.common.entity.Brand instances
+2021-08-24 00:44:09.153  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities | pageNum : 1
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 54
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 6
+2021-08-24 00:44:09.154  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 54
+2021-08-24 00:44:09.161  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Brand [id=37, name=Acer, categories=[Tablets, Laptops, Desktops]], Brand [id=28, name=Aioneus, categories=[Cables & Adapters]], Brand [id=13, name=AmazonBasics, categories=[Bags & Cases]], Brand [id=43, name=AMD, categories=[CPU Processors Unit, Graphic Cards]], Brand [id=9, name=Apple, categories=[Carrier Cell Phones, Tablets, Unlocked Cell Phones, Laptops, Desktops, Cell Phones & Accessories]], Brand [id=40, name=ASUS, categories=[Tablets, Laptops, Internal Optical Drives, Motherboard, Desktops, Power Supplies, Sound Cards]], Brand [id=17, name=Bosch, categories=[Tripods & Monopods]], Brand [id=12, name=CADeN, categories=[Bags & Cases]], Brand [id=1, name=Canon, categories=[Flashes, Camera & Photo, Lenses, Digital Cameras]], Brand [id=47, name=Cosair, categories=[Memory, Power Supplies]]]
+2021-08-24 00:44:10.531  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.ProductController   : ProductController | listFirstPage is started
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /products
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-08-24 00:44:10.536  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:44:10.537  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:44:10.537  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:44:10.537  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 5
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 105
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:44:10.541  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 21
+2021-08-24 00:44:10.542  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 105
+2021-08-24 00:44:10.542  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black], Product [id=66, name=Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver], Product [id=60, name=Acer Aspire TC-885-UA92 Desktop], Product [id=72, name=Acer Chromebook Spin 11 CP311-1H-C5PN], Product [id=69, name=Acer Swift 3 Thin & Light Laptop]]
+2021-08-24 00:44:10.555  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.controller.ProductController   : ProductController | newProduct | categoryId : 0
+2021-08-24 00:44:10.555  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.controller.ProductController   : ProductController | newProduct | listCategories : [Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones, Camera & Photo, --Bags & Cases, --Digital Cameras, --Flashes, --Lenses, --Tripods & Monopods, Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Cell Phones & Accessories, --Accessories, ----Cables & Adapters, ----Cases, ----Headphones, ----MicroSD Cards, ----Stands, --Carrier Cell Phones, --Unlocked Cell Phones, Desktops, Laptops, Tablets, Computer Components, --CPU Processors Unit, --Graphic Cards, --Internal Hard Drives, --Internal Optical Drives, --Memory, --Motherboard, --Network Cards, --Power Supplies, --Solid State Drives, --Sound Cards, Bags & Cases, Digital Cameras, Flashes, Lenses, Tripods & Monopods, Carrier Cell Phones, Unlocked Cell Phones, Accessories, --Cables & Adapters, --Cases, --Headphones, --MicroSD Cards, --Stands, Cables & Adapters, MicroSD Cards, Stands, Cases, Headphones, CPU Processors Unit, Graphic Cards, Internal Hard Drives, Internal Optical Drives, Power Supplies, Solid State Drives, Sound Cards, Memory, Motherboard, Network Cards]
+2021-08-24 00:44:12.599  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct is started
+2021-08-24 00:44:12.605  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | loggedUser  : com.shopme.admin.security.ShopmeUserDetails@23f81714
+2021-08-24 00:44:12.605  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | product  : Product [id=60, name=Acer Aspire TC-885-UA92 Desktop]
+2021-08-24 00:44:12.636  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | listBrands : [Brand [id=37, name=Acer, categories=[Tablets, Desktops, Laptops]], Brand [id=28, name=Aioneus, categories=[Cables & Adapters]], Brand [id=13, name=AmazonBasics, categories=[Bags & Cases]], Brand [id=43, name=AMD, categories=[CPU Processors Unit, Graphic Cards]], Brand [id=9, name=Apple, categories=[Tablets, Desktops, Unlocked Cell Phones, Laptops, Cell Phones & Accessories, Carrier Cell Phones]], Brand [id=40, name=ASUS, categories=[Tablets, Desktops, Power Supplies, Motherboard, Sound Cards, Internal Optical Drives, Laptops]], Brand [id=17, name=Bosch, categories=[Tripods & Monopods]], Brand [id=12, name=CADeN, categories=[Bags & Cases]], Brand [id=1, name=Canon, categories=[Camera & Photo, Digital Cameras, Lenses, Flashes]], Brand [id=47, name=Cosair, categories=[Memory, Power Supplies]], Brand [id=50, name=Creative, categories=[Sound Cards]], Brand [id=51, name=Crucial, categories=[Memory]], Brand [id=38, name=Dell, categories=[Tablets, Desktops, Laptops]], Brand [id=42, name=DragonTouch, categories=[Tablets]], Brand [id=30, name=Everyworth, categories=[Cables & Adapters]], Brand [id=33, name=Fitfort, categories=[Stands]], Brand [id=2, name=Fujifilm, categories=[Camera & Photo]], Brand [id=53, name=Gigabyte, categories=[Motherboard]], Brand [id=21, name=Google, categories=[Unlocked Cell Phones, Carrier Cell Phones]], Brand [id=19, name=GoPro, categories=[Tripods & Monopods]], Brand [id=27, name=HOVAMP, categories=[Cables & Adapters]], Brand [id=4, name=HP, categories=[Desktops, Laptops]], Brand [id=25, name=Huawei, categories=[Unlocked Cell Phones]], Brand [id=52, name=HyperX, categories=[Memory]], Brand [id=39, name=Intel, categories=[Desktops, CPU Processors Unit]], Brand [id=18, name=Joby, categories=[Tripods & Monopods]], Brand [id=49, name=Kingston, categories=[Memory, Solid State Drives]], Brand [id=36, name=Lenovo, categories=[Tablets, Desktops, Laptops]], Brand [id=31, name=Lexar, categories=[MicroSD Cards]], Brand [id=22, name=LG, categories=[Internal Optical Drives, Carrier Cell Phones]], Brand [id=20, name=Manfrotto, categories=[Tripods & Monopods, Stands]], Brand [id=41, name=Microsoft, categories=[Tablets]], Brand [id=23, name=Motorola, categories=[Unlocked Cell Phones, Carrier Cell Phones]], Brand [id=45, name=MSI, categories=[Motherboard, Graphic Cards]], Brand [id=15, name=Neewer, categories=[Flashes]], Brand [id=14, name=Nikon, categories=[Digital Cameras, Lenses, Flashes]], Brand [id=32, name=Nulaxy, categories=[Stands]], Brand [id=11, name=Olympus, categories=[Digital Cameras]], Brand [id=7, name=Panasonic, categories=[Camera & Photo, Digital Cameras]], Brand [id=24, name=Pantech, categories=[Carrier Cell Phones]], Brand [id=8, name=Pelican, categories=[Bags & Cases, Camera & Photo]], Brand [id=34, name=PopSockets, categories=[Stands]], Brand [id=10, name=Samsung, categories=[Tablets, Memory, Desktops, Solid State Drives, Unlocked Cell Phones, Internal Optical Drives, Laptops, MicroSD Cards, Internal Hard Drives, Carrier Cell Phones]], Brand [id=5, name=SanDisk, categories=[Memory, Solid State Drives, Network Cards, MicroSD Cards, Internal Hard Drives]], Brand [id=46, name=Seagate, categories=[Internal Hard Drives]], Brand [id=35, name=SHAWE, categories=[Stands]], Brand [id=16, name=Sigma, categories=[Lenses]], Brand [id=3, name=Sony, categories=[Camera & Photo, Digital Cameras, Flashes]], Brand [id=48, name=Thermaltake, categories=[Power Supplies]], Brand [id=54, name=TP-Link, categories=[Network Cards]], Brand [id=6, name=Western Digital, categories=[Memory, Solid State Drives, Electronics, Internal Hard Drives]], Brand [id=44, name=XFX, categories=[Graphic Cards]], Brand [id=29, name=XIAE, categories=[Cables & Adapters]], Brand [id=26, name=Xiaomi, categories=[Unlocked Cell Phones]]]
+2021-08-24 00:44:12.636  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | numberOfExistingExtraImages : 5
+2021-08-24 00:44:12.636  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | isReadOnlyForSalesperson  : false
+2021-08-24 00:44:12.666 ERROR 16468 --- [http-nio-8081-exec-4] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-4] Exception processing template "products/product_form": An error happened during template parsing (template: "class path resource [templates/products/product_form.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/product_form.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: org.attoparser.ParseException: An error happened during template parsing (template: "class path resource [templates/products/product_overview.html]" - line 107, col 4)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	... 95 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/product_overview.html]" - line 107, col 4)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:302) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 97 common frames omitted
+Caused by: org.attoparser.ParseException: (Line = 107, Column = 4) Incomplete structure: "<th:block th:unless="${isReadOnlyForSalesperson}>
+				<input type="checkbox" th:field="*{inStock}" />				
+			</th:block>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Cost:</label>
+		<div class="col-sm-10">
+			<input type="number" step="0.01" class="form-control" th:field="*{cost}"/>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Price:</label>
+		<div class="col-sm-10">
+			<input type="number" step="0.01" class="form-control" th:field="*{price}"/>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Discount:</label>
+		<div class="col-sm-10">
+			<input type="number" step="0.01" class="form-control" th:field="*{discountPercent}"/>
+		</div>
+	</div>	
+</div>		
+</body>
+</html> "
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	... 116 common frames omitted
+
+2021-08-24 00:44:12.667 ERROR 16468 --- [http-nio-8081-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/ShopmeAdmin] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/products/product_form.html]")] with root cause
+
+org.attoparser.ParseException: (Line = 107, Column = 4) Incomplete structure: "<th:block th:unless="${isReadOnlyForSalesperson}>
+				<input type="checkbox" th:field="*{inStock}" />				
+			</th:block>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Cost:</label>
+		<div class="col-sm-10">
+			<input type="number" step="0.01" class="form-control" th:field="*{cost}"/>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Price:</label>
+		<div class="col-sm-10">
+			<input type="number" step="0.01" class="form-control" th:field="*{price}"/>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-sm-2 col-form-label">Discount:</label>
+		<div class="col-sm-10">
+			<input type="number" step="0.01" class="form-control" th:field="*{discountPercent}"/>
+		</div>
+	</div>	
+</div>		
+</body>
+</html> "
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:302) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-08-24 00:46:43.865  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listFirstPage is started
+2021-08-24 00:46:43.869  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:46:43.869  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:46:43.869  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:46:43.869  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:46:43.869  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /products
+2021-08-24 00:46:43.869  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-08-24 00:46:43.870  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:46:43.870  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:46:43.870  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:46:43.870  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 5
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 105
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 21
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 105
+2021-08-24 00:46:43.875  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black], Product [id=66, name=Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver], Product [id=60, name=Acer Aspire TC-885-UA92 Desktop], Product [id=72, name=Acer Chromebook Spin 11 CP311-1H-C5PN], Product [id=69, name=Acer Swift 3 Thin & Light Laptop]]
+2021-08-24 00:46:43.885  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.controller.ProductController   : ProductController | newProduct | categoryId : 0
+2021-08-24 00:46:43.885  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.controller.ProductController   : ProductController | newProduct | listCategories : [Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones, Camera & Photo, --Bags & Cases, --Digital Cameras, --Flashes, --Lenses, --Tripods & Monopods, Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Cell Phones & Accessories, --Accessories, ----Cables & Adapters, ----Cases, ----Headphones, ----MicroSD Cards, ----Stands, --Carrier Cell Phones, --Unlocked Cell Phones, Desktops, Laptops, Tablets, Computer Components, --CPU Processors Unit, --Graphic Cards, --Internal Hard Drives, --Internal Optical Drives, --Memory, --Motherboard, --Network Cards, --Power Supplies, --Solid State Drives, --Sound Cards, Bags & Cases, Digital Cameras, Flashes, Lenses, Tripods & Monopods, Carrier Cell Phones, Unlocked Cell Phones, Accessories, --Cables & Adapters, --Cases, --Headphones, --MicroSD Cards, --Stands, Cables & Adapters, MicroSD Cards, Stands, Cases, Headphones, CPU Processors Unit, Graphic Cards, Internal Hard Drives, Internal Optical Drives, Power Supplies, Solid State Drives, Sound Cards, Memory, Motherboard, Network Cards]
+2021-08-24 00:46:45.812  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct is started
+2021-08-24 00:46:45.817  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | loggedUser  : com.shopme.admin.security.ShopmeUserDetails@23f81714
+2021-08-24 00:46:45.817  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | product  : Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black]
+2021-08-24 00:46:45.844  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | listBrands : [Brand [id=37, name=Acer, categories=[Laptops, Desktops, Tablets]], Brand [id=28, name=Aioneus, categories=[Cables & Adapters]], Brand [id=13, name=AmazonBasics, categories=[Bags & Cases]], Brand [id=43, name=AMD, categories=[Graphic Cards, CPU Processors Unit]], Brand [id=9, name=Apple, categories=[Laptops, Desktops, Cell Phones & Accessories, Tablets, Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=40, name=ASUS, categories=[Sound Cards, Motherboard, Power Supplies, Laptops, Internal Optical Drives, Desktops, Tablets]], Brand [id=17, name=Bosch, categories=[Tripods & Monopods]], Brand [id=12, name=CADeN, categories=[Bags & Cases]], Brand [id=1, name=Canon, categories=[Digital Cameras, Lenses, Camera & Photo, Flashes]], Brand [id=47, name=Cosair, categories=[Power Supplies, Memory]], Brand [id=50, name=Creative, categories=[Sound Cards]], Brand [id=51, name=Crucial, categories=[Memory]], Brand [id=38, name=Dell, categories=[Laptops, Desktops, Tablets]], Brand [id=42, name=DragonTouch, categories=[Tablets]], Brand [id=30, name=Everyworth, categories=[Cables & Adapters]], Brand [id=33, name=Fitfort, categories=[Stands]], Brand [id=2, name=Fujifilm, categories=[Camera & Photo]], Brand [id=53, name=Gigabyte, categories=[Motherboard]], Brand [id=21, name=Google, categories=[Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=19, name=GoPro, categories=[Tripods & Monopods]], Brand [id=27, name=HOVAMP, categories=[Cables & Adapters]], Brand [id=4, name=HP, categories=[Laptops, Desktops]], Brand [id=25, name=Huawei, categories=[Unlocked Cell Phones]], Brand [id=52, name=HyperX, categories=[Memory]], Brand [id=39, name=Intel, categories=[Desktops, CPU Processors Unit]], Brand [id=18, name=Joby, categories=[Tripods & Monopods]], Brand [id=49, name=Kingston, categories=[Solid State Drives, Memory]], Brand [id=36, name=Lenovo, categories=[Laptops, Desktops, Tablets]], Brand [id=31, name=Lexar, categories=[MicroSD Cards]], Brand [id=22, name=LG, categories=[Internal Optical Drives, Carrier Cell Phones]], Brand [id=20, name=Manfrotto, categories=[Tripods & Monopods, Stands]], Brand [id=41, name=Microsoft, categories=[Tablets]], Brand [id=23, name=Motorola, categories=[Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=45, name=MSI, categories=[Motherboard, Graphic Cards]], Brand [id=15, name=Neewer, categories=[Flashes]], Brand [id=14, name=Nikon, categories=[Digital Cameras, Lenses, Flashes]], Brand [id=32, name=Nulaxy, categories=[Stands]], Brand [id=11, name=Olympus, categories=[Digital Cameras]], Brand [id=7, name=Panasonic, categories=[Digital Cameras, Camera & Photo]], Brand [id=24, name=Pantech, categories=[Carrier Cell Phones]], Brand [id=8, name=Pelican, categories=[Bags & Cases, Camera & Photo]], Brand [id=34, name=PopSockets, categories=[Stands]], Brand [id=10, name=Samsung, categories=[MicroSD Cards, Laptops, Solid State Drives, Internal Optical Drives, Memory, Desktops, Internal Hard Drives, Tablets, Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=5, name=SanDisk, categories=[MicroSD Cards, Solid State Drives, Memory, Internal Hard Drives, Network Cards]], Brand [id=46, name=Seagate, categories=[Internal Hard Drives]], Brand [id=35, name=SHAWE, categories=[Stands]], Brand [id=16, name=Sigma, categories=[Lenses]], Brand [id=3, name=Sony, categories=[Digital Cameras, Camera & Photo, Flashes]], Brand [id=48, name=Thermaltake, categories=[Power Supplies]], Brand [id=54, name=TP-Link, categories=[Network Cards]], Brand [id=6, name=Western Digital, categories=[Solid State Drives, Electronics, Memory, Internal Hard Drives]], Brand [id=44, name=XFX, categories=[Graphic Cards]], Brand [id=29, name=XIAE, categories=[Cables & Adapters]], Brand [id=26, name=Xiaomi, categories=[Unlocked Cell Phones]]]
+2021-08-24 00:46:45.845  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | numberOfExistingExtraImages : 4
+2021-08-24 00:46:45.845  INFO 16468 --- [http-nio-8081-exec-4] c.s.admin.controller.ProductController   : ProductController | editProduct | isReadOnlyForSalesperson  : false
+2021-08-24 00:46:47.932  INFO 16468 --- [http-nio-8081-exec-6] c.s.admin.controller.CustomerController  : CustomerController | listFirstPage is called
+2021-08-24 00:46:47.937  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : firstName
+2021-08-24 00:46:47.937  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:46:47.937  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:46:47.937  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:46:47.937  INFO 16468 --- [http-nio-8081-exec-2] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /customers
+2021-08-24 00:46:47.938  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities is started
+2021-08-24 00:46:47.938  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:46:47.938  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : firstName: ASC
+2021-08-24 00:46:47.938  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:46:47.938  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 10
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities | page : Page 1 of 4 containing com.shopme.common.entity.Customer instances
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | listEntities | pageNum : 1
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 36
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 4
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 36
+2021-08-24 00:46:47.942  INFO 16468 --- [http-nio-8081-exec-2] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Customer [id=10, email=ahjj.thaker2000@gmail.com, firstName=Ahjaja, lastName=Thaker], Customer [id=7, email=alex.stevenson@outlook.com, firstName=Alex, lastName=Stevenson], Customer [id=18, email=alisa.willcox7@gmail.com, firstName=Alisa, lastName=Willcox], Customer [id=1, email=lehoanganhvn@gmail.com, firstName=Anh, lastName=Le Hoang], Customer [id=15, email=cheema1994@gmail.com, firstName=Avatar, lastName=Cheema], Customer [id=27, email=nguyen.hoang.bach@gmail.com, firstName=Bach, lastName=Nguyen Hoang], Customer [id=4, email=brian.purcell3@gmail.com, firstName=Brian, lastName=Purcell], Customer [id=31, email=chan.ding.97@gmail.com, firstName=Chan, lastName=Ding], Customer [id=19, email=chelsea.greener@gmail.com, firstName=Chelsea, lastName=Greener], Customer [id=6, email=christopherseldonusa@gmail.com, firstName=Christopher , lastName=Seldon]]
+2021-08-24 00:53:16.368  INFO 16468 --- [http-nio-8081-exec-5] c.s.admin.controller.ProductController   : ProductController | listFirstPage is started
+2021-08-24 00:53:16.373  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:53:16.373  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:53:16.373  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:53:16.373  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:53:16.373  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /products
+2021-08-24 00:53:16.373  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-08-24 00:53:16.374  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:53:16.374  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:53:16.374  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:53:16.374  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 5
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 105
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 21
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 105
+2021-08-24 00:53:16.380  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black], Product [id=66, name=Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver], Product [id=60, name=Acer Aspire TC-885-UA92 Desktop], Product [id=72, name=Acer Chromebook Spin 11 CP311-1H-C5PN], Product [id=69, name=Acer Swift 3 Thin & Light Laptop]]
+2021-08-24 00:53:16.396  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.ProductController   : ProductController | newProduct | categoryId : 0
+2021-08-24 00:53:16.396  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.ProductController   : ProductController | newProduct | listCategories : [Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones, Camera & Photo, --Bags & Cases, --Digital Cameras, --Flashes, --Lenses, --Tripods & Monopods, Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Cell Phones & Accessories, --Accessories, ----Cables & Adapters, ----Cases, ----Headphones, ----MicroSD Cards, ----Stands, --Carrier Cell Phones, --Unlocked Cell Phones, Desktops, Laptops, Tablets, Computer Components, --CPU Processors Unit, --Graphic Cards, --Internal Hard Drives, --Internal Optical Drives, --Memory, --Motherboard, --Network Cards, --Power Supplies, --Solid State Drives, --Sound Cards, Bags & Cases, Digital Cameras, Flashes, Lenses, Tripods & Monopods, Carrier Cell Phones, Unlocked Cell Phones, Accessories, --Cables & Adapters, --Cases, --Headphones, --MicroSD Cards, --Stands, Cables & Adapters, MicroSD Cards, Stands, Cases, Headphones, CPU Processors Unit, Graphic Cards, Internal Hard Drives, Internal Optical Drives, Power Supplies, Solid State Drives, Sound Cards, Memory, Motherboard, Network Cards]
+2021-08-24 00:53:17.964  INFO 16468 --- [http-nio-8081-exec-7] c.s.admin.controller.ProductController   : ProductController | listFirstPage is started
+2021-08-24 00:53:17.969  INFO 16468 --- [http-nio-8081-exec-1] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:53:17.969  INFO 16468 --- [http-nio-8081-exec-1] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:53:17.969  INFO 16468 --- [http-nio-8081-exec-1] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:53:17.969  INFO 16468 --- [http-nio-8081-exec-1] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:53:17.969  INFO 16468 --- [http-nio-8081-exec-1] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /products
+2021-08-24 00:53:17.969  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-08-24 00:53:17.970  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:53:17.970  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:53:17.970  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:53:17.970  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 5
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 105
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 21
+2021-08-24 00:53:17.975  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 105
+2021-08-24 00:53:17.976  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black], Product [id=66, name=Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver], Product [id=60, name=Acer Aspire TC-885-UA92 Desktop], Product [id=72, name=Acer Chromebook Spin 11 CP311-1H-C5PN], Product [id=69, name=Acer Swift 3 Thin & Light Laptop]]
+2021-08-24 00:53:17.991  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | newProduct | categoryId : 0
+2021-08-24 00:53:17.992  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | newProduct | listCategories : [Electronics, --Camera & Photo, ----Bags & Cases, ----Digital Cameras, ----Flashes, ----Lenses, ----Tripods & Monopods, --Cell Phones & Accessories, ----Accessories, ------Cables & Adapters, ------Cases, ------Headphones, ------MicroSD Cards, ------Stands, ----Carrier Cell Phones, ----Unlocked Cell Phones, Camera & Photo, --Bags & Cases, --Digital Cameras, --Flashes, --Lenses, --Tripods & Monopods, Computers, --Computer Components, ----CPU Processors Unit, ----Graphic Cards, ----Internal Hard Drives, ----Internal Optical Drives, ----Memory, ----Motherboard, ----Network Cards, ----Power Supplies, ----Solid State Drives, ----Sound Cards, --Desktops, --Laptops, --Tablets, Cell Phones & Accessories, --Accessories, ----Cables & Adapters, ----Cases, ----Headphones, ----MicroSD Cards, ----Stands, --Carrier Cell Phones, --Unlocked Cell Phones, Desktops, Laptops, Tablets, Computer Components, --CPU Processors Unit, --Graphic Cards, --Internal Hard Drives, --Internal Optical Drives, --Memory, --Motherboard, --Network Cards, --Power Supplies, --Solid State Drives, --Sound Cards, Bags & Cases, Digital Cameras, Flashes, Lenses, Tripods & Monopods, Carrier Cell Phones, Unlocked Cell Phones, Accessories, --Cables & Adapters, --Cases, --Headphones, --MicroSD Cards, --Stands, Cables & Adapters, MicroSD Cards, Stands, Cases, Headphones, CPU Processors Unit, Graphic Cards, Internal Hard Drives, Internal Optical Drives, Power Supplies, Solid State Drives, Sound Cards, Memory, Motherboard, Network Cards]
+2021-08-24 00:53:19.216  INFO 16468 --- [http-nio-8081-exec-8] c.s.admin.controller.ProductController   : ProductController | editProduct is started
+2021-08-24 00:53:19.220  INFO 16468 --- [http-nio-8081-exec-8] c.s.admin.controller.ProductController   : ProductController | editProduct | loggedUser  : com.shopme.admin.security.ShopmeUserDetails@23f81714
+2021-08-24 00:53:19.220  INFO 16468 --- [http-nio-8081-exec-8] c.s.admin.controller.ProductController   : ProductController | editProduct | product  : Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black]
+2021-08-24 00:53:19.244  INFO 16468 --- [http-nio-8081-exec-8] c.s.admin.controller.ProductController   : ProductController | editProduct | listBrands : [Brand [id=37, name=Acer, categories=[Desktops, Laptops, Tablets]], Brand [id=28, name=Aioneus, categories=[Cables & Adapters]], Brand [id=13, name=AmazonBasics, categories=[Bags & Cases]], Brand [id=43, name=AMD, categories=[Graphic Cards, CPU Processors Unit]], Brand [id=9, name=Apple, categories=[Cell Phones & Accessories, Desktops, Laptops, Carrier Cell Phones, Tablets, Unlocked Cell Phones]], Brand [id=40, name=ASUS, categories=[Internal Optical Drives, Power Supplies, Desktops, Laptops, Motherboard, Tablets, Sound Cards]], Brand [id=17, name=Bosch, categories=[Tripods & Monopods]], Brand [id=12, name=CADeN, categories=[Bags & Cases]], Brand [id=1, name=Canon, categories=[Flashes, Digital Cameras, Lenses, Camera & Photo]], Brand [id=47, name=Cosair, categories=[Power Supplies, Memory]], Brand [id=50, name=Creative, categories=[Sound Cards]], Brand [id=51, name=Crucial, categories=[Memory]], Brand [id=38, name=Dell, categories=[Desktops, Laptops, Tablets]], Brand [id=42, name=DragonTouch, categories=[Tablets]], Brand [id=30, name=Everyworth, categories=[Cables & Adapters]], Brand [id=33, name=Fitfort, categories=[Stands]], Brand [id=2, name=Fujifilm, categories=[Camera & Photo]], Brand [id=53, name=Gigabyte, categories=[Motherboard]], Brand [id=21, name=Google, categories=[Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=19, name=GoPro, categories=[Tripods & Monopods]], Brand [id=27, name=HOVAMP, categories=[Cables & Adapters]], Brand [id=4, name=HP, categories=[Desktops, Laptops]], Brand [id=25, name=Huawei, categories=[Unlocked Cell Phones]], Brand [id=52, name=HyperX, categories=[Memory]], Brand [id=39, name=Intel, categories=[Desktops, CPU Processors Unit]], Brand [id=18, name=Joby, categories=[Tripods & Monopods]], Brand [id=49, name=Kingston, categories=[Solid State Drives, Memory]], Brand [id=36, name=Lenovo, categories=[Desktops, Laptops, Tablets]], Brand [id=31, name=Lexar, categories=[MicroSD Cards]], Brand [id=22, name=LG, categories=[Internal Optical Drives, Carrier Cell Phones]], Brand [id=20, name=Manfrotto, categories=[Stands, Tripods & Monopods]], Brand [id=41, name=Microsoft, categories=[Tablets]], Brand [id=23, name=Motorola, categories=[Carrier Cell Phones, Unlocked Cell Phones]], Brand [id=45, name=MSI, categories=[Graphic Cards, Motherboard]], Brand [id=15, name=Neewer, categories=[Flashes]], Brand [id=14, name=Nikon, categories=[Flashes, Digital Cameras, Lenses]], Brand [id=32, name=Nulaxy, categories=[Stands]], Brand [id=11, name=Olympus, categories=[Digital Cameras]], Brand [id=7, name=Panasonic, categories=[Digital Cameras, Camera & Photo]], Brand [id=24, name=Pantech, categories=[Carrier Cell Phones]], Brand [id=8, name=Pelican, categories=[Bags & Cases, Camera & Photo]], Brand [id=34, name=PopSockets, categories=[Stands]], Brand [id=10, name=Samsung, categories=[Internal Optical Drives, MicroSD Cards, Solid State Drives, Desktops, Internal Hard Drives, Laptops, Carrier Cell Phones, Tablets, Memory, Unlocked Cell Phones]], Brand [id=5, name=SanDisk, categories=[MicroSD Cards, Solid State Drives, Internal Hard Drives, Network Cards, Memory]], Brand [id=46, name=Seagate, categories=[Internal Hard Drives]], Brand [id=35, name=SHAWE, categories=[Stands]], Brand [id=16, name=Sigma, categories=[Lenses]], Brand [id=3, name=Sony, categories=[Flashes, Digital Cameras, Camera & Photo]], Brand [id=48, name=Thermaltake, categories=[Power Supplies]], Brand [id=54, name=TP-Link, categories=[Network Cards]], Brand [id=6, name=Western Digital, categories=[Solid State Drives, Electronics, Internal Hard Drives, Memory]], Brand [id=44, name=XFX, categories=[Graphic Cards]], Brand [id=29, name=XIAE, categories=[Cables & Adapters]], Brand [id=26, name=Xiaomi, categories=[Unlocked Cell Phones]]]
+2021-08-24 00:53:19.244  INFO 16468 --- [http-nio-8081-exec-8] c.s.admin.controller.ProductController   : ProductController | editProduct | numberOfExistingExtraImages : 4
+2021-08-24 00:53:19.244  INFO 16468 --- [http-nio-8081-exec-8] c.s.admin.controller.ProductController   : ProductController | editProduct | isReadOnlyForSalesperson  : false
+2021-08-24 00:53:21.115  INFO 16468 --- [http-nio-8081-exec-1] c.s.admin.controller.ProductController   : ProductController | listFirstPage is started
+2021-08-24 00:53:21.121  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortField : name
+2021-08-24 00:53:21.121  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : asc
+2021-08-24 00:53:21.121  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : desc
+2021-08-24 00:53:21.121  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-08-24 00:53:21.122  INFO 16468 --- [http-nio-8081-exec-10] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /products
+2021-08-24 00:53:21.122  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.ProductController   : ProductController | listByPage is started
+2021-08-24 00:53:21.122  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable is started
+2021-08-24 00:53:21.123  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | sort : name: ASC
+2021-08-24 00:53:21.123  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : 0
+2021-08-24 00:53:21.123  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | createPageable | pageSize : 5
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 105
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 5
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 21
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 105
+2021-08-24 00:53:21.129  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Product [id=73, name=2020 Dell Inspiron 3000 15.6-inch HD Touchscreen Laptop PC, Intel 10th Gen Dual Core i3-1005G1 Processor, 8GB DDR4, 128GB SSD, 1TB HDD, Bluetooth, Windows 10, Black], Product [id=66, name=Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver], Product [id=60, name=Acer Aspire TC-885-UA92 Desktop], Product [id=72, name=Acer Chromebook Spin 11 CP311-1H-C5PN], Product [id=69, name=Acer Swift 3 Thin & Light Laptop]]
+2021-08-24 00:53:21.141  INFO 16468 --- [http-nio-8081-exec-10] c.s.admin.controller.ProductController   : ProductController | newProduct | categoryId : 0
