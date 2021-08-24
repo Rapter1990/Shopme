@@ -13,7 +13,7 @@ $(document).ready(function() {
 	loadStates4Country();
 
 	$('#buttonCancel').click(function() { 
-		window.location = "[[@{/customers}]]";	
+		window.location = moduleURL;	
 	});		
 });
 
@@ -21,7 +21,7 @@ function loadStates4Country() {
 	selectedCountry = $("#country option:selected");
 	countryId = selectedCountry.val();
 
-	url = "[[@{/states/list_by_country/}]]" + countryId;
+	url = contextPath + "states/list_by_country/" + countryId;
 
 	$.get(url, function(responseJson) {
 		dropdownStates.empty();

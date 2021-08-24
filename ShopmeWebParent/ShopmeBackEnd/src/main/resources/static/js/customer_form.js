@@ -3,7 +3,9 @@ function checkEmailUnique(form) {
 	customerEmail = $("#email").val();
 	csrfValue = $("input[name='_csrf'").val();
 
-	url = "[[@{/customers/check_email}]]";
+	// url = "[[@{/customers/check_email}]]";
+	url = moduleURL + "/check_email";
+	
 	params = {id : customerId, email: customerEmail, _csrf: csrfValue};
 
 	$.post(url, params, function(response) {

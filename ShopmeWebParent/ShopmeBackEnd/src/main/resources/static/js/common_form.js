@@ -3,6 +3,7 @@
  */
 $(document).ready(function() {
 	$("#buttonCancel").on("click", function() {
+		//console.log(moduleURL);
 		window.location = moduleURL;
 	});
 
