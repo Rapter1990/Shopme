@@ -30,12 +30,22 @@ public class StateRestController {
 
 	@GetMapping("/states/list_by_country/{id}")
 	public List<StateDTO> listByCountry(@PathVariable("id") Integer countryId) {
+		
+		LOGGER.info("StateRestController | listByCountry is called");
+		
+		LOGGER.info("StateRestController | listByCountry | countryId : " + countryId);
+		
 		List<State> listStates = repo.findByCountryOrderByNameAsc(new Country(countryId));
+		
+		LOGGER.info("StateRestController | listByCountry | listStates.size() : " + listStates.size());
+		
 		List<StateDTO> result = new ArrayList<>();
 
 		for (State state : listStates) {
 			result.add(new StateDTO(state.getId(), state.getName()));
 		}
+		
+		LOGGER.info("StateRestController | listByCountry | result : " + result.toString());
 
 		return result;
 	}

@@ -1,39 +1,32 @@
 package com.shopme.common.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+
 @Entity
-@Table(name = "customers")
+@Table(name = "addresses")
 @NoArgsConstructor
 @Getter
 @Setter
-public class Customer implements Serializable{
+public class Address implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
-	@Column(nullable = false, unique = true, length = 45)
-	private String email;
-
-	@Column(nullable = false, length = 64)
-	private String password;
 
 	@Column(name = "first_name", nullable = false, length = 45)
 	private String firstName;
@@ -44,7 +37,7 @@ public class Customer implements Serializable{
 	@Column(name = "phone_number", nullable = false, length = 15)
 	private String phoneNumber;
 
-	@Column(nullable = false, length = 64)
+	@Column(name = "address_line_1", nullable = false, length = 64)
 	private String addressLine1;
 
 	@Column(name = "address_line_2", length = 64)
@@ -57,42 +50,22 @@ public class Customer implements Serializable{
 	private String state;
 
 	@Column(name = "postal_code", nullable = false, length = 10)
-	private String postalCode;	
-
-	@Column(name = "verification_code", length = 64)
-	private String verificationCode;	
-
-	private boolean enabled;
-
-	@Column(name = "created_time")
-	private Date createdTime;
+	private String postalCode;
 
 	@ManyToOne
 	@JoinColumn(name = "country_id")
 	private Country country;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "authentication_type", length = 10)
-	private AuthenticationType authenticationType;
-	
-	@Column(name = "reset_password_token", length = 30)
-	private String resetPasswordToken;
-	
-	public Customer(Integer id) {
-		this.id = id;
-	}
-	
+
+	@ManyToOne
+	@JoinColumn(name = "customer_id")
+	private Customer customer;
+
+	@Column(name = "default_address")
+	private boolean defaultForShipping;
+
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + "]";
-	}
-	
-	public String getFullName() {
-		return firstName + " " + lastName;
-	}
-	
-	@Transient
-	public String getAddress() {
+		
 		String address = firstName;
 
 		if (lastName != null && !lastName.isEmpty()) address += " " + lastName;
@@ -112,4 +85,6 @@ public class Customer implements Serializable{
 
 		return address;
 	}
+	
+	
 }

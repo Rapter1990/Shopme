@@ -18,7 +18,7 @@ import com.shopme.common.entity.Customer;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ShoppingCartService;
-import com.shopme.util.CustomerShoppingCartUtil;
+import com.shopme.util.CustomerShoppingCartandAddressUtil;
 
 @Controller
 public class ShoppingCartController {
@@ -41,7 +41,7 @@ public class ShoppingCartController {
 		
 		LOGGER.info("ShoppingCartController | viewCart is called");
 		
-		Customer customer = CustomerShoppingCartUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
 		List<CartItem> cartItems = cartService.listCartItems(customer);
 		
 		LOGGER.info("ShoppingCartController | viewCart | customer : " + customer.toString());
@@ -69,7 +69,7 @@ public class ShoppingCartController {
 		LOGGER.info("ShoppingCartController | updateQuantity is called");
 		
 		try {
-			Customer customer = CustomerShoppingCartUtil.getAuthenticatedCustomer(request,customerService);
+			Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
 			
 			LOGGER.info("ShoppingCartController | updateQuantity | customer : " + customer.toString());
 			

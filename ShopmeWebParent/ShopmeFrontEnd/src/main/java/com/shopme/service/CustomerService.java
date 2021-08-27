@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,8 @@ import net.bytebuddy.utility.RandomString;
 @Service
 @Transactional
 public class CustomerService implements ICustomerService{
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
 	@Autowired 
 	private CountryRepository countryRepo;
@@ -77,8 +81,13 @@ public class CustomerService implements ICustomerService{
 	@Override
 	public void updateAuthenticationType(Customer customer, AuthenticationType type) {
 		// TODO Auto-generated method stub
-		if (!customer.getAuthenticationType().equals(type)) {
+		
+		LOGGER.info("CustomerService | updateAuthenticationType |  customer : " + customer.toString());
+		LOGGER.info("CustomerService | updateAuthenticationType |  type : " + type);
+		
+		if (customer.getAuthenticationType() == null || !customer.getAuthenticationType().equals(type)) {
 			customerRepo.updateAuthenticationType(customer.getId(), type);
+			LOGGER.info("CustomerService | updateAuthenticationType |  AuthenticationType updated");
 		}
 	}
 	

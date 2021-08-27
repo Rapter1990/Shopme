@@ -114,6 +114,18 @@ public class CustomerController {
 
 		CustomerAccountUtil.updateNameForAuthenticatedCustomer(customer, request);
 
-		return "redirect:/account_details";
+		String redirectOption = request.getParameter("redirect");
+		
+		LOGGER.info("CustomerController | updateAccountDetails | redirectOption : " + redirectOption);
+		
+		String redirectURL = "redirect:/account_details";
+
+		if ("address_book".equals(redirectOption)) {
+			redirectURL = "redirect:/address_book";
+		}
+
+		LOGGER.info("CustomerController | updateAccountDetails | redirectURL : " + redirectURL);
+		
+		return redirectURL;
 	}
 }

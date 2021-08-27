@@ -27,5 +27,11 @@ public class StateDTO {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "StateDTO [id=" + id + ", name=" + name + "]";
+	}
+	
 }

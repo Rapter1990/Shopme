@@ -27,12 +27,12 @@ public class MainController {
 	@GetMapping("")
 	public String viewHomePage(Model model) {
 		
-		LOGGER.info("ProductController | viewHomePage is called");
+		LOGGER.info("MainController | viewHomePage is called");
 		
 		List<Category> listCategories = categoryService.listNoChildrenCategories();
 		model.addAttribute("listCategories", listCategories);
 		
-		LOGGER.info("ProductController | viewHomePage | listCategories : " + listCategories.size());
+		LOGGER.info("MainController | viewHomePage | listCategories : " + listCategories.size());
 		
 		return "index";
 	}
@@ -40,12 +40,12 @@ public class MainController {
 	@GetMapping("/login")
 	public String viewLoginPage() {
 		
-		LOGGER.info("ProductController | viewLoginPage is called");
+		LOGGER.info("MainController | viewLoginPage is called");
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	
-		LOGGER.info("ProductController | viewLoginPage | authentication : " + authentication.toString());
-		LOGGER.info("ProductController | viewLoginPage | authentication instanceof AnonymousAuthenticationToken : " + (authentication instanceof AnonymousAuthenticationToken));
+		LOGGER.info("MainController | viewLoginPage | authentication : " + authentication.toString());
+		LOGGER.info("MainController | viewLoginPage | authentication instanceof AnonymousAuthenticationToken : " + (authentication instanceof AnonymousAuthenticationToken));
 		
 		if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
 			return "login";
