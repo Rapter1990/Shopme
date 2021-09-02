@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Orders - Shopme Admin', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Orders</h2>	
+	</div>
+
+	<div th:replace="fragments :: search_form_and_message" />
+
+	<<div class="full-details">>
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
+					<th th:replace="fragments :: column_link('customer', 'Customer', 'none')" />
+					<th th:replace="fragments :: column_link('total', 'Total', 'none')" />
+					<th th:replace="fragments :: column_link('orderTime', 'Order Time', 'none')" />
+					
+					<th class="hideable-column">
+					<th th:replace="fragments :: column_link('destination', 'Destination', 'tag')" />
+					</th>
+
+					<th class="hideable-column">
+					<th th:replace="fragments :: column_link('paymentMethod', 'Payment Method', 'tag')" />
+					</th>
+
+					<th class="hideable-column">
+					<th th:replace="fragments :: column_link('status', 'Status', 'tag')" />
+					</th>
+
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr th:each="order : ${listOrders}">
+					<td>[[${order.id}]]</td>
+					<td>
+						<a class="linkCustomerDetail" th:href="@{'/customers/detail/' + ${order.customer.id}}">
+						[[${order.customer.fullName}]]
+						</a>
+					</td>
+					<td>
+						<div th:replace="fragments :: format_currency(${order.total})"></div>
+					</td>
+					<td>
+						<div th:replace="fragments :: format_time(${order.orderTime})"></div>
+					</td>
+					<td class="hideable-column">[[${order.destination}]]</td>
+					<td class="hideable-column">[[${order.paymentMethod}]]</td>
+					<td class="hideable-column">[[${order.status}]]</td>
+
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green linkOrderDetail"
+							th:href="@{'/orders/detail/' + ${order.id}}"
+							title="View details of this order"
+							></a>					
+						&nbsp; 
+						<div th:replace="fragments :: edit('order', '/orders/edit/' + ${order.id})" />
+						&nbsp; 
+						<div th:replace="fragments :: delete('order', ${order.id}, '/orders/delete/' + ${order.id}, true)" />						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="less-details">
+		<th:block th:each="order : ${listOrders}">
+		<div class="row m-1">
+			<div class="col-2">
+				[[${order.id}]]
+			</div>
+			<div class="col-10">
+				<div>[[${order.customer.fullName}]], [[${order.country}]]</div>
+				<div><small>[[${order.orderTime}]] - [[${order.status}]]</small></div>
+				<div><div th:replace="fragments :: format_currency(${order.total})">Total</div> - [[${order.paymentMethod}]]</div>
+				<div>
+					<a class="fas fa-file-alt fa-2x icon-green linkOrderDetail"
+						th:href="@{'/orders/detail/' + ${order.id}}"
+						title="View details of this order"
+						></a>					
+					&nbsp; 
+					<div th:replace="fragments :: edit('order', '/orders/edit/' + ${order.id})" />
+					&nbsp; 
+					<div th:replace="fragments :: delete('order', ${order.id}, '/orders/delete/' + ${order.id}, true)" />				
+				</div>
+			</div>
+		</div>
+		<div>&nbsp;</div>
+		</th:block>
+	</div>
+
+	<div th:replace="fragments :: pagination('orders')"></div>
+
+	<div th:replace="modal_fragments :: confirm_modal" />
+
+	<div class="modal fade" id="customerDetailModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="orderDetailModal">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>	
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/orders}]]";
+
+	$(document).ready(function() {
+		handleLinkViewCustomerDetails();
+		handleLinkViewOrderDetails();
+		handleLinkDeleteOrder();
+	});
+
+	function handleLinkViewCustomerDetails() {
+		$(".linkCustomerDetail").on("click", function(e) {
+			e.preventDefault();
+			linkDetailURL = $(this).attr("href");
+			$("#customerDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
+		});			
+	}
+	
+	function handleLinkViewOrderDetails() {
+		$(".linkOrderDetail").on("click", function(e) {
+			e.preventDefault();
+			linkDetailURL = $(this).attr("href");
+			$("#orderDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
+		});		
+	}
+	
+	function handleLinkDeleteOrder() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'order');
+		});		
+	}
+	
+</script>
+</body>
+</html> 

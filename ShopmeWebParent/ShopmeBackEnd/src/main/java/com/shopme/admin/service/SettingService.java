@@ -50,5 +50,10 @@ public class SettingService implements ISettingService{
 	@Override
 	public List<Setting> getMailTemplateSettings() {
 		return repo.findByCategory(SettingCategory.MAIL_TEMPLATES);
-	}	
+	}
+
+	@Override
+	public List<Setting> getCurrencySettings() {
+		return repo.findByCategory(SettingCategory.CURRENCY);
+	}
 }
