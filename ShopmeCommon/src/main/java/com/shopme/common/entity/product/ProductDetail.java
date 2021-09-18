@@ -1,4 +1,4 @@
-package com.shopme.common.entity;
+package com.shopme.common.entity.product;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.shopme.common.entity.IdBasedEntity;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -24,11 +26,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProductDetail implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class ProductDetail extends IdBasedEntity implements Serializable{
 
 	@Column(nullable = false, length = 255)
 	private String name;

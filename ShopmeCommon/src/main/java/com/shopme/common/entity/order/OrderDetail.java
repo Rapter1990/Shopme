@@ -1,4 +1,4 @@
-package com.shopme.common.entity;
+package com.shopme.common.entity.order;
 
 import java.io.Serializable;
 
@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.shopme.common.entity.IdBasedEntity;
+import com.shopme.common.entity.product.Product;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,11 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OrderDetail implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class OrderDetail extends IdBasedEntity implements Serializable{
 
 	private int quantity;
 	private float productCost;

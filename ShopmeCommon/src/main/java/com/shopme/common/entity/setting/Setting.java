@@ -1,4 +1,4 @@
-package com.shopme.common.entity;
+package com.shopme.common.entity.setting;
 
 import java.io.Serializable;
 import java.util.Set;

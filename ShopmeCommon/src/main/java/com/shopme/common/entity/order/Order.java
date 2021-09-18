@@ -1,4 +1,4 @@
-package com.shopme.common.entity;
+package com.shopme.common.entity.order;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,6 +18,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import com.shopme.common.entity.Customer;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
