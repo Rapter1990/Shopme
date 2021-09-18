@@ -16,11 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Currency {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class Currency extends IdBasedEntity{
 
 	@Column(nullable = false, length = 64)
 	private String name;

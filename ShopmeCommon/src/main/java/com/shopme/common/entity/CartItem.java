@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.shopme.common.entity.product.Product;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,11 +21,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cart_items")
 @Data
 @NoArgsConstructor
-public class CartItem implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class CartItem extends IdBasedEntity implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name = "customer_id")

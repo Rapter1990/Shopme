@@ -21,14 +21,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Role implements Serializable{
+public class Role extends IdBasedEntity implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@EqualsAndHashCode.Include()
-	private Integer id;
 	
 	@Column(length = 40, nullable = false, unique = true)
 	private String name;

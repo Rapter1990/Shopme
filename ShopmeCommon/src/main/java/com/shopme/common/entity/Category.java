@@ -25,12 +25,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Category implements Serializable{
+public class Category extends IdBasedEntity implements Serializable{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-
 	@Column(length = 128, nullable = false, unique = true)
 	private String name;
 

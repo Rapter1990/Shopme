@@ -24,11 +24,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Brand implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class Brand extends IdBasedEntity implements Serializable{
 
 	@Column(nullable = false, length = 45, unique = true)
 	private String name;

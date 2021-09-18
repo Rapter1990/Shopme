@@ -22,13 +22,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class State implements Serializable{
+public class State  extends IdBasedEntity implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 
 	@Column(nullable = false, length = 45)
 	private String name;

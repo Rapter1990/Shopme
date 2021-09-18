@@ -30,11 +30,7 @@ import javax.persistence.JoinColumn;
 @Getter
 @Setter
 @ToString
-public class User implements Serializable{
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class User extends IdBasedEntity implements Serializable{
 	
 	@Column(length = 128, nullable = false, unique = true)
 	private String email;

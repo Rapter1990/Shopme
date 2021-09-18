@@ -21,11 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ShippingRate implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class ShippingRate extends IdBasedEntity implements Serializable{
 	
 	private float rate;
 	
