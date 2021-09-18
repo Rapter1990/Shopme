@@ -17,7 +17,7 @@ import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.OrderService;
 import com.shopme.admin.service.SettingService;
 import com.shopme.admin.util.OrderUtil;
-import com.shopme.common.entity.Order;
+import com.shopme.common.entity.order.Order;
 
 @Controller
 public class OrderController {

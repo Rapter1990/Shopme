@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.shopme.common.entity.CartItem;
 import com.shopme.common.entity.Customer;
-import com.shopme.common.entity.Product;
+import com.shopme.common.entity.product.Product;
 
 public interface CartItemRepository extends CrudRepository<CartItem, Integer> {
 	

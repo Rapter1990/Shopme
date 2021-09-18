@@ -34,8 +34,8 @@ import com.shopme.admin.service.ProductService;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
-import com.shopme.common.entity.Product;
-import com.shopme.common.entity.ProductImage;
+import com.shopme.common.entity.product.Product;
+import com.shopme.common.entity.product.ProductImage;
 import com.shopme.common.exception.ProductNotFoundException;
 
 @Controller

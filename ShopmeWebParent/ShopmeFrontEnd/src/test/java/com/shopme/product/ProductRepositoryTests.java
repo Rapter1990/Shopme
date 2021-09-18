@@ -8,7 +8,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.shopme.common.entity.Product;
+import com.shopme.common.entity.product.Product;
 import com.shopme.repository.ProductRepository;
 
 @DataJpaTest

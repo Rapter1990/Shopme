@@ -13,7 +13,7 @@ import com.shopme.admin.error.OrderNotFoundException;
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.repository.OrderRepository;
 import com.shopme.admin.service.impl.IOrderService;
-import com.shopme.common.entity.Order;
+import com.shopme.common.entity.order.Order;
 
 @Service
 public class OrderService implements IOrderService{

@@ -3,7 +3,7 @@ package com.shopme.admin.service.impl;
 import java.util.List;
 
 import com.shopme.admin.util.GeneralSettingBag;
-import com.shopme.common.entity.Setting;
+import com.shopme.common.entity.setting.Setting;
 
 public interface ISettingService {
 

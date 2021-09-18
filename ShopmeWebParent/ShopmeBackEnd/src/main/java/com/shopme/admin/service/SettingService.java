@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import com.shopme.admin.repository.SettingRepository;
 import com.shopme.admin.service.impl.ISettingService;
 import com.shopme.admin.util.GeneralSettingBag;
-import com.shopme.common.entity.Setting;
-import com.shopme.common.entity.SettingCategory;
+import com.shopme.common.entity.setting.Setting;
+import com.shopme.common.entity.setting.SettingCategory;
 
 @Service
 public class SettingService implements ISettingService{

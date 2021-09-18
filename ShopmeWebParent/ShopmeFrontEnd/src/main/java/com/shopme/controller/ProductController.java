@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shopme.common.entity.Category;
-import com.shopme.common.entity.Product;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.CategoryNotFoundException;
 import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.CategoryService;

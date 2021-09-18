@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import com.shopme.admin.controller.OrderController;
 import com.shopme.admin.service.SettingService;
-import com.shopme.common.entity.Setting;
+import com.shopme.common.entity.setting.Setting;
 
 public class OrderUtil {
 	
