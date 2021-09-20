@@ -71,7 +71,22 @@
 				</span>				
 			</div>
 			<div class="mt-2">
-				<button class="btn btn-danger p-3 mt-2">Check Out</button>
+				<div th:if="${shippingSupported}">
+					<button class="btn btn-danger p-3 mt-2">Check Out</button>
+				</div>
+				
+				<div th:unless="${shippingSupported}">
+					<div><span class="h5 text-warning">No shipping available for your location</span></div>
+
+					<div th:if="${usePrimaryAddressAsDefault}">
+						<a th:href="@{/account_details(redirect=cart)}" class="h6">Update your address</a>
+					</div>
+
+					<div th:unless="${usePrimaryAddressAsDefault}">
+						<a th:href="@{/address_book(redirect=cart)}" class="h6">Use another shipping address</a>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>	

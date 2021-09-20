@@ -16,4 +16,6 @@ public interface IAddressService {
 	public void delete(Integer addressId, Integer customerId);
 	
 	public void setDefaultAddress(Integer defaultAddressId, Integer customerId) ;
+
+	public Address getDefaultAddress(Customer customer);
 }

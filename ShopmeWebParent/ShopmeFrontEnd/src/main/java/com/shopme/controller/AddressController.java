@@ -165,6 +165,18 @@ public class AddressController {
 		
 		addressService.setDefaultAddress(addressId, customer.getId());
 
-		return "redirect:/address_book"; 
+		String redirectOption = request.getParameter("redirect");
+		String redirectURL = "redirect:/address_book";
+		
+		LOGGER.info("AddressController | setDefaultAddress | redirectOption : " + redirectOption);
+		LOGGER.info("AddressController | setDefaultAddress | redirectURL : " + redirectURL);
+
+		if ("cart".equals(redirectOption)) {
+			redirectURL = "redirect:/cart";
+		}
+		
+		LOGGER.info("AddressController | setDefaultAddress | redirectURL : " + redirectURL);
+
+		return redirectURL; 
 	}
 }
