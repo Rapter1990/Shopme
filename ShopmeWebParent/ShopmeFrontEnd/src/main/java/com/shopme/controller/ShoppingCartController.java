@@ -22,7 +22,7 @@ import com.shopme.service.AddressService;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ShippingRateService;
 import com.shopme.service.ShoppingCartService;
-import com.shopme.util.CustomerShoppingCartandAddressUtil;
+import com.shopme.util.CustomerShoppingCartAddressShippingUtil;
 
 @Controller
 public class ShoppingCartController {
@@ -52,7 +52,7 @@ public class ShoppingCartController {
 		
 		LOGGER.info("ShoppingCartController | viewCart is called");
 		
-		Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 		List<CartItem> cartItems = cartService.listCartItems(customer);
 		
 		LOGGER.info("ShoppingCartController | viewCart | customer : " + customer.toString());
@@ -66,8 +66,6 @@ public class ShoppingCartController {
 		}
 		
 		Address defaultAddress = addressService.getDefaultAddress(customer);
-		
-		LOGGER.info("ShoppingCartController | viewCart | defaultAddress : " + defaultAddress.toString());
 		
 		ShippingRate shippingRate = null;
 		boolean usePrimaryAddressAsDefault = false;
@@ -101,7 +99,7 @@ public class ShoppingCartController {
 		LOGGER.info("ShoppingCartController | updateQuantity is called");
 		
 		try {
-			Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+			Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 			
 			LOGGER.info("ShoppingCartController | updateQuantity | customer : " + customer.toString());
 			

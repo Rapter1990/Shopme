@@ -95,6 +95,17 @@
 	</div>
 </div>	
 
+<div th:fragment="format_currency(amount)" th:remove="tag">
+
+	<span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">
+	      [[${CURRENCY_SYMBOL}]]
+	</span>
+	      [[${#numbers.formatDecimal(amount, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]
+	<span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" th:remove="tag">
+	      [[${CURRENCY_SYMBOL}]]
+	</span>
+	
+</div>
 
 
 </body>

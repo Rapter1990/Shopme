@@ -51,8 +51,6 @@ public class ShoppingCartService implements IShoppingCartService{
 
 		CartItem cartItem = cartRepo.findByCustomerAndProduct(customer, product);
 		
-		LOGGER.info("ShoppingCartService | addProduct | cartItem : " + cartItem.toString());
-		
 		LOGGER.info("ShoppingCartService | addProduct | cartItem != null : " + (cartItem != null));
 
 		if (cartItem != null) {

@@ -20,7 +20,7 @@ import com.shopme.common.entity.Customer;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.AddressService;
 import com.shopme.service.CustomerService;
-import com.shopme.util.CustomerShoppingCartandAddressUtil;
+import com.shopme.util.CustomerShoppingCartAddressShippingUtil;
 
 @Controller
 public class AddressController {
@@ -43,7 +43,7 @@ public class AddressController {
 		
 		LOGGER.info("AddressController | showAddressBook is called");
 		
-		Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 		
 		LOGGER.info("AddressController | showAddressBook | customer : " + customer.toString());
 		
@@ -95,7 +95,7 @@ public class AddressController {
 		
 		LOGGER.info("AddressController | saveAddress is called");
 		
-		Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 		
 		LOGGER.info("AddressController | saveAddress | customer : " + customer.toString());
 		LOGGER.info("AddressController | saveAddress | address : " + address.toString());
@@ -116,7 +116,7 @@ public class AddressController {
 		
 		LOGGER.info("AddressController | editAddress is called");
 		
-		Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 		
 		List<Country> listCountries = customerService.listAllCountries();
 		
@@ -140,7 +140,7 @@ public class AddressController {
 		
 		LOGGER.info("AddressController | deleteAddress is called");
 		
-		Customer customer = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 		
 		LOGGER.info("AddressController | deleteAddress | customer : " + customer.toString());
 		
@@ -159,7 +159,7 @@ public class AddressController {
 		
 		LOGGER.info("AddressController | setDefaultAddress is called");
 		
-		Customer customer  = CustomerShoppingCartandAddressUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer  = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
 		
 		LOGGER.info("AddressController | setDefaultAddress | customer : " + customer.toString());
 		

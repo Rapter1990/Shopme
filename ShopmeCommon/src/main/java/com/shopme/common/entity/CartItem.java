@@ -34,6 +34,9 @@ public class CartItem extends IdBasedEntity implements Serializable{
 	private int quantity;
 	
 	@Transient
+	private float shippingCost;
+	
+	@Transient
 	public float getSubtotal() {
 		return product.getDiscountPrice() * quantity;
 	}
