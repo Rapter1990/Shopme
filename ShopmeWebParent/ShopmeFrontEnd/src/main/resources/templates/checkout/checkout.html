@@ -17,7 +17,7 @@
 				<div class="card-body">
 					<p>
 						<b>Ship to:</b>&nbsp; [[${shippingAddress}]]
-						<a th:href="@{/address_book}">[Ship to another address]</a>
+						<a th:href="@{/address_book(redirect=checkout)}">[Ship to another address]</a>
 					</p>
 					<p>
 						<b>Days to deliver: </b>[[${checkoutInfo.deliverDays}]] day(s)

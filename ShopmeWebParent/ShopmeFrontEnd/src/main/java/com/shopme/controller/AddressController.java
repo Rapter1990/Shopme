@@ -106,8 +106,22 @@ public class AddressController {
 		LOGGER.info("AddressController | saveAddress | message : " + "The address has been saved successfully.");
 
 		ra.addFlashAttribute("message", "The address has been saved successfully.");
+		
+		String redirectOption = request.getParameter("redirect");
+		String redirectURL = "redirect:/address_book";
+		
+		LOGGER.info("AddressController | saveAddress | redirectOption : " + redirectOption);
+		LOGGER.info("AddressController | saveAddress | redirectURL : " + redirectURL);
 
-		return "redirect:/address_book";
+		if ("checkout".equals(redirectOption)) {
+			redirectURL += "?redirect=checkout";
+		}
+		
+		LOGGER.info("AddressController | saveAddress | redirectURL : " + redirectURL);
+
+		return redirectURL;
+		
+		
 	}
 
 	@GetMapping("/address_book/edit/{id}")
@@ -173,7 +187,10 @@ public class AddressController {
 
 		if ("cart".equals(redirectOption)) {
 			redirectURL = "redirect:/cart";
+		}else if ("checkout".equals(redirectOption)) {
+			redirectURL = "redirect:/checkout";
 		}
+
 		
 		LOGGER.info("AddressController | setDefaultAddress | redirectURL : " + redirectURL);
 
