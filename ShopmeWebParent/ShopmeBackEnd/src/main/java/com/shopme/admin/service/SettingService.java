@@ -56,4 +56,9 @@ public class SettingService implements ISettingService{
 	public List<Setting> getCurrencySettings() {
 		return repo.findByCategory(SettingCategory.CURRENCY);
 	}
+	
+	@Override
+	public List<Setting> getPaymentSettings(){
+		return repo.findByCategory(SettingCategory.PAYMENT);
+	}
 }

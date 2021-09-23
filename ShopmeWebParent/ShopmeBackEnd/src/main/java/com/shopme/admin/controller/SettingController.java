@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +27,8 @@ import com.shopme.common.entity.setting.Setting;
 
 @Controller
 public class SettingController {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
 
 	private SettingService service;
 	
@@ -39,12 +43,19 @@ public class SettingController {
 	
 	@GetMapping("/settings")
 	public String listAll(Model model) {
+		
+		LOGGER.info("SettingController | listAll is called");
+		
 		List<Setting> listSettings = service.listAllSettings();
 		List<Currency> listCurrencies = currencyRepo.findAllByOrderByNameAsc();
+		
+		LOGGER.info("SettingController | listAll | listSettings : " + listSettings.toString());
+		LOGGER.info("SettingController | listAll | listCurrencies : " + listCurrencies.toString());
 
 		model.addAttribute("listCurrencies", listCurrencies);
 
 		for (Setting setting : listSettings) {
+			LOGGER.info("SettingController | listAll | setting.getKey() : " + setting.getKey() + " | setting.getValue() : " + setting.getValue());
 			model.addAttribute(setting.getKey(), setting.getValue());
 		}
 
@@ -54,7 +65,12 @@ public class SettingController {
 	@PostMapping("/settings/save_general")
 	public String saveGeneralSettings(@RequestParam("fileImage") MultipartFile multipartFile,
 			HttpServletRequest request, RedirectAttributes ra) throws IOException {
+		
+		LOGGER.info("SettingController | saveGeneralSettings is called");
+		
 		GeneralSettingBag settingBag = service.getGeneralSettings();
+		
+		LOGGER.info("SettingController | saveGeneralSettings | settingBag : " + settingBag.toString());
 
 		SettingHelper.saveSiteLogo(multipartFile, settingBag);
 		SettingHelper.saveCurrencySymbol(request, settingBag,currencyRepo);
@@ -68,7 +84,13 @@ public class SettingController {
 
 	@PostMapping("/settings/save_mail_server")
 	public String saveMailServerSetttings(HttpServletRequest request, RedirectAttributes ra) {
+		
+		LOGGER.info("SettingController | saveMailServerSetttings is called");
+		
 		List<Setting> mailServerSettings = service.getMailServerSettings();
+		
+		LOGGER.info("SettingController | saveMailServerSetttings | mailServerSettings : " + mailServerSettings.toString());
+		
 		SettingHelper.updateSettingValuesFromForm(request, mailServerSettings,service);
 
 		ra.addFlashAttribute("messageSuccess", "Mail server settings have been saved");
@@ -78,11 +100,33 @@ public class SettingController {
 
 	@PostMapping("/settings/save_mail_templates")
 	public String saveMailTemplateSetttings(HttpServletRequest request, RedirectAttributes ra) {
+		
+		LOGGER.info("SettingController | saveMailTemplateSetttings is called");
+		
 		List<Setting> mailTemplateSettings = service.getMailTemplateSettings();
+		
+		LOGGER.info("SettingController | saveMailTemplateSetttings | mailTemplateSettings : " + mailTemplateSettings.toString());
+		
 		SettingHelper.updateSettingValuesFromForm(request, mailTemplateSettings,service);
 
 		ra.addFlashAttribute("messageSuccess", "Mail template settings have been saved");
 
 		return "redirect:/settings#mailTemplates";
 	}
+	
+	@PostMapping("/settings/save_payment")
+	public String savePaymentSetttings(HttpServletRequest request, RedirectAttributes ra) {
+		
+		LOGGER.info("SettingController | savePaymentSetttings is called");
+		
+		List<Setting> paymentSettings = service.getPaymentSettings();
+		
+		LOGGER.info("SettingController | savePaymentSetttings | paymentSettings : " + paymentSettings.toString());
+		
+		SettingHelper.updateSettingValuesFromForm(request, paymentSettings,service);
+
+		ra.addFlashAttribute("messageSuccess", "Payment settings have been saved");
+
+		return "redirect:/settings#payment";
+	}	
 }
