@@ -16,4 +16,6 @@ public interface IShoppingCartService {
 	public float updateQuantity(Integer productId, Integer quantity, Customer customer);
 	
 	public void removeProduct(Integer productId, Customer customer);
+
+	public void deleteByCustomer(Customer customer);
 }
