@@ -77,7 +77,6 @@ public class ShoppingCartController {
 			shippingRate = shipService.getShippingRateForCustomer(customer);
 		}
 
-		LOGGER.info("ShoppingCartController | viewCart | shippingRate : " + shippingRate.toString());
 		LOGGER.info("ShoppingCartController | viewCart | usePrimaryAddressAsDefault : " + usePrimaryAddressAsDefault);
 		LOGGER.info("ShoppingCartController | viewCart | shippingSupported : " + (shippingRate != null));
 		

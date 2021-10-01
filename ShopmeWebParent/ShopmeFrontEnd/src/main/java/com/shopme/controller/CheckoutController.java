@@ -1,7 +1,9 @@
 package com.shopme.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -17,15 +19,21 @@ import com.shopme.common.entity.Address;
 import com.shopme.common.entity.CartItem;
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.ShippingRate;
+import com.shopme.common.entity.order.Order;
 import com.shopme.common.entity.order.PaymentMethod;
 import com.shopme.common.exception.CustomerNotFoundException;
+import com.shopme.common.exception.PayPalApiException;
 import com.shopme.service.AddressService;
 import com.shopme.service.CheckoutService;
 import com.shopme.service.CustomerService;
 import com.shopme.service.OrderService;
+import com.shopme.service.PayPalService;
+import com.shopme.service.SettingService;
 import com.shopme.service.ShippingRateService;
 import com.shopme.service.ShoppingCartService;
+import com.shopme.setting.PaymentSettingBag;
 import com.shopme.util.CustomerShoppingCartAddressShippingUtil;
+import com.shopme.util.OrderUtil;
 
 @Controller
 public class CheckoutController {
@@ -38,11 +46,13 @@ public class CheckoutController {
 	private ShippingRateService shipService;
 	private ShoppingCartService cartService;
 	private OrderService orderService;
+	private SettingService settingService;
+	private PayPalService paypalService;
 	
 	@Autowired
 	public CheckoutController(CheckoutService checkoutService, CustomerService customerService,
 			AddressService addressService, ShippingRateService shipService, ShoppingCartService cartService,
-			OrderService orderService) {
+			OrderService orderService, SettingService settingService,PayPalService paypalService) {
 		super();
 		this.checkoutService = checkoutService;
 		this.customerService = customerService;
@@ -50,6 +60,8 @@ public class CheckoutController {
 		this.shipService = shipService;
 		this.cartService = cartService;
 		this.orderService = orderService;
+		this.settingService = settingService;
+		this.paypalService = paypalService;
 	}
 
 	@GetMapping("/checkout")
@@ -93,6 +105,18 @@ public class CheckoutController {
 
 		List<CartItem> cartItems = cartService.listCartItems(customer);
 		CheckoutInfo checkoutInfo = checkoutService.prepareCheckout(cartItems, shippingRate);
+		
+		// Paypal
+		String currencyCode = settingService.getCurrencyCode();
+		PaymentSettingBag paymentSettings = settingService.getPaymentSettings();
+		String paypalClientId = paymentSettings.getClientID();
+		
+		LOGGER.info("CheckoutController | showCheckoutPage | paypalClientId " + paypalClientId);
+		LOGGER.info("CheckoutController | showCheckoutPage | currencyCode " + currencyCode);
+
+		model.addAttribute("paypalClientId", paypalClientId);
+		model.addAttribute("currencyCode", currencyCode);
+		model.addAttribute("customer", customer);
 		
 		LOGGER.info("CheckoutController | showCheckoutPage | cartItems " + cartItems.toString());
 		LOGGER.info("CheckoutController | showCheckoutPage | checkoutInfo " + checkoutInfo.toString());
@@ -148,9 +172,61 @@ public class CheckoutController {
 		LOGGER.info("CheckoutController | placeOrder | cartItems " + cartItems.toString());
 		LOGGER.info("CheckoutController | placeOrder | checkoutInfo " + checkoutInfo.toString());
 
-		orderService.createOrder(customer, defaultAddress, cartItems, paymentMethod, checkoutInfo);
+		Order createdOrder = orderService.createOrder(customer, defaultAddress, cartItems, paymentMethod, checkoutInfo);
+		
 		cartService.deleteByCustomer(customer);
-
+		
+		try {
+			OrderUtil.sendOrderConfirmationEmail(request, createdOrder, settingService);
+		} catch (UnsupportedEncodingException | MessagingException e) {
+			// TODO Auto-generated catch block
+			LOGGER.info("CheckoutController | placeOrder | OrderUtil.sendOrderConfirmationEmail failed");
+			e.printStackTrace();
+		}
+		
 		return "checkout/order_completed";
+	}
+	
+	@PostMapping("/process_paypal_order")
+	public String processPayPalOrder(HttpServletRequest request, Model model) 
+			throws UnsupportedEncodingException, MessagingException {
+		
+		LOGGER.info("CheckoutController | processPayPalOrder is called");
+		
+		String orderId = request.getParameter("orderId");
+		
+		LOGGER.info("CheckoutController | processPayPalOrder | orderId :  " + orderId);
+
+		String pageTitle = "Checkout Failure";
+		String message = null;
+		
+		LOGGER.info("CheckoutController | processPayPalOrder | pageTitle :  " + pageTitle);
+
+		try {
+			if (paypalService.validateOrder(orderId)) {
+				LOGGER.info("CheckoutController | processPayPalOrder | paypalService.validateOrder(orderId) :  " + (paypalService.validateOrder(orderId)));
+				return placeOrder(request);
+			} else {
+				pageTitle = "Checkout Failure";
+				message = "ERROR: Transaction could not be completed because order information is invalid";
+				
+				LOGGER.info("CheckoutController | processPayPalOrder | pageTitle :  " + pageTitle);
+				LOGGER.info("CheckoutController | processPayPalOrder | message :  " + message);
+				
+			}
+		} catch (PayPalApiException e) {
+			message = "ERROR: Transaction failed due to error: " + e.getMessage();
+			LOGGER.info("CheckoutController | processPayPalOrder | message :  " + e.getMessage());
+		}
+
+		model.addAttribute("pageTitle", pageTitle);
+		model.addAttribute("title", pageTitle);
+		model.addAttribute("message", message);
+		
+		LOGGER.info("CheckoutController | processPayPalOrder | pageTitle :  " + pageTitle);
+		LOGGER.info("CheckoutController | processPayPalOrder | title :  " + pageTitle);
+		LOGGER.info("CheckoutController | processPayPalOrder | message :  " + message);
+
+		return "message";
 	}
 }
