@@ -1,8 +1,12 @@
 package com.shopme.common.entity.order;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,6 +20,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -88,6 +93,10 @@ public class Order implements Serializable{
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private Set<OrderDetail> orderDetails = new HashSet<>();
 	
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+	@OrderBy("updatedTime ASC")
+	private List<OrderTrack> orderTracks = new ArrayList<>();
+	
 	public void copyAddressFromCustomer() {
 		setFirstName(customer.getFirstName());
 		setLastName(customer.getLastName());
@@ -147,5 +156,11 @@ public class Order implements Serializable{
 		if (!phoneNumber.isEmpty()) address += ". Phone Number: " + phoneNumber;
 
 		return address;
-	}	
+	}
+	
+	@Transient
+	public String getDeliverDateOnForm() {
+		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		return dateFormatter.format(this.deliverDate);
+	}
 }
