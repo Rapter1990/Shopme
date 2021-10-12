@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu">Static Menu</div>
+
+	<div>
+		<h2>Manage Orders | [[${pageTitle}]]</h2>
+	</div>
+
+	<form th:action="@{/order/save}" th:object="${order}" method="post">
+	<input type="hidden" th:field="*{id}" />
+	<div>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab">Overview</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="products-tab" data-toggle="tab" href="#products" role="tab">Products</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="shipping-tab" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="track-tab" data-toggle="tab" href="#track" role="tab">Track</a>
+		  </li>		  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active p-3" id="overview" role="tabpanel">
+			<div th:replace="orders/order_form_overview :: content"></div>  
+		  </div>
+
+		  <div class="tab-pane fade p-3" id="products" role="tabpanel">
+			<div th:replace="orders/order_form_products :: content"></div>    
+		  </div>
+
+		  <div class="tab-pane fade p-3" id="shipping" role="tabpanel">
+			<div th:replace="orders/order_form_shipping :: content"></div>
+		  </div>
+
+		  <div class="tab-pane fade p-3" id="track" role="tabpanel">
+			<h2>Edit Order Tracking</h2>						  	 
+		  </div>
+		 </div>
+	</div>
+	<div>
+		<p class="text-center">
+			<input type="submit" value="Save" class="btn btn-primary m-3" />
+			<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+		</p>	
+	</div>			
+	</form>
+
+	<div th:replace="modal_fragments :: modal_dialog"></div>
+
+	<div th:replace="fragments :: footer">Static footer</div>
+</div>	
+<script type="text/javascript">
+	contextPath = "[[@{/}]]";
+
+	$(document).ready(function() {
+		$('#buttonCancel').click(function() { 
+			window.location = "[[@{/orders}]]";	
+		});
+
+	});
+</script>
+<script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/common_form_country_state.js}"></script>
+<script th:src="@{/js/jquery.number.min.js}"></script>
+<script th:src="@{/js/order_form_overview_products.js}"></script>
+</body>
+</html> 

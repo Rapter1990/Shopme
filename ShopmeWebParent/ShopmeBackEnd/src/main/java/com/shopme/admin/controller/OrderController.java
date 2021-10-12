@@ -1,5 +1,7 @@
 package com.shopme.admin.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -17,6 +19,7 @@ import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.OrderService;
 import com.shopme.admin.service.SettingService;
 import com.shopme.admin.util.OrderUtil;
+import com.shopme.common.entity.Country;
 import com.shopme.common.entity.order.Order;
 
 @Controller
@@ -102,6 +105,37 @@ public class OrderController {
 		}
 
 		return defaultRedirectURL;
+	}
+	
+	@GetMapping("/orders/edit/{id}")
+	public String editOrder(@PathVariable("id") Integer id, Model model, RedirectAttributes ra,
+			HttpServletRequest request) {
+		
+		LOGGER.info("OrderController | editOrder is called");
+		
+		try {
+			Order order = orderService.get(id);;
+
+			List<Country> listCountries = orderService.listAllCountries();
+			
+			LOGGER.info("OrderController | editOrder | order : " + order.toString());
+			LOGGER.info("OrderController | editOrder | listCountries : " + listCountries);
+			LOGGER.info("OrderController | editOrder | pageTitle : " + "Edit Order (ID: " + id + ")" );
+
+			model.addAttribute("pageTitle", "Edit Order (ID: " + id + ")");
+			model.addAttribute("order", order);
+			model.addAttribute("listCountries", listCountries);
+
+			return "orders/order_form";
+
+		} catch (OrderNotFoundException ex) {
+			ra.addFlashAttribute("message", ex.getMessage());
+			
+			LOGGER.info("OrderController | editOrder | message : " + ex.getMessage());
+			
+			return defaultRedirectURL;
+		}
+
 	}
 		
 }

@@ -1,5 +1,6 @@
 package com.shopme.admin.service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,10 @@ import org.springframework.stereotype.Service;
 
 import com.shopme.admin.error.OrderNotFoundException;
 import com.shopme.admin.paging.PagingAndSortingHelper;
+import com.shopme.admin.repository.CountryRepository;
 import com.shopme.admin.repository.OrderRepository;
 import com.shopme.admin.service.impl.IOrderService;
+import com.shopme.common.entity.Country;
 import com.shopme.common.entity.order.Order;
 
 @Service
@@ -20,8 +23,16 @@ public class OrderService implements IOrderService{
 
 	private static final int ORDERS_PER_PAGE = 10;
 
-	@Autowired 
-	private OrderRepository repo;
+	private OrderRepository orderRepo;
+	
+	private CountryRepository countryRepo;
+	
+	
+	public OrderService(OrderRepository orderRepo, CountryRepository countryRepo) {
+		super();
+		this.orderRepo = orderRepo;
+		this.countryRepo = countryRepo;
+	}
 
 	@Override
 	public void listByPage(int pageNum, PagingAndSortingHelper helper) {
@@ -44,9 +55,9 @@ public class OrderService implements IOrderService{
 		Page<Order> page = null;
 
 		if (keyword != null) {
-			page = repo.findAll(keyword, pageable);
+			page = orderRepo.findAll(keyword, pageable);
 		} else {
-			page = repo.findAll(pageable);
+			page = orderRepo.findAll(pageable);
 		}
 
 		helper.updateModelAttributes(pageNum, page);		
@@ -55,7 +66,7 @@ public class OrderService implements IOrderService{
 	@Override
 	public Order get(Integer id) throws OrderNotFoundException {
 		try {
-			return repo.findById(id).get();
+			return orderRepo.findById(id).get();
 		} catch (NoSuchElementException ex) {
 			throw new OrderNotFoundException("Could not find any orders with ID " + id);
 		}
@@ -63,11 +74,15 @@ public class OrderService implements IOrderService{
 	
 	@Override
 	public void delete(Integer id) throws OrderNotFoundException {
-		Long count = repo.countById(id);
+		Long count = orderRepo.countById(id);
 		if (count == null || count == 0) {
 			throw new OrderNotFoundException("Could not find any orders with ID " + id); 
 		}
 
-		repo.deleteById(id);
-	}	
+		orderRepo.deleteById(id);
+	}
+	
+	public List<Country> listAllCountries() {
+		return countryRepo.findAllByOrderByNameAsc();
+	}
 }

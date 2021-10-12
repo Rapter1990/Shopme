@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" th:remove="tag">				
+	<div id="productList">
+
+		<th:block th:each="detail, status : ${order.orderDetails}">
+		<div class="border rounded p-1" th:with="product = ${detail.product}">
+			<div class="row">
+				<div class="col-1">
+					<div>[[${status.count}]]</div>				
+				</div>
+				<div class="col-3">
+					<img th:src="@{${product.mainImagePath}}" class="img-fluid" />
+				</div>
+			</div>
+
+			<div class="row m-2">
+				<b>[[${product.name}]]</b>
+			</div>
+
+			<div class="row m-2">
+			<table>
+				<tr>
+					<td>Product Cost:</td>
+					<td>
+						<input type="text" required class="form-control m-1 cost-input"
+							th:rowNumber="${status.count}" 
+							th:value="${detail.productCost}" style="max-width: 140px"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Quantity:</td>
+					<td>
+						<input type="number" step="1" min="1" max="5" class="form-control m-1 quantity-input"
+							th:id="'quantity' + ${status.count}"
+							th:rowNumber="${status.count}" 
+							th:value="${detail.quantity}" style="max-width: 140px"/>
+					</td>
+				</tr>	
+				<tr>
+					<td>Unit Price:</td>
+					<td>
+						<input type="text" required class="form-control m-1 price-input"
+							th:id="'price' + ${status.count}"
+							th:rowNumber="${status.count}" 
+							th:value="${detail.unitPrice}" style="max-width: 140px"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Subtotal:</td>
+					<td>
+						<input type="text" readonly="readonly" class="form-control m-1 subtotal-output"
+							th:id="'subtotal' + ${status.count}" 
+							th:value="${detail.subtotal}" style="max-width: 140px"/>
+					</td>
+				</tr>				
+				<tr>
+					<td>Shipping Cost:</td>
+					<td>
+						<input type="text" required class="form-control m-1 ship-input" 
+							th:value="${detail.shippingCost}" style="max-width: 140px"/>
+					</td>
+				</tr>											
+			</table>
+			</div>
+
+		</div>
+		<div class="row">&nbsp;</div>
+		</th:block>
+
+	</div>
+</div>
+</body>
+</html>
