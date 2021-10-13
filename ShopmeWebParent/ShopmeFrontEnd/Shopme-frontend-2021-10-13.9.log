@@ -1,0 +1,581 @@
+2021-10-13 12:00:28.940  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:28.943  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/cart/update/14/3
+2021-10-13 12:00:28.948  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.954  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.955  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity is called
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer is called
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer is called
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal : UsernamePasswordAuthenticationToken [Principal=com.shopme.security.CustomerUserDetails@1e917ed3, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5FA86D4F050897187CBD511DE4E065C3], Granted Authorities=[]]
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof UsernamePasswordAuthenticationToken  : true
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof RememberMeAuthenticationToken  : false
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof OAuth2AuthenticationToken  : false
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | customerEmail : lehoanganhvn@gmail.com
+2021-10-13 12:00:28.956  INFO 18848 --- [http-nio-80-exec-7] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | email : lehoanganhvn@gmail.com
+2021-10-13 12:00:28.961  INFO 18848 --- [http-nio-80-exec-7] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | customerService.getCustomerByEmail(email) : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-10-13 12:00:28.964  INFO 18848 --- [http-nio-80-exec-7] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity | customer : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-10-13 12:00:28.965  INFO 18848 --- [http-nio-80-exec-7] com.shopme.service.ShoppingCartService   : ShoppingCartService | updateQuantity is called
+2021-10-13 12:00:28.970  INFO 18848 --- [http-nio-80-exec-7] com.shopme.service.ShoppingCartService   : ShoppingCartService | updateQuantity | product : Product [id=14, name=AmazonBasics Large DSLR Camera Gadget Bag]
+2021-10-13 12:00:28.970  INFO 18848 --- [http-nio-80-exec-7] com.shopme.service.ShoppingCartService   : ShoppingCartService | updateQuantity | subtotal : 77.850006
+2021-10-13 12:00:28.974  INFO 18848 --- [http-nio-80-exec-7] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity | subtotal : 77.850006
+2021-10-13 12:00:28.975 ERROR 18848 --- [http-nio-80-exec-7] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-80-exec-7] Exception processing template "77.850006": Error resolving template [77.850006], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [77.850006], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at com.shopme.filter.SettingFilter.doFilter(SettingFilter.java:56) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:178) ~[spring-security-oauth2-client-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:130) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-10-13 12:00:28.976  INFO 18848 --- [http-nio-80-exec-7] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:28.977 ERROR 18848 --- [http-nio-80-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/Shopme] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [77.850006], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [77.850006], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at com.shopme.filter.SettingFilter.doFilter(SettingFilter.java:56) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:178) ~[spring-security-oauth2-client-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:130) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-10-13 12:00:28.980  INFO 18848 --- [http-nio-80-exec-7] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:31.019  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:31.019  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/cart/update/14/2
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.025  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:31.026  INFO 18848 --- [http-nio-80-exec-4] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity is called
+2021-10-13 12:00:31.026  INFO 18848 --- [http-nio-80-exec-4] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer is called
+2021-10-13 12:00:31.026  INFO 18848 --- [http-nio-80-exec-4] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer is called
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal : UsernamePasswordAuthenticationToken [Principal=com.shopme.security.CustomerUserDetails@1e917ed3, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5FA86D4F050897187CBD511DE4E065C3], Granted Authorities=[]]
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof UsernamePasswordAuthenticationToken  : true
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof RememberMeAuthenticationToken  : false
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof OAuth2AuthenticationToken  : false
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | customerEmail : lehoanganhvn@gmail.com
+2021-10-13 12:00:31.027  INFO 18848 --- [http-nio-80-exec-4] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | email : lehoanganhvn@gmail.com
+2021-10-13 12:00:31.031  INFO 18848 --- [http-nio-80-exec-4] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | customerService.getCustomerByEmail(email) : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-10-13 12:00:31.035  INFO 18848 --- [http-nio-80-exec-4] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity | customer : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-10-13 12:00:31.035  INFO 18848 --- [http-nio-80-exec-4] com.shopme.service.ShoppingCartService   : ShoppingCartService | updateQuantity is called
+2021-10-13 12:00:31.041  INFO 18848 --- [http-nio-80-exec-4] com.shopme.service.ShoppingCartService   : ShoppingCartService | updateQuantity | product : Product [id=14, name=AmazonBasics Large DSLR Camera Gadget Bag]
+2021-10-13 12:00:31.042  INFO 18848 --- [http-nio-80-exec-4] com.shopme.service.ShoppingCartService   : ShoppingCartService | updateQuantity | subtotal : 51.9
+2021-10-13 12:00:31.045  INFO 18848 --- [http-nio-80-exec-4] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity | subtotal : 51.9
+2021-10-13 12:00:31.047 ERROR 18848 --- [http-nio-80-exec-4] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-80-exec-4] Exception processing template "51.9": Error resolving template [51.9], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [51.9], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at com.shopme.filter.SettingFilter.doFilter(SettingFilter.java:56) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:178) ~[spring-security-oauth2-client-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:130) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-10-13 12:00:31.048  INFO 18848 --- [http-nio-80-exec-4] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:31.049 ERROR 18848 --- [http-nio-80-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/Shopme] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [51.9], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [51.9], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at com.shopme.filter.SettingFilter.doFilter(SettingFilter.java:56) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:92) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:178) ~[spring-security-oauth2-client-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:130) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.2.jar:5.4.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.3.jar:5.3.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+
+2021-10-13 12:00:31.052  INFO 18848 --- [http-nio-80-exec-4] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:33.277  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.277  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/cart
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.282  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart is called
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer is called
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer is called
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal : UsernamePasswordAuthenticationToken [Principal=com.shopme.security.CustomerUserDetails@1e917ed3, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5FA86D4F050897187CBD511DE4E065C3], Granted Authorities=[]]
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof UsernamePasswordAuthenticationToken  : true
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof RememberMeAuthenticationToken  : false
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof OAuth2AuthenticationToken  : false
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | customerEmail : lehoanganhvn@gmail.com
+2021-10-13 12:00:33.283  INFO 18848 --- [http-nio-80-exec-2] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | email : lehoanganhvn@gmail.com
+2021-10-13 12:00:33.287  INFO 18848 --- [http-nio-80-exec-2] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | customerService.getCustomerByEmail(email) : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-10-13 12:00:33.291  INFO 18848 --- [http-nio-80-exec-2] com.shopme.service.ShoppingCartService   : ShoppingCartService | listCartItems is called
+2021-10-13 12:00:33.296  INFO 18848 --- [http-nio-80-exec-2] com.shopme.service.ShoppingCartService   : ShoppingCartService | listCartItems | listCartItems size : 1
+2021-10-13 12:00:33.299  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart | customer : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-10-13 12:00:33.299  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart | cartItems : 1
+2021-10-13 12:00:33.299  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart | item.getSubtotal() : 51.9
+2021-10-13 12:00:33.307  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart | usePrimaryAddressAsDefault : true
+2021-10-13 12:00:33.307  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart | shippingSupported : true
+2021-10-13 12:00:33.307  INFO 18848 --- [http-nio-80-exec-2] c.s.controller.ShoppingCartController    : ShoppingCartController | viewCart | estimatedTotal : 51.9
+2021-10-13 12:00:33.329  INFO 18848 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | getFullName: Anh Le Hoang
+2021-10-13 12:00:33.332  INFO 18848 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | getFullName: Anh Le Hoang
+2021-10-13 12:00:33.358  INFO 18848 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:33.534  INFO 18848 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.534  INFO 18848 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/css/bootstrap.min.css
+2021-10-13 12:00:33.534  INFO 18848 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/css/bootstrap.min.css
+2021-10-13 12:00:33.534  INFO 18848 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.534  INFO 18848 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/fontawesome/all.css
+2021-10-13 12:00:33.534  INFO 18848 --- [http-nio-80-exec-10] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/fontawesome/all.css
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/css/styles.css
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webjars/jquery/3.4.1/jquery.min.js
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-9] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/webjars/jquery/3.4.1/jquery.min.js
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/css/styles.css
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/js/bootstrap.min.js
+2021-10-13 12:00:33.535  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/webjars/bootstrap/4.3.1/js/bootstrap.min.js
+2021-10-13 12:00:33.542  INFO 18848 --- [http-nio-80-exec-10] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:33.625  INFO 18848 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.625  INFO 18848 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/js/jquery.number.min.js
+2021-10-13 12:00:33.625  INFO 18848 --- [http-nio-80-exec-8] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/js/jquery.number.min.js
+2021-10-13 12:00:33.626  INFO 18848 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.626  INFO 18848 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/js/shopping_cart.js
+2021-10-13 12:00:33.626  INFO 18848 --- [http-nio-80-exec-3] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/js/shopping_cart.js
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/js/common_modal.js
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-7] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/js/common_modal.js
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/product-images/14/AmazonBasics%20Large%20DSLR%20Camera%20Bag.png
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/site-logo/ShopmeAdminSmall.png
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-2] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/product-images/14/AmazonBasics%20Large%20DSLR%20Camera%20Bag.png
+2021-10-13 12:00:33.647  INFO 18848 --- [http-nio-80-exec-4] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | .css , .js , .png , . jpg | url : http://localhost/Shopme/site-logo/ShopmeAdminSmall.png
+2021-10-13 12:00:33.650  INFO 18848 --- [http-nio-80-exec-4] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:33.654  INFO 18848 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:33.690  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:33.691  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/webfonts/fa-solid-900.woff2
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.697  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.698  INFO 18848 --- [http-nio-80-exec-6] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:33.704  INFO 18848 --- [http-nio-80-exec-6] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-10-13 12:00:35.059  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
+2021-10-13 12:00:35.060  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/cart/update/14/3
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.064  INFO 18848 --- [http-nio-80-exec-5] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-13 12:00:35.065  INFO 18848 --- [http-nio-80-exec-5] c.s.controller.ShoppingCartController    : ShoppingCartController | updateQuantity is called
+2021-10-13 12:00:35.065  INFO 18848 --- [http-nio-80-exec-5] .CustomerShoppingCartAddressShippingUtil : CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer is called

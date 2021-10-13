@@ -80,4 +80,25 @@ public class ShoppingCartRestController {
 			return "You must login to remove product.";
 		}
 	}
+	
+	@PostMapping("/cart/update/{productId}/{quantity}")
+	public String updateQuantity(@PathVariable("productId") Integer productId,
+			@PathVariable("quantity") Integer quantity, HttpServletRequest request) {
+		
+		LOGGER.info("ShoppingCartRestController | updateQuantity is called");
+		
+		try {
+			Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
+			
+			LOGGER.info("ShoppingCartRestController | updateQuantity | customer : " + customer.toString());
+			
+			float subtotal = cartService.updateQuantity(productId, quantity, customer);
+			
+			LOGGER.info("ShoppingCartRestController | updateQuantity | subtotal : " + subtotal);
+
+			return String.valueOf(subtotal);
+		} catch (CustomerNotFoundException ex) {
+			return "You must login to change quantity of product.";
+		}	
+	}
 }

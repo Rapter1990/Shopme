@@ -91,25 +91,5 @@ public class ShoppingCartController {
 		return "cart/shopping_cart";
 	}
 	
-	@PostMapping("/cart/update/{productId}/{quantity}")
-	public String updateQuantity(@PathVariable("productId") Integer productId,
-			@PathVariable("quantity") Integer quantity, HttpServletRequest request) {
-		
-		LOGGER.info("ShoppingCartController | updateQuantity is called");
-		
-		try {
-			Customer customer = CustomerShoppingCartAddressShippingUtil.getAuthenticatedCustomer(request,customerService);
-			
-			LOGGER.info("ShoppingCartController | updateQuantity | customer : " + customer.toString());
-			
-			float subtotal = cartService.updateQuantity(productId, quantity, customer);
-			
-			LOGGER.info("ShoppingCartController | updateQuantity | subtotal : " + subtotal);
-
-			return String.valueOf(subtotal);
-		} catch (CustomerNotFoundException ex) {
-			return "You must login to change quantity of product.";
-		}	
-	}
 
 }
