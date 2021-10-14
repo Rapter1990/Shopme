@@ -10,10 +10,12 @@ import org.springframework.stereotype.Service;
 
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.repository.CountryRepository;
+import com.shopme.admin.repository.ProductRepository;
 import com.shopme.admin.repository.ShippingRateRepository;
 import com.shopme.admin.service.impl.IShippingRateService;
 import com.shopme.common.entity.Country;
 import com.shopme.common.entity.ShippingRate;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.ShippingRateAlreadyExistsException;
 import com.shopme.common.exception.ShippingRateNotFoundException;
 
@@ -22,16 +24,20 @@ import com.shopme.common.exception.ShippingRateNotFoundException;
 public class ShippingRateService implements IShippingRateService{
 	
 	public static final int RATES_PER_PAGE = 10;
+	private static final int DIM_DIVISOR = 139;	
  
 	private ShippingRateRepository shipRepo;
 	
 	private CountryRepository countryRepo;
 	
+	private ProductRepository productRepo;
+	
 	@Autowired
-	public ShippingRateService(ShippingRateRepository shipRepo, CountryRepository countryRepo) {
+	public ShippingRateService(ShippingRateRepository shipRepo, CountryRepository countryRepo,ProductRepository productRepo) {
 		super();
 		this.shipRepo = shipRepo;
 		this.countryRepo = countryRepo;
+		this.productRepo = productRepo;
 	}
 
 	@Override
@@ -91,6 +97,23 @@ public class ShippingRateService implements IShippingRateService{
 
 		}
 		shipRepo.deleteById(id);
+	}
+	
+	public float calculateShippingCost(Integer productId, Integer countryId, String state) 
+			throws ShippingRateNotFoundException {
+		ShippingRate shippingRate = shipRepo.findByCountryAndState(countryId, state);
+
+		if (shippingRate == null) {
+			throw new ShippingRateNotFoundException("No shipping rate found for the given "
+					+ "destination. You have to enter shipping cost manually.");
+		}
+
+		Product product = productRepo.findById(productId).get();
+
+		float dimWeight = (product.getLength() * product.getWidth() * product.getHeight()) / DIM_DIVISOR;
+		float finalWeight = product.getWeight() > dimWeight ? product.getWeight() : dimWeight;
+
+		return finalWeight * shippingRate.getRate();
 	}
 
 }

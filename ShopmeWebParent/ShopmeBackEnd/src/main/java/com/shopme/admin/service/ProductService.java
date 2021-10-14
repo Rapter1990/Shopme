@@ -129,4 +129,11 @@ public class ProductService implements IProductService{
 
 		repo.save(productInDB);
 	}
+	
+	public void searchProducts(int pageNum, PagingAndSortingHelper helper) {
+		Pageable pageable = helper.createPageable(PRODUCTS_PER_PAGE, pageNum);
+		String keyword = helper.getKeyword();		
+		Page<Product> page = repo.searchProductsByName(keyword, pageable);		
+		helper.updateModelAttributes(pageNum, page);
+	}
 }

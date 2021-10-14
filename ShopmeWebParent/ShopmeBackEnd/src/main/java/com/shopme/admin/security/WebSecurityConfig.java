@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/products", "/products/", "/products/detail/**", "/products/page/**")
 			.hasAnyAuthority("Admin", "Editor", "Salesperson", "Shipper")
 		.antMatchers("/products/**").hasAnyAuthority("Admin", "Editor")
-		.antMatchers("/customers/**","/shipping/**","/articles/**").hasAnyAuthority("Admin", "Salesperson")
+		.antMatchers("/customers/**","/shipping/**","/articles/**", "/get_shipping_cost").hasAnyAuthority("Admin", "Salesperson")
 		.antMatchers("/orders", "/orders/", "/orders/page/**", "/orders/detail/**").hasAnyAuthority("Admin", "Salesperson", "Shipper")
 		.anyRequest().authenticated()
 		.and()
@@ -57,6 +57,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.key("AbcDefgKLDSLmvop_0123456789")
 			.tokenValiditySeconds(7 * 24 * 60 * 60); // 7 days 24 hours 60 minutes 60 seconds -> 7days 
 			;
+			
+			
+		http.headers().frameOptions().sameOrigin();	
 		
 	}
 	
