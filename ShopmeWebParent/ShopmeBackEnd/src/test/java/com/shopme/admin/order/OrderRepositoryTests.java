@@ -186,4 +186,23 @@ public class OrderRepositoryTests {
 
 		assertThat(updatedOrder.getOrderTracks()).hasSizeGreaterThan(1);
 	}
+	
+	@Test
+	public void testAddTrackWithStatusNewToOrder() {
+		Integer orderId = 9;
+		Order order = repo.findById(orderId).get();
+
+		OrderTrack newTrack = new OrderTrack();
+		newTrack.setOrder(order);
+		newTrack.setUpdatedTime(new Date());
+		newTrack.setStatus(OrderStatus.NEW);
+		newTrack.setNotes(OrderStatus.NEW.defaultDescription());
+
+		List<OrderTrack> orderTracks = order.getOrderTracks();
+		orderTracks.add(newTrack);		
+
+		Order updatedOrder = repo.save(order);
+
+		assertThat(updatedOrder.getOrderTracks()).hasSizeGreaterThan(1);
+	}	
 }
