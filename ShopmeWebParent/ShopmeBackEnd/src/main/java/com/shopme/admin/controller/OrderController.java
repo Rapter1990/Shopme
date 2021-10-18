@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.error.OrderNotFoundException;
@@ -137,5 +138,29 @@ public class OrderController {
 		}
 
 	}
+	
+	@PostMapping("/order/save")
+	public String saveOrder(Order order, HttpServletRequest request, RedirectAttributes ra) {
+		
+		LOGGER.info("OrderController | saveOrder is called");
+		
+		String countryName = request.getParameter("countryName");
+		
+		LOGGER.info("OrderController | saveOrder | countryName : " + countryName);
+		
+		order.setCountry(countryName);
+
+		OrderUtil.updateProductDetails(order, request);
+		OrderUtil.updateOrderTracks(order, request);
+
+		orderService.save(order);		
+
+		ra.addFlashAttribute("message", "The order ID " + order.getId() + " has been updated successfully");
+		
+		LOGGER.info("OrderController | saveOrder | message : " + "The order ID " + order.getId() + " has been updated successfully");
+
+		return defaultRedirectURL;
+	}
+
 		
 }

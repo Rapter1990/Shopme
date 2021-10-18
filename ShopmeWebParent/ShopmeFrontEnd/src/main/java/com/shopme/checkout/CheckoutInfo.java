@@ -69,7 +69,7 @@ public class CheckoutInfo {
 	}
 	
 	public String getPaymentTotal4PayPal() {
-		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		DecimalFormat formatter = new DecimalFormat("##.##");
 		return formatter.format(paymentTotal);
 	}
 }
