@@ -21,72 +21,84 @@
 		<div class="tab-content" id="myTabContent">
 		  <div class="tab-pane fade show active p-3" id="overview" role="tabpanel" aria-labelledby="overview-tab">
 			<form>
+			
 			  <div class="form-group row">
 			    <label class="col-sm-2 col-form-label">Order ID:</label>
 			    <div class="col-sm-10">
 			      <input type="text" readonly class="form-control" th:value="${order.id}">
 			    </div>
 			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Customer:</label>
-			    <div class="col-sm-10">
-			      <input type="text" readonly class="form-control" th:value="${order.customer.fullName}">
-			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Product Cost:</label>
-			    <div class="col-sm-10">
-			      <div th:replace="fragments :: currency_input(${order.productCost})">Cost</div>
-			    </div>
-			  </div>			  		  
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Subtotal:</label>
-			    <div class="col-sm-10">
-			      <div th:replace="fragments :: currency_input(${order.subtotal})">Subtotal</div>
-			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Shipping Cost:</label>
-			    <div class="col-sm-10">
-			      <div th:replace="fragments :: currency_input(${order.shippingCost})">Shipping cost</div>
-			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Tax:</label>
-			    <div class="col-sm-10">
-			      <div th:replace="fragments :: currency_input(${order.tax})">Tax</div>
-			    </div>
-			  </div>			  
+			  
+			  <th:block th:if="${isVisibleForAdminOrSalesperson}">
+				  <div class="form-group row">
+				    <label class="col-sm-2 col-form-label">Customer:</label>
+				    <div class="col-sm-10">
+				      <input type="text" readonly class="form-control" th:value="${order.customer.fullName}">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label class="col-sm-2 col-form-label">Product Cost:</label>
+				    <div class="col-sm-10">
+				      <div th:replace="fragments :: currency_input(${order.productCost})">Cost</div>
+				    </div>
+				  </div>			  		  
+				  <div class="form-group row">
+				    <label class="col-sm-2 col-form-label">Subtotal:</label>
+				    <div class="col-sm-10">
+				      <div th:replace="fragments :: currency_input(${order.subtotal})">Subtotal</div>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label class="col-sm-2 col-form-label">Shipping Cost:</label>
+				    <div class="col-sm-10">
+				      <div th:replace="fragments :: currency_input(${order.shippingCost})">Shipping cost</div>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label class="col-sm-2 col-form-label">Tax:</label>
+				    <div class="col-sm-10">
+				      <div th:replace="fragments :: currency_input(${order.tax})">Tax</div>
+				    </div>
+				  </div>
+			  </th:block>
+			  			  
 			  <div class="form-group row">
 			    <label class="col-sm-2 col-form-label">Total:</label>
 			    <div class="col-sm-10">
 			      <div th:replace="fragments :: currency_input(${order.total})">Total</div>
 			    </div>
 			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label"></label>
-			    <div class="col-sm-10">
-			      TOTAL = Subtotal + Shipping Cost + Tax
-			    </div>
-			  </div>			  
+			  
+			  <th:block th:if="${isVisibleForAdminOrSalesperson}">
+				  <div class="form-group row">
+				    <label class="col-sm-2 col-form-label"></label>
+				    <div class="col-sm-10">
+				      TOTAL = Subtotal + Shipping Cost + Tax
+				    </div>
+				  </div>
+			  </th:block>
+			  			  
 			  <div class="form-group row">
 			    <label class="col-sm-2 col-form-label">Payment Method:</label>
 			    <div class="col-sm-10">
 			      <span>[[${order.paymentMethod}]]</span>
 			    </div>
-			  </div>			  	
+			  </div>
+			  			  	
 			  <div class="form-group row">
 			    <label class="col-sm-2 col-form-label">Status:</label>
 			    <div class="col-sm-10">
 			      <span>[[${order.status}]]</span>
 			    </div>
-			  </div>		    			  
+			  </div>
+			  		    			  
 			  <div class="form-group row">
 			    <label class="col-sm-2 col-form-label">Order Date:</label>
 			    <div class="col-sm-10">
 			      <div th:replace="fragments :: format_time(${order.orderTime})">Order Time</div>
 			    </div>
 			  </div>
+			  
 			</form>
 		  </div>
 		  <div class="tab-pane fade p-3" id="products" role="tabpanel" aria-labelledby="products-tab">
@@ -97,21 +109,26 @@
 				</div>
 				<div class="col-sm-3"><img th:src="@{${product.mainImagePath}}" class="img-fluid" /></div>
 				<div class="col-sm-8">
+				
 					<div class="text-wrap">
 						<b>[[${product.name}]]</b>
 					</div>
-					<div>
-						Product Cost: <div th:replace="fragments :: format_currency(${detail.productCost})" />
-					</div>
-					<div>
-						Subtotal: [[${detail.quantity}]] X
-						<div th:replace="fragments :: format_currency(${detail.unitPrice})" />
-						 = 
-						 <div th:replace="fragments :: format_currency(${detail.subtotal})" />
-					</div>
-					<div>
-						Shipping Cost: <div th:replace="fragments :: format_currency(${detail.shippingCost})" />
-					</div>					
+					
+					<th:block th:if="${isVisibleForAdminOrSalesperson}">
+						<div>
+							Product Cost: <div th:replace="fragments :: format_currency(${detail.productCost})" />
+						</div>
+						<div>
+							Subtotal: [[${detail.quantity}]] X
+							<div th:replace="fragments :: format_currency(${detail.unitPrice})" />
+							 = 
+							 <div th:replace="fragments :: format_currency(${detail.subtotal})" />
+						</div>
+						<div>
+							Shipping Cost: <div th:replace="fragments :: format_currency(${detail.shippingCost})" />
+						</div>
+					</th:block>	
+									
 				</div>
 			</div>
 			</th:block>

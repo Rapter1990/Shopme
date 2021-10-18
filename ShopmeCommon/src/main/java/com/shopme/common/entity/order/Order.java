@@ -15,9 +15,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -25,6 +22,10 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.shopme.common.entity.AbstractAddress;
 import com.shopme.common.entity.Address;
 import com.shopme.common.entity.Customer;
 
@@ -37,36 +38,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Order implements Serializable{
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-
-	@Column(name = "first_name", nullable = false, length = 45)
-	private String firstName;
-
-	@Column(name = "last_name", nullable = false, length = 45)
-	private String lastName;
-
-	@Column(name = "phone_number", nullable = false, length = 15)
-	private String phoneNumber;
-
-	@Column(name = "address_line_1", nullable = false, length = 64)
-	private String addressLine1;
-
-	@Column(name = "address_line_2", length = 64)
-	private String addressLine2;
-
-	@Column(nullable = false, length = 45)
-	private String city;
-
-	@Column(nullable = false, length = 45)
-	private String state;
-
-	@Column(name = "postal_code", nullable = false, length = 10)
-	private String postalCode;
-
+public class Order extends AbstractAddress implements Serializable{
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(Order.class);
+	
 	@Column(nullable = false, length = 45)
 	private String country;
 
@@ -173,5 +148,74 @@ public class Order implements Serializable{
 		} catch (ParseException e) {
 			e.printStackTrace();
 		} 		
+	}
+	
+	@Transient
+	public String getRecipientName() {
+		String name = firstName;
+		if (lastName != null && !lastName.isEmpty()) name += " " + lastName;
+		return name;
+	}
+
+	@Transient
+	public String getRecipientAddress() {
+		String address = addressLine1;
+
+		if (addressLine2 != null && !addressLine2.isEmpty()) address += ", " + addressLine2;
+
+		if (!city.isEmpty()) address += ", " + city;
+
+		if (state != null && !state.isEmpty()) address += ", " + state;
+
+		address += ", " + country;
+
+		if (!postalCode.isEmpty()) address += ". " + postalCode;
+
+		return address;
+	}	
+
+	@Transient
+	public boolean isCOD() {
+		return paymentMethod.equals(PaymentMethod.COD);
+	}
+
+	@Transient
+	public boolean isPicked() {
+		return hasStatus(OrderStatus.PICKED);
+	}
+
+	@Transient
+	public boolean isShipping() {
+		return hasStatus(OrderStatus.SHIPPING);
+	}
+
+	@Transient
+	public boolean isDelivered() {
+		return hasStatus(OrderStatus.DELIVERED);
+	}
+
+	@Transient
+	public boolean isReturned() {
+		return hasStatus(OrderStatus.RETURNED);
+	}	
+
+	public boolean hasStatus(OrderStatus status) {
+		
+		LOGGER.info("Order | hasStatus is called");
+		
+		LOGGER.info("Order | hasStatus | status : " + status.toString());
+		
+		for (OrderTrack aTrack : orderTracks) {
+			if (aTrack.getStatus().equals(status)) {
+				
+				LOGGER.info("Order | hasStatus | return True ");
+				
+				return true;
+			}
+		}
+		
+		LOGGER.info("Order | hasStatus | return False ");
+		
+		return false;
 	}
 }

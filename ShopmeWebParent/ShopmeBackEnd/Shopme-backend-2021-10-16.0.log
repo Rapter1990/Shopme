@@ -1,0 +1,27 @@
+2021-10-16 16:59:48.716  INFO 15932 --- [http-nio-8081-exec-9] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | sortDir : desc
+2021-10-16 16:59:48.718  INFO 15932 --- [http-nio-8081-exec-9] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | reverseSortDir : asc
+2021-10-16 16:59:48.718  INFO 15932 --- [http-nio-8081-exec-9] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | keyword : null
+2021-10-16 16:59:48.718  INFO 15932 --- [http-nio-8081-exec-9] c.s.a.p.PagingAndSortingArgumentResolver : PagingAndSortingArgumentResolver | resolveArgument | moduleURL : /orders
+2021-10-16 16:59:48.718  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.controller.OrderController     : OrderController | listByPage is called
+2021-10-16 16:59:48.724  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes is started
+2021-10-16 16:59:48.724  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | startCount : 1
+2021-10-16 16:59:48.724  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 10
+2021-10-16 16:59:48.724  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : 1
+2021-10-16 16:59:48.724  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | endCount : 1
+2021-10-16 16:59:48.724  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : 1
+2021-10-16 16:59:48.725  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : 1
+2021-10-16 16:59:48.725  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : 1
+2021-10-16 16:59:48.725  INFO 15932 --- [http-nio-8081-exec-9] c.s.admin.paging.PagingAndSortingHelper  : PagingAndSortingArgumentResolver | updateModelAttributes | listName : [Order [id=9, subtotal=731.5, paymentMethod=COD, status=NEW, customer=Anh Le Hoang]]
+2021-10-16 16:59:48.725  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting is called
+2021-10-16 16:59:48.726  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | currencySettings : [Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
+2021-10-16 16:59:48.726  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | setting | key : CURRENCY_ID , value : 1
+2021-10-16 16:59:48.726  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | setting | key : CURRENCY_SYMBOL , value : $
+2021-10-16 16:59:48.727  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | setting | key : CURRENCY_SYMBOL_POSITION , value : Before price
+2021-10-16 16:59:48.727  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | setting | key : DECIMAL_DIGITS , value : 2
+2021-10-16 16:59:48.727  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | setting | key : DECIMAL_POINT_TYPE , value : POINT
+2021-10-16 16:59:48.727  INFO 15932 --- [http-nio-8081-exec-9] com.shopme.admin.util.OrderUtil          : OrderUtil | loadCurrencySetting | setting | key : THOUSANDS_POINT_TYPE , value : COMMA
+2021-10-16 17:03:37.251  INFO 15932 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-10-16 17:03:37.296  INFO 15932 --- [RMI TCP Connection(17)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-16 17:03:37.300  INFO 15932 --- [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-16 17:03:37.302  INFO 15932 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-16 17:03:37.308  INFO 15932 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

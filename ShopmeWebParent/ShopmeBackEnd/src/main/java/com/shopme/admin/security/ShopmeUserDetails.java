@@ -89,4 +89,9 @@ public class ShopmeUserDetails implements UserDetails {
 		return user.hasRole(roleName);
 	}
 
+	@Override
+	public String toString() {
+		return "ShopmeUserDetails [user=" + user + "]";
+	}
+	
 }

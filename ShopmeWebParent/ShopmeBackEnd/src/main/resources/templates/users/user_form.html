@@ -16,10 +16,11 @@
 			[[${messageError}]]
 		</div>
 
-		<form th:action="@{/users/save}" method="post"
-			style="max-width: 700px; margin: 0 auto" th:object="${user}"
-			onsubmit="return checkEmailUnique(this);"
-			enctype="multipart/form-data">
+		<form th:action="@{/users/save}" 
+		      method="post"
+			  style="max-width: 700px; margin: 0 auto" th:object="${user}"
+			  onsubmit="return checkEmailUnique(this);"
+			  enctype="multipart/form-data">
 			<input type="hidden" th:field="*{id}" />
 			<div class="border border-secondary rounded p-3">
 				<div class="form-group row">
