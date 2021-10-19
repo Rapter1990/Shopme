@@ -157,7 +157,8 @@
 
 	<!-- FORMAT TIME -->
 	<div th:fragment="format_time(dateTime)" th:remove="tag">
-		<span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+		<span th:text="${#temporals.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+		
 	</div>
 	<!-- FORMAT TIME END -->
 	

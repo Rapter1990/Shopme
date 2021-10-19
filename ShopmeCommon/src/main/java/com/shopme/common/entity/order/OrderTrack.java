@@ -46,14 +46,18 @@ public class OrderTrack extends IdBasedEntity {
 	
 	@Transient
 	public String getUpdatedTimeOnForm() {
-		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-		return dateFormatter.format(this.updatedTime);
+		//DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		//return dateFormatter.format(this.updatedTime);
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss");
+		
+		return this.updatedTime.format(formatter);
 	}
 	
 	public void setUpdatedTimeOnForm(String dateString) throws ParseException {
 		// DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss");
 		
 		this.updatedTime = LocalDateTime.parse(dateString, formatter); //  dateFormatter.parse(dateString); 
 	}
