@@ -2,6 +2,8 @@ package com.shopme.admin.order;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -40,7 +42,7 @@ public class OrderRepositoryTests {
 		Product product = entityManager.find(Product.class, 1);
 
 		Order mainOrder = new Order();
-		mainOrder.setOrderTime(new Date());
+		mainOrder.setOrderTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
 		mainOrder.setCustomer(customer);
 		mainOrder.copyAddressFromCustomer();
 
@@ -78,7 +80,7 @@ public class OrderRepositoryTests {
 		Product product2 = entityManager.find(Product.class, 40);
 
 		Order mainOrder = new Order();
-		mainOrder.setOrderTime(new Date());
+		mainOrder.setOrderTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
 		mainOrder.setCustomer(customer);
 		mainOrder.copyAddressFromCustomer();
 
@@ -135,7 +137,7 @@ public class OrderRepositoryTests {
 
 		order.setStatus(OrderStatus.SHIPPING);
 		order.setPaymentMethod(PaymentMethod.COD);
-		order.setOrderTime(new Date());
+		order.setOrderTime(LocalDateTime.now());
 		order.setDeliverDays(2);
 
 		Order updatedOrder = repo.save(order);
@@ -168,13 +170,13 @@ public class OrderRepositoryTests {
 
 		OrderTrack newTrack = new OrderTrack();
 		newTrack.setOrder(order);
-		newTrack.setUpdatedTime(new Date());
+		newTrack.setUpdatedTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
 		newTrack.setStatus(OrderStatus.NEW);
 		newTrack.setNotes(OrderStatus.NEW.defaultDescription());
 
 		OrderTrack processingTrack = new OrderTrack();
 		processingTrack.setOrder(order);
-		processingTrack.setUpdatedTime(new Date());
+		processingTrack.setUpdatedTime(LocalDateTime.now());
 		processingTrack.setStatus(OrderStatus.PROCESSING);
 		processingTrack.setNotes(OrderStatus.PROCESSING.defaultDescription());
 
@@ -194,7 +196,7 @@ public class OrderRepositoryTests {
 
 		OrderTrack newTrack = new OrderTrack();
 		newTrack.setOrder(order);
-		newTrack.setUpdatedTime(new Date());
+		newTrack.setUpdatedTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
 		newTrack.setStatus(OrderStatus.NEW);
 		newTrack.setNotes(OrderStatus.NEW.defaultDescription());
 

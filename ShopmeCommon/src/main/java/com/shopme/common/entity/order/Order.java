@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -45,7 +46,7 @@ public class Order extends AbstractAddress implements Serializable{
 	@Column(nullable = false, length = 45)
 	private String country;
 
-	private Date orderTime;
+	private LocalDateTime orderTime;
 
 	private float shippingCost;
 	private float productCost;

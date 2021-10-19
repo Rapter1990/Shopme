@@ -1,9 +1,10 @@
 package com.shopme.admin.service;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,6 +18,8 @@ import com.shopme.admin.repository.OrderRepository;
 import com.shopme.admin.service.impl.IOrderService;
 import com.shopme.common.entity.Country;
 import com.shopme.common.entity.order.Order;
+import com.shopme.common.entity.order.OrderStatus;
+import com.shopme.common.entity.order.OrderTrack;
 
 @Service
 public class OrderService implements IOrderService{
@@ -92,5 +95,27 @@ public class OrderService implements IOrderService{
 		orderInForm.setCustomer(orderInDB.getCustomer());
 
 		orderRepo.save(orderInForm);
+	}
+	
+	public void updateStatus(Integer orderId, String status) {
+		Order orderInDB = orderRepo.findById(orderId).get();
+		OrderStatus statusToUpdate = OrderStatus.valueOf(status);
+
+		if (!orderInDB.hasStatus(statusToUpdate)) {
+			List<OrderTrack> orderTracks = orderInDB.getOrderTracks();
+
+			OrderTrack track = new OrderTrack();
+			track.setOrder(orderInDB);
+			track.setStatus(statusToUpdate);
+			track.setUpdatedTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+			track.setNotes(statusToUpdate.defaultDescription());
+
+			orderTracks.add(track);
+
+			orderInDB.setStatus(statusToUpdate);
+
+			orderRepo.save(orderInDB);
+		}
+
 	}
 }

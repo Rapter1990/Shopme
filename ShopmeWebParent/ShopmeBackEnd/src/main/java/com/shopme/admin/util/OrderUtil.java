@@ -3,6 +3,8 @@ package com.shopme.admin.util;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Set;
 
@@ -57,7 +59,7 @@ public class OrderUtil {
 		LOGGER.info("OrderUtil | updateOrderTracks | orderTracks : " + orderTracks.toString());
 		LOGGER.info("OrderUtil | updateOrderTracks | orderTracks.size : " + orderTracks.size());
 		
-		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
 		
 		LOGGER.info("OrderUtil | updateOrderTracks | trackIds.length : " + trackIds.length);
 
@@ -76,11 +78,7 @@ public class OrderUtil {
 			trackRecord.setStatus(OrderStatus.valueOf(trackStatuses[i]));
 			trackRecord.setNotes(trackNotes[i]);
 
-			try {
-				trackRecord.setUpdatedTime(dateFormatter.parse(trackDates[i]));
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+			trackRecord.setUpdatedTime(LocalDateTime.parse(trackDates[i], dateFormatter));
 			
 			LOGGER.info("OrderUtil | updateOrderTracks | trackRecord : " + trackRecord.toString());
 

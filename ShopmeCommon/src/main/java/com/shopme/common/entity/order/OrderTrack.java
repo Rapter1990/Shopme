@@ -3,6 +3,8 @@ package com.shopme.common.entity.order;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Set;
 
@@ -32,7 +34,7 @@ public class OrderTrack extends IdBasedEntity {
 	@Column(length = 256)
 	private String notes;
 
-	private Date updatedTime;
+	private LocalDateTime updatedTime;
 
 	@Enumerated(EnumType.STRING)
 	@Column(length = 45, nullable = false)
@@ -48,14 +50,12 @@ public class OrderTrack extends IdBasedEntity {
 		return dateFormatter.format(this.updatedTime);
 	}
 	
-	public void setUpdatedTimeOnForm(String dateString) {
-		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+	public void setUpdatedTimeOnForm(String dateString) throws ParseException {
+		// DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
 		
-		try {
-			this.updatedTime = dateFormatter.parse(dateString);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+		
+		this.updatedTime = LocalDateTime.parse(dateString, formatter); //  dateFormatter.parse(dateString); 
 	}
 
 }

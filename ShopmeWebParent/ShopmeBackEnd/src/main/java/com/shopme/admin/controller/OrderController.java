@@ -178,7 +178,7 @@ public class OrderController {
 
 		orderService.save(order);		
 
-		ra.addFlashAttribute("message", "The order ID " + order.getId() + " has been updated successfully");
+		ra.addFlashAttribute("messageSuccess", "The order ID " + order.getId() + " has been updated successfully");
 		
 		LOGGER.info("OrderController | saveOrder | message : " + "The order ID " + order.getId() + " has been updated successfully");
 
