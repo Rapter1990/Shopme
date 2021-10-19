@@ -2,6 +2,7 @@ package com.shopme.admin.service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -107,7 +108,7 @@ public class OrderService implements IOrderService{
 			OrderTrack track = new OrderTrack();
 			track.setOrder(orderInDB);
 			track.setStatus(statusToUpdate);
-			track.setUpdatedTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+			track.setUpdatedTime(new Date());
 			track.setNotes(statusToUpdate.defaultDescription());
 
 			orderTracks.add(track);

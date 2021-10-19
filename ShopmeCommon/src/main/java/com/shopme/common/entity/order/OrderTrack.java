@@ -34,7 +34,7 @@ public class OrderTrack extends IdBasedEntity {
 	@Column(length = 256)
 	private String notes;
 
-	private LocalDateTime updatedTime;
+	private Date updatedTime;
 
 	@Enumerated(EnumType.STRING)
 	@Column(length = 45, nullable = false)
@@ -46,20 +46,19 @@ public class OrderTrack extends IdBasedEntity {
 	
 	@Transient
 	public String getUpdatedTimeOnForm() {
-		//DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-		//return dateFormatter.format(this.updatedTime);
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss");
-		
-		return this.updatedTime.format(formatter);
+		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
+		return dateFormatter.format(this.updatedTime);
 	}
 	
 	public void setUpdatedTimeOnForm(String dateString) throws ParseException {
-		// DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss");
-		
-		this.updatedTime = LocalDateTime.parse(dateString, formatter); //  dateFormatter.parse(dateString); 
+		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+		dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
+		try {
+			this.updatedTime = dateFormatter.parse(dateString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
 	}
 
 }

@@ -1,7 +1,5 @@
 package com.shopme.service;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -39,7 +37,7 @@ public class OrderService {
 		LOGGER.info("OrderService | createOrder is called");
 		
 		Order newOrder = new Order();
-		newOrder.setOrderTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+		newOrder.setOrderTime(new Date());
 		
 		if (paymentMethod.equals(PaymentMethod.PAYPAL)) {
 			newOrder.setStatus(OrderStatus.PAID);

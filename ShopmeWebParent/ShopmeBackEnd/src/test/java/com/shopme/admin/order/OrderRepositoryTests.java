@@ -42,7 +42,7 @@ public class OrderRepositoryTests {
 		Product product = entityManager.find(Product.class, 1);
 
 		Order mainOrder = new Order();
-		mainOrder.setOrderTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+		mainOrder.setOrderTime(new Date());
 		mainOrder.setCustomer(customer);
 		mainOrder.copyAddressFromCustomer();
 
@@ -80,7 +80,7 @@ public class OrderRepositoryTests {
 		Product product2 = entityManager.find(Product.class, 40);
 
 		Order mainOrder = new Order();
-		mainOrder.setOrderTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+		mainOrder.setOrderTime(new Date());
 		mainOrder.setCustomer(customer);
 		mainOrder.copyAddressFromCustomer();
 
@@ -137,7 +137,7 @@ public class OrderRepositoryTests {
 
 		order.setStatus(OrderStatus.SHIPPING);
 		order.setPaymentMethod(PaymentMethod.COD);
-		order.setOrderTime(LocalDateTime.now());
+		order.setOrderTime(new Date());
 		order.setDeliverDays(2);
 
 		Order updatedOrder = repo.save(order);
@@ -170,13 +170,13 @@ public class OrderRepositoryTests {
 
 		OrderTrack newTrack = new OrderTrack();
 		newTrack.setOrder(order);
-		newTrack.setUpdatedTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+		newTrack.setUpdatedTime(new Date());
 		newTrack.setStatus(OrderStatus.NEW);
 		newTrack.setNotes(OrderStatus.NEW.defaultDescription());
 
 		OrderTrack processingTrack = new OrderTrack();
 		processingTrack.setOrder(order);
-		processingTrack.setUpdatedTime(LocalDateTime.now());
+		processingTrack.setUpdatedTime(new Date());
 		processingTrack.setStatus(OrderStatus.PROCESSING);
 		processingTrack.setNotes(OrderStatus.PROCESSING.defaultDescription());
 
@@ -191,12 +191,12 @@ public class OrderRepositoryTests {
 	
 	@Test
 	public void testAddTrackWithStatusNewToOrder() {
-		Integer orderId = 9;
+		Integer orderId = 11;
 		Order order = repo.findById(orderId).get();
 
 		OrderTrack newTrack = new OrderTrack();
 		newTrack.setOrder(order);
-		newTrack.setUpdatedTime(LocalDateTime.now(ZoneId.of("Europe/Istanbul")));
+		newTrack.setUpdatedTime(new Date());
 		newTrack.setStatus(OrderStatus.NEW);
 		newTrack.setNotes(OrderStatus.NEW.defaultDescription());
 
