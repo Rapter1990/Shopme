@@ -23,7 +23,7 @@ public class OrderRestControllerTests {
 	@WithMockUser(username = "user1", password = "pass1", authorities = {"Shipper"})
 	public void testUpdateOrderStatus() throws Exception {
 		Integer orderId = 11;
-		String status = "DELIVERED";
+		String status = "REFUNDED";
 		String requestURL = "/orders_shipper/update/" + orderId + "/" + status;
 
 		mockMvc.perform(post(requestURL).with(csrf()))

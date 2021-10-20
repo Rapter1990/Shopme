@@ -137,13 +137,13 @@ public class Order extends AbstractAddress implements Serializable{
 	@Transient
 	public String getDeliverDateOnForm() {
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
-		dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
+		//dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
 		return dateFormatter.format(this.deliverDate);
 	}
 	
 	public void setDeliverDateOnForm(String dateString) {
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
-		dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
+		//dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
 		try {
 			this.deliverDate = dateFormatter.parse(dateString);
 		} catch (ParseException e) {

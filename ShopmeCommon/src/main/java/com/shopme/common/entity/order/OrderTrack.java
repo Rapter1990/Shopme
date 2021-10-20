@@ -47,13 +47,13 @@ public class OrderTrack extends IdBasedEntity {
 	@Transient
 	public String getUpdatedTimeOnForm() {
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-		dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
+		//dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
 		return dateFormatter.format(this.updatedTime);
 	}
 	
 	public void setUpdatedTimeOnForm(String dateString) throws ParseException {
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-		dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
+		//dateFormatter.setTimeZone(java.util.TimeZone.getTimeZone("Asia/Istanbul"));
 		try {
 			this.updatedTime = dateFormatter.parse(dateString);
 		} catch (ParseException e) {
