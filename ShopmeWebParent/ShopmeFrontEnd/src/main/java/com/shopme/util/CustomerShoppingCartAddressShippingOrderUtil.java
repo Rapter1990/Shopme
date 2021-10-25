@@ -9,24 +9,24 @@ import com.shopme.common.entity.Customer;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.CustomerService;
 
-public class CustomerShoppingCartAddressShippingUtil {
+public class CustomerShoppingCartAddressShippingOrderUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerShoppingCartAddressShippingUtil.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerShoppingCartAddressShippingOrderUtil.class);
 	
 	public static Customer getAuthenticatedCustomer(HttpServletRequest request, CustomerService customerService) 
 			throws CustomerNotFoundException {
 		
-		LOGGER.info("CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer is called");
+		LOGGER.info("CustomerShoppingCartAddressShippingOrderUtil | getAuthenticatedCustomer is called");
 		
 		String email = CustomerAccountUtil.getEmailOfAuthenticatedCustomer(request);
 		
-		LOGGER.info("CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | email : " + email);
+		LOGGER.info("CustomerShoppingCartAddressShippingOrderUtil | getAuthenticatedCustomer | email : " + email);
 		
 		if (email == null) {
 			throw new CustomerNotFoundException("No authenticated customer");
 		}
 		
-		LOGGER.info("CustomerShoppingCartandAddressUtil | getAuthenticatedCustomer | customerService.getCustomerByEmail(email) : " + customerService.getCustomerByEmail(email).toString());
+		LOGGER.info("CustomerShoppingCartAddressShippingOrderUtil | getAuthenticatedCustomer | customerService.getCustomerByEmail(email) : " + customerService.getCustomerByEmail(email).toString());
 
 		return customerService.getCustomerByEmail(email);
 	}
