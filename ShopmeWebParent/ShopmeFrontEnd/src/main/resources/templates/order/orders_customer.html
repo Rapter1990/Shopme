@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('My Orders', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: header_menu"></div>
+	<div th:replace="navigation :: search_nav"></div>
+	<div>
+		<h2>My Orders</h2>	
+	</div>
+
+	<div>
+		<form th:action="@{'/orders/page/1'}" class="form-inline m-3">
+			<input type="hidden" name="sortField" th:value="${sortField}" />
+			<input type="hidden" name="sortDir" th:value="${sortDir}" />
+
+			Filter:&nbsp;
+			<input type="search" name="orderKeyword" th:value="${orderKeyword}" class="form-control" required/>
+			&nbsp;&nbsp;
+			<button type="submit" class="btn btn-primary">
+				<i class="fas fa-search"></i>
+			</button>
+			&nbsp;&nbsp;
+			<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+				<i class="fas fa-eraser"></i>
+			</button>
+		</form>				
+	</div>
+
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
+					<th th:replace="fragments :: column_link('orderTime', 'Order Time', 'none')" />
+					<th>Products</th>
+					<th th:replace="fragments :: column_link('total', 'Total', 'none')" />
+					<th th:replace="fragments :: column_link('status', 'Status', 'none')" />
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr th:each="order : ${listOrders}">
+					<td th:text="${order.id}">ID</td>
+					<td><div th:replace="fragments :: format_time(${order.orderTime})">Order Time</div></td>
+					<td th:utext="${order.productNames}"></td>
+					<td>
+						<div th:replace="fragments :: format_currency(${order.total})">Total</div>
+					</td>
+					<td><span>[[${order.status}]]</span></td>
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green" href="" title="View details of this order"></a>
+
+						<th:block th:unless="${order.returnRequested}">
+							&nbsp;&nbsp;&nbsp;		
+							<a class="fas fa-undo fa-2x icon-dark " href="" title="Return this order"></a>
+						</th:block> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="less-details p-2">
+	<th:block th:each="order : ${listOrders}">
+		<div class="row m-1">
+			<div class="card">
+				<div class="card-header">
+					<div class="row">
+						<div class="col">
+							<span>Order ID #[[${order.id}]]</span>						
+						</div>						
+						<div class="col">
+							<div class="float-right">
+								<a class="fas fa-file-alt fa-2x icon-green" href=""></a>
+
+								<th:block th:unless="${order.returnRequested}">
+									&nbsp;
+									<a class="fas fa-undo fa-2x icon-dark" href="" title="Return this order"></a>
+								</th:block>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div>
+						<span th:utext="${order.productNames}"></span>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div th:replace="fragments :: format_currency(${order.total})">Total</div>	
+						</div>
+						<div class="col">
+							<span>[[${order.status}]]</span>
+						</div>			
+					</div>
+					<div><small><div th:replace="fragments :: format_time(${order.orderTime})"></div></small></div>
+				</div>
+			</div>
+		</div>	
+	</th:block>
+	</div>		
+
+	<div th:replace="fragments :: pagination('/orders', 'orders')"></div>
+
+	<div>&nbsp;</div>
+	<div th:replace="navigation :: footer_menu"></div>
+
+</div>
+<script type="text/javascript">
+	moduleURL = "[[@{/orders}]]";
+
+	function clearFilter() {
+		window.location = moduleURL;
+	}
+
+</script>
+</body>
+</html> 

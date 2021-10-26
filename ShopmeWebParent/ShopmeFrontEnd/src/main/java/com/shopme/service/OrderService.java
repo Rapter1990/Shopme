@@ -9,6 +9,10 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.shopme.checkout.CheckoutInfo;
@@ -27,6 +31,8 @@ import com.shopme.repository.OrderRepository;
 public class OrderService {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(OrderService.class);
+	
+	public static final int ORDERS_PER_PAGE = 5;
 
 	@Autowired 
 	private OrderRepository repo;
@@ -81,5 +87,21 @@ public class OrderService {
 		LOGGER.info("OrderService | createOrder | order : " + newOrder.toString());
 
 		return repo.save(newOrder);
+	}
+	
+	public Page<Order> listForCustomerByPage(Customer customer, int pageNum, 
+			String sortField, String sortDir, String keyword) {
+		
+		Sort sort = Sort.by(sortField);
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+
+		Pageable pageable = PageRequest.of(pageNum - 1, ORDERS_PER_PAGE, sort);
+
+		if (keyword != null) {
+			return repo.findAll(keyword, customer.getId(), pageable);
+		}
+
+		return repo.findAll(customer.getId(), pageable);
+
 	}
 }

@@ -18,7 +18,10 @@
 
 <a th:fragment="page_link(moduleURL, pageNum, label)"
 	class="page-link" 
-	th:href="@{${moduleURL} + '/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${label}]]</a>
+	th:href="@{${moduleURL} + '/page/' + ${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+	   [[${label}]]
+</a>
+
 
 <div th:fragment="pagination(moduleURL, entityName)" th:remove="tag">
 	<div class="text-center m-1" th:if="${totalItems > 0}">
@@ -105,6 +108,19 @@
 	      [[${CURRENCY_SYMBOL}]]
 	</span>
 	
+</div>
+
+<th th:fragment="column_link(fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
+	<a class="text-white"
+		th:href="@{${moduleURL} + '/page/' + ${currentPage} + '?sortField=' + ${fieldName}  +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''} + ${categoryId != null ? '&categoryId=' + categoryId : ''}}">
+		[[${columnLabel}]]
+	</a>								
+	<span th:if="${sortField == fieldName}"
+		th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}" ></span>					
+</th>
+
+<div th:fragment="format_time(dateTime)" th:remove="tag">
+	<span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
 </div>
 
 
