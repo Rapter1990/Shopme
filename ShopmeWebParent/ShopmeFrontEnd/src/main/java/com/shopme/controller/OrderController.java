@@ -106,6 +106,22 @@ public class OrderController {
 
 		model.addAttribute("endCount", endCount);
 
-		return "order/orders_customer";		
+		return "orders/orders_customer";		
+	}
+	
+	@GetMapping("/orders/detail/{id}")
+	public String viewOrderDetails(Model model,
+			@PathVariable(name = "id") Integer id, HttpServletRequest request) throws CustomerNotFoundException {
+		
+		LOGGER.info("OrderController | viewOrderDetails is called");
+		
+		Customer customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request, customerService);
+		
+		LOGGER.info("OrderController | listOrdersByPage | customer : " + customer.toString());
+
+		Order order = orderService.getOrder(id, customer);		
+		model.addAttribute("order", order);
+
+		return "orders/order_details_modal";
 	}
 }

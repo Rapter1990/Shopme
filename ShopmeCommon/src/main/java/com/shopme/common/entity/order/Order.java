@@ -203,7 +203,12 @@ public class Order extends AbstractAddress implements Serializable{
 	@Transient
 	public boolean isReturnRequested() {
 		return hasStatus(OrderStatus.RETURN_REQUESTED);
-	}	
+	}
+	
+	@Transient
+	public boolean isProcessing() {
+		return hasStatus(OrderStatus.PROCESSING);
+	}
 
 	public boolean hasStatus(OrderStatus status) {
 		

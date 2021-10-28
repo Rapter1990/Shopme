@@ -21,12 +21,17 @@
 				<li class="nav-item">
 					<a class="nav-link" href="">Shipping &amp; Delivery</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" th:href="@{/login}">Login</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" th:href="@{/register}">Register</a>
-				</li>
+				
+				<th:block sec:authorize="!isAuthenticated()">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/login}">Login</a>
+					</li>
+				
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/register}">Register</a>
+					</li>
+				</th:block>
+				
 				<li class="nav-item">
 					<a class="nav-link" href="">Contact</a>
 				</li>				
@@ -57,37 +62,37 @@
 				
 				<ul class="navbar-nav">						
 					<th:block sec:authorize="isAuthenticated()">
-					<li class="nav-item">
-						<b>
-						   <a class="nav-link" th:href="@{/account_details}"  
-							  sec:authentication="principal.fullName"></a>
-						</b>
-						<!-- <a class="nav-link" th:href="@{/account_details}" ><b>[[${#request.userPrincipal.principal.fullName}]]</b></a> -->			
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" th:href="@{/address_book}">Address Book</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="">Questions</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="">Reviews</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" th:href="@{/orders}">Orders</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link fas fa-shopping-cart fa-2x" th:href="@{/cart}"></a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a>
-					</li>					
+						<li class="nav-item">
+							<b>
+							   <a class="nav-link" th:href="@{/account_details}"  
+								  sec:authentication="principal.fullName"></a>
+							</b>
+							<!-- <a class="nav-link" th:href="@{/account_details}" ><b>[[${#request.userPrincipal.principal.fullName}]]</b></a> -->			
+						</li>
+	
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/address_book}">Address Book</a>
+						</li>
+	
+						<li class="nav-item">
+							<a class="nav-link" href="">Questions</a>
+						</li>
+	
+						<li class="nav-item">
+							<a class="nav-link" href="">Reviews</a>
+						</li>
+	
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/orders}">Orders</a>
+						</li>
+	
+						<li class="nav-item">
+							<a class="nav-link fas fa-shopping-cart fa-2x" th:href="@{/cart}"></a>
+						</li>
+	
+						<li class="nav-item">
+							<a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a>
+						</li>					
 					</th:block>						
 				</ul>
 			</div>
