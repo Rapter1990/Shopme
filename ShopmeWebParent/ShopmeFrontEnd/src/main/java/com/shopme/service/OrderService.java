@@ -86,6 +86,16 @@ public class OrderService {
 
 			orderDetails.add(orderDetail);
 		}
+		
+		OrderTrack track = new OrderTrack();
+		track.setOrder(newOrder);
+		track.setStatus(OrderStatus.NEW);
+		track.setNotes(OrderStatus.NEW.defaultDescription());
+		track.setUpdatedTime(new Date());
+		
+		LOGGER.info("OrderService | createOrder | OrderTrack track : " + track.toString());
+
+		newOrder.getOrderTracks().add(track);
 
 		LOGGER.info("OrderService | createOrder | order : " + newOrder.toString());
 
