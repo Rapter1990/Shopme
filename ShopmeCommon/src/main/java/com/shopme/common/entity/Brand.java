@@ -13,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import com.shopme.common.constants.Constants;
+
 import javax.persistence.JoinColumn;
 
 import lombok.Getter;
@@ -59,6 +62,6 @@ public class Brand extends IdBasedEntity implements Serializable{
 	public String getLogoPath() {
 		if (this.id == null) return "/images/image-thumbnail.png";
 
-		return "/brand-logos/" + this.id + "/" + this.logo;		
+		return Constants.S3_BASE_URI + "/brand-logos/" + this.id + "/" + this.logo;		
 	}
 }

@@ -22,6 +22,7 @@ import com.shopme.admin.repository.CurrencyRepository;
 import com.shopme.admin.service.SettingService;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.admin.util.GeneralSettingBag;
+import com.shopme.common.constants.Constants;
 import com.shopme.common.entity.Currency;
 import com.shopme.common.entity.setting.Setting;
 
@@ -58,6 +59,10 @@ public class SettingController {
 			LOGGER.info("SettingController | listAll | setting.getKey() : " + setting.getKey() + " | setting.getValue() : " + setting.getValue());
 			model.addAttribute(setting.getKey(), setting.getValue());
 		}
+		
+		model.addAttribute("S3_BASE_URI", Constants.S3_BASE_URI);
+		
+		LOGGER.info("SettingController | listAll | S3_BASE_URI : " + Constants.S3_BASE_URI);
 
 		return "settings/settings";
 	}

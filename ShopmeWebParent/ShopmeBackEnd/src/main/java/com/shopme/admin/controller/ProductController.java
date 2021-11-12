@@ -31,6 +31,7 @@ import com.shopme.admin.security.ShopmeUserDetails;
 import com.shopme.admin.service.BrandService;
 import com.shopme.admin.service.CategoryService;
 import com.shopme.admin.service.ProductService;
+import com.shopme.admin.util.AmazonS3Util;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
@@ -155,10 +156,16 @@ public class ProductController {
 		ProductSaveHelper.setProductDetails(detailIDs, detailNames, detailValues, product);
 		
 		Product savedProduct = productService.save(product);
-
-		ProductSaveHelper.saveUploadedImages(mainImageMultipart, extraImageMultiparts, savedProduct);
 		
+		/* Image Folder
+		ProductSaveHelper.saveUploadedImages(mainImageMultipart, extraImageMultiparts, savedProduct);
 		ProductSaveHelper.deleteExtraImagesWeredRemovedOnForm(product);
+		*/
+		
+		// Amazon S3 Image Storage
+		ProductSaveHelper.saveUploadedImagesForAmazonS3(mainImageMultipart, extraImageMultiparts, savedProduct);
+		ProductSaveHelper.deleteExtraImagesWeredRemovedOnFormForAmazonS3(product);
+		
 
 		ra.addFlashAttribute("messageSuccess", "The product has been saved successfully.");
 
@@ -200,8 +207,15 @@ public class ProductController {
 			LOGGER.info("ProductController | deleteProduct | productImagesDir : " + productImagesDir);
 
 			FileUploadUtil.removeDir(productExtraImagesDir);
-			
 			FileUploadUtil.removeDir(productImagesDir);
+			
+			// Image Folder
+			//FileUploadUtil.removeDir(productExtraImagesDir);
+			//FileUploadUtil.removeDir(productImagesDir);
+			 
+            // Amazon S3 option
+            AmazonS3Util.removeFolder(productExtraImagesDir);
+            AmazonS3Util.removeFolder(productExtraImagesDir);
 			
 			LOGGER.info("ProductController | deleteProduct is done");
 			

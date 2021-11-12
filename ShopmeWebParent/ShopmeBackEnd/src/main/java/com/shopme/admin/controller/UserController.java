@@ -27,6 +27,7 @@ import com.shopme.admin.exportpdf.UserPdfExporter;
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.UserService;
+import com.shopme.admin.util.AmazonS3Util;
 import com.shopme.admin.util.DirectUtil;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Role;
@@ -104,8 +105,14 @@ public class UserController {
 				
 				LOGGER.info("UserController | saveUser | uploadDir : " + uploadDir);
 	
+				/* Image Folder
 				FileUploadUtil.cleanDir(uploadDir);
 				FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+				*/
+				
+				// Amazon S3 Image Storage
+				AmazonS3Util.removeFolder(uploadDir);
+				AmazonS3Util.uploadFile(uploadDir, fileName, multipartFile.getInputStream());	
 	
 		} else {
 			
@@ -163,6 +170,17 @@ public class UserController {
 		
 		try {
 			service.delete(id);
+			
+			String userPhotosDir = "user-photos/" + id;
+			
+			LOGGER.info("CategoryController | deleteUser | userPhotosDir : " + userPhotosDir);
+			
+			/* Image Folder
+			FileUploadUtil.removeDir(userPhotosDir);
+			*/ 
+			
+			// Amazon S3 Image Storage
+			AmazonS3Util.removeFolder(userPhotosDir);
 			
 			LOGGER.info("UserController | deleteUser | delete completed");
 			

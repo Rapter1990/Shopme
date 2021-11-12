@@ -31,6 +31,7 @@ import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.BrandService;
 import com.shopme.admin.service.CategoryService;
+import com.shopme.admin.util.AmazonS3Util;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
@@ -94,7 +95,10 @@ public class BrandController {
 			
 			brand.setLogo(fileName);
 
+			
 			Brand savedBrand = brandService.save(brand);
+			
+			/* Image Folder 
 			String uploadDir = "../brand-logos/" + savedBrand.getId();
 			
 			LOGGER.info("BrandController | saveBrand | savedBrand : " + savedBrand.toString());
@@ -102,6 +106,16 @@ public class BrandController {
 
 			FileUploadUtil.cleanDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+			*/
+			
+			// Amazon S3 Image Storage
+			String uploadDir = "brand-logos/" + savedBrand.getId();
+			
+			LOGGER.info("BrandController | saveBrand | savedBrand : " + savedBrand.toString());
+			LOGGER.info("BrandController | saveBrand | uploadDir : " + uploadDir);
+
+			AmazonS3Util.removeFolder(uploadDir);
+			AmazonS3Util.uploadFile(uploadDir, fileName, multipartFile.getInputStream());
 
 		} else {
 			brandService.save(brand);
@@ -149,6 +163,7 @@ public class BrandController {
 			
 			LOGGER.info("BrandController | deleteBrand | brand deleted");
 			
+			/* Image Folder 
 			String brandDir = "../brand-logos/" + id;
 			
 			LOGGER.info("BrandController | deleteBrand | brandDir : " + brandDir);
@@ -156,7 +171,14 @@ public class BrandController {
 			FileUploadUtil.removeDir(brandDir);
 			
 			LOGGER.info("BrandController | deleteBrand | FileUploadUtil.removeDir is over");
+			*/
 			
+			// Amazon S3 Image Storage
+			String brandDir = "brand-logos/" + id;
+			LOGGER.info("BrandController | deleteBrand | brandDir : " + brandDir);
+			
+			AmazonS3Util.removeFolder(brandDir);
+			LOGGER.info("BrandController | deleteBrand | FileUploadUtil.removeDir is over");
 
 			redirectAttributes.addFlashAttribute("messageSuccess", 
 					"The brand ID " + id + " has been deleted successfully");

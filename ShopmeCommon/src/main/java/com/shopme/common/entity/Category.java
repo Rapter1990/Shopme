@@ -16,6 +16,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.shopme.common.constants.Constants;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -113,7 +115,7 @@ public class Category extends IdBasedEntity implements Serializable{
 		
 		if (this.id == null) return "/images/image-thumbnail.png";
 		
-		return "/category-images/" + this.id + "/" + this.image;
+		return Constants.S3_BASE_URI + "/category-images/" + this.id + "/" + this.image;
 	}
 	
 	@Override

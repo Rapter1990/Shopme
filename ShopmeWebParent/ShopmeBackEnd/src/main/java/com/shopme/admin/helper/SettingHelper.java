@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.shopme.admin.repository.CurrencyRepository;
 import com.shopme.admin.service.SettingService;
+import com.shopme.admin.util.AmazonS3Util;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.admin.util.GeneralSettingBag;
 import com.shopme.common.entity.Currency;
@@ -24,9 +25,16 @@ public class SettingHelper {
 			String value = "/site-logo/" + fileName;
 			settingBag.updateSiteLogo(value);
 
+			/* Image Folder 
 			String uploadDir = "../site-logo/";
 			FileUploadUtil.cleanDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+			*/
+			
+			// Amazon S3 Image Storage
+			String uploadDir = "site-logo";
+			AmazonS3Util.removeFolder(uploadDir);
+			AmazonS3Util.uploadFile(uploadDir, fileName, multipartFile.getInputStream());
 		}
 	}
 

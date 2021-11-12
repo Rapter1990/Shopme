@@ -20,6 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.shopme.common.constants.Constants;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.IdBasedEntity;
@@ -105,7 +106,7 @@ public class Product extends IdBasedEntity implements Serializable{
 	public String getMainImagePath() {
 		if (id == null || mainImage == null) return "/images/image-thumbnail.png";
 
-		return "/product-images/" + this.id + "/" + this.mainImage;
+		return Constants.S3_BASE_URI + "/product-images/" + this.id + "/" + this.mainImage;
 	}
 	
 	@Override

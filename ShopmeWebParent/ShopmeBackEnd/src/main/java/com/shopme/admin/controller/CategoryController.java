@@ -24,6 +24,7 @@ import com.shopme.admin.exportexcel.UserExcelExporter;
 import com.shopme.admin.exportpdf.CategoryPdfExporter;
 import com.shopme.admin.exportpdf.UserPdfExporter;
 import com.shopme.admin.service.CategoryService;
+import com.shopme.admin.util.AmazonS3Util;
 import com.shopme.admin.util.CategoryPageInfo;
 import com.shopme.admin.util.FileUploadUtil;
 import com.shopme.common.entity.Category;
@@ -130,6 +131,8 @@ public class CategoryController {
 			category.setImage(fileName);
 
 			Category savedCategory = categoryService.save(category);
+			
+			/* Image Folder 
 			String uploadDir = "../category-images/" + savedCategory.getId();
 			
 			LOGGER.info("CategoryController | saveCategory | savedCategory : " + savedCategory.toString());
@@ -137,6 +140,19 @@ public class CategoryController {
 			
 			FileUploadUtil.cleanDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+			*/
+			
+			
+			// Amazon S3 Image Storage
+			String uploadDir = "category-images/" + savedCategory.getId();
+			
+			LOGGER.info("CategoryController | saveCategory | savedCategory : " + savedCategory.toString());
+			LOGGER.info("CategoryController | saveCategory | uploadDir : " + uploadDir);
+			
+			AmazonS3Util.removeFolder(uploadDir);
+			AmazonS3Util.uploadFile(uploadDir, fileName, multipartFile.getInputStream());
+			
+			
 		} else {
 			categoryService.save(category);
 		}
@@ -259,6 +275,7 @@ public class CategoryController {
 			
 			LOGGER.info("CategoryController | deleteCategory | category deleted");
 			
+			/* Image Folder 
 			String categoryDir = "../category-images/" + id;
 			
 			LOGGER.info("CategoryController | deleteCategory | categoryDir : " + categoryDir);
@@ -266,8 +283,15 @@ public class CategoryController {
 			FileUploadUtil.removeDir(categoryDir);
 			
 			LOGGER.info("CategoryController | deleteCategory | FileUploadUtil.removeDir is over");
+			*/
 			
+			// Amazon S3 Image Storage
+			String categoryDir = "category-images/" + id;
 			LOGGER.info("CategoryController | deleteCategory | categoryDir : " + categoryDir);
+			
+			AmazonS3Util.removeFolder(categoryDir);
+			LOGGER.info("CategoryController | deleteCategory | FileUploadUtil.removeDir is over");
+			
 
 			redirectAttributes.addFlashAttribute("messageSuccess", 
 					"The category ID " + id + " has been deleted successfully");

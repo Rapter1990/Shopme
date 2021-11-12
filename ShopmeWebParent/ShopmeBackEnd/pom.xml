@@ -21,7 +21,20 @@
 		<csv.version>2.4.0</csv.version>
 		<poi.version>5.0.0</poi.version>
 		<openpdf.version>1.3.25</openpdf.version>
+		<amazon.aws.version>2.17.77</amazon.aws.version>
 	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>software.amazon.awssdk</groupId>
+				<artifactId>bom</artifactId>
+				<version>${amazon.aws.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	
 	<dependencies>
 
@@ -54,6 +67,11 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>s3</artifactId>
 		</dependency>
 		
 	</dependencies>
