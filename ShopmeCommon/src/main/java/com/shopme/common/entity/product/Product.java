@@ -36,10 +36,10 @@ import lombok.Setter;
 @Setter
 public class Product extends IdBasedEntity implements Serializable{
 
-	@Column(unique = true, length = 256, nullable = false)
+	@Column(unique = true, length = 255, nullable = false)
 	private String name;
 
-	@Column(unique = true, length = 256, nullable = false)
+	@Column(unique = true, length = 255, nullable = false)
 	private String alias;
 
 	@Column(length = 512, nullable = false, name = "short_description")
