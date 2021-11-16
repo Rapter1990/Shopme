@@ -1,5 +1,8 @@
 package com.shopme.admin.repository;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -22,4 +25,9 @@ public interface OrderRepository extends PagingAndSortingRepository<Order, Integ
 	public Page<Order> findAll(String keyword, Pageable pageable);
 	
 	public Long countById(Integer id);
+	
+	@Query("SELECT NEW com.shopme.common.entity.order.Order(o.id, o.orderTime, o.productCost,"
+			+ " o.subtotal, o.total) FROM Order o WHERE"
+			+ " o.orderTime BETWEEN ?1 AND ?2 ORDER BY o.orderTime ASC")
+	public List<Order> findByOrderTimeBetween(Date startTime, Date endTime);
 }
