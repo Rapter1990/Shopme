@@ -1,4 +1,4 @@
-package com.shopme.admin.util;
+package com.shopme.admin.dto;
 
 public class ProductDTO {
 
