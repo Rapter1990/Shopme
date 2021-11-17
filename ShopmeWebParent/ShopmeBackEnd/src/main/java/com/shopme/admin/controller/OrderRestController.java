@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.shopme.admin.dto.OrderResponseDTO;
 import com.shopme.admin.service.OrderService;
-import com.shopme.admin.util.OrderResponseDTO;
 
 @RestController
 public class OrderRestController {

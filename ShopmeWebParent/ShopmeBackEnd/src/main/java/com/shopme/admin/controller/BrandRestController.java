@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.shopme.admin.dto.CategoryDTO;
 import com.shopme.admin.error.BrandNotFoundException;
 import com.shopme.admin.error.BrandNotFoundRestException;
 import com.shopme.admin.service.BrandService;
-import com.shopme.admin.util.CategoryDTO;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 
