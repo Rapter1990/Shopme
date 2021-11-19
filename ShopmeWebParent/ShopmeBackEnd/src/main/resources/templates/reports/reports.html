@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Sales Report - Shopme Admin', 'none')" />
+<body>
+<div class="container-fluid">
+
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Sales Report</h2>	
+	</div>
+
+	<div>
+		<ul class="nav nav-tabs" id="reportTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" data-toggle="tab" href="#date" role="tab">Sales by Date</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" data-toggle="tab" href="#category" role="tab">Sales by Category</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" data-toggle="tab" href="#product" role="tab">Sales by Product</a>
+		  </li>		  		  
+		</ul>
+
+		<div class="tab-content">
+		  <div class="tab-pane active p-3" id="date" role="tabpanel">
+		  	<div th:replace="reports/sales_report_by_date::content"></div>
+		  </div>
+		  <div class="tab-pane p-3" id="category" role="tabpanel">
+			<h2>Sales by Category</h2>
+		  </div>
+		  <div class="tab-pane p-3" id="product" role="tabpanel">
+			<h2>Sales by Product</h2>
+		  </div>  	
+		 </div>
+	</div>
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	contextPath = "[[@{/}]]";
+
+	$(document).ready(function() {
+		google.charts.load('current', {'packages': ['corechart']});
+		google.charts.setOnLoadCallback(loadSalesReportByDate);
+	});
+
+</script>
+<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/sales_report_by_date.js}"></script>
+</body>
+</html> 

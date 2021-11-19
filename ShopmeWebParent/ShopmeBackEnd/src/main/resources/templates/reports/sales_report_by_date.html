@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" th:remove="tag">
+	<div>
+		<button period="last_7_days" class="btn btn-primary button-sales-by-date m-1">Last 7 days</button>
+		<button period="last_28_days" class="btn btn-light button-sales-by-date m-1">Last 28 days</button>
+	</div>
+
+	<div id="chart_sales_by_date" class="justify-content-center mt-3"></div>
+
+	<div class="row justify-content-center">
+		<div class="col-2-sm">
+			<div class="card">
+				<div class="card-header"><b>Total Gross Sales</b></div>
+				<div class="card-body">
+					<span class="h3" id="textTotalGrossSales"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-2-sm">
+			<div class="card">
+				<div class="card-header"><b>Total Net Sales</b></div>
+				<div class="card-body">
+					<span class="h3" id="textTotalNetSales"></span>
+				</div>
+			</div>
+		</div>		
+
+		<div class="col-2-sm">
+			<div class="card">
+				<div class="card-header"><b>Avg. Gross Sales</b></div>
+				<div class="card-body">
+					<span class="h3" id="textAvgGrossSales"></span>
+				</div>
+			</div>
+		</div>		
+
+		<div class="col-2-sm">
+			<div class="card">
+				<div class="card-header"><b>Avg. Net Sales</b></div>
+				<div class="card-body">
+					<span class="h3" id="textAvgNetSales"></span>
+				</div>
+			</div>
+		</div>		
+
+		<div class="col-2-sm">
+			<div class="card">
+				<div class="card-header"><b>Total Orders</b></div>
+				<div class="card-body">
+					<span class="h3" id="textTotalOrders"></span>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+</body>
+</html> 

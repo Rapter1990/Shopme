@@ -28,6 +28,21 @@ public class ReportRestController {
 		
 		LOGGER.info("ReportRestController | getReportDataByDatePeriod | Report period: " + period);
 		
-		return masterOrderReportService.getReportDataLast7Days();
+		switch (period) {
+			case "last_7_days":
+				
+				LOGGER.info("ReportRestController | getReportDataByDatePeriod | case last_7_days");
+				return masterOrderReportService.getReportDataLast7Days();
+	
+			case "last_28_days":
+				
+				LOGGER.info("ReportRestController | getReportDataByDatePeriod | case last_28_days");
+				return masterOrderReportService.getReportDataLast28Days();
+				
+			default:
+				
+				LOGGER.info("ReportRestController | getReportDataByDatePeriod | default last_7_days");
+				return masterOrderReportService.getReportDataLast7Days();
+		}
 	}
 }

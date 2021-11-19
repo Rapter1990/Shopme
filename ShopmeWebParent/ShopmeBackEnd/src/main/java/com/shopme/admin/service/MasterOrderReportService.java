@@ -34,4 +34,14 @@ public class MasterOrderReportService implements IMasterOrderReportService{
 		return MasterOrderReportServiceUtil.getReportDataLastXDays(repo, dateFormatter ,7);
 	}
 
+	@Override
+	public List<ReportItemDTO> getReportDataLast28Days() {
+		// TODO Auto-generated method stub
+		
+		LOGGER.info("MasterOrderReportService | getReportDataLast28Days is called");
+		
+		return MasterOrderReportServiceUtil.getReportDataLastXDays(repo, dateFormatter ,28);
+	}
+	
+
 }
