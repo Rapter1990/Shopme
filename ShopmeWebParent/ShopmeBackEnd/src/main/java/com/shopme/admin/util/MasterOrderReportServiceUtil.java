@@ -34,25 +34,25 @@ public class MasterOrderReportServiceUtil {
 		
 		LOGGER.info("MasterOrderReportServiceUtil | getReportDataLastXDays | startTime : " + startTime.toString());
 
-		dateFormatter = new SimpleDateFormat("yyy-MM-dd");
+		dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 
-		return getReportDataByDateRange(repo, startTime, endTime, dateFormatter);
+		return getReportDataByDateRange(repo, startTime, endTime, dateFormatter, "days");
 		
 	}
 
 	private static List<ReportItemDTO> getReportDataByDateRange(OrderRepository repo, Date startTime, Date endTime, 
-			DateFormat dateFormatter) {
+			DateFormat dateFormatter, String period) {
 		// TODO Auto-generated method stub
 		
 		LOGGER.info("MasterOrderReportServiceUtil | getReportDataByDateRange is called");
 		
 		List<Order> listOrders = repo.findByOrderTimeBetween(startTime, endTime);
 		
-		LOGGER.info("MasterOrderReportServiceUtil | getReportDataByDateRange | listOrders : " + listOrders.toString());
+		LOGGER.info("MasterOrderReportServiceUtil | getReportDataByDateRange | listOrders : " + listOrders.size());
 		
 		printRawData(listOrders);
 
-		List<ReportItemDTO> listReportItems = createReportData(startTime, endTime, dateFormatter);
+		List<ReportItemDTO> listReportItems = createReportData(startTime, endTime, dateFormatter, period);
 		
 		LOGGER.info("MasterOrderReportServiceUtil | getReportDataByDateRange | listReportItems : " + listReportItems.toString());
 
@@ -64,7 +64,8 @@ public class MasterOrderReportServiceUtil {
 		return listReportItems;
 	}
 
-	private static void calculateSalesForReportData(List<Order> listOrders, List<ReportItemDTO> listReportItems, DateFormat dateFormatter) {
+	private static void calculateSalesForReportData(List<Order> listOrders, List<ReportItemDTO> listReportItems, 
+			DateFormat dateFormatter) {
 		// TODO Auto-generated method stub
 		
 		LOGGER.info("MasterOrderReportServiceUtil | calculateSalesForReportData is called");
@@ -107,7 +108,8 @@ public class MasterOrderReportServiceUtil {
 		
 	}
 
-	private static List<ReportItemDTO> createReportData(Date startTime, Date endTime, DateFormat dateFormatter) {
+	private static List<ReportItemDTO> createReportData(Date startTime, Date endTime, 
+			DateFormat dateFormatter, String period) {
 		// TODO Auto-generated method stub
 		
 		LOGGER.info("MasterOrderReportServiceUtil | createReportData is called");
@@ -138,10 +140,25 @@ public class MasterOrderReportServiceUtil {
 		LOGGER.info("MasterOrderReportServiceUtil | createReportData | listReportItems : " + listReportItems.size());
 
 		do {
-			startDate.add(Calendar.DAY_OF_MONTH, 1);
 			
-			LOGGER.info("MasterOrderReportServiceUtil | createReportData | startDate : " + startDate.toString());
-			
+			if (period.equals("days")) {
+				
+				LOGGER.info("MasterOrderReportServiceUtil | createReportData | period : " + period);
+				
+				startDate.add(Calendar.DAY_OF_MONTH, 1);
+				
+				LOGGER.info("MasterOrderReportServiceUtil | createReportData | startDate : " + startDate.toString());
+				
+			} else if (period.equals("months")) {
+				
+				LOGGER.info("MasterOrderReportServiceUtil | createReportData | period : " + period);
+				
+				startDate.add(Calendar.MONTH, 1);
+				
+				LOGGER.info("MasterOrderReportServiceUtil | createReportData | startDate : " + startDate.toString());
+				
+			}
+					
 			currentDate = startDate.getTime();
 			
 			LOGGER.info("MasterOrderReportServiceUtil | createReportData | currentDate : " + currentDate);
@@ -173,5 +190,25 @@ public class MasterOrderReportServiceUtil {
 					order.getId(), order.getOrderTime(), order.getTotal(), order.getProductCost());
 		});
 		
+	}
+
+	public static List<ReportItemDTO> getReportDataLastXMonths(OrderRepository repo, DateFormat dateFormatter, int months) {
+		// TODO Auto-generated method stub
+		
+		LOGGER.info("MasterOrderReportServiceUtil | getReportDataLastXMonths is called");
+		
+		Date endTime = new Date();
+		
+		LOGGER.info("MasterOrderReportServiceUtil | getReportDataLastXMonths | endTime : " + endTime.toString());
+		
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.MONTH, -(months - 1));
+		Date startTime = cal.getTime();
+
+		LOGGER.info("MasterOrderReportServiceUtil | getReportDataLastXMonths | startTime : " + startTime.toString());
+
+		dateFormatter = new SimpleDateFormat("yyyy-MM");
+
+		return getReportDataByDateRange(repo, startTime, endTime, dateFormatter, "months");
 	}
 }

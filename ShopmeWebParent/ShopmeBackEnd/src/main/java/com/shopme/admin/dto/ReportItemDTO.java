@@ -83,4 +83,11 @@ public class ReportItemDTO {
 	public void increaseOrdersCount() {
 		this.ordersCount++;
 	}
+
+	@Override
+	public String toString() {
+		return "ReportItemDTO [identifier=" + identifier + ", grossSales=" + grossSales + ", netSales=" + netSales
+				+ ", ordersCount=" + ordersCount + "]";
+	}
+	
 }

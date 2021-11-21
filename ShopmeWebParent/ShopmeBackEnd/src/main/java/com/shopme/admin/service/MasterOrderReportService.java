@@ -43,5 +43,19 @@ public class MasterOrderReportService implements IMasterOrderReportService{
 		return MasterOrderReportServiceUtil.getReportDataLastXDays(repo, dateFormatter ,28);
 	}
 	
+	public List<ReportItemDTO> getReportDataLast6Months() {
+		
+		LOGGER.info("MasterOrderReportService | getReportDataLast6Months is called");
+		
+		return MasterOrderReportServiceUtil.getReportDataLastXMonths(repo, dateFormatter ,6);
+	}
+
+	public List<ReportItemDTO> getReportDataLastYear() {
+		
+		LOGGER.info("MasterOrderReportService | getReportDataLastYear is called");
+		
+		return MasterOrderReportServiceUtil.getReportDataLastXMonths(repo, dateFormatter ,12);
+	}
+	
 
 }
