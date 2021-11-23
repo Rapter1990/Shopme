@@ -7,7 +7,16 @@
 		<button period="last_28_days" class="btn btn-light button-sales-by-date m-1">Last 28 days</button>
 		<button period="last_6_months" class="btn btn-light button-sales-by-date m-1">Last 6 Months</button>
 		<button period="last_year" class="btn btn-light button-sales-by-date m-1">Last Year</button>
+		<button class="btn btn-light button-sales-by-date m-1">Custom Date Range</button>
 	</div>
+	
+	<form>
+	<div id="divCustomDateRange" class="d-none">
+		From date: <input type="date" id="startDate"> &nbsp;
+		To date: <input type="date" id="endDate"> &nbsp;
+		<button type="button" class="btn btn-secondary" id="buttonViewReportByDateRange">View</button>
+	</div>
+	</form>
 
 	<div id="chart_sales_by_date" class="justify-content-center mt-3"></div>
 

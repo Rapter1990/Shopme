@@ -1,6 +1,8 @@
 package com.shopme.admin.service;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -55,6 +57,13 @@ public class MasterOrderReportService implements IMasterOrderReportService{
 		LOGGER.info("MasterOrderReportService | getReportDataLastYear is called");
 		
 		return MasterOrderReportServiceUtil.getReportDataLastXMonths(repo, dateFormatter ,12);
+	}
+	
+	public List<ReportItemDTO> getReportDataByDateRange(Date startTime, Date endTime) {
+		
+		LOGGER.info("MasterOrderReportService | getReportDataByDateRange is called");
+		
+		return MasterOrderReportServiceUtil.getReportDataByDateRange(repo, startTime, endTime, dateFormatter);
 	}
 	
 

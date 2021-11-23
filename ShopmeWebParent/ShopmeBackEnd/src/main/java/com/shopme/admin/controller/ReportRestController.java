@@ -1,5 +1,9 @@
 package com.shopme.admin.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -52,5 +56,24 @@ public class ReportRestController {
 				LOGGER.info("ReportRestController | getReportDataByDatePeriod | default last_7_days");
 				return masterOrderReportService.getReportDataLast7Days();
 		}
+	}
+	
+	@GetMapping("/reports/sales_by_date/{startDate}/{endDate}")
+	public List<ReportItemDTO> getReportDataByDatePeriod(@PathVariable("startDate") String startDate,
+			@PathVariable("endDate") String endDate) throws ParseException {
+		
+		LOGGER.info("ReportRestController | getReportDataByDatePeriod is called");
+		
+		LOGGER.info("ReportRestController | getReportDataByDatePeriod | startDate: " + startDate);
+		LOGGER.info("ReportRestController | getReportDataByDatePeriod | endDate: " + endDate);
+		
+		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date startTime = dateFormatter.parse(startDate);
+		Date endTime = dateFormatter.parse(endDate);
+		
+		LOGGER.info("ReportRestController | getReportDataByDatePeriod | startDate: " + startDate);
+		LOGGER.info("ReportRestController | getReportDataByDatePeriod | endDate: " + endDate);
+
+		return masterOrderReportService.getReportDataByDateRange(startTime, endTime);
 	}
 }

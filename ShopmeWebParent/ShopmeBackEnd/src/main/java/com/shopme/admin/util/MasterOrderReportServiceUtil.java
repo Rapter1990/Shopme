@@ -39,7 +39,16 @@ public class MasterOrderReportServiceUtil {
 		return getReportDataByDateRange(repo, startTime, endTime, dateFormatter, "days");
 		
 	}
-
+	
+	public static List<ReportItemDTO> getReportDataByDateRange(OrderRepository repo, Date startTime, 
+			Date endTime, DateFormat dateFormatter) {
+		
+		LOGGER.info("MasterOrderReportServiceUtil | getReportDataByDateRange is called");
+		
+		dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		return getReportDataByDateRange(repo,startTime, endTime, dateFormatter , "days");
+	}
+	
 	private static List<ReportItemDTO> getReportDataByDateRange(OrderRepository repo, Date startTime, Date endTime, 
 			DateFormat dateFormatter, String period) {
 		// TODO Auto-generated method stub
