@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.shopme.admin.dto.ReportItemDTO;
 import com.shopme.admin.service.MasterOrderReportService;
+import com.shopme.admin.util.ReportType;
 
 
 @RestController
@@ -36,25 +37,25 @@ public class ReportRestController {
 			case "last_7_days":
 				
 				LOGGER.info("ReportRestController | getReportDataByDatePeriod | case last_7_days");
-				return masterOrderReportService.getReportDataLast7Days();
+				return masterOrderReportService.getReportDataLast7Days(ReportType.DAY);
 	
 			case "last_28_days":
 				
 				LOGGER.info("ReportRestController | getReportDataByDatePeriod | case last_28_days");
-				return masterOrderReportService.getReportDataLast28Days();
+				return masterOrderReportService.getReportDataLast28Days(ReportType.DAY);
 				
 			case "last_6_months":
 				LOGGER.info("ReportRestController | getReportDataByDatePeriod | case last_6_months");
-				return masterOrderReportService.getReportDataLast6Months();
+				return masterOrderReportService.getReportDataLast6Months(ReportType.MONTH);
 
 			case "last_year":
 				LOGGER.info("ReportRestController | getReportDataByDatePeriod | case last_year");
-				return masterOrderReportService.getReportDataLastYear();	
+				return masterOrderReportService.getReportDataLastYear(ReportType.MONTH);	
 				
 			default:
 				
 				LOGGER.info("ReportRestController | getReportDataByDatePeriod | default last_7_days");
-				return masterOrderReportService.getReportDataLast7Days();
+				return masterOrderReportService.getReportDataLast7Days(ReportType.DAY);
 		}
 	}
 	
@@ -74,6 +75,6 @@ public class ReportRestController {
 		LOGGER.info("ReportRestController | getReportDataByDatePeriod | startDate: " + startDate);
 		LOGGER.info("ReportRestController | getReportDataByDatePeriod | endDate: " + endDate);
 
-		return masterOrderReportService.getReportDataByDateRange(startTime, endTime);
+		return masterOrderReportService.getReportDataByDateRange(startTime, endTime, ReportType.DAY);
 	}
 }

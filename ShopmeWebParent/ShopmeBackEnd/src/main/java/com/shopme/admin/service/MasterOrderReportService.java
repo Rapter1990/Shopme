@@ -1,7 +1,5 @@
 package com.shopme.admin.service;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -11,16 +9,16 @@ import org.springframework.stereotype.Service;
 
 import com.shopme.admin.dto.ReportItemDTO;
 import com.shopme.admin.repository.OrderRepository;
-import com.shopme.admin.service.impl.IMasterOrderReportService;
 import com.shopme.admin.util.MasterOrderReportServiceUtil;
+import com.shopme.admin.util.ReportType;
+import com.shopme.common.entity.order.Order;
 
 @Service
-public class MasterOrderReportService implements IMasterOrderReportService{
+public class MasterOrderReportService extends AbstractReportService{
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MasterOrderReportService.class);
 	
 	private final OrderRepository repo;
-	private DateFormat dateFormatter;
 	
 	public MasterOrderReportService(OrderRepository repo) {
 		super();
@@ -28,42 +26,23 @@ public class MasterOrderReportService implements IMasterOrderReportService{
 	}
 
 	@Override
-	public List<ReportItemDTO> getReportDataLast7Days() {
-		// TODO Auto-generated method stub
-		
-		LOGGER.info("MasterOrderReportService | getReportDataLast7Days is called");
-		
-		return MasterOrderReportServiceUtil.getReportDataLastXDays(repo, dateFormatter ,7);
-	}
-
-	@Override
-	public List<ReportItemDTO> getReportDataLast28Days() {
-		// TODO Auto-generated method stub
-		
-		LOGGER.info("MasterOrderReportService | getReportDataLast28Days is called");
-		
-		return MasterOrderReportServiceUtil.getReportDataLastXDays(repo, dateFormatter ,28);
-	}
-	
-	public List<ReportItemDTO> getReportDataLast6Months() {
-		
-		LOGGER.info("MasterOrderReportService | getReportDataLast6Months is called");
-		
-		return MasterOrderReportServiceUtil.getReportDataLastXMonths(repo, dateFormatter ,6);
-	}
-
-	public List<ReportItemDTO> getReportDataLastYear() {
-		
-		LOGGER.info("MasterOrderReportService | getReportDataLastYear is called");
-		
-		return MasterOrderReportServiceUtil.getReportDataLastXMonths(repo, dateFormatter ,12);
-	}
-	
-	public List<ReportItemDTO> getReportDataByDateRange(Date startTime, Date endTime) {
+	protected List<ReportItemDTO> getReportDataByDateRangeInternal(Date startTime, Date endTime,
+			ReportType reportType) {
 		
 		LOGGER.info("MasterOrderReportService | getReportDataByDateRange is called");
 		
-		return MasterOrderReportServiceUtil.getReportDataByDateRange(repo, startTime, endTime, dateFormatter);
+		List<Order> listOrders = repo.findByOrderTimeBetween(startTime, endTime);
+		MasterOrderReportServiceUtil.printRawData(listOrders);
+
+		List<ReportItemDTO> listReportItems = MasterOrderReportServiceUtil.createReportData(startTime, endTime, dateFormatter, reportType);
+
+		System.out.println();
+
+		MasterOrderReportServiceUtil.calculateSalesForReportData(listOrders, listReportItems, dateFormatter);
+		
+		MasterOrderReportServiceUtil.printReportData(listReportItems);
+		
+		return listReportItems;
 	}
 	
 
