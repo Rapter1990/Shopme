@@ -129,7 +129,11 @@ function customizeChart(period) {
 	};
 
 	var formatter = new google.visualization.NumberFormat({
-		prefix: '$'
+		prefix: prefixCurrencySymbol,
+		suffix: suffixCurrencySymbol,
+		decimalSymbol: decimalPointType,
+		groupingSymbol: thousandsPointType,
+		fractionDigits: decimalDigits
 	});
 
 	formatter.format(data, 1);
@@ -140,13 +144,13 @@ function drawChart(period) {
 	var salesChart = new google.visualization.ColumnChart(document.getElementById('chart_sales_by_date'));
 	salesChart.draw(data, chartOptions);
 
-	$("#textTotalGrossSales").text("$" + $.number(totalGrossSales, 2));
-	$("#textTotalNetSales").text("$" + $.number(totalNetSales, 2));
-
+	$("#textTotalGrossSales").text(formatCurrency(totalGrossSales));
+	$("#textTotalNetSales").text(formatCurrency(totalNetSales));
+	
 	denominator = getDenominator(period);
 
-	$("#textAvgGrossSales").text("$" + $.number(totalGrossSales / denominator, 2));
-	$("#textAvgNetSales").text("$" + $.number(totalNetSales / denominator, 2));
+	$("#textAvgGrossSales").text(formatCurrency(totalGrossSales / denominator));
+	$("#textAvgNetSales").text(formatCurrency(totalNetSales / denominator));
 	$("#textTotalOrders").text(totalOrders);
 }
 
@@ -168,4 +172,10 @@ function getDenominator(period) {
 	if (period == "custom") return calculateDays();
 
 	return 7;
-} 
+}
+
+function formatCurrency(amount) {
+	formattedAmount = $.number(amount, decimalDigits, decimalPointType, thousandsPointType);
+	return prefixCurrencySymbol + formattedAmount + suffixCurrencySymbol;
+}
+ 

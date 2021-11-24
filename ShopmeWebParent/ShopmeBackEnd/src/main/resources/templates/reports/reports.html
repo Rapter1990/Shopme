@@ -41,6 +41,14 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 	contextPath = "[[@{/}]]";
+	currencySymbol = "[[${CURRENCY_SYMBOL}]]";
+	thousandsPointType = "[[${THOUSANDS_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+	decimalPointType = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+	currencySymbolPosition = "[[${CURRENCY_SYMBOL_POSITION}]]";
+	decimalDigits = "[[${DECIMAL_DIGITS}]]";
+
+	prefixCurrencySymbol = currencySymbolPosition == 'Before price' ? currencySymbol : '';
+	suffixCurrencySymbol = currencySymbolPosition == 'After price' ? currencySymbol : '';
 
 	$(document).ready(function() {
 		google.charts.load('current', {'packages': ['corechart']});
