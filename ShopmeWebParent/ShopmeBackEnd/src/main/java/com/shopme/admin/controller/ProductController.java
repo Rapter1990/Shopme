@@ -206,9 +206,6 @@ public class ProductController {
 			LOGGER.info("ProductController | deleteProduct | productExtraImagesDir : " + productExtraImagesDir);
 			LOGGER.info("ProductController | deleteProduct | productImagesDir : " + productImagesDir);
 
-			FileUploadUtil.removeDir(productExtraImagesDir);
-			FileUploadUtil.removeDir(productImagesDir);
-			
 			// Image Folder
 			//FileUploadUtil.removeDir(productExtraImagesDir);
 			//FileUploadUtil.removeDir(productImagesDir);
