@@ -48,8 +48,8 @@ public abstract class AbstractReportService {
 		cal.add(Calendar.DAY_OF_MONTH, -(days - 1));
 		Date startTime = cal.getTime();
 		
-		LOGGER.info("AbstractReportService | calculateSalesForReportData | startTime : " + startTime.toString());
-		LOGGER.info("AbstractReportService | calculateSalesForReportData | endTime : " + endTime.toString());
+		LOGGER.info("AbstractReportService | getReportDataLastXDays | startTime : " + startTime.toString());
+		LOGGER.info("AbstractReportService | getReportDataLastXDays | endTime : " + endTime.toString());
 		
 
 		dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
