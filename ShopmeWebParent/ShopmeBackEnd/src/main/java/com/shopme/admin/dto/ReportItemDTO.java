@@ -8,6 +8,7 @@ public class ReportItemDTO {
 	private float grossSales;
 	private float netSales;
 	private int ordersCount;
+	private int productsCount;
 
 	public ReportItemDTO() {
 	}
@@ -20,6 +21,14 @@ public class ReportItemDTO {
 		this.identifier = identifier;
 		this.grossSales = grossSales;
 		this.netSales = netSales;
+	}
+	
+	public ReportItemDTO(String identifier, float grossSales, float netSales, int productsCount) {
+		super();
+		this.identifier = identifier;
+		this.grossSales = grossSales;
+		this.netSales = netSales;
+		this.productsCount = productsCount;
 	}
 
 	public String getIdentifier() {
@@ -53,11 +62,24 @@ public class ReportItemDTO {
 	public void setOrdersCount(int ordersCount) {
 		this.ordersCount = ordersCount;
 	}
+	
+	public int getProductsCount() {
+		return productsCount;
+	}
+
+	public void setProductsCount(int productsCount) {
+		this.productsCount = productsCount;
+	}
+
+	public void increaseProductsCount(int count) {
+		this.productsCount += count;
+	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(identifier);
 	}
+	
 
 	@Override
 	public boolean equals(Object obj) {

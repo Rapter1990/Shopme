@@ -62,4 +62,17 @@ public class ReportRestControllerTests {
 
 		mockMvc.perform(get(requestURL)).andExpect(status().isOk()).andDo(print());
 	}
+	
+	@Test
+	@WithMockUser(username = "user1", password = "pass1", authorities = {"Salesperson"})
+	public void testGetReportDataByCategory() throws Exception {
+		
+		LOGGER.info("ReportRestControllerTests | testGetReportDataByCategory is called");
+		
+		String requestURL = "/reports/category/last_7_days";
+		
+		LOGGER.info("ReportRestControllerTests | testGetReportDataByDateRange | requestURL: " + requestURL);
+
+		mockMvc.perform(get(requestURL)).andExpect(status().isOk()).andDo(print());		
+	}
 }
