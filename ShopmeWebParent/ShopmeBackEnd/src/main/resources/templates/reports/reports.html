@@ -30,7 +30,7 @@
 			<div th:replace="reports/sales_report_fragment::content('_category')"></div>
 		  </div>
 		  <div class="tab-pane p-3" id="product" role="tabpanel">
-			<h2>Sales by Product</h2>
+			<div th:replace="reports/sales_report_fragment::content('_product')"></div>
 		  </div>  	
 		 </div>
 	</div>
@@ -51,7 +51,7 @@
 	suffixCurrencySymbol = currencySymbolPosition == 'After price' ? currencySymbol : '';
 
 	$(document).ready(function() {
-		google.charts.load('current', {'packages': ['corechart']});
+		google.charts.load('current', {'packages': ['corechart', 'table']});
 		google.charts.setOnLoadCallback(loadSalesReportByDate);
 	});
 
@@ -60,5 +60,6 @@
 <script type="text/javascript" th:src="@{/js/sales_report_common.js}"></script>
 <script type="text/javascript" th:src="@{/js/sales_report_by_date.js}"></script>
 <script type="text/javascript" th:src="@{/js/sales_report_by_category.js}"></script>
+<script type="text/javascript" th:src="@{/js/sales_report_by_product.js}"></script>
 </body>
 </html> 

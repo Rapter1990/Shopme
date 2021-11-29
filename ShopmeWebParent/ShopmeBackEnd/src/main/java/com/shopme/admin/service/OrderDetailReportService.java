@@ -35,11 +35,13 @@ public class OrderDetailReportService extends AbstractReportService {
 
 		if (reportType.equals(ReportType.CATEGORY)) {
 			listOrderDetails = repo.findWithCategoryAndTimeBetween(startDate, endDate);
+		}else if(reportType.equals(ReportType.PRODUCT)) {
+			listOrderDetails = repo.findWithProductAndTimeBetween(startDate, endDate);
 		}
 		
 		LOGGER.info("OrderDetailReportService | getReportDataByDateRangeInternal | listOrderDetails size: " + listOrderDetails.size());
 
-		printRawData(listOrderDetails);
+		printRawData(listOrderDetails, reportType);
 
 		List<ReportItemDTO> listReportItems = new ArrayList<>();
 
@@ -48,6 +50,8 @@ public class OrderDetailReportService extends AbstractReportService {
 			
 			if (reportType.equals(ReportType.CATEGORY)) {
 				identifier = detail.getProduct().getCategory().getName();
+			}else if(reportType.equals(ReportType.PRODUCT)) {
+				identifier = detail.getProduct().getShortName();
 			}
 			
 			LOGGER.info("OrderDetailReportService | getReportDataByDateRangeInternal | identifier: " + identifier);
@@ -101,16 +105,23 @@ public class OrderDetailReportService extends AbstractReportService {
 		}
 	}
 
-	private void printRawData(List<OrderDetail> listOrderDetails) {
+	private void printRawData(List<OrderDetail> listOrderDetails, ReportType reportType) {
 		
 		LOGGER.info("OrderDetailReportService | printRawData is called");
 		
 		LOGGER.info("OrderDetailReportService | printRawData | listOrderDetails size: " + listOrderDetails.size());
 		
 		for (OrderDetail detail : listOrderDetails) {
-			System.out.printf("%d, %-20s, %10.2f, %10.2f, %10.2f \n",
-					detail.getQuantity(), detail.getProduct().getCategory().getName(),
-					detail.getSubtotal(), detail.getProductCost(), detail.getShippingCost());
+			if(reportType.equals(ReportType.CATEGORY)) {
+				System.out.printf("%d, %-20s, %10.2f, %10.2f, %10.2f \n",
+						detail.getQuantity(), detail.getProduct().getCategory().getName(),
+						detail.getSubtotal(), detail.getProductCost(), detail.getShippingCost());
+			}else if(reportType.equals(ReportType.PRODUCT)) {
+				System.out.printf("%d, %-20s, %10.2f, %10.2f, %10.2f \n",
+						detail.getQuantity(), detail.getProduct().getShortName().substring(0, 20),
+						detail.getSubtotal(), detail.getProductCost(), detail.getShippingCost());
+			}
+			
 		}
 	}
 }
