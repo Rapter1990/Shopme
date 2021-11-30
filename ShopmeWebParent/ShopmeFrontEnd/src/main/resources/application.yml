@@ -1,6 +1,6 @@
 logging:
   file:
-    name: Shopme-backend.log
+    name: Shopme-frontend.log
   logback:
     rollingpolicy:
       file-name-pattern: Shopme-frontend-%d{yyyy-MM-dd}.%i.log
