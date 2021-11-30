@@ -73,6 +73,9 @@ public class Product extends IdBasedEntity implements Serializable{
 	private float height;
 	private float weight;
 	
+	private int reviewCount;
+	private float averageRating;
+	
 	@Column(name = "main_image", nullable = false)
 	private String mainImage;
 
