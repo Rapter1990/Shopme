@@ -58,7 +58,15 @@
 							<a class="dropdown-item" th:href="@{/products/new}" 
 								sec:authorize="hasAnyAuthority('Admin', 'Editor')">Create New</a>
 							<a class="dropdown-item" th:href="@{/products}">View All</a>
+							<a class="dropdown-item" sec:authorize="hasAuthority('Admin')"
+								th:href="@{/reviews}">Reviews</a>
 						</div>
+					</li>
+				</th:block>
+				
+				<th:block sec:authorize="hasAuthority('Assistant')">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/reviews}">Reviews</a>
 					</li>
 				</th:block>
 				
@@ -106,7 +114,9 @@
 						<a class="dropdown-item" th:href="@{/settings#mailTemplates}">Mail Templates</a>
 						<a class="dropdown-item" th:href="@{/settings#payment}">Payment</a>
 					</div>
-				</li>	
+				</li>
+				
+					
 					
 				<li>				
 					<span class="fas fa-user fa-2x icon-silver"></span>

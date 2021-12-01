@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Reviews - Shopme Admin', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Reviews</h2>	
+	</div>
+
+	<div th:replace="fragments :: search_form_and_message" />
+
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
+					<th th:replace="fragments :: column_link('product', 'Product', 'none')" />
+					<th th:replace="fragments :: column_link('customer', 'Customer', 'none')" />
+					<th th:replace="fragments :: column_link('rating', 'Rating', 'none')" />
+					<th th:replace="fragments :: column_link('reviewTime', 'Review Time', 'none')" />
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr th:each="review : ${listReviews}">
+					<td>[[${review.id}]]</td>
+					<td>
+						<a th:href="@{'/products/detail/' + ${review.product.id}}" class="link-detail-product">
+							[[${review.product.shortName}]]
+						</a>
+					</td>
+					<td>
+						<a th:href="@{'/customers/detail/' + ${review.customer.id}}" class="link-detail-customer">
+							[[${review.customer.fullName}]]
+						</a>
+					</td>
+					<td>[[${review.rating}]] <i class="far fa-star"></i></td>
+					<td>[[${review.reviewTime}]]</td>
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
+							th:href="@{'/reviews/detail/' + ${review.id}}"
+							title="View details of this review"
+							></a>					
+						&nbsp; 
+						<div th:replace="fragments :: edit('review', '/reviews/edit/' + ${review.id})" />
+						&nbsp; 
+						<div th:replace="fragments :: delete('review', ${review.id}, '/reviews/delete/' + ${review.id}, true)" />						
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="less-details">
+		<div th:each="review : ${listReviews}" class="row m-1">
+			<div class="col-2">
+				<span>[[${review.id}]]</span>
+			</div>
+			<div class="col-10">
+				<div class="mb-1">
+					<span>[[${review.product.shortName}]]</span>
+				</div>
+				<div>
+					&nbsp;
+					<span>[[${review.rating}]] <i class="far fa-star"></i></span>
+					&nbsp;
+					<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
+						th:href="@{'/reviews/detail/' + ${review.id}}"
+						title="View details of this review"
+						></a>					
+					&nbsp; 
+					<div th:replace="fragments :: edit('review', '/reviews/edit/' + ${review.id})" />
+					&nbsp; 
+					<div th:replace="fragments :: delete('review', ${review.id}, '/reviews/delete/' + ${review.id}, true)" />
+				</div>
+			</div>
+			<div>&nbsp;</div>
+		</div>	
+	</div>		
+
+	<div th:replace="fragments :: pagination('reviews')"></div>
+
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+</body>
+</html> 
