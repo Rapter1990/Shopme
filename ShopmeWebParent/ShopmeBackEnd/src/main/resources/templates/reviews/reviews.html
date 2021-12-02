@@ -109,6 +109,7 @@
 		handleProductDetailLink();
 		handleCustomerDetailLink();
 		handleReviewDetailLink();
+		handleDeleteLink();
 			
 	});
 	
@@ -129,6 +130,13 @@
 			e.preventDefault();
 			linkDetailURL = $(this).attr("href");
 			$(modalId).modal("show").find(".modal-content").load(linkDetailURL);
+		});		
+	}
+	
+	function handleDeleteLink() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'review');
 		});		
 	}
 	
