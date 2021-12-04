@@ -125,6 +125,24 @@
 
 <div th:fragment="currency_input(amount)" th:remove="tag">
 	<input type="text" readonly class="form-control" th:value="${(CURRENCY_SYMBOL_POSITION == 'Before price' ? CURRENCY_SYMBOL : '') + #numbers.formatDecimal(amount, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE) + (CURRENCY_SYMBOL_POSITION == 'After price' ? CURRENCY_SYMBOL : '')}">
+</div>
+
+<div th:fragment="search_form()" th:remove="tag">
+	<form th:action="@{${moduleURL} + '/page/1'}" class="form-inline m-3">
+		<input type="hidden" name="sortField" th:value="${sortField}" />
+		<input type="hidden" name="sortDir" th:value="${sortDir}" />
+
+		Filter:&nbsp;
+		<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
+		&nbsp;&nbsp;
+		<button type="submit" class="btn btn-primary">
+			<i class="fas fa-search"></i>
+		</button>
+		&nbsp;&nbsp;
+		<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+			<i class="fas fa-eraser"></i>
+		</button>
+	</form>
 </div>	
 
 

@@ -2,6 +2,8 @@ package com.shopme.admin.service;
 
 import java.util.NoSuchElementException;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import com.shopme.common.entity.Review;
 import com.shopme.common.exception.ReviewNotFoundException;
 
 @Service
+@Transactional
 public class ReviewService implements IReviewService{
 	
 	public static final int REVIEWS_PER_PAGE = 5;

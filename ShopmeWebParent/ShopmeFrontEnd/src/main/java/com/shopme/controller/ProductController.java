@@ -186,6 +186,7 @@ public class ProductController {
 		LOGGER.info("ProductController | searchByPage | listResult : "  + listResult.toString());
 		
 		model.addAttribute("keyword", keyword);
+		model.addAttribute("searchKeyword", keyword);
 		model.addAttribute("listResult", listResult);
 
 		return "product/search_result";

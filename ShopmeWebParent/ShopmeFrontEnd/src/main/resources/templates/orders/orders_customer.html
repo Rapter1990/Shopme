@@ -9,23 +9,7 @@
 		<h2>My Orders</h2>	
 	</div>
 
-	<div>
-		<form th:action="@{'/orders/page/1'}" class="form-inline m-3">
-			<input type="hidden" name="sortField" th:value="${sortField}" />
-			<input type="hidden" name="sortDir" th:value="${sortDir}" />
-
-			Filter:&nbsp;
-			<input type="search" name="orderKeyword" th:value="${orderKeyword}" class="form-control" required/>
-			&nbsp;&nbsp;
-			<button type="submit" class="btn btn-primary">
-				<i class="fas fa-search"></i>
-			</button>
-			&nbsp;&nbsp;
-			<button type="button" class="btn btn-secondary" onclick="clearFilter()">
-				<i class="fas fa-eraser"></i>
-			</button>
-		</form>				
-	</div>
+	<div th:replace="fragments :: search_form"></div>
 
 	<div class="full-details">
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
@@ -129,7 +113,7 @@
     moduleURL = "[[@{/orders}]]";
 	contextPath = "[[@{/}]]";
 	var csrfHeaderName = "[[${_csrf.headerName}]]";
-	var csrfValue = "[[${_csrf.token}]]";	
+	var csrfValue = "[[${_csrf.token}]]";
 
 	function clearFilter() {
 		window.location = moduleURL;

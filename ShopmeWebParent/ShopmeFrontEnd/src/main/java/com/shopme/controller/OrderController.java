@@ -48,7 +48,7 @@ public class OrderController {
 	@GetMapping("/orders/page/{pageNum}")
 	public String listOrdersByPage(Model model, HttpServletRequest request,
 						@PathVariable(name = "pageNum") int pageNum,
-						String sortField, String sortDir, String orderKeyword
+						String sortField, String sortDir, String keyword
 			) throws CustomerNotFoundException {
 		
 		LOGGER.info("OrderController | listOrdersByPage is called");
@@ -57,7 +57,7 @@ public class OrderController {
 		
 		LOGGER.info("OrderController | listOrdersByPage | customer : " + customer.toString());
 
-		Page<Order> page = orderService.listForCustomerByPage(customer, pageNum, sortField, sortDir, orderKeyword);
+		Page<Order> page = orderService.listForCustomerByPage(customer, pageNum, sortField, sortDir, keyword);
 		
 		LOGGER.info("OrderController | listOrdersByPage | page : " + page.toString());
 		
@@ -70,7 +70,7 @@ public class OrderController {
 		LOGGER.info("OrderController | listOrdersByPage | listOrders : " + listOrders.toString());
 		LOGGER.info("OrderController | listOrdersByPage | sortField : " + sortField);
 		LOGGER.info("OrderController | listOrdersByPage | sortDir : " + sortDir);
-		LOGGER.info("OrderController | listOrdersByPage | orderKeyword : " + orderKeyword);
+		LOGGER.info("OrderController | listOrdersByPage | keyword : " + keyword);
 		LOGGER.info("OrderController | listOrdersByPage | reverseSortDir : " + (sortDir.equals("asc") ? "desc" : "asc"));
 
 		model.addAttribute("totalPages", page.getTotalPages());
@@ -79,7 +79,7 @@ public class OrderController {
 		model.addAttribute("listOrders", listOrders);
 		model.addAttribute("sortField", sortField);
 		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("orderKeyword", orderKeyword);
+		model.addAttribute("keyword", keyword);
 		model.addAttribute("moduleURL", "/orders");
 		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 
