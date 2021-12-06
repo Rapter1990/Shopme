@@ -32,7 +32,7 @@ public class ReviewRepositoryTests {
 		Integer productId = 1;
 		Product product = new Product(productId);
 
-		Integer customerId = 5;
+		Integer customerId = 1;
 		Customer customer = new Customer(customerId);
 		
 		Review review = new Review();

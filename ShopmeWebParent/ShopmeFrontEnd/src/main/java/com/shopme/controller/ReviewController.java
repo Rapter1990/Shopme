@@ -12,10 +12,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.Review;
 import com.shopme.common.exception.CustomerNotFoundException;
+import com.shopme.common.exception.ReviewNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ReviewService;
 import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
@@ -104,4 +106,36 @@ public class ReviewController {
 
 		return "reviews/reviews_customer";
 	}
+	
+	@GetMapping("/reviews/detail/{id}")
+	public String viewReview(@PathVariable("id") Integer id, Model model, 
+			RedirectAttributes ra, HttpServletRequest request) throws CustomerNotFoundException {
+		
+		LOGGER.info("ReviewController | viewReview is called");
+		
+		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
+		
+		LOGGER.info("ReviewController | viewReview | customer : " + customer.toString());
+		
+		LOGGER.info("ReviewController | viewReview | id : " + id);
+		
+		try {
+			
+			Review review = reviewService.getByCustomerAndId(customer, id);
+			
+			LOGGER.info("ReviewController | viewReview | review : " + review.toString());
+			
+			model.addAttribute("review", review);
+
+			return "reviews/review_detail_modal";
+			
+		} catch (ReviewNotFoundException ex) {
+			
+			LOGGER.info("ReviewController | viewReview | messageError : " + ex.getMessage());
+			
+			ra.addFlashAttribute("messageError", ex.getMessage());
+			
+			return defaultRedirectURL;		
+		}
+	}	
 }

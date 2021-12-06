@@ -23,7 +23,7 @@ public class ReviewRepositoryTests {
 
 	@Test
 	public void testFindByCustomerNoKeyword() {
-		Integer customerId = 8;
+		Integer customerId = 1;
 		Pageable pageable = PageRequest.of(1, 5);
 
 		Page<Review> page = repo.findByCustomer(customerId, pageable);
@@ -34,7 +34,7 @@ public class ReviewRepositoryTests {
 
 	@Test
 	public void testFindByCustomerWithKeyword() {
-		Integer customerId = 8;
+		Integer customerId = 1;
 		String keyword = "charger";
 		Pageable pageable = PageRequest.of(1, 5);
 
@@ -46,7 +46,7 @@ public class ReviewRepositoryTests {
 
 	@Test
 	public void testFindByCustomerAndId() {
-		Integer customerId = 8;
+		Integer customerId = 1;
 		Integer reviewId = 3;
 
 		Review review = repo.findByCustomerAndId(customerId, reviewId);
