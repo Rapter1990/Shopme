@@ -15,7 +15,7 @@ import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.common.exception.ShoppingCartException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ShoppingCartService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderUtil;
+import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
 
 @RestController
 public class ShoppingCartRestController {
@@ -42,7 +42,7 @@ public class ShoppingCartRestController {
 
 		try {
 			
-			Customer customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request, customerService);
+			Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request, customerService);
 			
 			LOGGER.info("ShoppingCartRestController | addProductToCart | customer : " + customer.toString());
 			
@@ -68,7 +68,7 @@ public class ShoppingCartRestController {
 		
 		try {
 			
-			Customer customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request, customerService);
+			Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request, customerService);
 			
 			LOGGER.info("ShoppingCartRestController | removeProduct | customer : " + customer.toString());
 			
@@ -88,7 +88,7 @@ public class ShoppingCartRestController {
 		LOGGER.info("ShoppingCartRestController | updateQuantity is called");
 		
 		try {
-			Customer customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request,customerService);
+			Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
 			
 			LOGGER.info("ShoppingCartRestController | updateQuantity | customer : " + customer.toString());
 			

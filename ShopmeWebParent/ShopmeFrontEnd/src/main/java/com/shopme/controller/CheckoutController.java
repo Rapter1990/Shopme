@@ -32,7 +32,7 @@ import com.shopme.service.SettingService;
 import com.shopme.service.ShippingRateService;
 import com.shopme.service.ShoppingCartService;
 import com.shopme.setting.PaymentSettingBag;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderUtil;
+import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
 import com.shopme.util.OrderUtil;
 
 @Controller
@@ -71,7 +71,7 @@ public class CheckoutController {
 		
 		Customer customer = null;
 		try {
-			customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request,customerService);
+			customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
 		} catch (CustomerNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -142,7 +142,7 @@ public class CheckoutController {
 	
 		Customer customer = null;;
 		try {
-			customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request,customerService);
+			customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
 		} catch (CustomerNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

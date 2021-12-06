@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers("/account_details", "/update_account_details", "/orders/**", 
-				     "/cart" , "/address_book/**", 
+				     "/cart" , "/address_book/**", "/reviews/**", 
 				     "/checkout", "/place_order", "/process_paypal_order")
 		.authenticated()
 		.anyRequest().permitAll()

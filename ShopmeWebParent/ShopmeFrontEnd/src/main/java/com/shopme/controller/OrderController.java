@@ -18,7 +18,7 @@ import com.shopme.common.entity.order.Order;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.OrderService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderUtil;
+import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
 
 @Controller
 public class OrderController {
@@ -53,7 +53,7 @@ public class OrderController {
 		
 		LOGGER.info("OrderController | listOrdersByPage is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
 		
 		LOGGER.info("OrderController | listOrdersByPage | customer : " + customer.toString());
 
@@ -115,7 +115,7 @@ public class OrderController {
 		
 		LOGGER.info("OrderController | viewOrderDetails is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(request, customerService);
+		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request, customerService);
 		
 		LOGGER.info("OrderController | listOrdersByPage | customer : " + customer.toString());
 

@@ -16,7 +16,7 @@ import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.error.OrderNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.OrderService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderUtil;
+import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
 import com.shopme.util.OrderReturnRequest;
 import com.shopme.util.OrderReturnResponse;
 
@@ -49,7 +49,7 @@ public class OrderRestController {
 		Customer customer = null;
 
 		try {
-			customer = CustomerShoppingCartAddressShippingOrderUtil.getAuthenticatedCustomer(servletRequest,customerService);
+			customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(servletRequest,customerService);
 			
 			LOGGER.info("OrderService | handleOrderReturnRequest | customer : " + customer.toString());
 			

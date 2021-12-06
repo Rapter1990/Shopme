@@ -9,9 +9,9 @@ import com.shopme.common.entity.Customer;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.CustomerService;
 
-public class CustomerShoppingCartAddressShippingOrderUtil {
+public class CustomerShoppingCartAddressShippingOrderReviewUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerShoppingCartAddressShippingOrderUtil.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerShoppingCartAddressShippingOrderReviewUtil.class);
 	
 	public static Customer getAuthenticatedCustomer(HttpServletRequest request, CustomerService customerService) 
 			throws CustomerNotFoundException {
