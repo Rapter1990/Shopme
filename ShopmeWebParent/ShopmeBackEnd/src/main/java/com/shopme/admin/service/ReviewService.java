@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shopme.admin.paging.PagingAndSortingHelper;
+import com.shopme.admin.repository.ProductRepository;
 import com.shopme.admin.repository.ReviewRepository;
 import com.shopme.admin.service.impl.IReviewService;
 import com.shopme.common.entity.Review;
@@ -19,18 +20,27 @@ public class ReviewService implements IReviewService{
 	
 	public static final int REVIEWS_PER_PAGE = 5;
 
+	
+	private ReviewRepository reviewRepo;
+	
+	private ProductRepository productRepo;
+	
 	@Autowired 
-	private ReviewRepository repo;
+	public ReviewService(ReviewRepository reviewRepo, ProductRepository productRepo) {
+		super();
+		this.reviewRepo = reviewRepo;
+		this.productRepo = productRepo;
+	}
 
 	public void listByPage(int pageNum, PagingAndSortingHelper helper) {
-		helper.listEntities(pageNum, REVIEWS_PER_PAGE, repo);
+		helper.listEntities(pageNum, REVIEWS_PER_PAGE, reviewRepo);
 	}
 
 	@Override
 	public Review get(Integer id) throws ReviewNotFoundException {
 		// TODO Auto-generated method stub
 		try {
-			return repo.findById(id).get();
+			return reviewRepo.findById(id).get();
 		} catch (NoSuchElementException ex) {
 			throw new ReviewNotFoundException("Could not find any reviews with ID " + id);
 		}
@@ -39,21 +49,22 @@ public class ReviewService implements IReviewService{
 	@Override
 	public void save(Review reviewInForm) {
 		// TODO Auto-generated method stub
-		Review reviewInDB = repo.findById(reviewInForm.getId()).get();
+		Review reviewInDB = reviewRepo.findById(reviewInForm.getId()).get();
 		reviewInDB.setHeadline(reviewInForm.getHeadline());
 		reviewInDB.setComment(reviewInForm.getComment());
 
-		repo.save(reviewInDB);
+		reviewRepo.save(reviewInDB);
+		productRepo.updateReviewCountAndAverageRating(reviewInDB.getProduct().getId());
 	}
 
 	@Override
 	public void delete(Integer id) throws ReviewNotFoundException {
 		// TODO Auto-generated method stub
-		if (!repo.existsById(id)) {
+		if (!reviewRepo.existsById(id)) {
 			throw new ReviewNotFoundException("Could not find any reviews with ID " + id);
 		}
 
-		repo.deleteById(id);
+		reviewRepo.deleteById(id);
 	}
 
 }
