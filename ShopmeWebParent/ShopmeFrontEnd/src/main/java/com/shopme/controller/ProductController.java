@@ -14,23 +14,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shopme.common.entity.Category;
+import com.shopme.common.entity.Review;
 import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.CategoryNotFoundException;
 import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.CategoryService;
 import com.shopme.service.ProductService;
+import com.shopme.service.ReviewService;
 
 @Controller
 public class ProductController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 	
-	@Autowired 
 	private CategoryService categoryService;
 	
-	@Autowired 
 	private ProductService productService;
 	
+	private ReviewService reviewService;
+	
+	@Autowired
+	public ProductController(CategoryService categoryService, ProductService productService,
+			ReviewService reviewService) {
+		super();
+		this.categoryService = categoryService;
+		this.productService = productService;
+		this.reviewService = reviewService;
+	}
+
 	@GetMapping("/c/{category_alias}")
 	public String viewCategoryFirstPage(@PathVariable("category_alias") String alias,
 			Model model) {
@@ -116,13 +127,16 @@ public class ProductController {
 			Product product = productService.getProduct(alias);
 			
 			List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
+			Page<Review> listReviews = reviewService.list3MostRecentReviewsByProduct(product);
 			
 			LOGGER.info("ProductController | viewProductDetail | listCategoryParents : " + listCategoryParents.toString());
 			LOGGER.info("ProductController | viewProductDetail | product : " + product.toString());
 			LOGGER.info("ProductController | viewCategoryByPage | pageTitle : " + product.getShortName());
-			
+			LOGGER.info("ProductController | viewCategoryByPage | listReviews : " + listReviews.getSize());
+
 			model.addAttribute("listCategoryParents", listCategoryParents);
 			model.addAttribute("product", product);
+			model.addAttribute("listReviews", listReviews);
 			model.addAttribute("pageTitle", product.getShortName());
 
 			return "product/product_detail";

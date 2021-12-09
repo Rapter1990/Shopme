@@ -40,7 +40,7 @@
 						th:value="${product.averageRating}"/>
 				</div>
 				<div class="col-xs ml-1 mt-3">
-					[[${product.reviewCount}]] rating(s)
+					<a th:href="@{${product.URI} + '#review'}">[[${product.reviewCount}]] rating(s)</a>
 				</div>
 			</div>
 			<div>
@@ -97,6 +97,8 @@
 			</th:block>
 		</div>
 	</div>
+	
+	<div th:replace="product/product_top_reviews :: content"></div>
 
     <div th:replace="product/images_carousel :: content"></div>
     <div th:replace="fragments :: modal_dialog"></div>	
@@ -110,6 +112,9 @@
 	productId = "[[${product.id}]]";
 	var csrfHeaderName = "[[${_csrf.headerName}]]";
 	var csrfValue = "[[${_csrf.token}]]";
+	
+	decimalSeparator = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+	thousandSeparator = "[[${THOUSANDS_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
 	
 
 	$(document).ready(function() {
@@ -128,6 +133,9 @@
 			imageIndex = parseInt(bigImage.attr("index"));
 			$("#carouselExampleIndicators").carousel(imageIndex);
 		});
+		
+		
+		formatRatingNumber();
 	});
 	
 	$(".product-detail-rating-star").rating({
@@ -137,7 +145,14 @@
 		theme: 'krajee-svg'
 	});
 	
+	function formatRatingNumber() {
+		ratingText = $("#ratingNumber").text();
+		formattedRating = $.number(ratingText, 2, decimalSeparator, thousandSeparator);
+		$("#ratingNumber").text(formattedRating);
+	}	
+	
 </script>
+<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/common_modal.js}"></script>
 <script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>
 <script type="text/javascript" th:src="@{/js/add_to_cart.js}"></script>

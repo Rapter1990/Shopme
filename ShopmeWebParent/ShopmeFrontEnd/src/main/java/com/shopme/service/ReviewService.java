@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.Review;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.ReviewNotFoundException;
 import com.shopme.repository.ReviewRepository;
 import com.shopme.service.impl.IReviewService;
@@ -49,6 +50,13 @@ public class ReviewService implements IReviewService {
 			throw new ReviewNotFoundException("Customer doesn not have any reviews with ID " + reviewId);
 
 		return review;
+	}
+	
+	public Page<Review> list3MostRecentReviewsByProduct(Product product) {
+		Sort sort = Sort.by("reviewTime").descending();
+		Pageable pageable = PageRequest.of(0, 3, sort);
+
+		return repo.findByProduct(product, pageable);		
 	}
 
 }

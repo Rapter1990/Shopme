@@ -154,4 +154,9 @@ public class Product extends IdBasedEntity implements Serializable{
 		return this.price;
 	}
 	
+	@Transient
+	public String getURI() {
+		return "/p/" + this.alias + "/";
+	}
+	
 }
