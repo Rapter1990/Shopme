@@ -80,19 +80,13 @@
 	<div th:replace="navigation :: footer_menu"></div>
 
 </div>
+<script th:src="@{/js/common_list.js}"></script>
 <script type="text/javascript">
 	moduleURL = "[[@{/reviews}]]";
-
-	$(document).ready(function() {
-		handleDetailLink();
-	});
 	
-	function handleDetailLink() {
-		$(".link-detail-review").on("click", function(e) {
-			e.preventDefault();
-			$("#reviewDetailModal").modal('show').find('.modal-content').load($(this).attr('href'));
-		});		
-	}	
+	$(document).ready(function() {
+		handleDetailLink(".link-detail-review", "#reviewDetailModal");
+	});
 	
 	
 </script>
