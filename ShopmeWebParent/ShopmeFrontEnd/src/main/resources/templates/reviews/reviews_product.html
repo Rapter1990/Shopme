@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<head th:replace="fragments :: page_head(${pageTitle}, 'tag')" />
+	<link th:href="@{/star-rating/css/star-rating.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/star-rating/js/star-rating.js}" type="text/javascript"></script>
+	<link th:href="@{/star-rating/themes/krajee-svg/theme.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/star-rating/themes/krajee-svg/theme.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: header_menu"></div>
+	<div th:replace="navigation :: search_nav"></div>
+
+	<div class="row m-2">
+		<div class="col-xs-4">
+			<img th:src="@{${product.mainImagePath}}" width="150">
+		</div>
+		<div class="col-xs-8">
+			<div><h3>[[${product.name}]]</h3></div>
+			<div class="row m-1">
+				<div class="col-xs">
+					<input type="text" class="product-detail-rating-star" dir="ltr" data-size="md" th:value="${product.averageRating}" />
+				</div>
+				<div class="col-xs ml-1 mt-3"><span id="ratingNumber">[[${product.averageRating}]]</span> of 5</div>
+			</div>
+			<div class="row m-1 ml-3">
+				<span>[[${product.reviewCount}]] ratings</span>
+			</div>			
+		</div>
+	</div>	
+
+	<div class="row"><div class="col"><hr/></div></div>
+
+	<div class="row m-2">
+		<div class="col">
+			<th:block th:each="review : ${listReviews}">
+				<div class="row">
+					<div class="col-xs"><input type="text" class="product-detail-rating-star" dir="ltr" data-size="xs" th:value="${review.rating}" /></div>
+				</div>
+				<div class="row">
+					<div class="col"><b>[[${review.headline}]]</b></div>
+				</div>
+				<div class="row">
+					<div class="col">[[${review.comment}]]</div>
+				</div>								
+
+				<div class="row">
+					<div class="col ml-3"><small>[[${review.customer.fullName}]], <div th:replace="fragments :: format_time(${review.reviewTime})"></div></small></div>
+				</div>
+
+				<div class="row"><div class="col"><hr/></div></div>
+			</th:block>				
+		</div>						
+	</div>
+
+	<div th:replace="fragments :: pagination('/ratings/' + ${product.alias}, 'reviews')"></div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+
+</div>
+<script type="text/javascript">
+	decimalSeparator = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+	thousandSeparator = "[[${THOUSANDS_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+</script>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/common_rating.js}"></script>
+</body>
+</html> 

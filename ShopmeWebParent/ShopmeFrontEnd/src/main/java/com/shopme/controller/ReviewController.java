@@ -16,9 +16,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.Review;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.CustomerNotFoundException;
+import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.common.exception.ReviewNotFoundException;
 import com.shopme.service.CustomerService;
+import com.shopme.service.ProductService;
 import com.shopme.service.ReviewService;
 import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
 
@@ -32,12 +35,15 @@ public class ReviewController {
 	private ReviewService reviewService;
 	
 	private CustomerService customerService;
+	
+	private ProductService productService;
 
 	@Autowired
-	public ReviewController(ReviewService reviewService, CustomerService customerService) {
+	public ReviewController(ReviewService reviewService, CustomerService customerService, ProductService productService) {
 		super();
 		this.reviewService = reviewService;
 		this.customerService = customerService;
+		this.productService = productService;
 	}
 	
 	@GetMapping("/reviews")
@@ -137,5 +143,90 @@ public class ReviewController {
 			
 			return defaultRedirectURL;		
 		}
-	}	
+	}
+	
+	@GetMapping("/ratings/{productAlias}")
+	public String listByProductFirstPage(@PathVariable(name = "productAlias") String productAlias, Model model) {
+		
+		LOGGER.info("ReviewController | listByProductFirstPage is called");
+		
+		return listByProductByPage(model, productAlias, 1, "reviewTime", "desc");
+	}
+	
+	@GetMapping("/ratings/{productAlias}/page/{pageNum}") 
+	public String listByProductByPage(Model model,
+				@PathVariable(name = "productAlias") String productAlias,
+				@PathVariable(name = "pageNum") int pageNum,
+				String sortField, String sortDir) {
+
+		LOGGER.info("ReviewController | listByProductByPage is called");
+		
+		LOGGER.info("ReviewController | listByProductByPage | productAlias : " + productAlias);
+		LOGGER.info("ReviewController | listByProductByPage | pageNum : " + pageNum);
+		LOGGER.info("ReviewController | listByProductByPage | sortField : " + sortField);
+		LOGGER.info("ReviewController | listByProductByPage | sortDir : " + sortDir);
+		
+		Product product = null;
+
+		try {
+			product = productService.getProduct(productAlias);
+		} catch (ProductNotFoundException ex) {
+			LOGGER.info("ReviewController | listByProductByPage | ProductNotFoundException : " + ex.getMessage());
+			return "error/404";
+		}
+
+		Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
+		List<Review> listReviews = page.getContent();
+		
+		LOGGER.info("ReviewController | listByProductByPage | listReviews size : " + listReviews.size());
+		
+		
+		LOGGER.info("ReviewController | listByProductByPage | totalPages : " + page.getTotalPages());
+		LOGGER.info("ReviewController | listByProductByPage | totalItems : " + page.getTotalElements());
+		LOGGER.info("ReviewController | listByProductByPage | currentPage : " + pageNum);
+		LOGGER.info("ReviewController | listByProductByPage | sortField : " + sortField);
+		LOGGER.info("ReviewController | listByProductByPage | sortDir : " + sortDir);
+		LOGGER.info("ReviewController | listByProductByPage | reverseSortDir : " + (sortDir.equals("asc") ? "desc" : "asc"));
+		
+
+		model.addAttribute("totalPages", page.getTotalPages());
+		model.addAttribute("totalItems", page.getTotalElements());
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("sortField", sortField);
+		model.addAttribute("sortDir", sortDir);
+		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+		
+		LOGGER.info("ReviewController | listByProductByPage | listReviews size : " + listReviews.size());
+		LOGGER.info("ReviewController | listByProductByPage | product : " + product.toString());
+
+		model.addAttribute("listReviews", listReviews);
+		model.addAttribute("product", product);
+
+		long startCount = (pageNum - 1) * ReviewService.REVIEWS_PER_PAGE + 1;
+		
+		LOGGER.info("ReviewController | listByProductByPage | startCount : " + startCount);
+		
+		model.addAttribute("startCount", startCount);
+
+		long endCount = startCount + ReviewService.REVIEWS_PER_PAGE - 1;
+		
+		LOGGER.info("ReviewController | listByProductByPage | endCount : " + endCount);
+		
+		LOGGER.info("ReviewController | listByProductByPage | endCount : " + endCount);
+		LOGGER.info("ReviewController | listByProductByPage | page.getTotalElements() : " + page.getTotalElements());
+		
+		if (endCount > page.getTotalElements()) {
+			endCount = page.getTotalElements();
+		}
+		
+		LOGGER.info("ReviewController | listByProductByPage | endCount : " + endCount);
+
+		model.addAttribute("endCount", endCount);
+		
+		LOGGER.info("ReviewController | listByProductByPage | pageTitle : " + "Reviews for " + product.getShortName());
+		
+		model.addAttribute("pageTitle", "Reviews for " + product.getShortName());
+
+		return "reviews/reviews_product";
+	}
 }
