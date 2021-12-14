@@ -16,7 +16,7 @@ import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.error.OrderNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.OrderService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 import com.shopme.util.OrderReturnRequest;
 import com.shopme.util.OrderReturnResponse;
 
@@ -26,13 +26,15 @@ public class OrderRestController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(OrderRestController.class);
 
 	private OrderService orderService;
-	private CustomerService customerService;
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 	
 	@Autowired 
-	public OrderRestController(OrderService orderService, CustomerService customerService) {
+	public OrderRestController(OrderService orderService, 
+			                   CustomerService customerService,
+			                   AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.orderService = orderService;
-		this.customerService = customerService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
 	@PostMapping("/orders/return")
@@ -49,7 +51,7 @@ public class OrderRestController {
 		Customer customer = null;
 
 		try {
-			customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(servletRequest,customerService);
+			customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(servletRequest);
 			
 			LOGGER.info("OrderService | handleOrderReturnRequest | customer : " + customer.toString());
 			
@@ -59,7 +61,8 @@ public class OrderRestController {
 			
 			return new ResponseEntity<>("Authentication required", HttpStatus.BAD_REQUEST);
 		}
-
+		
+		
 		try {
 			
 			orderService.setOrderReturnRequested(returnRequest, customer);

@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.shopme.common.entity.Address;
 import com.shopme.common.entity.CartItem;
@@ -22,14 +20,12 @@ import com.shopme.service.AddressService;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ShippingRateService;
 import com.shopme.service.ShoppingCartService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @Controller
 public class ShoppingCartController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(ShoppingCartController.class);
-	
-	private CustomerService customerService;
 	
 	private ShoppingCartService cartService;
 	
@@ -37,14 +33,18 @@ public class ShoppingCartController {
 	
 	private ShippingRateService shipService;
 	
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
+	
 	@Autowired
 	public ShoppingCartController(CustomerService customerService, ShoppingCartService cartService,
-			AddressService addressService, ShippingRateService shipService) {
+			AddressService addressService, ShippingRateService shipService,
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
+		
 		super();
-		this.customerService = customerService;
 		this.cartService = cartService;
 		this.addressService = addressService;
 		this.shipService = shipService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
 	@GetMapping("/cart")
@@ -52,7 +52,7 @@ public class ShoppingCartController {
 		
 		LOGGER.info("ShoppingCartController | viewCart is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		List<CartItem> cartItems = cartService.listCartItems(customer);
 		
 		LOGGER.info("ShoppingCartController | viewCart | customer : " + customer.toString());

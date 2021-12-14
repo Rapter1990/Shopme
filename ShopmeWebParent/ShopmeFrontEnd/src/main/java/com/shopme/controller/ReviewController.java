@@ -23,7 +23,7 @@ import com.shopme.common.exception.ReviewNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ProductService;
 import com.shopme.service.ReviewService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @Controller
 public class ReviewController {
@@ -34,16 +34,19 @@ public class ReviewController {
 
 	private ReviewService reviewService;
 	
-	private CustomerService customerService;
-	
 	private ProductService productService;
+	
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 
 	@Autowired
-	public ReviewController(ReviewService reviewService, CustomerService customerService, ProductService productService) {
+	public ReviewController(ReviewService reviewService, 
+			                CustomerService customerService, 
+			                ProductService productService,
+			                AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.reviewService = reviewService;
-		this.customerService = customerService;
 		this.productService = productService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 	
 	@GetMapping("/reviews")
@@ -61,7 +64,7 @@ public class ReviewController {
 		
 		LOGGER.info("ReviewController | listReviewsByCustomerByPage is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		
 		LOGGER.info("ReviewController | listReviewsByCustomerByPage | customer : " + customer.toString());
 		
@@ -119,7 +122,7 @@ public class ReviewController {
 		
 		LOGGER.info("ReviewController | viewReview is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		
 		LOGGER.info("ReviewController | viewReview | customer : " + customer.toString());
 		

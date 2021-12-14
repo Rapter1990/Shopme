@@ -32,7 +32,7 @@ import com.shopme.service.SettingService;
 import com.shopme.service.ShippingRateService;
 import com.shopme.service.ShoppingCartService;
 import com.shopme.setting.PaymentSettingBag;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 import com.shopme.util.OrderUtil;
 
 @Controller
@@ -41,41 +41,37 @@ public class CheckoutController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CheckoutController.class);
 	
 	private CheckoutService checkoutService;
-	private CustomerService customerService;
 	private AddressService addressService;
 	private ShippingRateService shipService;
 	private ShoppingCartService cartService;
 	private OrderService orderService;
 	private SettingService settingService;
 	private PayPalService paypalService;
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 	
 	@Autowired
 	public CheckoutController(CheckoutService checkoutService, CustomerService customerService,
 			AddressService addressService, ShippingRateService shipService, ShoppingCartService cartService,
-			OrderService orderService, SettingService settingService,PayPalService paypalService) {
+			OrderService orderService, SettingService settingService,PayPalService paypalService,
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
+		
 		super();
 		this.checkoutService = checkoutService;
-		this.customerService = customerService;
 		this.addressService = addressService;
 		this.shipService = shipService;
 		this.cartService = cartService;
 		this.orderService = orderService;
 		this.settingService = settingService;
 		this.paypalService = paypalService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
 	@GetMapping("/checkout")
-	public String showCheckoutPage(Model model, HttpServletRequest request) {
+	public String showCheckoutPage(Model model, HttpServletRequest request) throws CustomerNotFoundException {
 		
 		LOGGER.info("CheckoutController | showCheckoutPage is called");
 		
-		Customer customer = null;
-		try {
-			customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
-		} catch (CustomerNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		
 		LOGGER.info("CheckoutController | showCheckoutPage | customer : " + customer.toString());
 
@@ -128,7 +124,7 @@ public class CheckoutController {
 	}
 	
 	@PostMapping("/place_order")
-	public String placeOrder(HttpServletRequest request) {
+	public String placeOrder(HttpServletRequest request) throws CustomerNotFoundException {
 		
 		LOGGER.info("CheckoutController | placeOrder is called");
 		
@@ -140,13 +136,7 @@ public class CheckoutController {
 		
 		LOGGER.info("CheckoutController | placeOrder | paymentMethod :  " + paymentMethod.toString());
 	
-		Customer customer = null;;
-		try {
-			customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
-		} catch (CustomerNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		
 		LOGGER.info("CheckoutController | placeOrder | customer :  " + customer.toString());
 
@@ -189,7 +179,7 @@ public class CheckoutController {
 	
 	@PostMapping("/process_paypal_order")
 	public String processPayPalOrder(HttpServletRequest request, Model model) 
-			throws UnsupportedEncodingException, MessagingException {
+			throws UnsupportedEncodingException, MessagingException, CustomerNotFoundException {
 		
 		LOGGER.info("CheckoutController | processPayPalOrder is called");
 		

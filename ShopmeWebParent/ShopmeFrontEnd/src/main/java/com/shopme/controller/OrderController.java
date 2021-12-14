@@ -18,7 +18,9 @@ import com.shopme.common.entity.order.Order;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.OrderService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
+import com.shopme.service.ReviewService;
+import com.shopme.util.AuthenticationControllerHelperUtil;
+import com.shopme.util.ReviewStatusUtil;
 
 @Controller
 public class OrderController {
@@ -27,13 +29,16 @@ public class OrderController {
 	
 	private OrderService orderService;
 	
-	private CustomerService customerService;
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 
 	@Autowired
-	public OrderController(OrderService orderService, CustomerService customerService) {
+	public OrderController(OrderService orderService, 
+			               CustomerService customerService,
+			               ReviewService reviewService,
+			               AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.orderService = orderService;
-		this.customerService = customerService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 	
 	
@@ -53,7 +58,7 @@ public class OrderController {
 		
 		LOGGER.info("OrderController | listOrdersByPage is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		
 		LOGGER.info("OrderController | listOrdersByPage | customer : " + customer.toString());
 
@@ -115,11 +120,14 @@ public class OrderController {
 		
 		LOGGER.info("OrderController | viewOrderDetails is called");
 		
-		Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request, customerService);
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 		
 		LOGGER.info("OrderController | listOrdersByPage | customer : " + customer.toString());
 
-		Order order = orderService.getOrder(id, customer);		
+		Order order = orderService.getOrder(id, customer);
+		
+		// ReviewStatusUtil 
+		
 		model.addAttribute("order", order);
 
 		return "orders/order_details_modal";

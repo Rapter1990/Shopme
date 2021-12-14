@@ -15,7 +15,7 @@ import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.common.exception.ShoppingCartException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ShoppingCartService;
-import com.shopme.util.CustomerShoppingCartAddressShippingOrderReviewUtil;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @RestController
 public class ShoppingCartRestController {
@@ -24,13 +24,15 @@ public class ShoppingCartRestController {
 	
 	private ShoppingCartService cartService;
 	
-	private CustomerService customerService;
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 	
 	@Autowired
-	public ShoppingCartRestController(ShoppingCartService cartService, CustomerService customerService) {
+	public ShoppingCartRestController(ShoppingCartService cartService,
+			CustomerService customerService,
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.cartService = cartService;
-		this.customerService = customerService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
 
@@ -42,7 +44,7 @@ public class ShoppingCartRestController {
 
 		try {
 			
-			Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request, customerService);
+			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 			
 			LOGGER.info("ShoppingCartRestController | addProductToCart | customer : " + customer.toString());
 			
@@ -68,7 +70,7 @@ public class ShoppingCartRestController {
 		
 		try {
 			
-			Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request, customerService);
+			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 			
 			LOGGER.info("ShoppingCartRestController | removeProduct | customer : " + customer.toString());
 			
@@ -88,7 +90,7 @@ public class ShoppingCartRestController {
 		LOGGER.info("ShoppingCartRestController | updateQuantity is called");
 		
 		try {
-			Customer customer = CustomerShoppingCartAddressShippingOrderReviewUtil.getAuthenticatedCustomer(request,customerService);
+			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 			
 			LOGGER.info("ShoppingCartRestController | updateQuantity | customer : " + customer.toString());
 			
