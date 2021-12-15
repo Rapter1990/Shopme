@@ -30,6 +30,8 @@ public class OrderController {
 	private OrderService orderService;
 	
 	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
+	
+	private ReviewService reviewService;
 
 	@Autowired
 	public OrderController(OrderService orderService, 
@@ -39,6 +41,7 @@ public class OrderController {
 		super();
 		this.orderService = orderService;
 		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
+		this.reviewService = reviewService;
 	}
 	
 	
@@ -126,7 +129,7 @@ public class OrderController {
 
 		Order order = orderService.getOrder(id, customer);
 		
-		// ReviewStatusUtil 
+		ReviewStatusUtil.setProductReviewableStatus(customer, order, reviewService);
 		
 		model.addAttribute("order", order);
 

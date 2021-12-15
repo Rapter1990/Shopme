@@ -93,6 +93,12 @@ public class Product extends IdBasedEntity implements Serializable{
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<ProductDetail> details = new ArrayList<>();
 	
+	@Transient 
+	private boolean customerCanReview;
+	
+	@Transient 
+	private boolean reviewedByCustomer;
+	
 	public Product(Integer id) {
 		this.id = id;
 	}

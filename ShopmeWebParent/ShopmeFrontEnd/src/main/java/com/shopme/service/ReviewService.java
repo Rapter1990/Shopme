@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.Review;
+import com.shopme.common.entity.order.OrderStatus;
 import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.ReviewNotFoundException;
+import com.shopme.repository.OrderDetailRepository;
 import com.shopme.repository.ReviewRepository;
 import com.shopme.service.impl.IReviewService;
 
@@ -22,9 +24,16 @@ public class ReviewService implements IReviewService {
 
 	public static final int REVIEWS_PER_PAGE = 5;
 
-	@Autowired 
-	private ReviewRepository repo;
+	private ReviewRepository reviewRepo;
+	private OrderDetailRepository orderDetailRepo;
 	
+	@Autowired
+	public ReviewService(ReviewRepository reviewRepo, OrderDetailRepository orderDetailRepo) {
+		super();
+		this.reviewRepo = reviewRepo;
+		this.orderDetailRepo = orderDetailRepo;
+	}
+
 	@Override
 	public Page<Review> listByCustomerByPage(Customer customer, String keyword, int pageNum, String sortField,
 			String sortDir) {
@@ -36,16 +45,16 @@ public class ReviewService implements IReviewService {
 		Pageable pageable = PageRequest.of(pageNum - 1, REVIEWS_PER_PAGE, sort);
 
 		if (keyword != null) {
-			return repo.findByCustomer(customer.getId(), keyword, pageable);
+			return reviewRepo.findByCustomer(customer.getId(), keyword, pageable);
 		}
 
-		return repo.findByCustomer(customer.getId(), pageable);
+		return reviewRepo.findByCustomer(customer.getId(), pageable);
 	}
 
 	@Override
 	public Review getByCustomerAndId(Customer customer, Integer reviewId) throws ReviewNotFoundException {
 		// TODO Auto-generated method stub
-		Review review = repo.findByCustomerAndId(customer.getId(), reviewId);
+		Review review = reviewRepo.findByCustomerAndId(customer.getId(), reviewId);
 		if (review == null) 
 			throw new ReviewNotFoundException("Customer doesn not have any reviews with ID " + reviewId);
 
@@ -56,7 +65,7 @@ public class ReviewService implements IReviewService {
 		Sort sort = Sort.by("reviewTime").descending();
 		Pageable pageable = PageRequest.of(0, 3, sort);
 
-		return repo.findByProduct(product, pageable);		
+		return reviewRepo.findByProduct(product, pageable);		
 	}
 	
 	public Page<Review> listByProduct(Product product, int pageNum, String sortField, String sortDir) {
@@ -64,7 +73,18 @@ public class ReviewService implements IReviewService {
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending(); 
 		Pageable pageable = PageRequest.of(pageNum - 1, REVIEWS_PER_PAGE, sort);
 
-		return repo.findByProduct(product, pageable);
+		return reviewRepo.findByProduct(product, pageable);
 	}
 
+	public boolean didCustomerReviewProduct(Customer customer, Integer productId) {
+		Long count = reviewRepo.countByCustomerAndProduct(customer.getId(), productId);
+		return count == 1;
+		
+	}
+	
+	public boolean canCustomerReviewProduct(Customer customer, Integer productId) {
+		Long count = orderDetailRepo.countByProductAndCustomerAndOrderStatus(productId, customer.getId(), OrderStatus.DELIVERED);
+		return count > 0;
+		
+	}
 }
