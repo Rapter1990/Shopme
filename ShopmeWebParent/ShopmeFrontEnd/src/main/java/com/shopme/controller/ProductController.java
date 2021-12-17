@@ -2,6 +2,8 @@ package com.shopme.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shopme.common.entity.Category;
+import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.Review;
 import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.CategoryNotFoundException;
+import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.CategoryService;
+import com.shopme.service.CustomerService;
 import com.shopme.service.ProductService;
 import com.shopme.service.ReviewService;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @Controller
 public class ProductController {
@@ -33,13 +39,20 @@ public class ProductController {
 	
 	private ReviewService reviewService;
 	
+	private CustomerService customerService;
+	
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
+	
 	@Autowired
 	public ProductController(CategoryService categoryService, ProductService productService,
-			ReviewService reviewService) {
+			ReviewService reviewService, CustomerService customerService,
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.categoryService = categoryService;
 		this.productService = productService;
 		this.reviewService = reviewService;
+		this.customerService = customerService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
 	@GetMapping("/c/{category_alias}")
@@ -119,7 +132,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/p/{product_alias}")
-	public String viewProductDetail(@PathVariable("product_alias") String alias, Model model) {
+	public String viewProductDetail(@PathVariable("product_alias") String alias, Model model,HttpServletRequest request) throws CustomerNotFoundException {
 		
 		LOGGER.info("ProductController | viewProductDetail is called");
 		
@@ -131,9 +144,25 @@ public class ProductController {
 			
 			LOGGER.info("ProductController | viewProductDetail | listCategoryParents : " + listCategoryParents.toString());
 			LOGGER.info("ProductController | viewProductDetail | product : " + product.toString());
-			LOGGER.info("ProductController | viewCategoryByPage | pageTitle : " + product.getShortName());
-			LOGGER.info("ProductController | viewCategoryByPage | listReviews : " + listReviews.getSize());
+			LOGGER.info("ProductController | viewProductDetail | pageTitle : " + product.getShortName());
+			LOGGER.info("ProductController | viewProductDetail | listReviews : " + listReviews.getSize());
+			
+			
+			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+			boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+			
+			LOGGER.info("ProductController | viewProductDetail | customerReviewed : " + customerReviewed);
 
+			if (customerReviewed) {
+				LOGGER.info("ProductController | viewProductDetail | customerReviewed : " + customerReviewed);
+				model.addAttribute("customerReviewed", customerReviewed);
+			} else {
+				boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+				LOGGER.info("ProductController | viewProductDetail | customerCanReview : " + customerCanReview);
+				model.addAttribute("customerCanReview", customerCanReview);
+			}
+
+			
 			model.addAttribute("listCategoryParents", listCategoryParents);
 			model.addAttribute("product", product);
 			model.addAttribute("listReviews", listReviews);

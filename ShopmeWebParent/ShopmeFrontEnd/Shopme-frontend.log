@@ -1,82 +1,40 @@
-2021-12-15 20:54:59.822  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.826  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : SHIPPING
-2021-12-15 20:54:59.826  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.827  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.827  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : DELIVERED
-2021-12-15 20:54:59.828  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.829  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.829  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : RETURNED
-2021-12-15 20:54:59.829  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.830  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.830  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PROCESSING
-2021-12-15 20:54:59.830  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.831  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.831  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PICKED
-2021-12-15 20:54:59.831  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.831  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.831  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : SHIPPING
-2021-12-15 20:54:59.831  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.832  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.832  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : DELIVERED
-2021-12-15 20:54:59.832  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.832  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:54:59.832  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | status : RETURNED
-2021-12-15 20:54:59.832  INFO 736 --- [http-nio-80-exec-6] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:54:59.833  INFO 736 --- [http-nio-80-exec-6] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
-2021-12-15 20:55:08.275  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter is called
-2021-12-15 20:55:08.275  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | url : http://localhost/Shopme/orders/detail/14
-2021-12-15 20:55:08.278  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.278  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.278  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.278  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.278  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.278  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.279  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.279  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.279  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | generalSettings : [Setting [key=COPYRIGHT, value=Copyright (C) 2021 Shopme Ltd.], Setting [key=CURRENCY_ID, value=1], Setting [key=CURRENCY_SYMBOL, value=$], Setting [key=CURRENCY_SYMBOL_POSITION, value=Before price], Setting [key=DECIMAL_DIGITS, value=2], Setting [key=DECIMAL_POINT_TYPE, value=POINT], Setting [key=SITE_LOGO, value=/site-logo/ShopmeAdminSmall.png], Setting [key=SITE_NAME, value=Shopme], Setting [key=THOUSANDS_POINT_TYPE, value=COMMA]]
-2021-12-15 20:55:08.279  INFO 736 --- [http-nio-80-exec-1] com.shopme.filter.SettingFilter          : SettingFilter | doFilter | S3_BASE_URI : https://shopmefiles.s3.eu-central-1.amazonaws.com
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.controller.OrderController    : OrderController | viewOrderDetails is called
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer is called
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal : UsernamePasswordAuthenticationToken [Principal=com.shopme.security.CustomerUserDetails@5c9b23f5, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=BE925287046EB912362EDB19D67C03A2], Granted Authorities=[]]
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof UsernamePasswordAuthenticationToken  : true
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof RememberMeAuthenticationToken  : false
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof OAuth2AuthenticationToken  : false
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
-2021-12-15 20:55:08.280  INFO 736 --- [http-nio-80-exec-1] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | customerEmail : lehoanganhvn@gmail.com
-2021-12-15 20:55:08.283  INFO 736 --- [http-nio-80-exec-1] com.shopme.controller.OrderController    : OrderController | listOrdersByPage | customer : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
-2021-12-15 20:55:08.300  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.300  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PROCESSING
-2021-12-15 20:55:08.301  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.302  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.302  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PICKED
-2021-12-15 20:55:08.302  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.302  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.302  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : SHIPPING
-2021-12-15 20:55:08.303  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.303  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.303  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : DELIVERED
-2021-12-15 20:55:08.303  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return True 
-2021-12-15 20:55:08.304  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.304  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : RETURNED
-2021-12-15 20:55:08.304  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.304  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.304  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PROCESSING
-2021-12-15 20:55:08.304  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.305  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.305  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PICKED
-2021-12-15 20:55:08.305  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.306  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.306  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : SHIPPING
-2021-12-15 20:55:08.306  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.306  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.306  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : DELIVERED
-2021-12-15 20:55:08.306  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return True 
-2021-12-15 20:55:08.307  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus is called
-2021-12-15 20:55:08.307  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | status : RETURNED
-2021-12-15 20:55:08.307  INFO 736 --- [http-nio-80-exec-1] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
-2021-12-15 20:55:08.307  INFO 736 --- [http-nio-80-exec-1] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
-2021-12-15 20:55:16.030  INFO 736 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-15 20:55:16.074  INFO 736 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-12-15 20:55:16.079  INFO 736 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-15 20:55:16.081  INFO 736 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-15 20:55:16.087  INFO 736 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-17 16:46:08.314  INFO 19380 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | principal instanceof OAuth2AuthenticationToken  : false
+2021-12-17 16:46:08.316  INFO 19380 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-12-17 16:46:08.316  INFO 19380 --- [http-nio-80-exec-2] com.shopme.util.CustomerAccountUtil      : CustomerController | getEmailOfAuthenticatedCustomer | customerEmail : lehoanganhvn@gmail.com
+2021-12-17 16:46:08.326  INFO 19380 --- [http-nio-80-exec-2] com.shopme.controller.OrderController    : OrderController | listOrdersByPage | customer : Anh Le Hoang, 30 Do Huy Uyen, Son Tra district, Da Nang, Vietnam. Postal Code: 550000. Phone Number: 09123456789
+2021-12-17 16:46:08.387  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.387  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PROCESSING
+2021-12-17 16:46:08.389  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.393  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.393  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PICKED
+2021-12-17 16:46:08.393  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.395  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.395  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : SHIPPING
+2021-12-17 16:46:08.395  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.396  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.396  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : DELIVERED
+2021-12-17 16:46:08.396  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return True 
+2021-12-17 16:46:08.397  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.397  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : RETURNED
+2021-12-17 16:46:08.397  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.398  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.398  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PROCESSING
+2021-12-17 16:46:08.398  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.398  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.398  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : PICKED
+2021-12-17 16:46:08.398  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : SHIPPING
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : DELIVERED
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return True 
+2021-12-17 16:46:08.399  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus is called
+2021-12-17 16:46:08.400  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | status : RETURNED
+2021-12-17 16:46:08.400  INFO 19380 --- [http-nio-80-exec-2] com.shopme.common.entity.order.Order     : Order | hasStatus | return False 
+2021-12-17 16:46:08.400  INFO 19380 --- [http-nio-80-exec-2] com.shopme.security.CustomerUserDetails  : CustomerUserDetails | username: lehoanganhvn@gmail.com
+2021-12-17 16:46:20.066  INFO 19380 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-12-17 16:46:20.099  INFO 19380 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-17 16:46:20.104  INFO 19380 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-17 16:46:20.107  INFO 19380 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-17 16:46:20.111  INFO 19380 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
