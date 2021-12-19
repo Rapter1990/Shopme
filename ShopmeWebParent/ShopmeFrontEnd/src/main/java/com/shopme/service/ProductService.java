@@ -1,5 +1,7 @@
 package com.shopme.service;
 
+import java.util.NoSuchElementException;
+
 import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
@@ -60,6 +62,15 @@ public class ProductService implements IProductService{
 		// TODO Auto-generated method stub
 		Pageable pageable = PageRequest.of(pageNum - 1, SEARCH_RESULTS_PER_PAGE);
 		return repo.search(keyword, pageable);
+	}
+	
+	public Product getProduct(Integer id) throws ProductNotFoundException {
+		try {
+			Product product = repo.findById(id).get();
+			return product;
+		} catch (NoSuchElementException ex) {
+			throw new ProductNotFoundException("Could not find any product with ID " + id);
+		}
 	}
 
 }

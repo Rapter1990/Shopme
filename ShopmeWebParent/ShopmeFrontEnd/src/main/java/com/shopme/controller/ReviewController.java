@@ -232,4 +232,57 @@ public class ReviewController {
 
 		return "reviews/reviews_product";
 	}
+	
+	@GetMapping("/write_review/product/{productId}")
+	public String showViewForm(@PathVariable("productId") Integer productId, Model model,
+			HttpServletRequest request) throws CustomerNotFoundException {
+		
+		LOGGER.info("ReviewController | showViewForm is called");
+		LOGGER.info("ReviewController | showViewForm | productId : " + productId);
+		
+		Review review = new Review();
+
+		Product product = null;
+
+		try {
+			product = productService.getProduct(productId);
+			LOGGER.info("ReviewController | showViewForm | product : " + product.toString());
+		} catch (ProductNotFoundException ex) {
+			LOGGER.info("ReviewController | showViewForm | ProductNotFoundException (error/404): " + ex.getMessage());
+			return "error/404";
+		}
+
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		LOGGER.info("ReviewController | showViewForm | customer : " + customer.toString());
+		
+		boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+		
+		LOGGER.info("ReviewController | showViewForm | customerReviewed : " + customerReviewed);
+
+		if (customerReviewed) {
+			model.addAttribute("customerReviewed", customerReviewed);
+			LOGGER.info("ReviewController | showViewForm | model customerReviewed : " + customerReviewed);
+		} else {
+			boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+			
+			LOGGER.info("ReviewController | showViewForm | customerCanReview : " + customerCanReview);
+
+			if (customerCanReview) {
+				model.addAttribute("customerCanReview", customerCanReview);
+				LOGGER.info("ReviewController | showViewForm | model customerCanReview : " + customerCanReview);
+			} else {
+				model.addAttribute("NoReviewPermission", true);
+				LOGGER.info("ReviewController | showViewForm | model NoReviewPermission : " + true);
+			}
+		}		
+		
+		LOGGER.info("ReviewController | showViewForm | product : " + product.toString());
+
+		model.addAttribute("product", product);
+		model.addAttribute("review", review);
+		
+		return "reviews/review_form";
+	}
+	
 }

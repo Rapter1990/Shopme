@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 $(".product-detail-rating-star").rating({
 	displayOnly: true,
-	hoverOnClera: false,
+	hoverOnClear: false,
 	showCaption: false,
 	theme: 'krajee-svg'
 });
