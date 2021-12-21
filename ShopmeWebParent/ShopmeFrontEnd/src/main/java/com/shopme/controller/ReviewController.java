@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.common.entity.Customer;
@@ -283,6 +284,37 @@ public class ReviewController {
 		model.addAttribute("review", review);
 		
 		return "reviews/review_form";
+	}
+	
+	@PostMapping("/post_review")
+	public String saveReview(Model model, Review review, Integer productId, HttpServletRequest request) throws CustomerNotFoundException {
+		
+		LOGGER.info("ReviewController | saveReview is called");
+		LOGGER.info("ReviewController | saveReview | productId : " + productId);
+		LOGGER.info("ReviewController | saveReview | review : " + review.toString());
+		
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+
+		Product product = null;
+
+		try {
+			product = productService.getProduct(productId);
+			LOGGER.info("ReviewController | saveReview | product : " + product.toString());
+		} catch (ProductNotFoundException ex) {
+			LOGGER.info("ReviewController | saveReview | ProductNotFoundException (error/404): " + ex.getMessage());
+			return "error/404";
+		}
+
+		review.setProduct(product);
+		review.setCustomer(customer);
+
+		Review savedReview = reviewService.save(review);
+		
+		LOGGER.info("ReviewController | saveReview | savedReview : " + savedReview.toString());
+
+		model.addAttribute("review", savedReview);
+
+		return "reviews/review_done";
 	}
 	
 }

@@ -31,8 +31,9 @@
 	</div>
 
 	<!-- /post_review -->
-	<form th:if="${customerCanReview}" action="#" 
+	<form th:if="${customerCanReview}" th:action="@{/post_review}"
 			method="post" th:object="${review}" style="max-width: 600px; margin: 0 auto">
+			<input type="hidden" name="productId" th:value="${product.id}" />
 		<div class="border border-secondary rounded p-3">
 			<p>
 				<input type="text" th:field="*{rating}" class="product-rating-star" dir="ltr" data-size="md" data-step="1" />

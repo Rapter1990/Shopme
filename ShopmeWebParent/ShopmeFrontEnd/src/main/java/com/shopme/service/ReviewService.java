@@ -1,5 +1,7 @@
 package com.shopme.service;
 
+import java.util.Date;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import com.shopme.common.entity.order.OrderStatus;
 import com.shopme.common.entity.product.Product;
 import com.shopme.common.exception.ReviewNotFoundException;
 import com.shopme.repository.OrderDetailRepository;
+import com.shopme.repository.ProductRepository;
 import com.shopme.repository.ReviewRepository;
 import com.shopme.service.impl.IReviewService;
 
@@ -26,12 +29,15 @@ public class ReviewService implements IReviewService {
 
 	private ReviewRepository reviewRepo;
 	private OrderDetailRepository orderDetailRepo;
+	private ProductRepository productRepo;
 	
 	@Autowired
-	public ReviewService(ReviewRepository reviewRepo, OrderDetailRepository orderDetailRepo) {
+	public ReviewService(ReviewRepository reviewRepo, OrderDetailRepository orderDetailRepo,
+			ProductRepository productRepo) {
 		super();
 		this.reviewRepo = reviewRepo;
 		this.orderDetailRepo = orderDetailRepo;
+		this.productRepo = productRepo;
 	}
 
 	@Override
@@ -86,5 +92,15 @@ public class ReviewService implements IReviewService {
 		Long count = orderDetailRepo.countByProductAndCustomerAndOrderStatus(productId, customer.getId(), OrderStatus.DELIVERED);
 		return count > 0;
 		
+	}
+	
+	public Review save(Review review) {
+		review.setReviewTime(new Date());
+		Review savedReview = reviewRepo.save(review);
+
+		Integer productId = savedReview.getProduct().getId();		
+		productRepo.updateReviewCountAndAverageRating(productId);
+
+		return savedReview;
 	}
 }
