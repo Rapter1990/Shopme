@@ -149,20 +149,21 @@ public class ProductController {
 			
 			
 			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
-			boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
-			
-			LOGGER.info("ProductController | viewProductDetail | customerReviewed : " + customerReviewed);
-
-			if (customerReviewed) {
+					
+			if (customer != null) {
+				boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
 				LOGGER.info("ProductController | viewProductDetail | customerReviewed : " + customerReviewed);
-				model.addAttribute("customerReviewed", customerReviewed);
-			} else {
-				boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
-				LOGGER.info("ProductController | viewProductDetail | customerCanReview : " + customerCanReview);
-				model.addAttribute("customerCanReview", customerCanReview);
+				
+				if (customerReviewed) {
+					model.addAttribute("customerReviewed", customerReviewed);
+					LOGGER.info("ProductController | viewProductDetail | customerReviewed : " + customerReviewed);
+				} else {
+					boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+					LOGGER.info("ProductController | viewProductDetail | customerCanReview : " + customerCanReview);
+					model.addAttribute("customerCanReview", customerCanReview);
+				}
 			}
 
-			
 			model.addAttribute("listCategoryParents", listCategoryParents);
 			model.addAttribute("product", product);
 			model.addAttribute("listReviews", listReviews);
