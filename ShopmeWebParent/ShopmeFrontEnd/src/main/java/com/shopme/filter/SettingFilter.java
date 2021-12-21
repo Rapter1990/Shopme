@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.shopme.common.constants.Constants;
@@ -20,6 +21,9 @@ import com.shopme.common.entity.setting.Setting;
 import com.shopme.service.SettingService;
 
 @Component
+@Order(-121) // use this value to fix Logout Error of Customer already signed out
+// Default value -100 (https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html -> spring.security.filter.order)
+// Select any value less than default value
 public class SettingFilter implements Filter {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SettingFilter.class);
