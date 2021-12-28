@@ -3,6 +3,7 @@ package com.shopme.repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.shopme.common.entity.Review;
@@ -27,4 +28,8 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
 			+ "r.product.id = ?2")
 	public Long countByCustomerAndProduct(Integer customerId, Integer productId);
 	
+	@Query("UPDATE Review r SET r.votes = (SELECT SUM(v.votes) FROM ReviewVote v"
+			+ " WHERE v.review.id=?1) WHERE r.id = ?1")
+	@Modifying
+	public void updateVoteCount(Integer reviewId);
 }

@@ -42,6 +42,13 @@ public class Review extends IdBasedEntity{
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
+	private int votes;
+	
+	public Review(Integer id) { 
+		
+		this.id = id; 
+	}
+	
 	@Override
 	public String toString() {
 		return "Review [headline=" + headline + ", rating=" + rating + ", reviewTime=" + reviewTime + ", product="
