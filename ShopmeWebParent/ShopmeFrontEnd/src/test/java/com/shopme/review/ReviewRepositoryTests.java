@@ -87,4 +87,12 @@ public class ReviewRepositoryTests {
 
 		assertThat(review.getVotes()).isEqualTo(2);
 	}
+	
+	@Test
+	public void testGetVoteCount() {
+		Integer reviewId = 5;
+		Integer voteCount = repo.getVoteCount(reviewId);
+
+		assertThat(voteCount).isEqualTo(2);
+	}
 }

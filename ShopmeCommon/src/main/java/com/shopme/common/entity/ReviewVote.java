@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -34,6 +36,16 @@ public class ReviewVote extends IdBasedEntity {
 
 	public void voteDown() {
 		this.votes = VOTE_DOWN_POINT;
+	}
+	
+	@Transient
+	public boolean isUpvoted() {
+		return this.votes == VOTE_UP_POINT;
+	}
+
+	@Transient
+	public boolean isDownvoted() {
+		return this.votes == VOTE_DOWN_POINT;
 	}
 	
 	@Override
