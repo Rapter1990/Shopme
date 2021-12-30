@@ -43,7 +43,7 @@ public class ReviewVoteService implements IReviewVoteService{
 		
 		LOGGER.info("ReviewVoteService | undoVote | vote : " + vote.toString());
 		LOGGER.info("ReviewVoteService | undoVote | reviewId : " + reviewId);
-		LOGGER.info("ReviewVoteService | undoVote | voteType : " + voteType.toString());
+		LOGGER.info("ReviewVoteService | undoVote | voteType : " + voteType);
 		
 		voteRepo.delete(vote);
 		reviewRepo.updateVoteCount(reviewId);
@@ -61,7 +61,7 @@ public class ReviewVoteService implements IReviewVoteService{
 		LOGGER.info("ReviewVoteService | doVote is called");
 		
 		LOGGER.info("ReviewVoteService | doVote | customer : " + customer.getFullName());
-		LOGGER.info("ReviewVoteService | doVote | voteType : " + voteType.toString());
+		LOGGER.info("ReviewVoteService | doVote | voteType : " + voteType);
 		
 		Review review = null;
 
