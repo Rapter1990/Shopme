@@ -48,20 +48,17 @@ public class OrderRestController {
 		LOGGER.info("OrderService | handleOrderReturnRequest | Note : " + returnRequest.getNote());
 
 		
-		Customer customer = null;
-
-		try {
-			customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(servletRequest);
-			
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(servletRequest);
+		
+		if(customer != null) {
 			LOGGER.info("OrderService | handleOrderReturnRequest | customer : " + customer.toString());
-			
-		} catch (CustomerNotFoundException ex) {
+		}else {
 			
 			LOGGER.info("OrderService | handleOrderReturnRequest | CustomerNotFoundException , Authentication required");
 			
 			return new ResponseEntity<>("Authentication required", HttpStatus.BAD_REQUEST);
 		}
-		
+
 		
 		try {
 			

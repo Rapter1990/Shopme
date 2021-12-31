@@ -18,22 +18,27 @@ public class CustomerAccountUtil {
 
 	public static String getEmailOfAuthenticatedCustomer(HttpServletRequest request) {
 		
-		LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer is called");
+		LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer is called");
 		
 		Object principal = request.getUserPrincipal();
 		
-		LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer | principal : " + principal.toString());
+		if(principal != null) {
+			LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | principal : " + principal.toString());
+		}else {
+			LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | principal = null ");
+		}
+		
 		
 		String customerEmail = null;
 		
 		
-		LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer | "
+		LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | "
 				+ "principal instanceof UsernamePasswordAuthenticationToken  : " + (principal instanceof UsernamePasswordAuthenticationToken));
 
-		LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer | "
+		LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | "
 				+ "principal instanceof RememberMeAuthenticationToken  : " + (principal instanceof RememberMeAuthenticationToken));
 		
-		LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer | "
+		LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | "
 				+ "principal instanceof OAuth2AuthenticationToken  : " + (principal instanceof OAuth2AuthenticationToken));
 		
 		if (principal instanceof UsernamePasswordAuthenticationToken 
@@ -43,32 +48,32 @@ public class CustomerAccountUtil {
 			OAuth2AuthenticationToken oauth2Token = (OAuth2AuthenticationToken) principal;
 			CustomerOAuth2User oauth2User = (CustomerOAuth2User) oauth2Token.getPrincipal();
 			
-			LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer | oauth2User : " + oauth2User.toString());
+			LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | oauth2User : " + oauth2User.toString());
 			
 			customerEmail = oauth2User.getEmail();
 		}
 		
-		LOGGER.info("CustomerController | getEmailOfAuthenticatedCustomer | customerEmail : " + customerEmail);
+		LOGGER.info("CustomerAccountUtil | getEmailOfAuthenticatedCustomer | customerEmail : " + customerEmail);
 
 		return customerEmail;
 	}
 	
 	public static void updateNameForAuthenticatedCustomer(Customer customer, HttpServletRequest request) {
 		
-		LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer is called");
+		LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer is called");
 		
 		Object principal = request.getUserPrincipal();
 		
 		
-		LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | principal : " + principal.toString());
+		LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | principal : " + principal.toString());
 		
-		LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | "
+		LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | "
 				+ "principal instanceof UsernamePasswordAuthenticationToken  : " + (principal instanceof UsernamePasswordAuthenticationToken));
 
-		LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | "
+		LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | "
 				+ "principal instanceof RememberMeAuthenticationToken  : " + (principal instanceof RememberMeAuthenticationToken));
 		
-		LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | "
+		LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | "
 				+ "principal instanceof OAuth2AuthenticationToken  : " + (principal instanceof OAuth2AuthenticationToken));
 
 		if (principal instanceof UsernamePasswordAuthenticationToken 
@@ -76,11 +81,11 @@ public class CustomerAccountUtil {
 			
 			CustomerUserDetails userDetails = getCustomerUserDetailsObject(principal);
 			
-			LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | userDetails : " + userDetails.toString());
+			LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | userDetails : " + userDetails.toString());
 			
 			Customer authenticatedCustomer = userDetails.getCustomer();
 			
-			LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | authenticatedCustomer : " + authenticatedCustomer.toString());
+			LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | authenticatedCustomer : " + authenticatedCustomer.toString());
 			
 			authenticatedCustomer.setFirstName(customer.getFirstName());
 			authenticatedCustomer.setLastName(customer.getLastName());
@@ -89,11 +94,11 @@ public class CustomerAccountUtil {
 			OAuth2AuthenticationToken oauth2Token = (OAuth2AuthenticationToken) principal;
 			CustomerOAuth2User oauth2User = (CustomerOAuth2User) oauth2Token.getPrincipal();
 			
-			LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | oauth2User : " + oauth2User.toString());
+			LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | oauth2User : " + oauth2User.toString());
 			
 			String fullName = customer.getFirstName() + " " + customer.getLastName();
 			
-			LOGGER.info("CustomerController | updateNameForAuthenticatedCustomer | fullName : " + fullName);
+			LOGGER.info("CustomerAccountUtil | updateNameForAuthenticatedCustomer | fullName : " + fullName);
 			
 			oauth2User.setFullName(fullName);
 		}		
@@ -101,14 +106,14 @@ public class CustomerAccountUtil {
 
 	public static CustomerUserDetails getCustomerUserDetailsObject(Object principal) {
 		
-		LOGGER.info("CustomerController | getCustomerUserDetailsObject is called");
+		LOGGER.info("CustomerAccountUtil | getCustomerUserDetailsObject is called");
 		
 		CustomerUserDetails userDetails = null;
 		
-		LOGGER.info("CustomerController | getCustomerUserDetailsObject | "
+		LOGGER.info("CustomerAccountUtil | getCustomerUserDetailsObject | "
 				+ "principal instanceof UsernamePasswordAuthenticationToken  : " + (principal instanceof UsernamePasswordAuthenticationToken));
 
-		LOGGER.info("CustomerController | getCustomerUserDetailsObject | "
+		LOGGER.info("CustomerAccountUtil | getCustomerUserDetailsObject | "
 				+ "principal instanceof RememberMeAuthenticationToken  : " + (principal instanceof RememberMeAuthenticationToken));
 		
 		if (principal instanceof UsernamePasswordAuthenticationToken) {
@@ -119,7 +124,7 @@ public class CustomerAccountUtil {
 			userDetails = (CustomerUserDetails) token.getPrincipal();
 		}
 
-		LOGGER.info("CustomerController | getCustomerUserDetailsObject | userDetails : " + userDetails.toString());
+		LOGGER.info("CustomerAccountUtil | getCustomerUserDetailsObject | userDetails : " + userDetails.toString());
 		
 		return userDetails;
 	}

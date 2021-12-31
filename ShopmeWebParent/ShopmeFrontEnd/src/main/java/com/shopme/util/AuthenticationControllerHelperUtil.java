@@ -15,8 +15,8 @@ public class AuthenticationControllerHelperUtil {
 	@Autowired 
 	private CustomerService customerService;
 
-	public Customer getAuthenticatedCustomer(HttpServletRequest request) throws CustomerNotFoundException {
-		String email = CustomerAccountUtil.getEmailOfAuthenticatedCustomer(request);				
-		return customerService.getCustomerByEmail(email);
+	public Customer getAuthenticatedCustomer(HttpServletRequest request) {
+		String email = CustomerAccountUtil.getEmailOfAuthenticatedCustomer(request);
+		return customerService.getCustomerByEmail(email);	
 	}
 }

@@ -36,24 +36,20 @@ public class ReviewVoteRestController {
 	@PostMapping("/vote_review/{id}/{type}")
 	public VoteResultDTO voteReview(@PathVariable(name = "id") Integer reviewId,
 			@PathVariable(name = "type") String type,
-			HttpServletRequest request) {
+			HttpServletRequest request) throws CustomerNotFoundException {
 		
 		LOGGER.info("ReviewVoteRestController | voteReview is called");
 		
 		LOGGER.info("ReviewVoteRestController | voteReview | reviewId : " + reviewId);
 		LOGGER.info("ReviewVoteRestController | voteReview | type : " + type);
 
-		Customer customer;
+		Customer customer = helper.getAuthenticatedCustomer(request);
 		
-		try {
-			customer = helper.getAuthenticatedCustomer(request);
-		} catch (CustomerNotFoundException e) {
-			// TODO Auto-generated catch block
+		if (customer == null) {
 			LOGGER.info("ReviewVoteRestController | voteReview | CustomerNotFoundException");
-			
 			return VoteResultDTO.fail("You must login to vote the review.");
 		}
-
+		
 		VoteType voteType = VoteType.valueOf(type.toUpperCase());
 		
 		LOGGER.info("ReviewVoteRestController | voteReview | voteType : " + voteType);

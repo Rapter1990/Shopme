@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shopme.common.entity.Customer;
-import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.common.exception.ShoppingCartException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ShoppingCartService;
@@ -42,23 +41,27 @@ public class ShoppingCartRestController {
 		
 		LOGGER.info("ShoppingCartRestController | addProductToCart is called");
 
-		try {
-			
-			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
-			
+		
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		if(customer != null) {
 			LOGGER.info("ShoppingCartRestController | addProductToCart | customer : " + customer.toString());
 			
-			Integer updatedQuantity = cartService.addProduct(productId, quantity, customer);
+			Integer updatedQuantity;
+			try {
+				updatedQuantity = cartService.addProduct(productId, quantity, customer);
+			} catch (ShoppingCartException ex) {
+				// TODO Auto-generated catch block
+				return ex.getMessage();
+			}
 			
 			LOGGER.info("ShoppingCartRestController | addProductToCart | updatedQuantity : " + updatedQuantity);
-
+			
 			return updatedQuantity + " item(s) of this product were added to your shopping cart.";
-		} catch (CustomerNotFoundException ex) {
+		}else {
 			return "You must login to add this product to cart.";
-		} catch (ShoppingCartException ex) {
-			return ex.getMessage();
 		}
-
+		
 	}
 
 	
@@ -68,19 +71,19 @@ public class ShoppingCartRestController {
 		
 		LOGGER.info("ShoppingCartRestController | removeProduct is called");
 		
-		try {
-			
-			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		if(customer != null) {
 			
 			LOGGER.info("ShoppingCartRestController | removeProduct | customer : " + customer.toString());
 			
 			cartService.removeProduct(productId, customer);
 			
 			return "The product has been removed from your shopping cart.";
-
-		} catch (CustomerNotFoundException e) {
+		}else {
 			return "You must login to remove product.";
 		}
+		
 	}
 	
 	@PostMapping("/cart/update/{productId}/{quantity}")
@@ -89,9 +92,9 @@ public class ShoppingCartRestController {
 		
 		LOGGER.info("ShoppingCartRestController | updateQuantity is called");
 		
-		try {
-			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
-			
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		if(customer != null) {
 			LOGGER.info("ShoppingCartRestController | updateQuantity | customer : " + customer.toString());
 			
 			float subtotal = cartService.updateQuantity(productId, quantity, customer);
@@ -99,8 +102,9 @@ public class ShoppingCartRestController {
 			LOGGER.info("ShoppingCartRestController | updateQuantity | subtotal : " + subtotal);
 
 			return String.valueOf(subtotal);
-		} catch (CustomerNotFoundException ex) {
+		}else {
 			return "You must login to change quantity of product.";
-		}	
+		}
+		
 	}
 }
