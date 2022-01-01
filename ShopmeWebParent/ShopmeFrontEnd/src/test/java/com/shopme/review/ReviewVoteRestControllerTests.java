@@ -55,5 +55,73 @@ public class ReviewVoteRestControllerTests {
 		assertFalse(voteResult.isSuccessful());
 		assertThat(voteResult.getMessage()).contains("You must login");
 	}
+	
+	@Test
+	@WithMockUser(username = "lehoanganhvn@gmail.com", password = "anh2020")
+	public void testVoteNonExistReview() throws Exception {
+		String requestURL = "/vote_review/123/up";
+
+		MvcResult mvcResult = mockMvc.perform(post(requestURL).with(csrf()))
+			.andExpect(status().isOk())
+			.andDo(print())
+			.andReturn();
+
+		String json = mvcResult.getResponse().getContentAsString();
+		VoteResultDTO voteResult = objectMapper.readValue(json, VoteResultDTO.class);
+
+		assertFalse(voteResult.isSuccessful());
+		assertThat(voteResult.getMessage()).contains("no longer exists");
+	}
+	
+	@Test
+	@WithMockUser(username = "lehoanganhvn@gmail.com", password = "anh2020")
+	public void testVoteUp() throws Exception {
+		Integer reviewId = 20;
+		String requestURL = "/vote_review/" + reviewId + "/up";
+
+		Review review = reviewRepo.findById(reviewId).get();
+		int voteCountBefore = review.getVotes();
+		
+
+		MvcResult mvcResult = mockMvc.perform(post(requestURL).with(csrf()))
+			.andExpect(status().isOk())
+			.andDo(print())
+			.andReturn();
+
+		String json = mvcResult.getResponse().getContentAsString();
+		VoteResultDTO voteResult = objectMapper.readValue(json, VoteResultDTO.class);
+
+		assertTrue(voteResult.isSuccessful());
+		assertThat(voteResult.getMessage()).contains("successfully voted up");
+
+		int voteCountAfter = voteResult.getVoteCount();
+		assertEquals(voteCountBefore + 1, voteCountAfter);
+
+	}
+	
+	@Test
+	@WithMockUser(username = "lehoanganhvn@gmail.com", password = "anh2020")
+	public void testUndoVoteUp() throws Exception {
+		Integer reviewId = 20;
+		String requestURL = "/vote_review/" + reviewId + "/up";
+
+		Review review = reviewRepo.findById(reviewId).get();
+		int voteCountBefore = review.getVotes();
+
+		MvcResult mvcResult = mockMvc.perform(post(requestURL).with(csrf()))
+			.andExpect(status().isOk())
+			.andDo(print())
+			.andReturn();
+
+		String json = mvcResult.getResponse().getContentAsString();
+		VoteResultDTO voteResult = objectMapper.readValue(json, VoteResultDTO.class);
+
+		assertTrue(voteResult.isSuccessful());
+		assertThat(voteResult.getMessage()).contains("unvoted up");
+
+		int voteCountAfter = voteResult.getVoteCount();
+		assertEquals(voteCountBefore - 1, voteCountAfter);
+
+	}
 
 }

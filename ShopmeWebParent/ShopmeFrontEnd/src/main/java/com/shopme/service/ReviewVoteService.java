@@ -76,8 +76,6 @@ public class ReviewVoteService implements IReviewVoteService{
 		
 		ReviewVote vote = voteRepo.findByReviewAndCustomer(reviewId, customer.getId());
 		
-		LOGGER.info("ReviewVoteService | doVote | vote : " + vote.toString());
-		
 		if (vote != null) {
 			if (vote.isUpvoted() && voteType.equals(VoteType.UP) || 
 					vote.isDownvoted() && voteType.equals(VoteType.DOWN)) {
@@ -102,8 +100,10 @@ public class ReviewVoteService implements IReviewVoteService{
 			LOGGER.info("ReviewVoteService | doVote | vote : " + vote.toString());
 
 			if (voteType.equals(VoteType.UP)) {
+				LOGGER.info("ReviewVoteService | doVote | voteType : " + voteType);
 				vote.voteUp();
 			} else {
+				LOGGER.info("ReviewVoteService | doVote | voteType : " + voteType);
 				vote.voteDown();
 			}
 		}
