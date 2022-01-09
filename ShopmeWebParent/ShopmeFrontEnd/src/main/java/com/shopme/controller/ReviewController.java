@@ -24,6 +24,7 @@ import com.shopme.common.exception.ReviewNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ProductService;
 import com.shopme.service.ReviewService;
+import com.shopme.service.ReviewVoteService;
 import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @Controller
@@ -38,16 +39,20 @@ public class ReviewController {
 	private ProductService productService;
 	
 	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
+	
+	private ReviewVoteService voteService;
 
 	@Autowired
 	public ReviewController(ReviewService reviewService, 
 			                CustomerService customerService, 
 			                ProductService productService,
-			                AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
+			                AuthenticationControllerHelperUtil authenticationControllerHelperUtil,
+			                ReviewVoteService voteService) {
 		super();
 		this.reviewService = reviewService;
 		this.productService = productService;
 		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
+		this.voteService = voteService;
 	}
 	
 	@GetMapping("/reviews")
@@ -150,18 +155,19 @@ public class ReviewController {
 	}
 	
 	@GetMapping("/ratings/{productAlias}")
-	public String listByProductFirstPage(@PathVariable(name = "productAlias") String productAlias, Model model) {
+	public String listByProductFirstPage(@PathVariable(name = "productAlias") String productAlias, Model model,
+			HttpServletRequest request) {
 		
 		LOGGER.info("ReviewController | listByProductFirstPage is called");
 		
-		return listByProductByPage(model, productAlias, 1, "reviewTime", "desc");
+		return listByProductByPage(model, productAlias, 1, "reviewTime", "desc", request);
 	}
 	
 	@GetMapping("/ratings/{productAlias}/page/{pageNum}") 
 	public String listByProductByPage(Model model,
 				@PathVariable(name = "productAlias") String productAlias,
 				@PathVariable(name = "pageNum") int pageNum,
-				String sortField, String sortDir) {
+				String sortField, String sortDir, HttpServletRequest request) {
 
 		LOGGER.info("ReviewController | listByProductByPage is called");
 		
@@ -181,6 +187,15 @@ public class ReviewController {
 
 		Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
 		List<Review> listReviews = page.getContent();
+		
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		LOGGER.info("ReviewController | listByProductByPage | customer : " + customer.toString());
+		
+		if (customer != null) {
+			LOGGER.info("ReviewController | listByProductByPage | customer != null : " + (customer != null));
+			voteService.markReviewsVotedForProductByCustomer(listReviews, product.getId(), customer.getId());
+		}
 		
 		LOGGER.info("ReviewController | listByProductByPage | listReviews size : " + listReviews.size());
 		

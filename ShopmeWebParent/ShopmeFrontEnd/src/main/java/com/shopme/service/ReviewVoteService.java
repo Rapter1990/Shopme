@@ -1,5 +1,6 @@
 package com.shopme.service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -116,6 +117,48 @@ public class ReviewVoteService implements IReviewVoteService{
 		
 		return VoteResultDTO.success("You have successfully voted " + voteType + " that review.", 
 				voteCount);
+	}
+	
+	public void markReviewsVotedForProductByCustomer(List<Review> listReviews, Integer productId,
+			Integer customerId) {
+		
+		LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer is called");
+		
+		LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | listReviews : " + listReviews.toString());
+		LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | productId : " + productId);
+		LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | customerId : " + customerId);
+		
+		
+		List<ReviewVote> listVotes = voteRepo.findByProductAndCustomer(productId, customerId);
+		
+		LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | listVotes : " + listVotes.toString());
+
+		for (ReviewVote vote : listVotes) {
+			Review votedReview = vote.getReview();
+			
+			LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | votedReview : " + votedReview.toString());
+
+			LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | "
+					+ "listReviews.contains(votedReview) : " + (listReviews.contains(votedReview)));
+			
+			if (listReviews.contains(votedReview)) {
+				int index = listReviews.indexOf(votedReview);
+				
+				LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | index : " + index);
+				
+				Review review = listReviews.get(index);
+				
+				LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | review : " + review.toString());
+
+				if (vote.isUpvoted()) {
+					LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | vote.isUpvoted() : " + (vote.isUpvoted()));
+					review.setUpvotedByCurrentCustomer(true);
+				} else if (vote.isDownvoted()) {
+					LOGGER.info("ReviewVoteService | markReviewsVotedForProductByCustomer | vote.isDownvoted() : " + (vote.isDownvoted()));
+					review.setDownvotedByCurrentCustomer(true);
+				}
+			}
+		}
 	}
 
 }
