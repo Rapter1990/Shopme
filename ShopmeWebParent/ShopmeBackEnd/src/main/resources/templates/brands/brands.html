@@ -25,7 +25,7 @@
 				<tr>
 					<th class="hideable-column">[[#{brand.id}]]</th>
 					<th>[[#{brand.logotitle}]]</th>
-					<th th:replace="fragments :: column_link('name', 'Brand Name', 'none')" />
+					<th th:replace="fragments :: column_link('name', #{brand.name}, 'none')" />
 					<th>[[#{brand.categorytitle}]]</th>
 					<th></th>
 				</tr>								
@@ -70,7 +70,7 @@
 		</div>	
 	</div>	
 	
-	<div th:replace="fragments :: pagination('brands')"></div>
+	<div th:replace="fragments :: pagination(#{brand.paginationtitle})"></div>
 
 	<div th:replace="modal_fragments :: confirm_modal" />
 

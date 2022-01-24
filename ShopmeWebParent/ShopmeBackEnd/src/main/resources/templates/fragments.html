@@ -85,20 +85,20 @@
 	<!-- PAGINATION -->
 	<div th:fragment="pagination(entityName)" th:remove="tag">
 		<div class="text-center m-1" th:if="${totalItems > 0}">
-			<span>Showing [[${entityName}]] # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+			<span>[[#{pagination.showingmessage}]] [[${entityName}]] # [[${startCount}]] [[#{pagination.showingmessage.to}]] [[${endCount}]] [[#{pagination.showingmessage.of}]] [[${totalItems}]]</span>
 		</div>
 		<div class="text-center m-1" th:unless="${totalItems > 0}">
-			<span>No [[${entityName}]] found</span>
+			<span>[[#{pagination.showingmessage.no}]] [[${entityName}]] [[#{pagination.showingmessage.found}]]</span>
 		</div>
 	
 		<div th:if="${totalPages > 1}">
 			<nav>
 			  <ul class="pagination justify-content-center flex-wrap">
 			    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-			    	<a th:replace="fragments :: page_link(1, 'First')"></a>
+			    	<a th:replace="fragments :: page_link(1, #{pagination.first})"></a>
 			    </li>		  
 			    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-			    	<a th:replace="fragments :: page_link(${currentPage - 1}, 'Previous')"></a>
+			    	<a th:replace="fragments :: page_link(${currentPage - 1}, #{pagination.previous})"></a>
 			    </li>
 	
 			    <li th:class="${currentPage != i ? 'page-item': 'page-item active'}" 
@@ -107,11 +107,11 @@
 			    </li>
 	
 			    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-			    	<a th:replace="fragments :: page_link(${currentPage + 1}, 'Next')"></a>
+			    	<a th:replace="fragments :: page_link(${currentPage + 1}, #{pagination.next})"></a>
 			    </li>
 	
 			    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-			    	<a th:replace="fragments :: page_link(${totalPages}, 'Last')"></a>
+			    	<a th:replace="fragments :: page_link(${totalPages}, #{pagination.last})"></a>
 			    </li>		    
 			  </ul>
 			</nav>	
@@ -125,8 +125,8 @@
 			<input type="hidden" name="sortField" th:value="${sortField}" />
 			<input type="hidden" name="sortDir" th:value="${sortDir}" />
 
-			Filter:&nbsp;
-			<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
+			[[#{filter.title}]]&nbsp;
+			<input type="search" name="keyword" th:value="${keyword}" class="form-control" required th:placeholder="#{filter.placeholder}"/>
 			&nbsp;&nbsp;
 			<button type="submit" class="btn btn-primary">
 				<i class="fas fa-search"></i>
