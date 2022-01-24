@@ -18,6 +18,13 @@
 		</div>
 		<div class="col-xs-8">
 			<div><h3>[[${product.name}]]</h3></div>
+			
+			<div>
+				<a th:href="@{'/ratings/' + ${product.alias} + '/page/' + ${currentPage} + '?sortField=votes&sortDir=desc'}">Sort by most voted</a>
+				&nbsp;
+				<a th:href="@{'/ratings/' + ${product.alias} + '/page/' + ${currentPage} + '?sortField=reviewTime&sortDir=desc'}">Sort by most recent</a>
+			</div>
+			
 					
 			<div class="row m-1">
 				<div class="col-xs">
