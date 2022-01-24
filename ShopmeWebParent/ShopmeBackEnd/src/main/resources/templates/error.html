@@ -8,7 +8,7 @@
 	
 		<div th:replace="navigation :: menu"></div>
 		<div class="m-3">
-			<h2>Sorry, an unexpected error has occurred</h2>		
+			<h2>[[#{error.message}]]</h2>		
 		</div>
 	
 		<div th:replace="fragments :: footer"></div>

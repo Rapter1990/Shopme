@@ -20,10 +20,10 @@
 				<th:block sec:authorize="hasAuthority('Admin')">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-							th:href="@{/users}">Users</a>
+							th:href="@{/users}">[[#{menu.user}]]</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" th:href="@{/users/new}">Create New</a>
-							<a class="dropdown-item" th:href="@{/users}">View All</a>
+							<a class="dropdown-item" th:href="@{/users/new}">[[#{menu.create.new}]]</a>
+							<a class="dropdown-item" th:href="@{/users}">[[#{menu.list.all}]]</a>
 						</div>
 					</li>						
 				</th:block>
@@ -32,20 +32,20 @@
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-						th:href="@{/categories}">Categories</a>
+						th:href="@{/categories}">[[#{menu.category}]]</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" th:href="@{/categories/new}">Create New</a>
-							<a class="dropdown-item" th:href="@{/categories}">View All</a>
+							<a class="dropdown-item" th:href="@{/categories/new}">[[#{menu.create.new}]]</a>
+							<a class="dropdown-item" th:href="@{/categories}">[[#{menu.list.all}]]</a>
 						</div>	
 					</li>	
 				
 
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-							 th:href="@{/brands}">Brands</a>
+							 th:href="@{/brands}">[[#{menu.brand}]]</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" th:href="@{/brands/new}">Create New</a>
-							<a class="dropdown-item" th:href="@{/brands}">View All</a>
+							<a class="dropdown-item" th:href="@{/brands/new}">[[#{menu.create.new}]]</a>
+							<a class="dropdown-item" th:href="@{/brands}">[[#{menu.list.all}]]</a>
 						</div>	
 					</li>
 				</th:block>	
@@ -53,66 +53,66 @@
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Editor', 'Shipper')">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-							th:href="@{/products}">Products</a>
+							th:href="@{/products}">[[#{menu.product}]]</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" th:href="@{/products/new}" 
-								sec:authorize="hasAnyAuthority('Admin', 'Editor')">Create New</a>
-							<a class="dropdown-item" th:href="@{/products}">View All</a>
+								sec:authorize="hasAnyAuthority('Admin', 'Editor')">[[#{menu.create.new}]]</a>
+							<a class="dropdown-item" th:href="@{/products}">[[#{menu.list.all}]]</a>
 							<a class="dropdown-item" sec:authorize="hasAuthority('Admin')"
-								th:href="@{/reviews}">Reviews</a>
+								th:href="@{/reviews}">[[#{menu.review}]]</a>
 						</div>
 					</li>
 				</th:block>
 				
 				<th:block sec:authorize="hasAuthority('Assistant')">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/reviews}">Reviews</a>
+						<a class="nav-link" th:href="@{/reviews}">[[#{menu.review}]]</a>
 					</li>
 				</th:block>
 				
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson')">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/customers}">Customers</a>
+						<a class="nav-link" th:href="@{/customers}">[[#{menu.customer}]]</a>
 					</li>
 		
 									
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/shipping_rates}">Shipping Rates</a>
+						<a class="nav-link" th:href="@{/shipping_rates}">[[#{menu.shipping.rate}]]</a>
 					</li>
 				</th:block>
 				
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Shipper')">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/orders}">Orders</a>
+						<a class="nav-link" th:href="@{/orders}">[[#{menu.order}]]</a>
 					</li>
 					
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/reports}">Sales Report</a>
+						<a class="nav-link" th:href="@{/reports}">[[#{menu.report}]]</a>
 					</li>
 				</th:block>	
 				
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson')">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/articles}">Articles</a>
+						<a class="nav-link" th:href="@{/articles}">[[#{menu.article}]]</a>
 					</li>
 				</th:block>
 				
 				<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/menus}">Menus</a>
+						<a class="nav-link" th:href="@{/menus}">[[#{menu.menu}]]</a>
 					</li>
 				</th:block>
 				
 				<li class="nav-item dropdown" sec:authorize="hasAuthority('Admin')">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" 
-						th:href="@{/settings}">Settings</a>
+						th:href="@{/settings}">[[#{menu.setting}]]</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" th:href="@{/settings#general}">General</a>
-						<a class="dropdown-item" th:href="@{/settings#countries}">Countries</a>
-						<a class="dropdown-item" th:href="@{/settings#states}">States</a>
-						<a class="dropdown-item" th:href="@{/settings#mailServer}">Mail Server</a>
-						<a class="dropdown-item" th:href="@{/settings#mailTemplates}">Mail Templates</a>
-						<a class="dropdown-item" th:href="@{/settings#payment}">Payment</a>
+						<a class="dropdown-item" th:href="@{/settings#general}">[[#{menu.setting.general}]]</a>
+						<a class="dropdown-item" th:href="@{/settings#countries}">[[#{menu.setting.country}]]</a>
+						<a class="dropdown-item" th:href="@{/settings#states}">[[#{menu.setting.state}]]</a>
+						<a class="dropdown-item" th:href="@{/settings#mailServer}">[[#{menu.setting.mailserver}]]</a>
+						<a class="dropdown-item" th:href="@{/settings#mailTemplates}">[[#{menu.setting.mailtemplate}]]</a>
+						<a class="dropdown-item" th:href="@{/settings#payment}">[[#{menu.setting.payment}]]</a>
 					</div>
 				</li>
 				
@@ -121,14 +121,28 @@
 				<li>				
 					<span class="fas fa-user fa-2x icon-silver"></span>
 				</li>
+				
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
 					    th:href="@{/account}" 
 						sec:authentication="principal.fullname"></a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" id="logoutLink" href="">Logout</a>
+						<a class="dropdown-item" id="logoutLink" href="">[[#{menu.logout}]]</a>
 					</div>
-				</li>										
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{?lang=en}">
+						<img th:src="@{/images/english.png}" width="30">
+					</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{?lang=tr}">
+						<img th:src="@{/images/turkish.png}" width="30">
+					</a>
+				</li>
+							
 			</ul>
 		</div>
 

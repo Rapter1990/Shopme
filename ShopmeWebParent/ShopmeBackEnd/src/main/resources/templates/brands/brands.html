@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Brands</h2>	
+		<h2>[[#{brand.managemessage}]]</h2>	
 		
 		<a th:href="@{/brands/new}" style="text-decoration: none;" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
 
@@ -23,10 +23,10 @@
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="thead-dark">
 				<tr>
-					<th class="hideable-column">Brand ID</th>
-					<th>Logo</th>
+					<th class="hideable-column">[[#{brand.id}]]</th>
+					<th>[[#{brand.logotitle}]]</th>
 					<th th:replace="fragments :: column_link('name', 'Brand Name', 'none')" />
-					<th>Categories</th>
+					<th>[[#{brand.categorytitle}]]</th>
 					<th></th>
 				</tr>								
 			</thead>

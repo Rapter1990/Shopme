@@ -12,8 +12,8 @@
 
 
 		<div>
-			<h2>Shopme Control Panel</h2>
-			Welcome 
+			<h2>[[#{app.title}]]</h2>
+			[[#{app.welcome.title}]] 
 			<a th:href="@{/account}" 
 				sec:authentication="principal.fullname"></a>	
 			<span sec:authentication="principal.authorities"></span>		
