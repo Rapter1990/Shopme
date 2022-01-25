@@ -6,19 +6,19 @@
 
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Sales Report</h2>	
+		<h2>[[#{report.sales.title}]]</h2>	
 	</div>
 
 	<div>
 		<ul class="nav nav-tabs" id="reportTab" role="tablist">
 		  <li class="nav-item">
-		    <a class="nav-link active" data-toggle="tab" href="#date" role="tab">Sales by Date</a>
+		    <a class="nav-link active" data-toggle="tab" href="#date" role="tab">[[#{report.salesbydate.title}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#category" role="tab">Sales by Category</a>
+		    <a class="nav-link" data-toggle="tab" href="#category" role="tab">[[#{report.salesbycategory.title}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#product" role="tab">Sales by Product</a>
+		    <a class="nav-link" data-toggle="tab" href="#product" role="tab">[[#{report.salesbyproduct.title}]]</a>
 		  </li>		  		  
 		</ul>
 

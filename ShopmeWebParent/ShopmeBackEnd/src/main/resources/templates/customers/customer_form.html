@@ -6,7 +6,7 @@
 	<div th:replace="navigation :: menu"></div>
 
 	<div>
-		<h2>Manage Customers | [[${pageTitle}]]</h2>
+		<h2>[[#{customer.title}]] | [[${pageTitle}]]</h2>
 	</div>
 
 	<form th:action="@{/customers/save}" th:object="${customer}" method="post"
@@ -16,62 +16,62 @@
 		<input type="hidden" th:field="*{id}" />
 	<div class="border border-secondary rounded p-3">
 	  <div class="form-group row">
-	    <label for="firstName" class="col-sm-4 col-form-label">First Name:</label>
+	    <label for="firstName" class="col-sm-4 col-form-label">[[#{customer.first.name}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{firstName}" required minlength="2" maxlength="45">
 	    </div>
 	  </div>
 	  <div class="form-group row">
-	    <label for="lastName" class="col-sm-4 col-form-label">Last Name:</label>
+	    <label for="lastName" class="col-sm-4 col-form-label">[[#{customer.last.name}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{lastName}" required minlength="2" maxlength="45">
 	    </div>
 	  </div>	  
 
 	  <div class="form-group row">
-	    <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
+	    <label for="email" class="col-sm-4 col-form-label">[[#{customer.email}]]</label>
 	    <div class="col-sm-8">
 	      <input type="email" class="form-control" th:field="*{email}" required minlength="10" maxlength="45">
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="password" class="col-sm-4 col-form-label">Password:</label>
+	    <label for="password" class="col-sm-4 col-form-label">[[#{customer.password}]]</label>
 	    <div class="col-sm-8">
 	      <input type="password" class="form-control" th:field="*{password}" minlength="6" maxlength="45" placeholder="Leave blank if you don't want to change password">
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="phoneNumber" class="col-sm-4 col-form-label">Phone Number:</label>
+	    <label for="phoneNumber" class="col-sm-4 col-form-label">[[#{customer.phonenumber}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{phoneNumber}" required minlength="9" maxlength="12">
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="addressLine1" class="col-sm-4 col-form-label">Address Line 1:</label>
+	    <label for="addressLine1" class="col-sm-4 col-form-label">[[#{customer.addressline1}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{addressLine1}" required minlength="9" maxlength="64">
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="addressLine2" class="col-sm-4 col-form-label">Address Line 2:</label>
+	    <label for="addressLine2" class="col-sm-4 col-form-label">[[#{customer.addressline2}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{addressLine2}" maxlength="64">
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="city" class="col-sm-4 col-form-label">City:</label>
+	    <label for="city" class="col-sm-4 col-form-label">[[#{customer.city}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{city}" required minlength="3" maxlength="64">
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="country" class="col-sm-4 col-form-label">Country:</label>
+	    <label for="country" class="col-sm-4 col-form-label">[[#{customer.country}]]</label>
 	    <div class="col-sm-8">
 	      <select th:field="*{country}" class="form-control">
 	      	<option th:each="country : ${listCountries}" th:value="${country.id}">[[${country.name}]]</option>
@@ -80,7 +80,7 @@
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="state" class="col-sm-4 col-form-label">State/Province:</label>
+	    <label for="state" class="col-sm-4 col-form-label">[[#{customer.stateorprovince}]]</label>
 	    <div class="col-sm-8">
 	    	<input type="text" class="form-control" th:field="*{state}" minlength="3" maxlength="64" list="listStates"> 
 	      <datalist id="listStates">
@@ -90,15 +90,15 @@
 	  </div>
 
 	  <div class="form-group row">
-	    <label for="postalCode" class="col-sm-4 col-form-label">Postal Code:</label>
+	    <label for="postalCode" class="col-sm-4 col-form-label">[[#{customer.postalcode}]]</label>
 	    <div class="col-sm-8">
 	      <input type="text" class="form-control" th:field="*{postalCode}" required minlength="3" maxlength="6">
 	    </div>
 	  </div>
 
 	  <div class="text-center">
-	  	<input type="submit" value="Save" class="btn btn-primary m-3" />
-	  	<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+	  	<input type="submit" th:value="#{customer.savebutton}" class="btn btn-primary m-3" />
+	  	<input type="button" th:value="#{customer.cancelbutton}" class="btn btn-secondary" id="buttonCancel" />
 	  </div>
 	</div>
 	</form>

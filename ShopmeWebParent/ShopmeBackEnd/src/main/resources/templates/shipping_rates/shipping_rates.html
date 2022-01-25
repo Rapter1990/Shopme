@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Shipping Rates</h2>	
+		<h2>[[#{shipping.title}]]</h2>	
 
 		<a th:href="@{/shipping_rates/new}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
 	</div>
@@ -16,12 +16,12 @@
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="thead-dark">
 				<tr>
-					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
-					<th th:replace="fragments :: column_link('country', 'Country', 'none')" />
-					<th th:replace="fragments :: column_link('state', 'State', 'none')" />
-					<th th:replace="fragments :: column_link('rate', 'Rate', 'none')" />
-					<th th:replace="fragments :: column_link('days', 'Days', 'none')" />
-					<th th:replace="fragments :: column_link('codSupported', 'COD Supported', 'none')" />
+					<th th:replace="fragments :: column_link('id', #{shipping.id}, 'none')" />
+					<th th:replace="fragments :: column_link('country', #{shipping.country}, 'none')" />
+					<th th:replace="fragments :: column_link('state', #{shipping.state}, 'none')" />
+					<th th:replace="fragments :: column_link('rate', #{shipping.rate}, 'none')" />
+					<th th:replace="fragments :: column_link('days', #{shipping.day}, 'none')" />
+					<th th:replace="fragments :: column_link('codSupported', #{shipping.cod}, 'none')" />
 
 					<th></th>
 				</tr>								

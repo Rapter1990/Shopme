@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Customers</h2>	
+		<h2>[[#{customer.title}]]</h2>	
 
 		<a th:href="@{/customers/export/csv}" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
 		
@@ -20,24 +20,24 @@
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="thead-dark">
 				<tr>
-					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
-					<th th:replace="fragments :: column_link('firstName', 'First Name', 'none')" />
-					<th th:replace="fragments :: column_link('lastName', 'Last Name', 'none')" />
+					<th th:replace="fragments :: column_link('id', #{customer.id.title}, 'none')" />
+					<th th:replace="fragments :: column_link('firstName', #{customer.first.name.title}, 'none')" />
+					<th th:replace="fragments :: column_link('lastName', #{customer.last.name.title}, 'none')" />
 
 					<th class="hideable-column">
-						<th th:replace="fragments :: column_link('email', 'E-mail', 'tag')" />
+						<th th:replace="fragments :: column_link('email', #{customer.email.title}, 'tag')" />
 					</th>
 
 					<th class="hideable-column">
-						<th th:replace="fragments :: column_link('city', 'City', 'tag')" />
+						<th th:replace="fragments :: column_link('city', #{customer.city.title}, 'tag')" />
 					</th>
 
 					<th class="hideable-column">
-						<th th:replace="fragments :: column_link('state', 'State', 'tag')" />
+						<th th:replace="fragments :: column_link('state', #{customer.state.title}, 'tag')" />
 					</th>
 
-					<th th:replace="fragments :: column_link('country', 'Country', 'none')" />
-					<th th:replace="fragments :: column_link('enabled', 'Enabled', 'none')" />
+					<th th:replace="fragments :: column_link('country', #{customer.country.title}, 'none')" />
+					<th th:replace="fragments :: column_link('enabled', #{customer.enabled.title}, 'none')" />
 					<th></th>
 				</tr>								
 			</thead>

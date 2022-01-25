@@ -132,13 +132,17 @@
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{?lang=en}">
+					<a class="nav-link" 
+						th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+						th:href="${urlBuilder.replaceQueryParam('lang', 'en').toUriString()}">
 						<img th:src="@{/images/english.png}" width="30">
 					</a>
 				</li>
 				
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{?lang=tr}">
+					<a class="nav-link" 
+						th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+						th:href="${urlBuilder.replaceQueryParam('lang', 'tr').toUriString()}">
 						<img th:src="@{/images/turkish.png}" width="30">
 					</a>
 				</li>

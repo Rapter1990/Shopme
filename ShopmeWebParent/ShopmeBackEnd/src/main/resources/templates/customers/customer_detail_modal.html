@@ -1,5 +1,5 @@
 <div class="modal-header">
-	<h4 class="modal-title">Customer Details</h4>
+	<h4 class="modal-title">[[#{customer.detail}]]</h4>
 	<button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 
@@ -17,42 +17,42 @@
 	<div class="tab-content" id="myTabContent">
 	  <div class="tab-pane fade show active p-3" id="general" role="tabpanel" aria-labelledby="general-tab">
 		  <div class="form-group row">
-		    <label for="id" class="col-sm-4 col-form-label">Customer ID:</label>
+		    <label for="id" class="col-sm-4 col-form-label">[[#{customer.id}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.id}" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="name" class="col-sm-4 col-form-label">Full Name:</label>
+		    <label for="name" class="col-sm-4 col-form-label">[[#{customer.full.name}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.fullName}" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
+		    <label for="email" class="col-sm-4 col-form-label">[[#{customer.email}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.email}" />
 		    </div>
 		  </div>  
 
 		  <div class="form-group row">
-		    <label for="phone" class="col-sm-4 col-form-label">Phone Number:</label>
+		    <label for="phone" class="col-sm-4 col-form-label">[[#{customer.phonenumber}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.phoneNumber}" />
 		    </div>
 		  </div> 
 
 		  <div class="form-group row">
-		    <label for="enabled" class="col-sm-4 col-form-label">Enabled:</label>
+		    <label for="enabled" class="col-sm-4 col-form-label">[[#{customer.enabled}]]</label>
 		    <div class="col-sm-8">
 		      <input type="checkbox" th:checked="${customer.enabled}" disabled="disabled" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="createdTime" class="col-sm-4 col-form-label">Created Time:</label>
+		    <label for="createdTime" class="col-sm-4 col-form-label">[[#{customer.createdTime}]]</label>
 		    <div class="col-sm-8">
 		      <span th:text="${#dates.format(customer.createdTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
 		    </div>
@@ -61,42 +61,42 @@
 
 	  <div class="tab-pane fade show p-3" id="address" role="tabpanel" aria-labelledby="address-tab">
 		  <div class="form-group row">
-		    <label for="address1" class="col-sm-4 col-form-label">Address Line 1:</label>
+		    <label for="address1" class="col-sm-4 col-form-label">[[#{customer.addressline1}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.addressLine1}" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="address2" class="col-sm-4 col-form-label">Address Line 2:</label>
+		    <label for="address2" class="col-sm-4 col-form-label">[[#{customer.addressline2}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.addressLine2}" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="city" class="col-sm-4 col-form-label">City:</label>
+		    <label for="city" class="col-sm-4 col-form-label">[[#{customer.city}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.city}" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="state" class="col-sm-4 col-form-label">State/Province:</label>
+		    <label for="state" class="col-sm-4 col-form-label">[[#{customer.stateorprovince}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.state}" />
 		    </div>
 		  </div>
 
 		  <div class="form-group row">
-		    <label for="country" class="col-sm-4 col-form-label">Country:</label>
+		    <label for="country" class="col-sm-4 col-form-label">[[#{customer.country}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.country.name}" />
 		    </div>
 		  </div>        
 
 		  <div class="form-group row">
-		    <label for="postal" class="col-sm-4 col-form-label">Postal Code:</label>
+		    <label for="postal" class="col-sm-4 col-form-label">[[#{customer.postalcode}]]</label>
 		    <div class="col-sm-8">
 		      <input type="text" readonly class="form-control" th:value="${customer.postalCode}" />
 		    </div>
@@ -106,5 +106,5 @@
 </div>
 
 <div class="modal-footer">
-	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	<button type="button" class="btn btn-danger" data-dismiss="modal">[[#{customer.closebutton}]]</button>
 </div>

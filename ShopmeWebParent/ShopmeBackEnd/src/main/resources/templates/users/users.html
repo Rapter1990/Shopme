@@ -10,7 +10,7 @@
 		<div th:replace="navigation :: menu"></div>
 		
 		<div>
-			<h2>Manage Users</h2>	
+			<h2>[[#{user.title}]]</h2>	
 			<a th:href="@{/users/new}" style="text-decoration: none;" class="fas fa-user-plus fa-2x icon-dark mr-2"></a>
 
 			<a th:href="@{/users/export/csv}" style="text-decoration: none;" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
@@ -28,21 +28,21 @@
 					<tr>
 					
 						<th class="hideable-column">
-							<th th:replace="fragments :: column_link('id', 'User ID', 'tag')" />
+							<th th:replace="fragments :: column_link('id', #{user.id.title}, 'tag')" />
 						</th>
 						
-						<th>Photos</th>
+						<th>[[#{user.photo}]]</th>
 						
 						<th class="hideable-column">
-							<th th:replace="fragments :: column_link('email', 'E-mail', 'tag')" />
+							<th th:replace="fragments :: column_link('email', #{user.email}, 'tag')" />
 						</th>
 	
-						<th th:replace="fragments :: column_link('firstName', 'First Name', 'none')" />
-					    <th th:replace="fragments :: column_link('lastName', 'Last Name', 'none')" />
+						<th th:replace="fragments :: column_link('firstName', #{user.firstname.title}, 'none')" />
+					    <th th:replace="fragments :: column_link('lastName', #{user.lastname.title}, 'none')" />
 						
-						<th>Roles</th>
+						<th>[[#{user.roles}]]</th>
 						
-						<th th:replace="fragments :: column_link('enabled', 'Enabled', 'none')" />
+						<th th:replace="fragments :: column_link('enabled', #{user.enabled.title}, 'none')" />
 						
 						<th></th>
 					</tr>								

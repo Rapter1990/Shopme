@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Categories</h2>	
+		<h2>[[#{category.title}]]</h2>	
 		<a th:href="@{/categories/new}" style="text-decoration: none;" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
 
 		<a th:href="@{/categories/export/csv}" style="text-decoration: none;" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
@@ -21,11 +21,11 @@
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="thead-dark">
 				<tr>
-					<th>ID</th>
-					<th>Category Image</th>
-					<th th:replace="fragments :: column_link('name', 'Category Name', 'none')" />	
-					<th class="hideable-column">Alias</th>
-					<th>Enabled</th>
+					<th>[[#{category.id.title}]]</th>
+					<th>[[#{category.name.title}]]</th>
+					<th th:replace="fragments :: column_link('name', #{category.name.title}, 'none')" />	
+					<th class="hideable-column">[[#{category.alias.title}]]</th>
+					<th>[[#{category.alias.enabled}]]</th>
 					<th></th>
 				</tr>								
 			</thead>
@@ -71,12 +71,12 @@
 	</div>
 	
 	<div th:if="${keyword != null}" class="text-center">
-		<span>Search result does not show categories in hierarchical form</span>
-		<div th:replace="fragments :: pagination('categories')"></div>
+		<span>[[#{category.keyword.null.message}]]</span>
+		<div th:replace="fragments :: pagination(#{category.pagination.categories})"></div>
 	</div>
 	
 	<div th:unless="${keyword != null}">
-		<div th:replace="fragments :: pagination('top-level categories')"></div>
+		<div th:replace="fragments :: pagination(#{category.pagination.toplevel.categories})"></div>
 	</div>
 	
 	<div th:replace="modal_fragments :: confirm_modal" />
