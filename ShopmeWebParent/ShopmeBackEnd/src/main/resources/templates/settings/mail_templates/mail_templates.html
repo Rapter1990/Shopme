@@ -6,10 +6,10 @@
 	<div>
 		<ul class="nav nav-tabs" id="mailTemplatesTab" role="tablist">
 		  <li class="nav-item">
-		    <a class="nav-link active" data-toggle="tab" href="#customerVerification" role="tab">Customer Verification</a>
+		    <a class="nav-link active" data-toggle="tab" href="#customerVerification" role="tab">[[#{settings.mailtemplates.customer}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#orderConfirmation" role="tab">Order Confirmation</a>
+		    <a class="nav-link" data-toggle="tab" href="#orderConfirmation" role="tab">[[#{settings.mailtemplates.order}]]</a>
 		  </li>	  
 		</ul>
 
@@ -24,7 +24,7 @@
 	</div>
 
 	<div class="text-center">
-		<input type="submit" value="Save" class="btn btn-primary m-3" />
+		<input type="submit" th:value="#{settings.mailtemplates.saveButton}" class="btn btn-primary m-3" />
 	</div>	
 </form>	
 </div>

@@ -9,7 +9,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Site Settings</h2>	
+		<h2>[[#{settings.sitesettings.sitesettings}]]</h2>	
 	</div>
 
 	<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
@@ -19,22 +19,22 @@
 	<div>
 		<ul class="nav nav-tabs" id="settingTab" role="tablist">
 		  <li class="nav-item">
-		    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
+		    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">[[#{settings.sitesettings.general}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#countries" role="tab">Countries</a>
+		    <a class="nav-link" data-toggle="tab" href="#countries" role="tab">[[#{settings.sitesettings.countries}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#states" role="tab">States</a>
+		    <a class="nav-link" data-toggle="tab" href="#states" role="tab">[[#{settings.sitesettings.states}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#mailServer" role="tab">Mail Server</a>
+		    <a class="nav-link" data-toggle="tab" href="#mailServer" role="tab">[[#{settings.sitesettings.mailserver}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#mailTemplates" role="tab">Mail Templates</a>
+		    <a class="nav-link" data-toggle="tab" href="#mailTemplates" role="tab">[[#{settings.sitesettings.mailtemplates}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#payment" role="tab">Payment</a>
+		    <a class="nav-link" data-toggle="tab" href="#payment" role="tab">[[#{settings.sitesettings.payment}]]</a>
 		  </li>		  
 		</ul>
 

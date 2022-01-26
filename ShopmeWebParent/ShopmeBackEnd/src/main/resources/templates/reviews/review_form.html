@@ -6,7 +6,7 @@
 	<div th:replace="navigation :: menu"></div>
 
 	<div>
-		<h2>Manage Reviews | [[${pageTitle}]]</h2>
+		<h2>[[#{settings.review.title}]] | [[${pageTitle}]]</h2>
 	</div>
 
 	<form th:action="@{/reviews/save}" th:object="${review}" method="post"
@@ -15,57 +15,57 @@
 	<div class="border border-secondary rounded p-3">
 
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Product:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.product}]]</label>
 	    <div class="col-sm-10">
 	      <input type="text" readonly class="form-control" th:value="${review.product.name}" />
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Customer:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.customer}]]</label>
 	    <div class="col-sm-10">
 	      <input type="text" readonly class="form-control" th:value="${review.customer.fullName}" />
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Rating:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.rating}]]</label>
 	    <div class="col-sm-10">
 	      <input type="text" readonly class="form-control" th:value="${review.rating}" />
 	    </div>
 	  </div>
 	  
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Votes:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.votes}]]</label>
 	    <div class="col-sm-10">
 	      <input type="text" readonly class="form-control" th:value="${review.votes}" />
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Review Time:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.reviewtime}]]</label>
 	    <div class="col-sm-10">
 	      <span th:text="${#dates.format(review.reviewTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Headline:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.headline}]]</label>
 	    <div class="col-sm-10">
 	      <input type="text" class="form-control" th:field="*{headline}" minlength="20" maxlength="128" required />
 	    </div>
 	  </div>
 
 	  <div class="form-group row">
-	    <label class="col-sm-2 col-form-label">Comment:</label>
+	    <label class="col-sm-2 col-form-label">[[#{settings.review.form.comment}]]</label>
 	    <div class="col-sm-10">
 	      <textarea rows="3" class="form-control" th:field="*{comment}" minlength="30" maxlength="300" required></textarea>
 	    </div>
 	  </div>	   
 
 	  <div class="text-center">
-	  	<input type="submit" value="Save" class="btn btn-primary m-3" />
-	  	<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+	  	<input type="submit" th:value="#{settings.review.form.savebutton}" class="btn btn-primary m-3" />
+	  	<input type="button" th:value="#{settings.review.form.cancelbutton}" class="btn btn-secondary" id="buttonCancel" />
 	  </div>
 	</div>
 	</form>

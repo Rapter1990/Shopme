@@ -4,22 +4,21 @@
 <div th:fragment="content" th:remove="tag">
 	<div>
 		<p>
-			Use this page to manage states/provinces which will be chosen by visitors in the customer registration form.
-			Click Load Country List first.
+			[[#{settings.state.statesorprovinces}]]
 		</p>
 	</div>
 	<div>
-		<input type="button" value="Load Country List" id="buttonLoadCountriesForStates" class="btn btn-primary m-2" />
+		<input type="button" th:value="#{settings.country.loadcountry}" id="buttonLoadCountriesForStates" class="btn btn-primary m-2" />
 	</div>
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label">Selected Country:</label>
+		<label class="col-sm-2 col-form-label">[[#{settings.state.selectedcountry}]]</label>
 		<div class="col-sm-10">
 			<select class="form-control m-2" id="dropDownCountriesForStates">
 			</select>
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label">All States/Provinces:</label>
+		<label class="col-sm-2 col-form-label">[[#{settings.state.allstatesorprovinces}]]</label>
 		<div class="col-sm-10">
 			<select class="form-control m-2" style="height: 300px" size="3" id="dropDownStates">
 			</select>
@@ -28,15 +27,15 @@
 	
 	<form id="formState">
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label mt-2" id="labelStateName">State/Province Name:</label>
+			<label class="col-sm-2 col-form-label mt-2" id="labelStateName">[[#{settings.state.stateorprovincename}]]</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control mt-2" id="fieldStateName"
 				required minlength="3" maxlength="45" />
 			</div>	
 			<div class="col-lg-4 mt-2">
-				<input type="button" id="buttonAddState" value="New" class="btn btn-secondary mr-2" />
-				<input type="button" id="buttonUpdateState" value="Update" class="btn btn-secondary mr-2" disabled="disabled" />
-				<input type="button" id="buttonDeleteState" value="Delete" class="btn btn-secondary" disabled="disabled" />
+				<input type="button" id="buttonAddState" th:value="#{settings.state.statenewButton}" class="btn btn-secondary mr-2" />
+				<input type="button" id="buttonUpdateState" th:value="#{settings.state.stateupdateButton}" class="btn btn-secondary mr-2" disabled="disabled" />
+				<input type="button" id="buttonDeleteState" th:value="#{settings.state.statedeleteButton}" class="btn btn-secondary" disabled="disabled" />
 			</div>	
 		</div>
 	</form>

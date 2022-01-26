@@ -4,12 +4,11 @@
 <div th:fragment="content" th:remove="tag">
 	<div>
 		<p>
-			Use this page to manage countries which will be displayed in the customer registration form.
-			Click Load Country List first.
+			[[#{settings.country.title}]]
 		</p>
 	</div>
 	<div>
-		<input type="button" value="Load Country List" id="buttonLoadCountries" class="btn btn-primary m-2" />
+		<input type="button" th:value="#{settings.country.loadcountry}" id="buttonLoadCountries" class="btn btn-primary m-2" />
 	</div>
 	<div>
 		<select class="form-control m-2" style="height: 300px" size="3" id="dropDownCountries">
@@ -18,18 +17,18 @@
 	
 	<form id="formCountry" onsubmit="return checkUnique(this)">
 		<div class="form-group row ml-2">
-			<label class="col-form-label mt-2" id="labelCountryName">Country Name:</label>
+			<label class="col-form-label mt-2" id="labelCountryName">[[#{settings.country.countryname}]]</label>
 			<div class="col-md">
 				<input type="text" class="form-control mt-2" id="fieldCountryName" required minlength="3" maxlength="45"/>
 			</div>
-			<label class="col-form-label mt-2">Code:</label>
+			<label class="col-form-label mt-2">[[#{settings.country.countrycode}]]</label>
 			<div class="col-md">
 				<input type="text" class="form-control mt-2" id="fieldCountryCode" required minlength="3" maxlength="45"/>
 			</div>	
 			<div class="col-lg-4 mt-2">
-				<input type="button" id="buttonAddCountry" value="New" class="btn btn-secondary mr-2" />
-				<input type="button" id="buttonUpdateCountry" value="Update" class="btn btn-secondary mr-2" disabled="disabled" />
-				<input type="button" id="buttonDeleteCountry" value="Delete" class="btn btn-secondary" disabled="disabled" />
+				<input type="button" id="buttonAddCountry" th:value="#{settings.country.newButton}" class="btn btn-secondary mr-2" />
+				<input type="button" id="buttonUpdateCountry" th:value="#{settings.country.updateButton}" class="btn btn-secondary mr-2" disabled="disabled" />
+				<input type="button" id="buttonDeleteCountry" th:value="#{settings.country.deleteButton}" class="btn btn-secondary" disabled="disabled" />
 			</div>	
 		</div>
 	</form>

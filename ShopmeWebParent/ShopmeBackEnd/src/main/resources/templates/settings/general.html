@@ -4,7 +4,7 @@
 <div th:fragment="content" th:remove="tag">
 	<form th:action="@{/settings/save_general}" method="post" enctype="multipart/form-data">
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Site Name:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.sitename}]]</label>
 		<div class="col-sm-8">
 			<input type="text" class="form-control" name="SITE_NAME" 
 				th:value="${SITE_NAME}" required  />
@@ -12,7 +12,7 @@
 	</div>	
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Copyright:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.copyright}]]</label>
 		<div class="col-sm-8">
 			<input type="text" class="form-control" name="COPYRIGHT" 
 				th:value="${COPYRIGHT}" required  />
@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Site Logo:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.sitelogo}]]</label>
 		<div class="col-sm-8">
 			<img id="thumbnail" alt="Site Logo thumbnail" th:src="@{${S3_BASE_URI + SITE_LOGO}}"
 				width="150" height="70"/>
@@ -30,7 +30,7 @@
 	</div>	
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Currency Type:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.currencytype}]]</label>
 		<div class="col-sm-8">
 			<select name="CURRENCY_ID" class="form-control">
 			<th:block th:each="currency : ${listCurrencies}">
@@ -42,27 +42,27 @@
 	</div>	
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Currency Symbol Position:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.currencysymbolposition}]]</label>
 		<div class="col-sm-8">
 			<select name="CURRENCY_SYMBOL_POSITION" class="form-control">
-				<option value="Before price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'Before price')">Before price</option>
-				<option value="After price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'After price')">After price</option>
+				<option value="Before price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'Before price')">[[#{settings.general.beforeprice}]]</option>
+				<option value="After price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'After price')">[[#{settings.general.afterprice}]]</option>
 			</select>			
 		</div>
 	</div>
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Decimal Point Type:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.decimalpointtype}]]</label>
 		<div class="col-sm-8">
 			<select name="DECIMAL_POINT_TYPE" class="form-control">
-				<option value="POINT" th:selected="(${DECIMAL_POINT_TYPE} == 'POINT')">Point (.)</option>
-				<option value="COMMA" th:selected="(${DECIMAL_POINT_TYPE} == 'COMMA')">Comma (,)</option>
+				<option value="POINT" th:selected="(${DECIMAL_POINT_TYPE} == 'POINT')">[[#{settings.general.point}]]</option>
+				<option value="COMMA" th:selected="(${DECIMAL_POINT_TYPE} == 'COMMA')">[[#{settings.general.comma}]]</option>
 			</select>			
 		</div>
 	</div>
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Decimal Digits:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.decimaldigits}]]</label>
 		<div class="col-sm-8">
 			<select name="DECIMAL_DIGITS" class="form-control">
 			    <option value="0" th:selected="(${DECIMAL_DIGITS} == 0)">0</option>
@@ -75,17 +75,17 @@
 	</div>
 
 	<div class="form-group row">
-		<label class="col-sm-4 col-form-label">Thousands Point Type:</label>
+		<label class="col-sm-4 col-form-label">[[#{settings.general.thousandspointtype}]]</label>
 		<div class="col-sm-8">
 			<select name="THOUSANDS_POINT_TYPE" class="form-control">
-				<option value="POINT" th:selected="(${THOUSANDS_POINT_TYPE} == 'POINT')">Point (.)</option>
-				<option value="COMMA" th:selected="(${THOUSANDS_POINT_TYPE} == 'COMMA')">Comma (,)</option>
+				<option value="POINT" th:selected="(${THOUSANDS_POINT_TYPE} == 'POINT')">[[#{settings.general.point}]]</option>
+				<option value="COMMA" th:selected="(${THOUSANDS_POINT_TYPE} == 'COMMA')">[[#{settings.general.comma}]]</option>
 			</select>			
 		</div>
 	</div>
 
 	<div class="text-center">
-		<input type="submit" value="Save" class="btn btn-primary m-3" />
+		<input type="submit" th:value="#{settings.general.saveButton}" class="btn btn-primary m-3" />
 	</div>	
 	</form>
 </div>

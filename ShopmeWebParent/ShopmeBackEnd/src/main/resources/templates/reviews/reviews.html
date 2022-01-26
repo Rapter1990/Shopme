@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Reviews</h2>	
+		<h2>[[#{settings.review.title}]]</h2>	
 	</div>
 
 	<div th:replace="fragments :: search_form_and_message" />
@@ -14,11 +14,11 @@
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="thead-dark">
 				<tr>
-					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
-					<th th:replace="fragments :: column_link('product', 'Product', 'none')" />
-					<th th:replace="fragments :: column_link('customer', 'Customer', 'none')" />
-					<th th:replace="fragments :: column_link('rating', 'Rating', 'none')" />
-					<th th:replace="fragments :: column_link('reviewTime', 'Review Time', 'none')" />
+					<th th:replace="fragments :: column_link('id', #{settings.review.id}, 'none')" />
+					<th th:replace="fragments :: column_link('product', #{settings.review.product}, 'none')" />
+					<th th:replace="fragments :: column_link('customer', #{settings.review.customer}, 'none')" />
+					<th th:replace="fragments :: column_link('rating', #{settings.review.rating}, 'none')" />
+					<th th:replace="fragments :: column_link('reviewTime', #{settings.review.reviewtime}, 'none')" />
 					<th></th>
 				</tr>								
 			</thead>
@@ -40,7 +40,7 @@
 					<td>
 						<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
 							th:href="@{'/reviews/detail/' + ${review.id}}"
-							title="View details of this review"
+							th:title="#{settings.review.detail}"
 							></a>					
 						&nbsp; 
 						<div th:replace="fragments :: edit('review', '/reviews/edit/' + ${review.id})" />
@@ -67,7 +67,7 @@
 					&nbsp;
 					<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
 						th:href="@{'/reviews/detail/' + ${review.id}}"
-						title="View details of this review"
+						th:title="#{settings.review.detail}"
 						></a>					
 					&nbsp; 
 					<div th:replace="fragments :: edit('review', '/reviews/edit/' + ${review.id})" />

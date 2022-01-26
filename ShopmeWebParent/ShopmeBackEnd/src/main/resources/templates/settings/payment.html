@@ -4,7 +4,7 @@
 <div th:fragment="content" th:remove="tag">
 	<form th:action="@{/settings/save_payment}" method="post">
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label">PayPal API Base URL:</label>
+		<label class="col-sm-2 col-form-label">[[#{settings.general.paypalbaseurl}]]</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="PAYPAL_API_BASE_URL" 
 				th:value="${PAYPAL_API_BASE_URL}" required  />
@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label">PayPal Client ID:</label>
+		<label class="col-sm-2 col-form-label">[[#{settings.general.paypalclientid}]]</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="PAYPAL_API_CLIENT_ID" 
 				th:value="${PAYPAL_API_CLIENT_ID}" required  />
@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label">PayPal Client Secret:</label>
+		<label class="col-sm-2 col-form-label">[[#{settings.general.paypalclientsecret}]]</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="PAYPAL_API_CLIENT_SECRET" 
 				th:value="${PAYPAL_API_CLIENT_SECRET}" required  />
@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="text-center">
-		<input type="submit" value="Save" class="btn btn-primary m-3" />
+		<input type="submit" th:value="#{settings.general.saveButton}" class="btn btn-primary m-3" />
 	</div>	
 	</form>
 </div>
