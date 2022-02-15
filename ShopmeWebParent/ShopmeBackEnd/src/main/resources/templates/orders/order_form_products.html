@@ -25,7 +25,7 @@
 			<div class="row m-2">
 			<table>
 				<tr>
-					<td>Product Cost:</td>
+					<td>[[#{orders.details.productcost}]]</td>
 					<td>
 						<input type="text" required class="form-control m-1 cost-input"
 						    name="productDetailCost"
@@ -34,7 +34,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Quantity:</td>
+					<td>[[#{orders.form.products.quantity}]]</td>
 					<td>
 						<input type="number" step="1" min="1" max="5" class="form-control m-1 quantity-input"
 						    name="quantity"
@@ -44,7 +44,7 @@
 					</td>
 				</tr>	
 				<tr>
-					<td>Unit Price:</td>
+					<td>[[#{orders.form.products.unitprice}]]</td>
 					<td>
 						<input type="text" required class="form-control m-1 price-input"
 						    name="productPrice"
@@ -54,7 +54,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Subtotal:</td>
+					<td>[[#{orders.details.subtotal}]]</td>
 					<td>
 						<input type="text" readonly="readonly" class="form-control m-1 subtotal-output" 
 						    name="productSubtotal"
@@ -63,7 +63,7 @@
 					</td>
 				</tr>				
 				<tr>
-					<td>Shipping Cost:</td>
+					<td>[[#{orders.details.shippingcost}]]</td>
 					<td>
 						<input type="text" required class="form-control m-1 ship-input" 
 						    name="productShipCost"  
@@ -79,7 +79,7 @@
 
 	</div>
 	
-	<a th:href="@{/orders/search_product}" id="linkAddProduct" class="btn btn-success">Add a Product</a>
+	<a th:href="@{/orders/search_product}" id="linkAddProduct" class="btn btn-success">[[#{orders.form.products.addbutton}]]</a>
 	
 </div>
 </body>
