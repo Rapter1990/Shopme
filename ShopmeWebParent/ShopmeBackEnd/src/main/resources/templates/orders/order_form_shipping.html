@@ -3,55 +3,55 @@
 <body>
 <div th:fragment="content" th:remove="tag">				
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Deliver Days:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.deliverdates}]]</label>
 			    <div class="col-sm-10">
 			      <input type="number" step="1" class="form-control" th:field="*{deliverDays}" required />
 			    </div>
 			  </div>		  
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Expected Deliver Date:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.expecteddeliverdate}]]</label>
 			    <div class="col-sm-10">
 			      <input type="date" class="form-control" th:field="*{deliverDateOnForm}" required />
 			    </div>
 			  </div>			  
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">First Name:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.firstname}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{firstName}" required />
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Last Name:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.lastname}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{lastName}" required />
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Phone Number:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.phonenumber}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{phoneNumber}" required />
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Address Line 1:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.addressline1}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{addressLine1}" required />
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Address Line 2:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.addressline2}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{addressLine2}" />
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">City:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.city}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{city}" required />
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Country:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.country}]]</label>
 			    <div class="col-sm-10">
 			      <input type="hidden" name="countryName" id="countryName" th:value="${order.country}" />
 			      <select class="form-control" id="country">
@@ -60,7 +60,7 @@
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">State:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.state}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{state}" list="listStates"/>
 			      <datalist id="listStates">
@@ -69,7 +69,7 @@
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">Postal Code:</label>
+			    <label class="col-sm-2 col-form-label">[[#{orders.details.postalcode}]]</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" th:field="*{postalCode}" required />
 			    </div>

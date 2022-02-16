@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head
-	th:replace="fragments :: page_head('Orders - Shopme Admin', 'none')" />
+	th:replace="fragments :: page_head(#{orders.shipper.title}, 'none')" />
 <body>
 	<div class="container-fluid">
 		<div th:replace="navigation :: menu"></div>
 		<div>
-			<h2>Manage Orders</h2>
+			<h2>[[#{orders.shipper.manageorders.title}]]</h2>
 		</div>
 
 		<div th:replace="fragments :: search_form_and_message" />
@@ -20,7 +20,7 @@
 							<div class="card-header">
 								<div class="row">
 									<div class="col">
-										<span>Order ID #[[${order.id}]]</span>
+										<span>[[#{orders.shipper.orderid}]] #[[${order.id}]]</span>
 									</div>
 									<div class="col">
 										<div class="float-right">
@@ -42,7 +42,7 @@
 									<i class="fas fa-phone-alt"></i> [[${order.phoneNumber}]]
 								</div>
 								<div th:if="${order.COD}">
-									<span>COD: <b><div th:replace="fragments :: format_currency(${order.total})"></div></b></span>
+									<span>[[#{orders.shipper.cod}]] <b><div th:replace="fragments :: format_currency(${order.total})"></div></b></span>
 								</div>
 								<div>&nbsp;</div>
 								<div class="row">
@@ -71,7 +71,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title">Update Confirmation</h4>
+						<h4 class="modal-title">[[#{orders.shipper.updateconfirmation}]]</h4>
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 
@@ -80,9 +80,9 @@
 					</div>
 
 					<div class="modal-footer">
-						<a class="btn btn-success" href="" id="yesButton">Yes</a>
+						<a class="btn btn-success" href="" id="yesButton">[[#{orders.shipper.yes}]]</a>
 						<button type="button" class="btn btn-danger" id="noButton"
-							data-dismiss="modal">No</button>
+							data-dismiss="modal">[[#{orders.shipper.no}]]</button>
 					</div>
 				</div>
 			</div>
