@@ -5,10 +5,10 @@
 	<th:block th:each="detail, status : ${product.details}">
 	<div class="form-inline" th:id="'divDetail' + ${status.index}">
 	    <input type="hidden" name="detailIDs" th:value="${detail.id}" />
-		<label class="m-3">Name:</label>
+		<label class="m-3">[[#{products.detail.name.text}]]</label>
 		<input type="text" class="form-control w-25" name="detailNames" maxlength="255"
 			th:value="${detail.name}" />
-		<label class="m-3">Value:</label>
+		<label class="m-3">[[#{products.detail.value.text}]]</label>
 		<input type="text" class="form-control w-25" name="detailValues" maxlength="255"
 			th:value="${detail.value}" />
 		<a name="linkRemoveDetail" class="btn fas fa-times-circle fa-2x icon-dark"
@@ -18,9 +18,9 @@
 
 	<div class="form-inline" th:id="'divDetail' + ${#lists.size(product.details)}">
 	    <input type="hidden" name="detailIDs" value="0" />
-		<label class="m-3">Name:</label>
+		<label class="m-3">[[#{products.detail.name.text}]]</label>
 		<input type="text" class="form-control w-25" name="detailNames" maxlength="255" />
-		<label class="m-3">Value:</label>
+		<label class="m-3">[[#{products.detail.value.text}]]</label>
 		<input type="text" class="form-control w-25" name="detailValues" maxlength="255" />
 	</div>	
 </div>		

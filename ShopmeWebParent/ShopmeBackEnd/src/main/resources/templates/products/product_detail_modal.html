@@ -1,93 +1,93 @@
 <div class="modal-header">
-	<h4 class="modal-title">Product Details</h4>
+	<h4 class="modal-title">[[#{products.detail.title}]]</h4>
 	<button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 
 <div>
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
 	  <li class="nav-item">
-	    <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
+	    <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">[[#{products.detail.overview}]]</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
+	    <a class="nav-link" data-toggle="tab" href="#description" role="tab">[[#{products.detail.description}]]</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
+	    <a class="nav-link" data-toggle="tab" href="#images" role="tab">[[#{products.detail.images}]]</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
+	    <a class="nav-link" data-toggle="tab" href="#details" role="tab">[[#{products.detail.details}]]</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
+	    <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">[[#{products.detail.shipping}]]</a>
 	  </li>		  
 	</ul>
 
 	<div class="tab-content">
 	  <div class="tab-pane active p-3" id="overview" role="tabpanel">
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Product Name:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.productname}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.name}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Alias:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.alias}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.alias}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Brand:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.brand}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.brand.name}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Category:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.category}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.category.name}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Enabled:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.enabled}]]</label>
 			<div class="col-sm-10">
 				<input type="checkbox" th:checked="${product.enabled}" onclick="return false;" />
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">In-Stock:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.instock}]]</label>
 			<div class="col-sm-10">
 				<input type="checkbox" th:checked="${product.inStock}" onclick="return false;" />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Cost:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.cost}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.cost}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Price:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.price}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.price}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Discount:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.discount}]]</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" th:value="${product.discountPercent}" readonly />
 			</div>
 		</div>
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Updated Time:</label>
+			<label class="col-sm-2 col-form-label">[[#{products.detail.updatedtime}]]</label>
 			<div class="col-sm-10">
 				<span th:text="${#dates.format(product.updatedTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
 			</div>
@@ -111,5 +111,5 @@
 </div>
 
 <div class="modal-footer">
-	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	<button type="button" class="btn btn-danger" data-dismiss="modal">[[#{products.detail.closebutton}]]</button>
 </div>
