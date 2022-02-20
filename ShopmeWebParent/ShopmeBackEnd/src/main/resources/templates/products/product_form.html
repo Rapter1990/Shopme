@@ -9,7 +9,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Products | [[${pageTitle}]]</h2>	
+		<h2>[[#{products.form.title}]] | [[${pageTitle}]]</h2>	
 	</div>
 
 	<form th:action="@{/products/save}" method="post" onsubmit="return checkUnique(this)"
@@ -21,19 +21,19 @@
 	<div>
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 		  <li class="nav-item">
-		    <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">Overview</a>
+		    <a class="nav-link active" data-toggle="tab" href="#overview" role="tab">[[#{products.form.title}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#description" role="tab">Description</a>
+		    <a class="nav-link" data-toggle="tab" href="#description" role="tab">[[#{products.detail.description}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
+		    <a class="nav-link" data-toggle="tab" href="#images" role="tab">[[#{products.detail.images}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
+		    <a class="nav-link" data-toggle="tab" href="#details" role="tab">[[#{products.detail.details}]]</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping</a>
+		    <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">[[#{products.detail.shipping}]]</a>
 		  </li>	
 		</ul>
 
@@ -87,8 +87,8 @@
 		</div>	
 	</div>
 	<div class="text-center">
-		<input type="submit" value="Save" class="btn btn-primary m-3" />
-		<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+		<input type="submit" th:value="#{products.form.savebutton}" class="btn btn-primary m-3" />
+		<input type="button" th:value="#{products.form.cancelbutton}" class="btn btn-secondary" id="buttonCancel" />
 	</div>
 	</form>
 
