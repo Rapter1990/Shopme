@@ -6,7 +6,7 @@
 <div class="container-fluid">
 	<div th:replace="navigation :: menu"></div>
 	<div>
-		<h2>Manage Products</h2>	
+		<h2>[[#{products.form.title}]]</h2>	
 		
 		<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 			<a th:href="@{/products/new}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
@@ -20,16 +20,16 @@
 			<input type="hidden" name="sortField" th:value="${sortField}" />
 			<input type="hidden" name="sortDir" th:value="${sortDir}" />
 
-			Category:&nbsp;
+			[[#{products.detail.category}]]&nbsp;
 			<select class="form-control" name="categoryId" id="dropdownCategory">
-				<option value="0">All Categories</option>
+				<option value="0">[[#{products.form.allcategories}]]</option>
 
 				<th:block th:each="cat : ${listCategories}">
 				<option th:value="${cat.id}" th:selected="(${categoryId} == ${cat.id})">[[${cat.name}]]</option>
 				</th:block>
 			</select>
 
-			&nbsp;Filter:&nbsp;
+			&nbsp;[[#{products.form.filter}]]&nbsp;
 			<input type="search" name="keyword" th:value="${keyword}" class="form-control" required/>
 			&nbsp;&nbsp;
 			<button type="submit" class="btn btn-primary">
@@ -53,7 +53,7 @@
 					<th class="hideable-column"> 
 						<th th:replace="fragments :: column_link('id', 'ID', 'tag')" />
 					</th>
-					<th>Main Image</th>
+					<th>[[#{products.form.mainimage}]]</th>
 					<th th:replace="fragments :: column_link('name', 'Product Name', 'none')" />
 					<th class="hideable-column"> 
 						<th th:replace="fragments :: column_link('brand', 'Brand', 'tag')" />
@@ -62,7 +62,7 @@
 						<th th:replace="fragments :: column_link('category', 'Category', 'tag')" />
 					</th>
 					<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
-						<th>Enabled</th>
+						<th>[[#{products.form.enabled}]]</th>
 					</th:block>
 					<th></th>
 				</tr>								
