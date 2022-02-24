@@ -37,4 +37,4 @@ spring:
             client-secret: du_845-714EMVOz4zeB90d89
             scope:
             - email
-            - profile
+            - profile        

@@ -3,14 +3,10 @@ package com.shopme.controller;
 import java.io.UnsupportedEncodingException;
 
 import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shopme.common.entity.Customer;
-import com.shopme.common.entity.EmailSettingBag;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.service.CustomerService;
 import com.shopme.service.SettingService;
