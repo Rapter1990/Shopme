@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Questions - Shopme Admin', 'none')" />
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Questions</h2>
+	</div>
+
+	<div th:replace="fragments :: search_form_and_message"></div>
+
+	<div class="full-details">
+		<table class="table table-striped table-bordered table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
+					<th th:replace="fragments :: column_link('product', 'Product', 'none')" />
+					<th th:replace="fragments :: column_link('questionContent', 'Question', 'none')" />
+					<th th:replace="fragments :: column_link('asker', 'Asker', 'none')" />
+					<th th:replace="fragments :: column_link('askTime', 'Ask Time', 'none')" />
+					<th th:replace="fragments :: column_link('approved', 'Approved', 'none')" />
+					<th class="hideable-column">Answered</th>					
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="question : ${listQuestions}">
+					<td th:text="${question.id}">ID</td>
+					<td>
+						<a th:href="@{'/products/detail/' + ${question.product.id}}" class="link-product-detail" th:title="${question.product.shortName}">[[${question.product.shortName}]]</a>
+					</td>
+					<td th:text="${question.questionContent}">Question</td>
+					<td>
+						<a th:href="@{'/customers/detail/' + ${question.asker.id}}" class="link-customer-detail">[[${question.asker.fullName}]]</a>
+					</td>
+					<td th:text="${question.askTime}">Ask Time</td>
+
+
+					<td>
+						<a th:if="${question.approved == true}" class="fas fa-check-circle fa-2x icon-green"
+							th:href="@{'/questions/' + ${question.id} + '/disapprove'}"
+							title="Disapprove this question"
+							>
+						</a>
+						<a th:unless="${question.approved == true}" class="fas fa-circle fa-2x icon-dark"
+							th:href="@{'/questions/' + ${question.id} + '/approve'}"
+							title="Approve this question"
+							>
+						</a>
+					</td>
+
+					<td class="hideable-column">
+						<span class="fas fa-2x"	th:classappend="${question.answered ? 'fa-check-circle icon-green' : 'fa-circle icon-dark'}"></span>
+					</td>					
+
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green link-detail" th:href="@{'/questions/detail/' + ${question.id}}" title="View details of this question"></a>
+						&nbsp;
+						<div th:replace="fragments :: edit('question', '/questions/edit/' + ${question.id})" />
+						&nbsp; 
+						<div th:replace="fragments :: delete('question', ${question.id}, '/questions/delete/' + ${question.id}, true)" />						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="less-details">
+		<div th:each="question : ${listQuestions}" class="row m-1">
+			<div class="col-2">
+				<span>[[${question.id}]]</span>
+			</div>
+			<div class="col-10">
+				<div class="mb-1">
+					<a th:href="@{'/products/detail/' + ${question.product.id}}" class="link-product-detail" th:title="${question.product.shortName}">[[${question.product.shortName}]]</a>
+				</div>
+
+				<div class="mb-1">
+					<span><i>[[${question.questionContent}]]</i></span>
+				</div>
+				<div class="mb-1">
+					&nbsp;
+					<small><div th:replace="fragments :: format_time(${question.askTime})"></div></small>
+					&nbsp;
+				</div>
+				<div>
+					<a class="fas fa-file-alt fa-2x icon-green link-detail"
+						th:href="@{'/questions/detail/' + ${question.id}}"
+						title="View details of this question"
+						></a>
+					&nbsp;
+					<a th:if="${question.approved == true}" class="fas fa-check-circle fa-2x icon-green"
+						th:href="@{'/questions/' + ${question.id} + '/disapprove'}"
+						title="Disapprove this question"
+						>
+					</a>
+					&nbsp;
+					<a th:unless="${question.approved == true}" class="fas fa-circle fa-2x icon-dark"
+						th:href="@{'/questions/' + ${question.id} + '/approve'}"
+						title="Approve this question"
+						>
+					</a>
+					&nbsp;
+					<div th:replace="fragments :: edit('question', '/questions/edit/' + ${question.id})" />
+					&nbsp; 
+					<div th:replace="fragments :: delete('question', ${question.id}, '/questions/delete/' + ${question.id}, true)" />										
+				</div>
+			</div>
+			<div>&nbsp;</div>
+		</div>	
+	</div>		
+
+	<div th:replace="fragments :: pagination('questions')"></div>
+
+	<div class="modal fade" id="detailModal">
+	  <div class="modal-dialog modal-xl">
+	    <div class="modal-content">
+	    </div>
+	  </div>
+	</div>	
+
+	<div class="modal fade" id="smallModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	    </div>
+	  </div>
+	</div>	
+
+	<div th:replace="fragments :: footer"></div>
+</div>	
+</body>
+</html>
