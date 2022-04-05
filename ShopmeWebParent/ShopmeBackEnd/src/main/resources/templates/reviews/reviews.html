@@ -38,7 +38,7 @@
 					<td>[[${review.rating}]] <i class="far fa-star"></i></td>
 					<td>[[${review.reviewTime}]]</td>
 					<td>
-						<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
+						<a class="fas fa-file-alt fa-2x icon-green link-detail"
 							th:href="@{'/reviews/detail/' + ${review.id}}"
 							th:title="#{settings.review.detail}"
 							></a>					
@@ -65,7 +65,7 @@
 					&nbsp;
 					<span>[[${review.rating}]] <i class="far fa-star"></i></span>
 					&nbsp;
-					<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
+					<a class="fas fa-file-alt fa-2x icon-green link-detail"
 						th:href="@{'/reviews/detail/' + ${review.id}}"
 						th:title="#{settings.review.detail}"
 						></a>					
@@ -90,7 +90,7 @@
 		</div>
 	</div>	
 
-	<div class="modal fade" id="largeModal">
+	<div class="modal fade" id="detailModal">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			</div>
@@ -103,13 +103,12 @@
 <script th:src="@{/js/common_list.js}"></script>
 <script type="text/javascript">
 	moduleURL = "[[@{/reviews}]]";
-	
+	entityName = "review";
 	$(document).ready(function() {
 
 		handleProductDetailLink();
 		handleCustomerDetailLink();
-		handleReviewDetailLink();
-		handleDeleteLink();
+		handleDefaultDetailLinkClick();
 			
 	});
 	
@@ -118,28 +117,9 @@
 	}
 
 	function handleCustomerDetailLink() {
-		handleDetailLinkClick(".link-detail-customer", "#largeModal");		
+		handleDetailLinkClick(".link-detail-customer", "#detailModal");	
 	}
 
-	function handleReviewDetailLink() {
-		handleDetailLinkClick(".link-detail-review", "#largeModal");
-	}	
-	
-	function handleDetailLinkClick(cssClass, modalId) {
-		$(cssClass).on("click", function(e) {
-			e.preventDefault();
-			linkDetailURL = $(this).attr("href");
-			$(modalId).modal("show").find(".modal-content").load(linkDetailURL);
-		});		
-	}
-	
-	function handleDeleteLink() {
-		$(".link-delete").on("click", function(e) {
-			e.preventDefault();
-			showDeleteConfirmModal($(this), 'review');
-		});		
-	}
-	
 	
 </script>
 </body>
