@@ -8,4 +8,5 @@ import com.shopme.common.exception.QuestionNotFoundException;
 public interface IQuestionService {
 
 	public void listByPage(int pageNum, PagingAndSortingHelper helper);
+	public Question getQuestionById(Integer id) throws QuestionNotFoundException;
 }

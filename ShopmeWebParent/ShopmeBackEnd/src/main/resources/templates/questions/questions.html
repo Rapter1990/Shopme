@@ -127,6 +127,26 @@
 	</div>	
 
 	<div th:replace="fragments :: footer"></div>
-</div>	
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/questions}]]";
+	entityName = "question";
+
+	$(document).ready(function(){
+		handleViewProductDetailLink();
+		handleDefaultDetailLinkClick();
+		handleViewCustomerDetailLink();
+	});
+
+	function handleViewProductDetailLink() {
+		handleDetailLinkClick(".link-product-detail", "#detailModal");
+	}
+
+	function handleViewCustomerDetailLink() {
+		handleDetailLinkClick(".link-customer-detail", "#smallModal");
+	}	
+
+</script>	
 </body>
 </html>
