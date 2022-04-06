@@ -94,4 +94,7 @@ public class ShopmeUserDetails implements UserDetails {
 		return "ShopmeUserDetails [user=" + user + "]";
 	}
 	
+	public User getUser() {
+		return user;
+	}
 }

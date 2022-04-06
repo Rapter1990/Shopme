@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Questions', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu">Static Menu</div>
+
+	<div>
+		<h2>Manage Questions | [[${pageTitle}]]</h2>
+	</div>
+
+	<form th:action="@{/questions/save}" th:object="${question}" method="post">
+	<div class="border border-secondary rounded p-3">				
+		<input type="hidden" th:field="*{id}" />
+	  <div class="form-group row">
+	    <label for="product" class="col-sm-2 col-form-label">Product:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" th:field="*{product.name}" readonly="readonly" />
+	    </div>
+	  </div>	  
+	  <div class="form-group row">
+	    <label for="question" class="col-sm-2 col-form-label">Question:</label>
+	    <div class="col-sm-10">
+	      <textarea class="form-control" th:field="*{questionContent}" rows="3" required></textarea>
+	      <div>
+	      Asked by: <b>[[${question.asker.fullName}]]</b> on [[${question.askTime}]]
+	      </div>
+	    </div>
+	  </div>	  
+	  <div class="form-group row">
+	    <label for="answer" class="col-sm-2 col-form-label">Answer:</label>
+	    <div class="col-sm-10">
+	      <textarea class="form-control" th:field="*{answer}" rows="3"></textarea>
+	    </div>
+	  </div>	  
+	  <div class="form-group row">
+	  	<label for="enabled" class="col-sm-2 col-form-label">Approved:</label>
+	  	<div class="col-sm-10">
+	  		<input type="checkbox" th:field="*{approved}" /> 
+	  	</div>
+	  </div>	  
+	  <div>		
+		<p class="text-center">
+			<input type="submit" value="Save" class="btn btn-primary m-1" />
+			<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+		</p>
+	  </div>				
+	</div>
+	</form>
+
+	<div th:replace="fragments :: footer">Static footer</div>
+</div>	
+<script type="text/javascript">
+	moduleURL = "[[@{/questions}]]";
+</script>
+<script th:src="@{/js/common_form.js}"></script>	
+</body>
+</html> 

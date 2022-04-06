@@ -3,14 +3,17 @@ package com.shopme.admin.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.paging.PagingAndSortingParam;
+import com.shopme.admin.security.ShopmeUserDetails;
 import com.shopme.admin.service.QuestionService;
 import com.shopme.common.entity.question.Question;
 import com.shopme.common.exception.QuestionNotFoundException;
@@ -63,8 +66,53 @@ public class QuestionController {
 			
 		} catch (QuestionNotFoundException ex) {
 			LOGGER.info("QuestionController | viewQuestion | message : " + ex.getMessage());
-			ra.addFlashAttribute("message", ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
 			return defaultRedirectURL;	
 		}
+	}
+	
+	@GetMapping("/questions/edit/{id}")
+	public String editQuestion(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {
+		
+		LOGGER.info("QuestionController | editQuestion is called");
+		LOGGER.info("QuestionController | editQuestion | id : " + id);
+		
+		try {
+			Question question = service.getQuestionById(id);
+			
+			LOGGER.info("QuestionController | editQuestion | question : " + question.toString());
+			LOGGER.info("QuestionController | editQuestion | pageTitle : " + "Edit Question (ID: " + id + ")");
+			
+			model.addAttribute("question", question);
+			model.addAttribute("pageTitle", "Edit Question (ID: " + id + ")");
+
+			return "questions/question_form";
+		} catch (QuestionNotFoundException ex) {
+			LOGGER.info("QuestionController | editQuestion | message : " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+			return defaultRedirectURL;
+		}
+	}
+
+	@PostMapping("/questions/save")
+	public String saveQuestion(Question question, RedirectAttributes ra,
+			@AuthenticationPrincipal ShopmeUserDetails userDetails) {
+		
+		LOGGER.info("QuestionController | saveQuestion is called");
+		LOGGER.info("QuestionController | saveQuestion | Question Content : " + question.getQuestionContent());
+		
+		LOGGER.info("QuestionController | saveQuestion | user Info : " + userDetails.getUser().toString());
+		
+		try {
+			service.saveQuestionByUser(question, userDetails.getUser());
+			LOGGER.info("QuestionController | saveQuestion | messageSuccess : " + "The Question ID " + question.getId() + " has been updated successfully.");
+			ra.addFlashAttribute("messageSuccess", "The Question ID " + question.getId() + " has been updated successfully.");
+		} catch (QuestionNotFoundException ex) {
+			LOGGER.info("QuestionController | saveQuestion | messageError : " + "Could not find any question with ID " + question.getId());
+			ra.addFlashAttribute("messageError", "Could not find any question with ID " + question.getId());
+		}
+		
+		return defaultRedirectURL;
+		
 	}
 }

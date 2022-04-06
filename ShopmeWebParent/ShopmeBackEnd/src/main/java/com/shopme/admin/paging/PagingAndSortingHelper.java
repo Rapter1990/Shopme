@@ -31,7 +31,7 @@ public class PagingAndSortingHelper {
 
 	public void updateModelAttributes(int pageNum, Page<?> page) {
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes is started");
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes is started");
 		
 		List<?> listItems = page.getContent();
 		int pageSize = page.getSize();
@@ -39,15 +39,15 @@ public class PagingAndSortingHelper {
 		long startCount = (pageNum - 1) * pageSize + 1;
 		long endCount = startCount + pageSize - 1;
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | startCount : " + startCount);
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | endCount : " + endCount);
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | page.getTotalElements() : " + page.getTotalElements());
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | startCount : " + startCount);
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | endCount : " + endCount);
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | page.getTotalElements() : " + page.getTotalElements());
 		
 		if (endCount > page.getTotalElements()) {
 			endCount = page.getTotalElements();
 		}
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | endCount : " + endCount);
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | endCount : " + endCount);
 
 		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("totalPages", page.getTotalPages());
@@ -56,17 +56,17 @@ public class PagingAndSortingHelper {
 		model.addAttribute("totalItems", page.getTotalElements());
 		model.addAttribute(listName, listItems);
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | currentPage : " + pageNum);
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | totalPages : " + page.getTotalPages());
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | totalItems : " + page.getTotalElements());
-		LOGGER.info("PagingAndSortingArgumentResolver | updateModelAttributes | listName : " + listItems);
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | currentPage : " + pageNum);
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | totalPages : " + page.getTotalPages());
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | totalItems : " + page.getTotalElements());
+		LOGGER.info("PagingAndSortingHelper | updateModelAttributes | listName : " + listItems);
 		
 		
 	}
 
 	public void listEntities(int pageNum, int pageSize, SearchRepository<?, Integer> repo) {
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | listEntities is started");
+		LOGGER.info("PagingAndSortingHelper | listEntities is started");
 		
 		Pageable pageable = createPageable(pageSize, pageNum);
 		Page<?> page = null;
@@ -77,8 +77,8 @@ public class PagingAndSortingHelper {
 			page = repo.findAll(pageable);
 		}
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | listEntities | page : " + page.toString());
-		LOGGER.info("PagingAndSortingArgumentResolver | listEntities | pageNum : " + pageNum);
+		LOGGER.info("PagingAndSortingHelper | listEntities | page : " + page.toString());
+		LOGGER.info("PagingAndSortingHelper | listEntities | pageNum : " + pageNum);
 		
 
 		updateModelAttributes(pageNum, page);		
@@ -86,14 +86,14 @@ public class PagingAndSortingHelper {
 
 	public Pageable createPageable(int pageSize, int pageNum) {
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | createPageable is started");
+		LOGGER.info("PagingAndSortingHelper | createPageable is started");
 		
 		Sort sort = Sort.by(sortField);
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
 		
-		LOGGER.info("PagingAndSortingArgumentResolver | createPageable | sort : " + sort.toString());
-		LOGGER.info("PagingAndSortingArgumentResolver | createPageable | pageNum - 1 : " + (pageNum - 1));
-		LOGGER.info("PagingAndSortingArgumentResolver | createPageable | pageSize : " + pageSize);
+		LOGGER.info("PagingAndSortingHelper | createPageable | sort : " + sort.toString());
+		LOGGER.info("PagingAndSortingHelper | createPageable | pageNum - 1 : " + (pageNum - 1));
+		LOGGER.info("PagingAndSortingHelper | createPageable | pageSize : " + pageSize);
 		
 		return PageRequest.of(pageNum - 1, pageSize, sort);		
 	}	

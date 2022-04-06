@@ -1,6 +1,7 @@
 package com.shopme.admin.service;
 
 
+import java.util.Date;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.repository.QuestionRepository;
 import com.shopme.admin.service.impl.IQuestionService;
+import com.shopme.common.entity.User;
 import com.shopme.common.entity.question.Question;
 import com.shopme.common.exception.QuestionNotFoundException;
 
@@ -39,6 +41,27 @@ public class QuestionService implements IQuestionService{
 			return repo.findById(id).get();
 		} catch (NoSuchElementException ex) {
 			throw new QuestionNotFoundException("Could not find question with ID " + id);
+		}
+	}
+
+	@Override
+	public void saveQuestionByUser(Question questionInForm, User user) throws QuestionNotFoundException {
+		// TODO Auto-generated method stub
+		try {
+			Question questionInDB = repo.findById(questionInForm.getId()).get();
+			questionInDB.setQuestionContent(questionInForm.getQuestionContent());
+			questionInDB.setAnswer(questionInForm.getAnswer());
+			questionInDB.setApproved(questionInForm.isApproved());
+
+			if (questionInDB.isAnswered()) {
+				questionInDB.setAnswerTime(new Date());
+				questionInDB.setAnswerer(user);
+			}
+
+			repo.save(questionInDB);
+
+		} catch (NoSuchElementException ex) {
+			throw new QuestionNotFoundException("Could not find any question with ID " + questionInForm.getId());
 		}
 	}
 
