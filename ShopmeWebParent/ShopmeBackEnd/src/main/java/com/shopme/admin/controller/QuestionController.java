@@ -1,5 +1,7 @@
 package com.shopme.admin.controller;
 
+import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,5 +116,53 @@ public class QuestionController {
 		
 		return defaultRedirectURL;
 		
+	}
+	
+	@GetMapping("/questions/{id}/approve")
+	public String approveQuestion(@PathVariable("id") Integer id, RedirectAttributes ra) {
+		
+		LOGGER.info("QuestionController | approveQuestion is called");
+		LOGGER.info("QuestionController | approveQuestion | id : " + id);
+		
+		service.approve(id);
+		
+		LOGGER.info("QuestionController | approveQuestion | messageSuccess : " + "The Question ID " + id + " has been approved.");
+		
+		ra.addFlashAttribute("messageSuccess", "The Question ID " + id + " has been approved.");
+		return defaultRedirectURL;
+	}
+
+	@GetMapping("/questions/{id}/disapprove")
+	public String disapproveQuestion(@PathVariable("id") Integer id, RedirectAttributes ra) {
+		
+		LOGGER.info("QuestionController | disapproveQuestion is called");
+		LOGGER.info("QuestionController | disapproveQuestion | id : " + id);
+		
+		service.disapprove(id);
+		
+		LOGGER.info("QuestionController | approveQuestion | messageSuccess : " + "The Question ID " + id + " has been disapproved.");
+		
+		ra.addFlashAttribute("messageSuccess", "The Question ID " + id + " has been disapproved.");
+		return defaultRedirectURL;
+	}
+
+	@GetMapping("/questions/delete/{id}")
+	public String deleteQuestion(@PathVariable(name = "id") Integer id, RedirectAttributes ra) throws IOException {
+
+		LOGGER.info("QuestionController | deleteQuestion is called");
+		LOGGER.info("QuestionController | deleteQuestion | id : " + id);
+		
+		try {
+			service.delete(id);
+			
+			LOGGER.info("QuestionController | approveQuestion | messageSuccess : " + String.format("The question ID %d has been deleted successfully.", id));
+
+			ra.addFlashAttribute("messageSuccess", String.format("The question ID %d has been deleted successfully.", id));
+		} catch (QuestionNotFoundException ex) {
+			LOGGER.info("QuestionController | saveQuestion | messageError : " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return defaultRedirectURL;
 	}
 }

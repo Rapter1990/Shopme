@@ -65,4 +65,25 @@ public class QuestionService implements IQuestionService{
 		}
 	}
 
+	@Override
+	public void approve(Integer id) {
+		// TODO Auto-generated method stub
+		repo.updateApprovalStatus(id, true);
+	}
+
+	@Override
+	public void disapprove(Integer id) {
+		// TODO Auto-generated method stub
+		repo.updateApprovalStatus(id, false);
+	}
+
+	@Override
+	public void delete(Integer id) throws QuestionNotFoundException {
+		// TODO Auto-generated method stub
+		if (!repo.existsById(id)) {
+			throw new QuestionNotFoundException("Could not find any question with ID " + id);
+		}
+		repo.deleteById(id);
+	}
+	
 }
