@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" class="row m-2">
+		<div class="col">
+			<th:block th:each="question : ${listQuestions}">
+				<div class="row">
+					<div class="col-xs"><b>Question:</b></div>
+					<div class="col-xs ml-2">
+						<a class="linkVoteQuestion fa-thumbs-up"
+							th:classappend="${question.upvotedByCurrentCustomer ? 'fas' : 'far'}"
+							th:id="'linkVoteUp-question-' + ${question.id}"
+							th:questionId="${question.id}"
+						   	></a>
+					</div>
+					
+					<div class="col-xs ml-2">
+						<span th:id="'voteCount-question-' + ${question.id}">[[${question.votes}]] Votes</span>
+					</div>
+
+					<div class="col-xs ml-2">
+						<a class="linkVoteQuestion fa-thumbs-down"
+							th:classappend="${question.downvotedByCurrentCustomer ? 'fas' : 'far'}"
+							th:id="'linkVoteDown-question-' + ${question.id}"
+							th:questionId="${question.id}"
+						   	></a>
+					</div>
+				</div>
+				
+				<div class="row"><div class="col">[[${question.questionContent}]]</div></div>
+				<div class="row">
+					<div class="col ml-4">
+						<small>[[${question.asker.fullName}]], <div th:replace="fragments :: format_time(${question.askTime})"></div></small>
+					</div>
+				</div>
+				
+				<th:block th:if="${question.answered == true}">
+					<div class="row"><div class="col"><b>Answer:</b></div></div>
+					<div class="row"><div class="col">[[${question.answer}]]</div></div>
+					<div class="row"><div class="col ml-4"><small>[[${question.answerer.fullName}]], <div th:replace="fragments :: format_time(${question.answerTime})"></div></small></div></div>
+				</th:block>
+
+				<div>
+					<hr/>
+				</div>
+				
+			</th:block>
+		</div>
+	</div>
+</body>
+</html>

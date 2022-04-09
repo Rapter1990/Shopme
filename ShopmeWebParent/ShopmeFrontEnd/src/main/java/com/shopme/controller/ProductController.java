@@ -19,12 +19,14 @@ import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.Review;
 import com.shopme.common.entity.product.Product;
+import com.shopme.common.entity.question.Question;
 import com.shopme.common.exception.CategoryNotFoundException;
 import com.shopme.common.exception.CustomerNotFoundException;
 import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.CategoryService;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ProductService;
+import com.shopme.service.QuestionService;
 import com.shopme.service.ReviewService;
 import com.shopme.service.ReviewVoteService;
 import com.shopme.util.AuthenticationControllerHelperUtil;
@@ -42,17 +44,20 @@ public class ProductController {
 	
 	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 	
-	private ReviewVoteService voteService;
+	private ReviewVoteService reviewVoteService;
+	
+	private QuestionService questionService;
 	
 	@Autowired
 	public ProductController(CategoryService categoryService, ProductService productService,
-			ReviewService reviewService, ReviewVoteService voteService,
+			ReviewService reviewService, ReviewVoteService reviewVoteService,QuestionService questionService,
 			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.categoryService = categoryService;
 		this.productService = productService;
 		this.reviewService = reviewService;
-		this.voteService = voteService;
+		this.reviewVoteService = reviewVoteService;
+		this.questionService = questionService;
 		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
@@ -142,12 +147,13 @@ public class ProductController {
 			
 			List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
 			Page<Review> listReviews = reviewService.list3MostVotedReviewsByProduct(product);
+			List<Question> listQuestions = questionService.getTop3VotedQuestions(product.getId());
 			
 			LOGGER.info("ProductController | viewProductDetail | listCategoryParents : " + listCategoryParents.toString());
 			LOGGER.info("ProductController | viewProductDetail | product : " + product.toString());
 			LOGGER.info("ProductController | viewProductDetail | pageTitle : " + product.getShortName());
-			LOGGER.info("ProductController | viewProductDetail | listReviews : " + listReviews.getSize());
-			
+			LOGGER.info("ProductController | viewProductDetail | listReviews size : " + listReviews.getSize());
+			LOGGER.info("ProductController | viewProductDetail | listQuestions size : " + listQuestions.size());
 			
 			Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
 					
@@ -155,7 +161,7 @@ public class ProductController {
 				boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
 				LOGGER.info("ProductController | viewProductDetail | customerReviewed : " + customerReviewed);
 				
-				voteService.markReviewsVotedForProductByCustomer(listReviews.getContent(), 
+				reviewVoteService.markReviewsVotedForProductByCustomer(listReviews.getContent(), 
 						                                         product.getId(), 
 						                                         customer.getId());
 				
@@ -168,7 +174,10 @@ public class ProductController {
 					model.addAttribute("customerCanReview", customerCanReview);
 				}
 			}
+			
 
+			
+			model.addAttribute("listQuestions", listQuestions);			
 			model.addAttribute("listCategoryParents", listCategoryParents);
 			model.addAttribute("product", product);
 			model.addAttribute("listReviews", listReviews);

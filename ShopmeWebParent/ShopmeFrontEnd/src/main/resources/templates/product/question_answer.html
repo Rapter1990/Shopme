@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+	<div th:fragment="content">
+		<div class="row"><div class="col"><hr/></div></div>
+		<div class="row m-1">
+			<h3 id="qa">Questions &amp; answers for this product:</h3>
+		</div>
+
+		<div th:replace="question/questions_votes :: content"></div>
+	</div>
+</body>
+</html>
