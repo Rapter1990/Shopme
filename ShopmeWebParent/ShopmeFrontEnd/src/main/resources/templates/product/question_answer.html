@@ -8,6 +8,29 @@
 		</div>
 
 		<div th:replace="question/questions_votes :: content"></div>
+		
+		
+		<div sec:authorize="isAuthenticated()">
+			<div>
+				<th:block th:if="${numberOfQuestions > 3}">
+					<a th:href="@{'/questions/' + ${product.alias}}">View all [[${numberOfQuestions}]] questions</a>&nbsp;&nbsp;
+				</th:block>				
+			</div>
+			<form class="form-inline my-2" id="formQuestion">
+				<textarea id="question" class="form-control" rows="2" cols="60" placeholder="Type your question here..." required></textarea>
+				&nbsp;&nbsp;
+				<button id="buttonPostQuestion" class="btn btn-secondary my-2">Submit</button>
+			</form>
+		</div>
+		<div sec:authorize="!isAuthenticated()">
+			<form th:action="@{'/ask_question/' + ${product.alias}}">
+				<th:block th:if="${numberOfQuestions > 3}">
+					<a th:href="@{'/questions/' + ${product.alias}}">View all [[${numberOfQuestions}]] questions</a>&nbsp;&nbsp;
+				</th:block>
+				<button class="btn btn-secondary" type="submit">Ask a Question</button>
+			</form>
+		</div>
+		
 	</div>
 </body>
 </html>

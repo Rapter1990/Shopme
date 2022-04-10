@@ -175,9 +175,12 @@ public class ProductController {
 				}
 			}
 			
-
+			int numberOfQuestions = questionService.getNumberOfQuestions(product.getId());
+			LOGGER.info("ProductController | viewProductDetail | numberOfQuestions : " + numberOfQuestions);
 			
-			model.addAttribute("listQuestions", listQuestions);			
+			
+			model.addAttribute("listQuestions", listQuestions);
+			model.addAttribute("numberOfQuestions", numberOfQuestions);
 			model.addAttribute("listCategoryParents", listCategoryParents);
 			model.addAttribute("product", product);
 			model.addAttribute("listReviews", listReviews);

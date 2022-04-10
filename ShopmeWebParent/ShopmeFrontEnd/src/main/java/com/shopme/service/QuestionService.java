@@ -38,4 +38,17 @@ public class QuestionService implements IQuestionService{
 		Page<Question> result = questionRepo.findAll(productId, pageable);
 		return result.getContent();
 	}
+	
+	@Override
+	public Page<Question> listQuestionsOfProduct(String alias, int pageNum, String sortField, String sortDir) {
+		Sort sort = Sort.by(sortField);
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending(); 
+		Pageable pageable = PageRequest.of(pageNum - 1, QUESTIONS_PER_PAGE_FOR_PUBLIC_LISTING, sort);
+		return questionRepo.findByAlias(alias, pageable);
+	}
+	
+	@Override
+	public int getNumberOfQuestions(Integer productId) {
+		return questionRepo.countApprovedQuestions(productId);
+	}
 }
