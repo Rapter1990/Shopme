@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.question.Question;
 import com.shopme.repository.QuestionRepository;
 import com.shopme.service.impl.IQuestionService;
@@ -50,5 +51,20 @@ public class QuestionService implements IQuestionService{
 	@Override
 	public int getNumberOfQuestions(Integer productId) {
 		return questionRepo.countApprovedQuestions(productId);
+	}
+	
+	@Override
+	public Page<Question> listQuestionsByCustomer(Customer customer, String keyword, int pageNum, 
+			String sortField, String sortDir) {
+		Sort sort = Sort.by(sortField);
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+
+		Pageable pageable = PageRequest.of(pageNum - 1, QUESTIONS_PER_PAGE_FOR_CUSTOMER, sort);
+
+		if (keyword != null) {
+			return questionRepo.findByCustomer(customer.getId(), keyword, pageable);
+		}
+
+		return questionRepo.findByCustomer(customer.getId(), pageable);
 	}
 }

@@ -13,11 +13,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.product.Product;
 import com.shopme.common.entity.question.Question;
 import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.ProductService;
 import com.shopme.service.QuestionService;
+import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @Controller
 public class QuestionController {
@@ -28,11 +30,15 @@ public class QuestionController {
 	
 	private ProductService productService;
 	
+	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
+	
 	@Autowired
-	public QuestionController(QuestionService questionService, ProductService productService) {
+	public QuestionController(QuestionService questionService, ProductService productService,
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
 		super();
 		this.questionService = questionService;
 		this.productService = productService;
+		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
 	}
 
 	@GetMapping("/questions/{productAlias}") 
@@ -111,5 +117,73 @@ public class QuestionController {
 		}		
 
 		return "product/product_questions";
+	}
+	
+	@GetMapping("/customer/questions") 
+	public String listQuestionsByCustomer(Model model, HttpServletRequest request) {
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomer is called");
+		
+		return listQuestionsByCustomerByPage(model, request, 1, null, "askTime", "desc");
+	}
+	
+	@GetMapping("/customer/questions/page/{pageNum}") 
+	public String listQuestionsByCustomerByPage(
+				Model model, HttpServletRequest request,
+				@PathVariable(name = "pageNum") int pageNum,
+				String keyword, String sortField, String sortDir) {
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage is called");
+		
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | customer Full Name : " + customer.getFullName());
+		
+		Page<Question> page = questionService.listQuestionsByCustomer(customer, keyword, pageNum, sortField, sortDir);		
+		List<Question> listQuestions = page.getContent();
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | totalPages : " + page.getTotalPages());
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | totalItems : " + page.getTotalElements());
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | currentPage : " + pageNum);
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | sortField : " + sortField);
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | sortDir : " + sortDir);
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | keyword : " + keyword);
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | reverseSortDir : " + (sortDir.equals("asc") ? "desc" : "asc"));
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | moduleURL : " + "/customer/questions");
+		
+		model.addAttribute("totalPages", page.getTotalPages());
+		model.addAttribute("totalItems", page.getTotalElements());
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("sortField", sortField);
+		model.addAttribute("sortDir", sortDir);
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+		model.addAttribute("moduleURL", "/customer/questions");
+
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | listQuestions size : " + listQuestions.size());		
+		model.addAttribute("listQuestions", listQuestions);
+
+		long startCount = (pageNum - 1) * QuestionService.QUESTIONS_PER_PAGE_FOR_PUBLIC_LISTING + 1;		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | startCount : " + startCount);
+		
+		model.addAttribute("startCount", startCount);
+			
+		long endCount = startCount + QuestionService.QUESTIONS_PER_PAGE_FOR_PUBLIC_LISTING - 1;
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | endCount : " + endCount);
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | page.getTotalElements() : " + page.getTotalElements());
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | endCount > page.getTotalElements() : "
+		+ (endCount > page.getTotalElements()));
+
+		if (endCount > page.getTotalElements()) {
+			endCount = page.getTotalElements();
+		}
+		
+		LOGGER.info("QuestionController | listQuestionsByCustomerByPage | endCount : " + endCount);
+		model.addAttribute("endCount", endCount);
+		
+		return "question/customer_questions";
 	}
 }

@@ -17,4 +17,13 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
 	
 	@Query("SELECT COUNT (q) FROM Question q WHERE q.approved = true and q.product.id =?1")
 	int countApprovedQuestions(Integer productId);
+	
+	@Query("SELECT q FROM Question q WHERE q.asker.id = ?1")
+	Page<Question> findByCustomer(Integer customerId, Pageable pageable);
+
+	@Query("SELECT q FROM Question q WHERE q.asker.id = ?1 AND ("
+			+ "q.questionContent LIKE %?2% OR "
+			+ "q.answer LIKE %?2% OR q.product.name LIKE %?2%)")
+	Page<Question> findByCustomer(Integer customerId, String keyword, Pageable pageable);
+
 }
