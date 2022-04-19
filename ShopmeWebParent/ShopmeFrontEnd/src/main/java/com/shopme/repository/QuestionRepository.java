@@ -26,4 +26,6 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
 			+ "q.answer LIKE %?2% OR q.product.name LIKE %?2%)")
 	Page<Question> findByCustomer(Integer customerId, String keyword, Pageable pageable);
 
+	@Query("SELECT q FROM Question q WHERE q.asker.id = ?1 AND q.id = ?2")
+	Question findByCustomerAndId(Integer customerId, Integer questionId);
 }

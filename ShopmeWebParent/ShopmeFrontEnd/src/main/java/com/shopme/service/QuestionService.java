@@ -67,4 +67,8 @@ public class QuestionService implements IQuestionService{
 
 		return questionRepo.findByCustomer(customer.getId(), pageable);
 	}
+	
+	public Question getByCustomerAndId(Customer customer, Integer questionId) {
+		return questionRepo.findByCustomerAndId(customer.getId(), questionId);
+	}
 }

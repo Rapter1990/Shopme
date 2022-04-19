@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.product.Product;
@@ -185,5 +186,20 @@ public class QuestionController {
 		model.addAttribute("endCount", endCount);
 		
 		return "question/customer_questions";
+	}
+	
+	@GetMapping("/customer/questions/detail/{id}")
+	public String viewQuestion(@PathVariable("id") Integer id, Model model, RedirectAttributes ra, 
+			HttpServletRequest request) {
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		Question question = questionService.getByCustomerAndId(customer, id);
+
+		if (question != null) {	
+			model.addAttribute("question", question);
+			return "question/question_detail_modal";
+		} else {
+			ra.addFlashAttribute("message", "Could not find any question with ID " + id);
+			return "redirect:/customer/questions";			
+		}
 	}
 }

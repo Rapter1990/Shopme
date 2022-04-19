@@ -42,7 +42,7 @@
 						</td>					
 	
 						<td>
-							<a class="fas fa-file-alt fa-2x icon-green link-detail" title="View details of this question"></a>
+							<a class="fas fa-file-alt fa-2x icon-green link-detail" th:href="@{'/customer/questions/detail/' + ${question.id}}" title="View details of this question"></a>
 						</td>
 					</tr>
 				</tbody>
@@ -83,8 +83,8 @@
 		    </div>
 		  </div>
 		</div>	
-	
-		<div th:replace="navigation :: footer_menu"></div>
+
+	<div th:replace="navigation :: footer_menu"></div>
 	</div>
 </body>
 <script th:src="@{/js/common_list.js}"></script>

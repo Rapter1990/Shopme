@@ -14,4 +14,5 @@ public interface IQuestionService {
 	public int getNumberOfQuestions(Integer productId);
 	public Page<Question> listQuestionsByCustomer(Customer customer, String keyword, int pageNum, 
 			String sortField, String sortDir);
+	public Question getByCustomerAndId(Customer customer, Integer questionId);
 }
