@@ -191,15 +191,42 @@ public class QuestionController {
 	@GetMapping("/customer/questions/detail/{id}")
 	public String viewQuestion(@PathVariable("id") Integer id, Model model, RedirectAttributes ra, 
 			HttpServletRequest request) {
+		
+		LOGGER.info("QuestionController | viewQuestion is called");
+		
 		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		LOGGER.info("QuestionController | viewQuestion | customer : " + customer.getFullName());
+		
 		Question question = questionService.getByCustomerAndId(customer, id);
+		
+		LOGGER.info("QuestionController | viewQuestion | question : " + question.getQuestionContent());
 
 		if (question != null) {	
 			model.addAttribute("question", question);
+			
+			LOGGER.info("QuestionController | viewQuestion | question/question_detail_modal");
+			
 			return "question/question_detail_modal";
 		} else {
+			
+			LOGGER.info("QuestionController | viewQuestion | message : " + "Could not find any question with ID " + id);
+			
 			ra.addFlashAttribute("message", "Could not find any question with ID " + id);
+			
+			LOGGER.info("QuestionController | viewQuestion | redirect:/customer/questions");
+			
 			return "redirect:/customer/questions";			
 		}
+	}
+	
+	@GetMapping("/ask_question/{productAlias}")
+	public String askQuestion(@PathVariable(name = "productAlias") String productAlias) {
+		
+		LOGGER.info("QuestionController | askQuestion is called");
+		
+		LOGGER.info("QuestionController | askQuestion | " + "redirect:/p/" + productAlias + "#qa");
+		
+		return "redirect:/p/" + productAlias + "#qa";
 	}
 }

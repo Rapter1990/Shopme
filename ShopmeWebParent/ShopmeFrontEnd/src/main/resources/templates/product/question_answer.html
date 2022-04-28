@@ -22,6 +22,7 @@
 				<button id="buttonPostQuestion" class="btn btn-secondary my-2">Submit</button>
 			</form>
 		</div>
+		
 		<div sec:authorize="!isAuthenticated()">
 			<form th:action="@{'/ask_question/' + ${product.alias}}">
 				<th:block th:if="${numberOfQuestions > 3}">

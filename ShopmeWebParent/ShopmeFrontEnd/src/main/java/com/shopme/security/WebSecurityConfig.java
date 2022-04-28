@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				     "/cart" , "/address_book/**", "/reviews/**", 
 				     "/checkout", "/place_order", "/process_paypal_order", 
 				     "/write_review/**", "/post_review", "/customer/questions/**",
-				     "/post_question/**")
+				     "/post_question/**", "/ask_question/**")
 		.authenticated()
 		.anyRequest().permitAll()
 		.and()
