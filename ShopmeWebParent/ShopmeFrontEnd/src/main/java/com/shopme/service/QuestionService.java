@@ -1,6 +1,8 @@
 package com.shopme.service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -12,7 +14,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.shopme.common.entity.Customer;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.entity.question.Question;
+import com.shopme.common.exception.ProductNotFoundException;
+import com.shopme.repository.ProductRepository;
 import com.shopme.repository.QuestionRepository;
 import com.shopme.service.impl.IQuestionService;
 
@@ -25,11 +30,13 @@ public class QuestionService implements IQuestionService{
 	
 	private QuestionRepository questionRepo;
 	
+	private ProductRepository productRepo;
 	
 	@Autowired
-	public QuestionService(QuestionRepository questionRepo) {
+	public QuestionService(QuestionRepository questionRepo, ProductRepository productRepo) {
 		super();
 		this.questionRepo = questionRepo;
+		this.productRepo = productRepo;
 	}
 
 
@@ -70,5 +77,18 @@ public class QuestionService implements IQuestionService{
 	
 	public Question getByCustomerAndId(Customer customer, Integer questionId) {
 		return questionRepo.findByCustomerAndId(customer.getId(), questionId);
+	}
+	
+	public void saveNewQuestion(Question question, Customer asker, 
+			Integer productId) throws ProductNotFoundException {
+		Optional<Product> productById = productRepo.findById(productId);
+		if (!productById.isPresent()) {
+			throw new ProductNotFoundException("Could not find product with ID " + productId);
+		}
+		question.setAskTime(new Date());
+		question.setProduct(productById.get());
+		question.setAsker(asker);
+
+		questionRepo.save(question);
 	}
 }

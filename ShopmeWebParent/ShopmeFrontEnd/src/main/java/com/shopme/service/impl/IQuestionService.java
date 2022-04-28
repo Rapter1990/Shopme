@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 
 import com.shopme.common.entity.Customer;
 import com.shopme.common.entity.question.Question;
+import com.shopme.common.exception.ProductNotFoundException;
 
 public interface IQuestionService {
 
@@ -15,4 +16,5 @@ public interface IQuestionService {
 	public Page<Question> listQuestionsByCustomer(Customer customer, String keyword, int pageNum, 
 			String sortField, String sortDir);
 	public Question getByCustomerAndId(Customer customer, Integer questionId);
+	public void saveNewQuestion(Question question, Customer asker, Integer productId) throws ProductNotFoundException;
 }
