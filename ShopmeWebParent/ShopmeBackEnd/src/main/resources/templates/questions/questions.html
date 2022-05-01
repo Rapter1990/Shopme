@@ -58,7 +58,7 @@
 						&nbsp;
 						<div th:replace="fragments :: edit('question', '/questions/edit/' + ${question.id})" />
 						&nbsp; 
-						<div th:replace="fragments :: delete('question', ${question.id}, '/questions/delete/' + ${question.id}, true)" />						
+						<div th:replace="fragments :: delete('question', ${question.id}, '/questions/delete/' + ${question.id}, true)" />					
 					</td>
 				</tr>
 			</tbody>
@@ -112,6 +112,8 @@
 
 	<div th:replace="fragments :: pagination('questions')"></div>
 
+	<div th:replace="modal_fragments :: confirm_modal" />
+
 	<div class="modal fade" id="detailModal">
 	  <div class="modal-dialog modal-xl">
 	    <div class="modal-content">
@@ -127,6 +129,7 @@
 	</div>	
 
 	<div th:replace="fragments :: footer"></div>
+	
 </div>
 <script th:src="@{/js/common_list.js}"></script>
 <script type="text/javascript">
