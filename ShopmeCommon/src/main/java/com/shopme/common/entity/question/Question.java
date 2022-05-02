@@ -18,10 +18,12 @@ import com.shopme.common.entity.User;
 import com.shopme.common.entity.product.Product;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "questions")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Question implements Serializable{
