@@ -32,7 +32,7 @@ public class Country extends IdBasedEntity implements Serializable{
 	@Column(nullable = false, length = 5)
 	private String code;
 
-	@JsonBackReference
+	//@JsonBackReference
 	@OneToMany(mappedBy = "country")
 	private Set<State> states;
 

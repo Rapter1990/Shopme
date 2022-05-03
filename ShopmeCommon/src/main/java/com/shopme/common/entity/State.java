@@ -29,7 +29,7 @@ public class State  extends IdBasedEntity implements Serializable{
 	@Column(nullable = false, length = 45)
 	private String name;
 
-	@JsonManagedReference
+	//@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "country_id")
 	private Country country;

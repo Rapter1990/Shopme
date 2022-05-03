@@ -5,15 +5,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.shopme.common.entity.Customer;
+import com.shopme.common.entity.IdBasedEntity;
 import com.shopme.common.entity.User;
 import com.shopme.common.entity.product.Product;
 
@@ -26,12 +24,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Question implements Serializable{
+public class Question extends IdBasedEntity implements Serializable{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
 	@Column(name = "question")
 	private String questionContent;
 	
