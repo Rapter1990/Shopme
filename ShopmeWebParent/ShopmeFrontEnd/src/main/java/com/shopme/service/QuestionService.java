@@ -91,4 +91,14 @@ public class QuestionService implements IQuestionService{
 
 		questionRepo.save(question);
 	}
+	
+	public int getNumberOfAnsweredQuestions(Integer productId) {
+		return questionRepo.countAnsweredQuestions(productId);
+	}
+
+
+	public int getVotesForQuestion(Integer questionId) {
+		Question question = questionRepo.findById(questionId).get();
+		return question.getVotes();
+	}
 }

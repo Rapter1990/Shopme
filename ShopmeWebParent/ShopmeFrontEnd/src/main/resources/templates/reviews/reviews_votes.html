@@ -15,19 +15,19 @@
 				<div class="col-xs ml-2">
 					<a class="linkVoteReview far fa-thumbs-up"
 					    th:classappend="${review.upvotedByCurrentCustomer ? 'fas' : 'far'}"
-						th:id="'linkVoteUp-' + ${review.id}"
+						th:id="'linkVoteUp-review-' + ${review.id}"
 						th:reviewId="${review.id}"
 					   	th:href="@{'/vote_review/' + ${review.id} + '/up'}"></a>
 				</div>
 
 				<div class="col-xs ml-2">
-					<span th:id="'voteCount-' + ${review.id}">[[${review.votes}]] Votes</span>
+					<span th:id="'voteCount-review-' + ${review.id}">[[${review.votes}]] Votes</span>
 				</div>
 				
 				<div class="col-xs ml-2">
 					<a class="linkVoteReview far fa-thumbs-down"
 					    th:classappend="${review.downvotedByCurrentCustomer ? 'fas' : 'far'}"
-						th:id="'linkVoteDown-' + ${review.id}"
+						th:id="'linkVoteDown-review-' + ${review.id}"
 						th:reviewId="${review.id}"
 					   	th:href="@{'/vote_review/' + ${review.id} + '/down'}"></a>
 				</div>

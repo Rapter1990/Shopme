@@ -35,7 +35,7 @@
 					<td>[[${review.rating}]] <i class="far fa-star"></i></td>
 					<td>[[${review.reviewTime}]]</td>
 					<td>
-						<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
+						<a class="fas fa-file-alt fa-2x icon-green link-detail"
 							th:href="@{'/reviews/detail/' + ${review.id}}"
 							title="View details of this review"
 							></a>						
@@ -58,7 +58,7 @@
 					&nbsp;
 					<span>[[${review.rating}]] <i class="far fa-star"></i></span>
 					&nbsp;
-					<a class="fas fa-file-alt fa-2x icon-green link-detail-review"
+					<a class="fas fa-file-alt fa-2x icon-green link-detail"
 						th:href="@{'/reviews/detail/' + ${review.id}}"
 						title="View details of this review"
 						></a>
@@ -70,7 +70,7 @@
 
 	<div th:replace="fragments :: pagination('/reviews', 'reviews')"></div>
 
-	<div class="modal fade" id="reviewDetailModal">
+	<div class="modal fade" id="detailModal">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			</div>
@@ -85,7 +85,7 @@
 	moduleURL = "[[@{/reviews}]]";
 	
 	$(document).ready(function() {
-		handleDetailLink(".link-detail-review", "#reviewDetailModal");
+		handleDefaultDetailLinkClick();
 	});
 	
 	

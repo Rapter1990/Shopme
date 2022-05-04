@@ -20,6 +20,7 @@ import com.shopme.common.entity.question.Question;
 import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.ProductService;
 import com.shopme.service.QuestionService;
+import com.shopme.service.QuestionVoteService;
 import com.shopme.util.AuthenticationControllerHelperUtil;
 
 @Controller
@@ -33,13 +34,17 @@ public class QuestionController {
 	
 	private AuthenticationControllerHelperUtil authenticationControllerHelperUtil;
 	
+	private QuestionVoteService voteService;
+	
 	@Autowired
 	public QuestionController(QuestionService questionService, ProductService productService,
-			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil,
+			QuestionVoteService voteService) {
 		super();
 		this.questionService = questionService;
 		this.productService = productService;
 		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
+		this.voteService = voteService;
 	}
 
 	@GetMapping("/questions/{productAlias}") 
@@ -63,6 +68,15 @@ public class QuestionController {
 		Page<Question> page = questionService.listQuestionsOfProduct(productAlias, pageNum, sortField, sortDir);
 		List<Question> listQuestions = page.getContent();
 		Product product = productService.getProduct(productAlias);
+		
+		Customer customer = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		LOGGER.info("QuestionController | listQuestionsOfProductByPage | customer : " + customer.getFullName());
+		
+		if (customer != null) {
+			voteService.markQuestionsVotedForProductByCustomer(listQuestions, product.getId(), customer.getId());
+		}	
+		
 
 		LOGGER.info("QuestionController | listQuestionsOfProductByPage | totalPages : " + page.getTotalPages());
 		LOGGER.info("QuestionController | listQuestionsOfProductByPage | totalItems : " + page.getTotalElements());
@@ -70,7 +84,7 @@ public class QuestionController {
 		LOGGER.info("QuestionController | listQuestionsOfProductByPage | sortField : " + sortField);
 		LOGGER.info("QuestionController | listQuestionsOfProductByPage | sortDir : " + sortDir);
 		LOGGER.info("QuestionController | listQuestionsOfProductByPage | reverseSortDir : " + (sortDir.equals("asc") ? "desc" : "asc"));
-					
+		
 		model.addAttribute("totalPages", page.getTotalPages());
 		model.addAttribute("totalItems", page.getTotalElements());
 		model.addAttribute("currentPage", pageNum);

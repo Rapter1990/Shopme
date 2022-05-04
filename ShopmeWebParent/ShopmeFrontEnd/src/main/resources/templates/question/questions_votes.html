@@ -11,6 +11,7 @@
 							th:classappend="${question.upvotedByCurrentCustomer ? 'fas' : 'far'}"
 							th:id="'linkVoteUp-question-' + ${question.id}"
 							th:questionId="${question.id}"
+							th:href="@{'/vote_question/' + ${question.id} + '/up'}"
 						   	></a>
 					</div>
 					
@@ -23,6 +24,7 @@
 							th:classappend="${question.downvotedByCurrentCustomer ? 'fas' : 'far'}"
 							th:id="'linkVoteDown-question-' + ${question.id}"
 							th:questionId="${question.id}"
+							th:href="@{'/vote_question/' + ${question.id} + '/down'}"
 						   	></a>
 					</div>
 				</div>

@@ -27,6 +27,7 @@ import com.shopme.service.CategoryService;
 import com.shopme.service.CustomerService;
 import com.shopme.service.ProductService;
 import com.shopme.service.QuestionService;
+import com.shopme.service.QuestionVoteService;
 import com.shopme.service.ReviewService;
 import com.shopme.service.ReviewVoteService;
 import com.shopme.util.AuthenticationControllerHelperUtil;
@@ -48,10 +49,13 @@ public class ProductController {
 	
 	private QuestionService questionService;
 	
+	private QuestionVoteService questionVoteService;
+	
 	@Autowired
 	public ProductController(CategoryService categoryService, ProductService productService,
 			ReviewService reviewService, ReviewVoteService reviewVoteService,QuestionService questionService,
-			AuthenticationControllerHelperUtil authenticationControllerHelperUtil) {
+			AuthenticationControllerHelperUtil authenticationControllerHelperUtil,
+			QuestionVoteService questionVoteService) {
 		super();
 		this.categoryService = categoryService;
 		this.productService = productService;
@@ -59,6 +63,7 @@ public class ProductController {
 		this.reviewVoteService = reviewVoteService;
 		this.questionService = questionService;
 		this.authenticationControllerHelperUtil = authenticationControllerHelperUtil;
+		this.questionVoteService = questionVoteService;
 	}
 
 	@GetMapping("/c/{category_alias}")
@@ -164,6 +169,8 @@ public class ProductController {
 				reviewVoteService.markReviewsVotedForProductByCustomer(listReviews.getContent(), 
 						                                         product.getId(), 
 						                                         customer.getId());
+				
+				questionVoteService.markQuestionsVotedForProductByCustomer(listQuestions, product.getId(), customer.getId());
 				
 				if (customerReviewed) {
 					model.addAttribute("customerReviewed", customerReviewed);

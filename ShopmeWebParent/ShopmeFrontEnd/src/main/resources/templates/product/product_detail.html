@@ -39,8 +39,13 @@
 					<input type="text" class="product-detail-rating-star" dir="ltr" data-size="md"
 						th:value="${product.averageRating}"/>
 				</div>
+				
 				<div class="col-xs ml-1 mt-3">
 					<a th:href="@{${product.URI} + '#review'}">[[${product.reviewCount}]] rating(s)</a>
+				</div>
+				
+				<div class="col-xs ml-3 mt-3">
+					<a th:href="@{${product.URI} + '#qa'}">[[${numberOfAnsweredQuestions}]] answered questions</a>
 				</div>
 			</div>
 			<div>
@@ -136,6 +141,16 @@
 			$("#carouselExampleIndicators").carousel(imageIndex);
 		});
 		
+		$(".linkVoteReview").on("click", function(e) {
+			e.preventDefault();
+			doVote($(this), "review");
+		});
+
+		$(".linkVoteQuestion").on("click", function(e) {
+			e.preventDefault();
+			doVote($(this), "question");
+		});
+		
 	});
 	
 </script>
@@ -144,6 +159,6 @@
 <script type="text/javascript" th:src="@{/js/common_modal.js}"></script>
 <script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>
 <script type="text/javascript" th:src="@{/js/add_to_cart.js}"></script>
-<script type="text/javascript" th:src="@{/js/review_vote.js}"></script>
+<script type="text/javascript" th:src="@{/js/common_vote.js}"></script>
 <script type="text/javascript" th:src="@{/js/question_post.js}"></script>
 </html> 

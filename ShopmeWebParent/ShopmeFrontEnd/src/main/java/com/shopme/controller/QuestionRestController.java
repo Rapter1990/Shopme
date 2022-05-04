@@ -1,6 +1,7 @@
 package com.shopme.controller;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -59,5 +60,33 @@ public class QuestionRestController {
 
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	/*@PostMapping("/post_question/{productId}")
+	public ResponseEntity<?> postQuestion(@RequestBody Map<String,String> data,
+			@PathVariable(name = "productId") Integer productId,
+			HttpServletRequest request) throws ProductNotFoundException, IOException {
+		
+		LOGGER.info("QuestionRestController | postQuestion is called");
+		
+		LOGGER.info("QuestionRestController | postQuestion | productId : " + productId);
+		
+		String questionContent = data.get("questionContent");
+		LOGGER.info("QuestionRestController | postQuestion | questionContent : " + questionContent);
+		
+		Question question = new Question();
+		question.setQuestionContent(questionContent);
+		
+		Customer customerUser = authenticationControllerHelperUtil.getAuthenticatedCustomer(request);
+		
+		LOGGER.info("QuestionRestController | postQuestion | customerUser : " + customerUser.getFullName());
+		
+		if (customerUser == null) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+		questionService.saveNewQuestion(question, customerUser, productId);
+
+		return new ResponseEntity<>(HttpStatus.OK);
+	}*/
 	
 }

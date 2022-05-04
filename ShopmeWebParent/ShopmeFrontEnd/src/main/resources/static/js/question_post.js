@@ -15,7 +15,7 @@ function postQuestion() {
 	question = $("#question").val();
 
 	jsonData = {questionContent: question};
-
+	
 	$.ajax({
 		type: 'POST',
 		url: url,

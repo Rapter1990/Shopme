@@ -48,4 +48,12 @@ public class QuestionVote implements Serializable{
 	public boolean isDownvoted() {
 		return this.votes == VOTE_DOWN_POINT;
 	}
+	
+	public void voteUp() {
+		this.votes = VOTE_UP_POINT;
+	}
+
+	public void voteDown() {
+		this.votes = VOTE_DOWN_POINT;
+	}
 }

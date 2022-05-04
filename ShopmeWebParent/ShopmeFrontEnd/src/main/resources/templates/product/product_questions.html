@@ -37,7 +37,14 @@
 	var csrfHeaderName = "[[${_csrf.headerName}]]";
 	var csrfValue = "[[${_csrf.token}]]";
 
+	$(document).ready(function() {
+		$(".linkVoteQuestion").on("click", function(e) {
+			e.preventDefault();
+			doVote($(this), "question");
+		});		
+	});
 			
 </script>
 <script th:src="@{/js/common_modal.js}"></script>
+<script th:src="@{/js/common_vote.js}"></script>
 </html>

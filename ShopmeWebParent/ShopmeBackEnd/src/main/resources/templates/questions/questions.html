@@ -33,7 +33,7 @@
 					<td>
 						<a th:href="@{'/customers/detail/' + ${question.asker.id}}" class="link-customer-detail">[[${question.asker.fullName}]]</a>
 					</td>
-					<td th:text="${question.askTime}">Ask Time</td>
+					<td><div th:replace="fragments :: format_time(${question.askTime})"></div></td>
 
 
 					<td>
