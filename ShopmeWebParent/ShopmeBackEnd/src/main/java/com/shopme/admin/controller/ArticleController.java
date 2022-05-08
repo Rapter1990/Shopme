@@ -7,10 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.paging.PagingAndSortingParam;
 import com.shopme.admin.service.ArticleService;
+import com.shopme.common.entity.article.Article;
+import com.shopme.common.exception.ArticleNotFoundException;
 
 @Controller
 public class ArticleController {
@@ -38,5 +41,28 @@ public class ArticleController {
 		
 		service.listByPage(pageNum, helper);
 		return "articles/articles";
+	}
+	
+	@GetMapping("/articles/detail/{id}")
+	public String viewArticle(@PathVariable(name = "id") Integer id, RedirectAttributes ra,  Model model) {
+		
+		LOGGER.info("ArticleController | viewArticle is called");
+		
+		try {
+			Article article = service.get(id);
+			
+			LOGGER.info("ArticleController | viewArticle | article title : " + article.getTitle());
+			
+			model.addAttribute("article", article);
+
+			return "articles/article_detail_modal";
+
+		} catch (ArticleNotFoundException ex) {
+			
+			LOGGER.info("ArticleController | viewArticle | messageSuccess : " + "Could not find any article with ID " + id);
+			
+			ra.addFlashAttribute("messageSuccess", "Could not find any article with ID " + id);
+			return defaultRedirectURL;
+		}		
 	}
 }

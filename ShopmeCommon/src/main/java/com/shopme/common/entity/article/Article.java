@@ -50,5 +50,12 @@ public class Article extends IdBasedEntity implements Serializable{
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	
+	public Article(Integer id, String title, ArticleType type, Date updatedTime, boolean published, User user) {
+		this.id = id;
+		this.title = title;
+		this.type = type;
+		this.updatedTime = updatedTime;
+		this.published = published;
+		this.user = user;
+	}
 }
