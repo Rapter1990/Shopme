@@ -65,4 +65,17 @@ public class ArticleController {
 			return defaultRedirectURL;
 		}		
 	}
+	
+	@GetMapping("/articles/new")
+	public String newArticle(Model model) {
+		
+		LOGGER.info("ArticleController | newArticle is called");
+		
+		model.addAttribute("article", new Article());
+		model.addAttribute("pageTitle", "Create New Article");
+		
+		LOGGER.info("ArticleController | newArticle | pageTitle : " + "Create New Article");
+
+		return "articles/article_form";
+	}
 }

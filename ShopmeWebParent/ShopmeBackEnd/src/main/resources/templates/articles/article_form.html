@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<head th:replace="fragments :: page_head(${pageTitle}, 'tag')" />
+	<link rel="stylesheet" th:href="@{/richtext/richtext.min.css}" />
+	<script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Articles | [[${pageTitle}]]</h2>	
+	</div>
+
+	<form th:action="@{/articles/save}" method="post" style="width: 90%; margin: 0 auto"
+		th:object="${article}">
+		<input type="hidden" th:field="*{id}" />
+	<div class="border border-secondary rounded p-3">
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Title:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" th:field="*{title}" required minlength="5" maxlength="256"  />
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Alias:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" th:field="*{alias}" minlength="5" maxlength="500"  
+					placeholder="If leaved empty, default alias will be same as title with spaces replaced by dashes"/>
+			</div>
+		</div>
+
+		<div class="form-group row">
+		    <label for="content" class="col-sm-2 col-form-label">Content:</label>
+		    <div class="col-sm-10">
+		      <textarea class="form-control" th:field="*{content}" rows="10" required></textarea>
+		    </div>
+		</div>
+
+		<div class="form-group row">
+		  	<label for="type" class="col-sm-2 col-form-label">Type:</label>
+		  	<div class="col-sm-10">
+		  		<select th:field="*{type}" class="form-control" style="max-width: 190px">
+		  			<option value="MENU_BOUND">Menu-Bound Article</option>
+		  			<option value="FREE">Free Article</option>
+		  		</select>
+		 	</div>
+		</div>
+
+		<div class="form-group row">
+		  	<label for="published" class="col-sm-2 col-form-label">Published:</label>
+		  	<div class="col-sm-10">
+		  		<input type="checkbox" th:field="*{published}" /> 
+		  	</div>
+		</div>			
+
+		<div class="text-center">
+			<input type="submit" value="Save" class="btn btn-primary m-3" />
+			<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+		</div>
+	</div>
+	</form>
+
+	<div th:replace="modal_fragments :: modal_dialog"></div>
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script type="text/javascript">
+	moduleURL = "[[@{/articles}]]";
+	$("#content").richText();
+</script>
+<script th:src="@{/js/common_form.js}"></script>
+</body>
+</html> 
