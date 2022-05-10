@@ -48,7 +48,7 @@ public class Product extends IdBasedEntity implements Serializable{
 	@Column(length = 4096, nullable = false, name = "full_description")
 	private String fullDescription;
 
-	@Column(name = "created_time")
+	@Column(name = "created_time", nullable = false, updatable = false)
 	private Date createdTime;
 
 	@Column(name = "updated_time")
