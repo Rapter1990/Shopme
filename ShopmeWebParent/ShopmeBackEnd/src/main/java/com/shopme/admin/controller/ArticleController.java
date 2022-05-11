@@ -3,15 +3,19 @@ package com.shopme.admin.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.paging.PagingAndSortingParam;
+import com.shopme.admin.security.ShopmeUserDetails;
 import com.shopme.admin.service.ArticleService;
+import com.shopme.common.entity.User;
 import com.shopme.common.entity.article.Article;
 import com.shopme.common.exception.ArticleNotFoundException;
 
@@ -77,5 +81,24 @@ public class ArticleController {
 		LOGGER.info("ArticleController | newArticle | pageTitle : " + "Create New Article");
 
 		return "articles/article_form";
+	}
+	
+	@PostMapping("/articles/save")
+	public String saveArticle(Article article, RedirectAttributes ra, 
+			@AuthenticationPrincipal ShopmeUserDetails userDetails) {
+
+		LOGGER.info("ArticleController | saveArticle is called");
+		
+		User authenticatedUser = userDetails.getUser();
+		
+		LOGGER.info("ArticleController | saveArticle | authenticatedUser : " + authenticatedUser.getFullName());
+		
+		service.save(article, authenticatedUser);
+		
+		LOGGER.info("ArticleController | saveArticle | message : " + "The article has been saved successfully.");
+
+		ra.addFlashAttribute("message", "The article has been saved successfully.");
+
+		return defaultRedirectURL;
 	}
 }

@@ -1,5 +1,6 @@
 package com.shopme.admin.service;
 
+import java.util.Date;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.shopme.admin.paging.PagingAndSortingHelper;
 import com.shopme.admin.repository.ArticleRepository;
 import com.shopme.admin.service.impl.IArticleService;
+import com.shopme.common.entity.User;
 import com.shopme.common.entity.article.Article;
 import com.shopme.common.exception.ArticleNotFoundException;
 
@@ -36,6 +38,20 @@ public class ArticleService implements IArticleService{
 		} catch (NoSuchElementException ex) {
 			throw new ArticleNotFoundException("Could not find any article with ID " + id);
 		}
+	}
+
+	@Override
+	public void save(Article article, User user) {
+		// TODO Auto-generated method stub
+		
+		if (article.getAlias() == null || article.getAlias().isEmpty()) {
+			article.setAlias(article.getTitle().replaceAll(" ", "-"));
+		}
+
+		article.setUpdatedTime(new Date());
+		article.setUser(user);
+
+		repo.save(article);
 	}
 
 
