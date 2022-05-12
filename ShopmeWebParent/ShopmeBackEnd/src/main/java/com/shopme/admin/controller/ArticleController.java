@@ -97,8 +97,33 @@ public class ArticleController {
 		
 		LOGGER.info("ArticleController | saveArticle | message : " + "The article has been saved successfully.");
 
-		ra.addFlashAttribute("message", "The article has been saved successfully.");
+		ra.addFlashAttribute("messageSuccess", "The article has been saved successfully.");
 
 		return defaultRedirectURL;
+	}
+	
+	@GetMapping("/articles/edit/{id}")
+	public String editArticle(@PathVariable(name = "id") Integer id, Model model,
+			RedirectAttributes ra) {
+		
+		LOGGER.info("ArticleController | editArticle is called");
+		
+		try {
+			Article article = service.get(id);
+			
+			LOGGER.info("ArticleController | editArticle | article content: " + article.getContent());
+			model.addAttribute("article", article);
+			
+			LOGGER.info("ArticleController | editArticle | pageTitle: " + "Edit Article (ID: " + id + ")");
+			model.addAttribute("pageTitle", "Edit Article (ID: " + id + ")");
+
+			return "articles/article_form"; 
+
+		} catch (ArticleNotFoundException ex) {
+			LOGGER.info("ArticleController | editArticle | messageError: " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+
+			return defaultRedirectURL;
+		}		
 	}
 }
