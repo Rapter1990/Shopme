@@ -54,5 +54,14 @@ public class ArticleService implements IArticleService{
 		repo.save(article);
 	}
 
+	@Override
+	public void delete(Integer id) throws ArticleNotFoundException {
+		// TODO Auto-generated method stub
+		if (!repo.existsById(id)) {
+			throw new ArticleNotFoundException("Could not find any article with ID " + id);			
+		}
+		repo.deleteById(id);
+	}
+
 
 }

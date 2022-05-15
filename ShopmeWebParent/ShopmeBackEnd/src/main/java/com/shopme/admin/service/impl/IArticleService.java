@@ -10,4 +10,5 @@ public interface IArticleService {
 	public void listByPage(int pageNum, PagingAndSortingHelper helper);
 	public Article get(Integer id) throws ArticleNotFoundException;
 	public void save(Article article, User user);
+	public void delete(Integer id) throws ArticleNotFoundException;
 }

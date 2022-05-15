@@ -126,4 +126,24 @@ public class ArticleController {
 			return defaultRedirectURL;
 		}		
 	}
+	
+	
+	@GetMapping("/articles/delete/{id}")
+	public String deleteArticle(@PathVariable(name = "id") Integer id, RedirectAttributes ra) {
+		
+		LOGGER.info("ArticleController | deleteArticle is called");
+		LOGGER.info("ArticleController | deleteArticle | id : " + id);
+		
+		try {
+			service.delete(id);
+			
+			LOGGER.info("ArticleController | editArticle | messageSuccess: " + "The article ID " + id + " has been deleted.");
+			ra.addFlashAttribute("messageSuccess", "The article ID " + id + " has been deleted.");
+		} catch (ArticleNotFoundException ex) {
+			LOGGER.info("ArticleController | deleteArticle | messageError: " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return defaultRedirectURL;
+	}
 }
