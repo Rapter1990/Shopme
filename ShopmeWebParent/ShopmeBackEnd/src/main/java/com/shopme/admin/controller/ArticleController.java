@@ -146,4 +146,34 @@ public class ArticleController {
 
 		return defaultRedirectURL;
 	}
+	
+	@GetMapping("/articles/{id}/enabled/{publishStatus}")
+	public String publishArticle(@PathVariable("id") Integer id, 
+			@PathVariable("publishStatus") String publishStatus, RedirectAttributes ra) {
+		
+		LOGGER.info("ArticleController | publishArticle is called");
+		LOGGER.info("ArticleController | publishArticle | id : " + id);
+		LOGGER.info("ArticleController | publishArticle | publishStatus : " + publishStatus);
+		
+		try {
+			boolean published = Boolean.parseBoolean(publishStatus);	
+			
+			LOGGER.info("ArticleController | publishArticle | published : " + published);
+			
+			service.updatePublishStatus(id, published);		
+
+			String publishResult = published ? "published." : "unpublished.";
+			
+			LOGGER.info("ArticleController | publishArticle | publishResult : " + publishResult);
+			
+			LOGGER.info("ArticleController | publishArticle | messageSuccess : " + "The article ID " + id + " has been " + publishResult);
+			ra.addFlashAttribute("messageSuccess", "The article ID " + id + " has been " + publishResult);
+				
+		} catch (ArticleNotFoundException ex) {
+			LOGGER.info("ArticleController | publishArticle | messageError: " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return defaultRedirectURL;
+	}
 }

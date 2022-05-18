@@ -63,5 +63,14 @@ public class ArticleService implements IArticleService{
 		repo.deleteById(id);
 	}
 
+	@Override
+	public void updatePublishStatus(Integer id, boolean published) throws ArticleNotFoundException {
+		// TODO Auto-generated method stub
+		if (!repo.existsById(id)) {
+			throw new ArticleNotFoundException("Could not find any article with ID " + id);
+		}
+		repo.updatePublishStatus(id, published);
+	}
+
 
 }

@@ -2,6 +2,7 @@ package com.shopme.admin.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.shopme.admin.paging.SearchRepository;
@@ -17,4 +18,7 @@ public interface ArticleRepository extends SearchRepository<Article, Integer> {
 			+ "FROM Article a WHERE a.title LIKE %?1% OR a.content LIKE %?1%")
 	public Page<Article> findAll(String keyword, Pageable pageable);
 	
+	@Query("UPDATE Article a SET a.published = ?2 WHERE a.id = ?1")
+	@Modifying
+	public void updatePublishStatus(Integer id, boolean published);
 }

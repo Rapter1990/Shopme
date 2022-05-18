@@ -11,4 +11,5 @@ public interface IArticleService {
 	public Article get(Integer id) throws ArticleNotFoundException;
 	public void save(Article article, User user);
 	public void delete(Integer id) throws ArticleNotFoundException;
+	public void updatePublishStatus(Integer id, boolean published) throws ArticleNotFoundException;
 }
