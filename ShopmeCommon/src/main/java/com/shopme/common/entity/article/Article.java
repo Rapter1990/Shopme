@@ -58,4 +58,9 @@ public class Article extends IdBasedEntity implements Serializable{
 		this.published = published;
 		this.user = user;
 	}
+	
+	@Override
+	public String toString() {
+		return "Article [title=" + title + ", type=" + type + "]";
+	}
 }
