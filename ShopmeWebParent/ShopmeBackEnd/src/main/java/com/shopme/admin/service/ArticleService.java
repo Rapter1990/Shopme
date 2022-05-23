@@ -1,6 +1,7 @@
 package com.shopme.admin.service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
@@ -13,6 +14,7 @@ import com.shopme.admin.repository.ArticleRepository;
 import com.shopme.admin.service.impl.IArticleService;
 import com.shopme.common.entity.User;
 import com.shopme.common.entity.article.Article;
+import com.shopme.common.entity.article.ArticleType;
 import com.shopme.common.exception.ArticleNotFoundException;
 
 @Service
@@ -70,6 +72,12 @@ public class ArticleService implements IArticleService{
 			throw new ArticleNotFoundException("Could not find any article with ID " + id);
 		}
 		repo.updatePublishStatus(id, published);
+	}
+
+	@Override
+	public List<Article> findByTypeOrderByTitle(ArticleType type) {
+		// TODO Auto-generated method stub
+		return repo.findByTypeOrderByTitle(ArticleType.MENU_BOUND);
 	}
 
 
