@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Menu Items - Shopme Admin', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Menus</h2>	
+		<a th:href="@{/menus/new}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
+	</div>
+
+	<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
+		[[${message}]]
+	</div>	
+
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Type</th>
+					<th class="hideable-column">Article</th>
+					<th>Enabled</th>
+					<th>Position</th>
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr th:each="menuItem : ${listMenuItems}">
+					<td>[[${menuItem.id}]]</td>
+					<td>[[${menuItem.title}]]</td>
+					<td>[[${menuItem.type}]]</td>
+					<td class="hideable-column">
+						<a th:href="@{'/articles/detail/' + ${menuItem.article.id}}" class="link-detail" th:title="${menuItem.article.title}">[[${menuItem.article.title}]]</a>
+					</td>
+					<td>
+						<div th:replace="fragments :: status(${menuItem.enabled}, 'menu item', '/menus/' + ${menuItem.id})" />				
+					</td>
+					<td>
+						<a th:href="@{'/menus/up/' + ${menuItem.id}}" class="fas fa-chevron-up fa-2x" title="Move this menu item up"></a>
+						<span class="m-3">[[${menuItem.position}]]</span>
+						<a th:href="@{'/menus/down/' + ${menuItem.id}}" class="fas fa-chevron-down fa-2x" title="Move this menu item down"></a>					
+					</td>
+					<td>
+						<div th:replace="fragments :: edit('menu item', '/menus/edit/' + ${menuItem.id})" />
+						&nbsp; 
+						<div th:replace="fragments :: delete('menu item', ${menuItem.id}, '/menus/delete/' + ${menuItem.id}, true)" />					
+					</td>	
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="less-details">
+		<th:block th:each="menuItem : ${listMenuItems}">
+			<div class="row m-1">
+				<div class="col-1">[[${menuItem.id}]]</div>
+				<div class="col">
+					<b>[[${menuItem.title}]]</b> <i>([[${menuItem.type}]])</i>
+				</div>
+			</div>
+			<div class="row m-1">
+				<div class="col-2">
+					<div th:replace="fragments :: status(${menuItem.enabled}, 'menu item', '/menus/' + ${menuItem.id})" />			
+				</div>
+				<div class="col-2">
+					<a th:href="@{'/menus/up/' + ${menuItem.id}}" class="fas fa-chevron-up fa-2x" title="Move this menu item up"></a>
+				</div>
+				<div class="col-2">					
+					<span class="m-3">[[${menuItem.position}]]</span>
+				</div>
+				<div class="col-2">
+					<a th:href="@{'/menus/down/' + ${menuItem.id}}" class="fas fa-chevron-down fa-2x" title="Move this menu item down"></a>				
+				</div>
+				<div class="col-2">
+					<div th:replace="fragments :: edit('menu item', '/menus/edit/' + ${menuItem.id})" />
+				</div>
+				<div class="col-2"> 
+					<div th:replace="fragments :: delete('menu item', ${menuItem.id}, '/menus/delete/' + ${menuItem.id}, true)" />				
+				</div>
+			</div>
+			<div>&nbsp;</div>
+		</th:block>
+	</div>	
+	
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+</body>
+</html> 
