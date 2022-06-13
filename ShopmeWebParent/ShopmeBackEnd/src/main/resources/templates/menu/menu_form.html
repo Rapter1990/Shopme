@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Menus | [[${pageTitle}]]</h2>	
+	</div>
+
+	<form th:action="@{/menus/save}" method="post" style="width: 90%; margin: 0 auto" th:object="${menu}">
+		<input type="hidden" th:field="*{id}" />
+		<input type="hidden" th:field="*{position}" />
+	<div class="border border-secondary rounded p-3">
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Title:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" th:field="*{title}" required minlength="5" maxlength="128"  />
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Alias:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" th:field="*{alias}" minlength="5" maxlength="256"  
+					placeholder="If left empty, default alias will be same as title with spaces replaced by dashes"/>
+			</div>
+		</div>
+
+		  <div class="form-group row">
+		    <label class="col-sm-2 col-form-label">Article:</label>
+		    <div class="col-sm-10">
+		    	<select th:field="*{article}" required="required" class="form-control">
+		    		<th:block th:each="menuArticle : ${listArticles}">
+		    		<option th:value="${menuArticle.id}">[[${menuArticle.title}]]</option>
+		    		</th:block>
+		    	</select>
+		    </div>
+		  </div>
+
+		<div class="form-group row">
+		  	<label class="col-sm-2 col-form-label">Type:</label>
+		  	<div class="col-sm-10">
+		  		<select th:field="*{type}" class="form-control" style="max-width: 150px">
+		  			<option value="HEADER">Header Menu</option>
+		  			<option value="FOOTER">Footer Menu</option>
+		  		</select>
+		 	</div>
+		</div>
+
+		<div class="form-group row">
+		  	<label class="col-sm-2 col-form-label">Enabled:</label>
+		  	<div class="col-sm-10">
+		  		<input type="checkbox" th:field="*{enabled}" /> 
+		  	</div>
+		</div>			
+
+		<div class="text-center">
+			<input type="submit" value="Save" class="btn btn-primary m-3" />
+			<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+		</div>
+	</div>
+	</form>
+
+	<div th:replace="modal_fragments :: modal_dialog"></div>
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script type="text/javascript">
+	moduleURL = "[[@{/menus}]]";
+</script>
+<script th:src="@{/js/common_form.js}"></script>
+</body>
+</html> 

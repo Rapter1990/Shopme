@@ -79,6 +79,10 @@ public class ArticleService implements IArticleService{
 		// TODO Auto-generated method stub
 		return repo.findByTypeOrderByTitle(ArticleType.MENU_BOUND);
 	}
+	
+	public List<Article> listArticlesForMenu() {
+		return repo.findByTypeOrderByTitle(ArticleType.MENU_BOUND);
+	}
 
 
 }

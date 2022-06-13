@@ -7,4 +7,5 @@ import com.shopme.common.entity.menu.Menu;
 public interface IMenuService{
 
 	public List<Menu> listAll();
+	public void save(Menu menu);
 }

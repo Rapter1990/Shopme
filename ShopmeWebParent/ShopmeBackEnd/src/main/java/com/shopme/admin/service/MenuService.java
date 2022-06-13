@@ -19,4 +19,19 @@ public class MenuService implements IMenuService{
 		return repo.findAllByOrderByTypeAscPositionAsc();
 	}
 
+	@Override
+	public void save(Menu menu) {
+		// TODO Auto-generated method stub
+		if (menu.getAlias() == null || menu.getAlias().isEmpty()) {
+			menu.setAlias(menu.getTitle().replaceAll(" ", "-"));
+		}
+		
+		if (menu.getId() == null) {
+			Long newPosition = repo.countByType(menu.getType()) + 1;
+			menu.setPosition(newPosition.intValue());
+		}
+		
+		repo.save(menu);
+	}
+
 }
