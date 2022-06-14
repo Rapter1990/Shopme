@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -15,6 +16,7 @@ import com.shopme.admin.service.ArticleService;
 import com.shopme.admin.service.MenuService;
 import com.shopme.common.entity.article.Article;
 import com.shopme.common.entity.menu.Menu;
+import com.shopme.common.exception.MenuItemNotFoundException;
 
 @Controller
 public class MenuController {
@@ -76,5 +78,34 @@ public class MenuController {
 		LOGGER.info("MenuController | saveMenu | messageSuccess : " + "The menu item has been saved successfully.");
 
 		return defaultRedirectURL;
+	}
+	
+	@GetMapping("/menus/edit/{id}")
+	public String editMenu(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes ra) {
+		
+		LOGGER.info("MenuController | editMenu is called");
+		LOGGER.info("MenuController | editMenu | id : " + id);
+		
+		try {
+			Menu menu = menuService.get(id);
+			
+			LOGGER.info("MenuController | editMenu | id : " + id);
+			
+			List<Article> listArticles = articleService.listArticlesForMenu();
+			
+			LOGGER.info("MenuController | editMenu | listArticles : " + listArticles.toString());
+			
+			LOGGER.info("MenuController | editMenu | menu : " + menu.toString());
+
+			model.addAttribute("menu", menu);
+			model.addAttribute("listArticles", listArticles);
+			model.addAttribute("pageTitle", "Edit Menu Item (ID: " + id + ")");
+
+			return "menus/menu_form";
+		} catch (MenuItemNotFoundException ex) {
+			ra.addFlashAttribute("messageError", ex.getMessage());
+			LOGGER.info("MenuController | editMenu | messageError : " + ex.getMessage());
+			return defaultRedirectURL;
+		}
 	}
 }
