@@ -1,6 +1,9 @@
 package com.shopme.admin.menu;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -13,6 +16,7 @@ import org.springframework.test.annotation.Rollback;
 
 import com.shopme.admin.repository.MenuRepository;
 import com.shopme.common.entity.menu.Menu;
+import com.shopme.common.entity.menu.MenuType;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -29,4 +33,35 @@ public class MenuRepositoryTests {
 
 		listMenuItems.forEach(System.out::println);
 	}
+	
+	@Test
+	public void testCountHeaderMenus() {
+		Long numberOfFooterMenus = repo.countByType(MenuType.HEADER);
+		assertEquals(1, numberOfFooterMenus);
+	}
+	
+	@Test
+	public void testCountFooterMenus() {
+		Long numberOfFooterMenus = repo.countByType(MenuType.FOOTER);
+		assertEquals(1, numberOfFooterMenus);
+	}	
+
+	@Test
+	public void testDisableMenuItem() {
+		Integer menuId = 1;
+		repo.updateEnabledStatus(menuId, false);
+		Menu updatedMenu = repo.findById(menuId).get();
+
+		assertFalse(updatedMenu.isEnabled());
+	}
+
+	@Test
+	public void testEnableMenuItem() {
+		Integer menuId = 1;
+		repo.updateEnabledStatus(menuId, true);
+		Menu updatedMenu = repo.findById(menuId).get();
+
+		assertTrue(updatedMenu.isEnabled());
+	}	
+
 }
