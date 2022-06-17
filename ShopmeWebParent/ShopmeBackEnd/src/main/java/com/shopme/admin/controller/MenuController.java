@@ -108,4 +108,36 @@ public class MenuController {
 			return defaultRedirectURL;
 		}
 	}
+	
+	@GetMapping("/menus/{id}/enabled/{enabledStatus}")
+	public String updateMenuEnabledStatus(@PathVariable("id") Integer id, 
+			@PathVariable("enabledStatus") String enabledStatus, RedirectAttributes ra) {
+		
+		LOGGER.info("MenuController | updateMenuEnabledStatus is called");
+		LOGGER.info("MenuController | updateMenuEnabledStatus | id : " + id);
+		LOGGER.info("MenuController | updateMenuEnabledStatus | enabledStatus : " + enabledStatus);
+		
+		try {
+			boolean enabled = Boolean.parseBoolean(enabledStatus);
+			
+			LOGGER.info("MenuController | updateMenuEnabledStatus | enabled : " + enabled);
+			
+			menuService.updateEnabledStatus(id, enabled);		
+
+			String updateResult = enabled ? "enabled." : "disabled.";
+			
+			LOGGER.info("MenuController | updateMenuEnabledStatus | updateResult : " + updateResult);
+			
+			ra.addFlashAttribute("messageSuccess", "The menu item ID " + id + " has been " + updateResult);
+			
+			LOGGER.info("MenuController | updateMenuEnabledStatus | messageSuccess : " + "The menu item ID " + id + " has been " + updateResult);
+			
+		} catch (MenuItemNotFoundException ex) {
+			LOGGER.info("MenuController | updateMenuEnabledStatus | messageError : " + ex.getMessage());
+			
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return defaultRedirectURL;
+	}
 }
