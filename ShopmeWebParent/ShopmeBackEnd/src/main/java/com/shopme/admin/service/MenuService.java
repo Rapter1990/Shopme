@@ -55,4 +55,13 @@ public class MenuService implements IMenuService{
 		repo.updateEnabledStatus(id, enabled);
 	}
 
+	@Override
+	public void delete(Integer id) throws MenuItemNotFoundException {
+		// TODO Auto-generated method stub
+		if (!repo.existsById(id)) {
+			throw new MenuItemNotFoundException("Could not find any menu item with ID " + id);
+		}
+		repo.deleteById(id);
+	}
+
 }

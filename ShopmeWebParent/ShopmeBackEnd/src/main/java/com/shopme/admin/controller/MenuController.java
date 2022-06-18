@@ -140,4 +140,26 @@ public class MenuController {
 
 		return defaultRedirectURL;
 	}
+	
+	
+	@GetMapping("/menus/delete/{id}")
+	public String deleteMenu(@PathVariable(name = "id") Integer id, RedirectAttributes ra) {
+		
+		LOGGER.info("MenuController | deleteMenu is called");
+		
+		try {
+			menuService.delete(id);
+
+			LOGGER.info("MenuController | deleteMenu | messageSuccess : " + "The menu item ID " + id + " has been deleted.");
+			
+			ra.addFlashAttribute("messageSuccess", "The menu item ID " + id + " has been deleted.");
+		} catch (MenuItemNotFoundException ex) {
+			LOGGER.info("MenuController | deleteMenu | messageError : " + ex.getMessage());
+			
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return defaultRedirectURL;
+	}
+	
 }

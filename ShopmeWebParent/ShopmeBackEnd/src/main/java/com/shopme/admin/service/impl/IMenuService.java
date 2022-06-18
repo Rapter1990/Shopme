@@ -11,4 +11,6 @@ public interface IMenuService{
 	public void save(Menu menu);
 	public Menu get(Integer id) throws MenuItemNotFoundException;
 	public void updateEnabledStatus(Integer id, boolean enabled) throws MenuItemNotFoundException;
+	public void delete(Integer id) throws MenuItemNotFoundException;
+	
 }
