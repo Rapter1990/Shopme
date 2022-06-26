@@ -3,13 +3,21 @@ package com.shopme.admin.service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopme.admin.error.MenuUnmoveableException;
 import com.shopme.admin.repository.MenuRepository;
 import com.shopme.admin.service.impl.IMenuService;
+import com.shopme.admin.util.MenuMoveDirection;
+import com.shopme.admin.util.MenuUtil;
 import com.shopme.common.entity.menu.Menu;
 import com.shopme.common.exception.MenuItemNotFoundException;
 
+@Service
+@Transactional
 public class MenuService implements IMenuService{
 	
 	@Autowired 
@@ -24,15 +32,14 @@ public class MenuService implements IMenuService{
 	@Override
 	public void save(Menu menu) {
 		// TODO Auto-generated method stub
-		if (menu.getAlias() == null || menu.getAlias().isEmpty()) {
-			menu.setAlias(menu.getTitle().replaceAll(" ", "-"));
-		}
-		
+		MenuUtil.setDefaultAlias(menu);
+
 		if (menu.getId() == null) {
-			Long newPosition = repo.countByType(menu.getType()) + 1;
-			menu.setPosition(newPosition.intValue());
+			MenuUtil.setPositionForNewMenu(repo,menu);
+		} else {
+			MenuUtil.setPositionForEditedMenu(repo,menu);
 		}
-		
+
 		repo.save(menu);
 	}
 
@@ -64,4 +71,18 @@ public class MenuService implements IMenuService{
 		repo.deleteById(id);
 	}
 
+	@Override
+	public void moveMenu(Integer id, MenuMoveDirection direction)
+			throws MenuUnmoveableException, MenuItemNotFoundException {
+		// TODO Auto-generated method stub
+		
+		if (direction.equals(MenuMoveDirection.UP)) {
+						
+			MenuUtil.moveMenuUp(repo,id);
+		} else {
+					
+			MenuUtil.moveMenuDown(repo,id);
+		}
+	}
+	
 }

@@ -10,7 +10,11 @@
 	</div>
 
 	<div th:if="${messageSuccess != null}" class="alert alert-success text-center">
-		[[${message}]]
+		[[${messageSuccess}]]
+	</div>
+	
+	<div th:if="${messageError != null}" class="alert alert-danger text-center">
+		[[${messageError}]]
 	</div>	
 
 	<div class="full-details">

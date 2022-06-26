@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.shopme.admin.error.MenuUnmoveableException;
 import com.shopme.admin.service.ArticleService;
 import com.shopme.admin.service.MenuService;
+import com.shopme.admin.util.MenuMoveDirection;
 import com.shopme.common.entity.article.Article;
 import com.shopme.common.entity.menu.Menu;
 import com.shopme.common.exception.MenuItemNotFoundException;
@@ -160,6 +162,35 @@ public class MenuController {
 		}
 
 		return defaultRedirectURL;
+	}
+	
+	@GetMapping("/menus/{direction}/{id}")
+	public String moveMenu(@PathVariable("direction") String direction, @PathVariable("id") Integer id, 
+			RedirectAttributes ra) {
+		
+		LOGGER.info("MenuController | moveMenu is called");
+		LOGGER.info("MenuController | moveMenu | direction : " + direction);
+		LOGGER.info("MenuController | moveMenu | id : " + id);
+		
+		try {
+			MenuMoveDirection moveDirection = MenuMoveDirection.valueOf(direction.toUpperCase());
+			menuService.moveMenu(id, moveDirection);
+
+			LOGGER.info("MenuController | moveMenu | messageSuccess : " + "The menu ID " + id + " has been moved up by one position.");
+			
+			ra.addFlashAttribute("messageSuccess", "The menu ID " + id + " has been moved up by one position.");
+
+		} catch (MenuUnmoveableException ex) {
+			
+			LOGGER.info("MenuController | moveMenu | MenuUnmoveableException messageError : " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		} catch (MenuItemNotFoundException ex) {
+			
+			LOGGER.info("MenuController | moveMenu | MenuUnmoveableException messageError : " + ex.getMessage());
+			ra.addFlashAttribute("messageError", ex.getMessage());
+		}
+
+		return defaultRedirectURL;		
 	}
 	
 }
