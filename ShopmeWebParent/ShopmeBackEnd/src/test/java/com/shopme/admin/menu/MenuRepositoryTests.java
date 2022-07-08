@@ -15,6 +15,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
 import com.shopme.admin.repository.MenuRepository;
+import com.shopme.common.entity.article.Article;
 import com.shopme.common.entity.menu.Menu;
 import com.shopme.common.entity.menu.MenuType;
 
@@ -25,6 +26,38 @@ public class MenuRepositoryTests {
 
 	@Autowired 
 	private MenuRepository repo;
+	
+	@Test
+	public void testCreateHeaderMenu() {
+		Menu menu = new Menu();
+		menu.setType(MenuType.HEADER);
+		menu.setTitle("About Shopme");
+		menu.setAlias("about");
+		menu.setEnabled(true);
+		menu.setPosition(1);
+
+		menu.setArticle(new Article(1));
+
+		Menu savedMenu = repo.save(menu);
+
+		assertTrue(savedMenu.getId() > 0);
+	}
+
+	@Test
+	public void testCreateFooterMenu() {
+		Menu menu = new Menu();
+		menu.setType(MenuType.FOOTER);
+		menu.setTitle("Shipping");
+		menu.setAlias("shipping");
+		menu.setEnabled(false);
+		menu.setPosition(2);
+
+		menu.setArticle(new Article(4));
+
+		Menu savedMenu = repo.save(menu);
+
+		assertTrue(savedMenu.getId() > 0);
+	}	
 	
 	@Test
 	public void testListMenuByTypeThenByPosition() {
@@ -62,6 +95,22 @@ public class MenuRepositoryTests {
 		Menu updatedMenu = repo.findById(menuId).get();
 
 		assertTrue(updatedMenu.isEnabled());
-	}	
+	}
+	
+	@Test
+	public void testListHeaderMenuItems() {
+		List<Menu> listHeaderMenuItems = repo.findByTypeOrderByPositionAsc(MenuType.HEADER);
+		assertThat(listHeaderMenuItems).isNotEmpty();
+
+		listHeaderMenuItems.forEach(System.out::println);
+	}
+
+	@Test
+	public void testListFooterMenuItems() {
+		List<Menu> listFooterMenuItems = repo.findByTypeOrderByPositionAsc(MenuType.FOOTER);
+		assertThat(listFooterMenuItems).isNotEmpty();
+
+		listFooterMenuItems.forEach(System.out::println);
+	}
 
 }
