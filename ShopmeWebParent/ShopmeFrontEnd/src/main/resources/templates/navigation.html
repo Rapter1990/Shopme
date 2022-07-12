@@ -12,15 +12,15 @@
 		</button>
 		<div class="collapse navbar-collapse" id="topNavbar">
 			<ul class="navbar-nav">				
-				<li class="nav-item">
-					<a class="nav-link" href="">Careers</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="">Payments</a>
-				</li>				
-				<li class="nav-item">
-					<a class="nav-link" href="">Shipping &amp; Delivery</a>
-				</li>
+				<!-- Start of Dynamic Header Menu Items -->
+				<th:block th:each="headerMenu : ${headerMenuItems}">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{'/m/' + ${headerMenu.alias}}">
+							[[${headerMenu.title}]]
+						</a>
+					</li>						
+				</th:block>
+				<!-- End of Dynamic Header Menu Items -->
 				
 				<th:block sec:authorize="!isAuthenticated()">
 					<li class="nav-item">
@@ -108,15 +108,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="bottomNavbar">
 				<ul class="navbar-nav">				
-					<li class="nav-item">
-						<a class="nav-link" href="">About Us</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="">Privacy Notice</a>
-					</li>				
-					<li class="nav-item">
-						<a class="nav-link" href="">Returns &amp; Refunds</a>
-					</li>
+					<th:block th:each="footerMenu : ${footerMenuItems}">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{'/m/' + ${footerMenu.alias}}">
+								[[${footerMenu.title}]]
+							</a>
+						</li>						
+					</th:block>
 				</ul>
 			</div>		
 		</nav>

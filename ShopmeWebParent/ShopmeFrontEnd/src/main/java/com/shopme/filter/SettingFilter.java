@@ -17,7 +17,9 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.shopme.common.constants.Constants;
+import com.shopme.common.entity.menu.Menu;
 import com.shopme.common.entity.setting.Setting;
+import com.shopme.service.MenuService;
 import com.shopme.service.SettingService;
 
 @Component
@@ -28,10 +30,18 @@ public class SettingFilter implements Filter {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SettingFilter.class);
 	
-	@Autowired
 	private SettingService service; 
-
 	
+	private MenuService menuService;
+	
+	@Autowired 
+	public SettingFilter(SettingService service, MenuService menuService) {
+		super();
+		this.service = service;
+		this.menuService = menuService;
+	}
+
+
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -50,19 +60,39 @@ public class SettingFilter implements Filter {
 			chain.doFilter(request, response);
 			return;
 		}
+		
+		loadGeneralSettings(request);
+		loadMenuSettings(request);
 
+		chain.doFilter(request, response);
+
+	}
+	
+	private void loadMenuSettings(ServletRequest request) {
+		
+		LOGGER.info("SettingFilter | loadMenuSettings is called");
+		
+		List<Menu> headerMenuItems = menuService.getHeaderMenuItems();
+		LOGGER.info("SettingFilter | loadMenuSettings | headerMenuItems size : " + headerMenuItems.size());
+		request.setAttribute("headerMenuItems", headerMenuItems);
+
+		List<Menu> footerMenuItems = menuService.getFooterMenuItems();
+		LOGGER.info("SettingFilter | loadMenuSettings | footerMenuItems size : " + footerMenuItems.size());
+		request.setAttribute("footerMenuItems", footerMenuItems);		
+	}
+	
+	private void loadGeneralSettings(ServletRequest request) {
+		
+		LOGGER.info("SettingFilter | loadGeneralSettings is called");
+		
 		List<Setting> generalSettings = service.getGeneralSettings();
 
 		generalSettings.forEach(setting -> {
-			LOGGER.info("SettingFilter | doFilter | generalSettings : " + generalSettings);
+			LOGGER.info("SettingFilter | loadGeneralSettings | generalSettings : " + generalSettings);
 			request.setAttribute(setting.getKey(), setting.getValue());
 		});
-		
-		request.setAttribute("S3_BASE_URI", Constants.S3_BASE_URI);
-		
-		LOGGER.info("SettingFilter | doFilter | S3_BASE_URI : " + Constants.S3_BASE_URI);
 
-		chain.doFilter(request, response);
+		request.setAttribute("S3_BASE_URI", Constants.S3_BASE_URI);
 
 	}
 

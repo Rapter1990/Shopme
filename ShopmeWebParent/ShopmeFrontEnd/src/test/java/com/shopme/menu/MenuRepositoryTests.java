@@ -37,4 +37,17 @@ public class MenuRepositoryTests {
 		listFooterMenuItems.forEach(System.out::println);
 	}
 	
+	@Test
+	public void testFindMenuByAliasNotFound() {
+		String alias = "test-alias";
+		Menu menu = repo.findByAlias(alias);
+		assertThat(menu).isNull();		
+	}
+
+	@Test
+	public void testFindMenuByAliasFound() {
+		String alias = "privacy-policy";
+		Menu menu = repo.findByAlias(alias);
+		assertThat(menu).isNotNull();		
+	}
 }
