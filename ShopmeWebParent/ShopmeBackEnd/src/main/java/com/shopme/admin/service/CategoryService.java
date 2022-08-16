@@ -34,12 +34,7 @@ public class CategoryService implements ICategoryService{
 	private CategoryRepository categoryRepository;
 	
 	public List<Category> listAll() {
-		
-		Sort firstNameSorting =  Sort.by("name").ascending();
-		
-		List<Category> categoryList = new ArrayList<>();
-		categoryRepository.findAll(firstNameSorting).forEach(categoryList::add);
-		return categoryList;
+		return listByPage(new CategoryPageInfo(), 1, "asc", null);
 	}
 
 	@Override

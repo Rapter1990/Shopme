@@ -54,6 +54,11 @@ public class Article extends IdBasedEntity implements Serializable{
 		this.id = id;
 	}
 	
+	public Article(Integer id, String title) {
+		this.id = id;
+		this.title = title;
+	}
+	
 	public Article(Integer id, String title, ArticleType type, Date updatedTime, boolean published, User user) {
 		this.id = id;
 		this.title = title;

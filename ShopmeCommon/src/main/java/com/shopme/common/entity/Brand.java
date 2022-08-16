@@ -52,6 +52,10 @@ public class Brand extends IdBasedEntity implements Serializable{
 		this.id = id;
 		this.name = name;
 	}
+	
+	public Brand(Integer id) {
+		this.id = id;
+	}
 
 	@Override
 	public String toString() {

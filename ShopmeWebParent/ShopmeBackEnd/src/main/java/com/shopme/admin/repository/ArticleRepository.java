@@ -26,4 +26,7 @@ public interface ArticleRepository extends SearchRepository<Article, Integer> {
 	public void updatePublishStatus(Integer id, boolean published);
 	
 	public List<Article> findByTypeOrderByTitle(ArticleType type);
+	
+	@Query("SELECT NEW Article(a.id, a.title) From Article a WHERE a.published = true ORDER BY a.title")
+	public List<Article> findPublishedArticlesWithIDAndTitleOnly();
 }

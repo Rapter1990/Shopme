@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Home Page Customization - Shopme Admin', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Home Page Customization (Manage Sections)</h2>	
+	</div>
+	<div class="mb-2">
+		Manage sections that are displayed on the website's home page. The order of sections matters.<br/>
+	</div>
+
+	<div class="mb-2">
+		<a th:href="@{/sections/new/all_categories}">Add All Categories Section</a>	
+		&nbsp;|&nbsp;
+		<a th:href="@{/sections/new/product}">Add Product Section</a>
+		&nbsp;|&nbsp;
+		<a th:href="@{/sections/new/category}">Add Category Section</a>
+	</div>
+	<div class="mb-2">
+		<a th:href="@{/sections/new/brand}">Add Brand Section</a>
+		&nbsp;|&nbsp;
+		<a th:href="@{/sections/new/article}">Add Article Section</a>
+		&nbsp;|&nbsp;
+		<a th:href="@{/sections/new/text}">Add Text Section</a>		
+	</div>		
+
+	<div th:if="${message != null}" class="alert alert-success text-center">
+		[[${message}]]
+	</div>	
+
+	<div>
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Heading</th>
+					<th>Type</th>
+					<th>Position</th>
+					<th>Enabled</th>
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr th:each="section : ${listSections}">
+					<td>[[${section.id}]]</td>
+					<td>[[${section.heading}]]</td>
+					<td>[[${section.type}]]</td>
+					<td>
+						<a th:href="@{'/sections/moveup/' + ${section.id}}" class="fas fa-chevron-up fa-2x" title="Move this section up"></a>
+						<span class="m-3">[[${section.sectionOrder}]]</span>
+						<a th:href="@{'/sections/movedown/' + ${section.id}}" class="fas fa-chevron-down fa-2x" title="Move this section down"></a>					
+					</td>
+					<td>
+						<div th:replace="fragments :: status(${section.enabled}, 'section', '/sections/' + ${section.id})" />
+					</td>
+					<td>					
+						&nbsp; 
+						<div th:replace="fragments :: edit('section', '/sections/edit/' + ${section.type} + '/' + ${section.id})" />
+						&nbsp; 
+						<div th:replace="fragments :: delete('section', ${section.id}, '/sections/delete/' + ${section.id}, true)" />						
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div th:replace="modal_fragments :: confirm_modal" />
+
+	<div th:replace="fragments :: footer"></div>
+
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/sections}]]";
+	entityName = "section";
+
+</script>
+</body>
+</html>
