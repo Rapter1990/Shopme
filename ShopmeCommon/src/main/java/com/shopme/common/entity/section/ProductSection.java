@@ -1,4 +1,4 @@
-package com.shopme.common.section;
+package com.shopme.common.entity.section;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.shopme.common.entity.IdBasedEntity;
-import com.shopme.common.entity.article.Article;
+import com.shopme.common.entity.product.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,18 +15,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "sections_articles")
+@Table(name = "sections_products")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class ArticleSection extends IdBasedEntity {
+public class ProductSection extends IdBasedEntity {
 
-	@Column(name = "article_order")
-	private int articleOrder;
+	@Column(name = "product_order")
+	private int productOrder;
 
 	@ManyToOne
-	@JoinColumn(name = "article_id")
-	private Article article;
+	@JoinColumn(name = "product_id")	
+	private Product product;
 
 }

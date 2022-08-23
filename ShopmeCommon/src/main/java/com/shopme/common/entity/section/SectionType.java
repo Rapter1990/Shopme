@@ -1,4 +1,4 @@
-package com.shopme.common.section;
+package com.shopme.common.entity.section;
 
 public enum SectionType {
 	PRODUCT {

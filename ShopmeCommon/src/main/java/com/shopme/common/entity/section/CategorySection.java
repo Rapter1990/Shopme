@@ -1,4 +1,4 @@
-package com.shopme.common.section;
+package com.shopme.common.entity.section;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.shopme.common.section;
+package com.shopme.common.entity.section;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +14,19 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import com.shopme.common.entity.IdBasedEntity;
+import com.shopme.common.entity.article.Article;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "sections")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Section extends IdBasedEntity{
 	
 	@Column(length = 256, nullable = false, unique = true)

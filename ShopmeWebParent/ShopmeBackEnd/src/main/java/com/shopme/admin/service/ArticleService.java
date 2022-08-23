@@ -84,5 +84,8 @@ public class ArticleService implements IArticleService{
 		return repo.findByTypeOrderByTitle(ArticleType.MENU_BOUND);
 	}
 
+	public List<Article> listAll() {
+		return repo.findPublishedArticlesWithIDAndTitleOnly();
+	}
 
 }
