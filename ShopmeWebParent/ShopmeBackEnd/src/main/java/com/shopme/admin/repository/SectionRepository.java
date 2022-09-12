@@ -17,4 +17,14 @@ public interface SectionRepository extends JpaRepository<Section, Integer> {
 	@Query("UPDATE Section s SET s.enabled = ?2 WHERE s.id = ?1")
 	@Modifying
 	public void updateEnabledStatus(Integer id, boolean enabled);
+	
+	@Query("SELECT NEW Section(s.id) FROM Section s WHERE s.id = ?1")
+	public Section getSimpleSectionById(Integer id);
+
+	@Query("SELECT NEW Section(s.id) FROM Section s ORDER BY s.sectionOrder ASC")
+	public List<Section> getOnlySectionIDsSortedByOrder();
+
+	@Query("UPDATE Section s SET s.sectionOrder = ?1 WHERE s.id = ?2")
+	@Modifying
+	public void updateSectionPosition(int sectionOrder, Integer id);
 }

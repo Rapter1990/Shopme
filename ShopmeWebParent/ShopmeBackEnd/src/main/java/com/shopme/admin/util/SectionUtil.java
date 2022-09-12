@@ -1,0 +1,60 @@
+package com.shopme.admin.util;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.article.Article;
+import com.shopme.common.entity.section.ArticleSection;
+import com.shopme.common.entity.section.BrandSection;
+import com.shopme.common.entity.section.Section;
+
+public class SectionUtil {
+
+	public static void addArticlesToSection(Section section, HttpServletRequest request) {
+		String[] IDs = request.getParameterValues("chosenArticles");
+
+		if (IDs != null && IDs.length > 0) {
+			for (int i = 0; i < IDs.length; i++) {
+				String[] arrayIds = IDs[i].split("-");
+
+				ArticleSection articleSection = new ArticleSection();
+
+				Integer articleSectionId = Integer.valueOf(arrayIds[1]);
+				if (articleSectionId > 0) {
+					articleSection.setId(articleSectionId);
+				}
+
+				articleSection.setArticleOrder(i);
+				Integer articleId = Integer.valueOf(arrayIds[0]);
+
+				articleSection.setArticle(new Article(articleId));
+				section.addArticleSection(articleSection);
+
+			}
+		}		
+	}
+	
+	public static void addBrandsToSection(Section section, HttpServletRequest request) {
+		String[] IDs = request.getParameterValues("chosenBrands");
+
+		if (IDs != null && IDs.length > 0) {
+			for (int i = 0; i < IDs.length; i++) {
+				String[] arrayIds = IDs[i].split("-");
+
+				BrandSection brandSection = new BrandSection();
+
+				Integer brandSectionId = Integer.valueOf(arrayIds[1]);
+				if (brandSectionId > 0) {
+					brandSection.setId(brandSectionId);
+				}
+
+				brandSection.setBrandOrder(i);
+				Integer brandId = Integer.valueOf(arrayIds[0]);
+
+				brandSection.setBrand(new Brand(brandId));
+				section.addBrandSection(brandSection);
+
+			}
+		}		
+	}
+}

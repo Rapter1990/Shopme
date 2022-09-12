@@ -72,6 +72,10 @@ public class Section extends IdBasedEntity{
 		this.id = id;
 	}
 	
+	public void addProductSection(ProductSection productSection) {
+		this.productSections.add(productSection);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -101,5 +105,15 @@ public class Section extends IdBasedEntity{
 	public String toString() {
 		return "Section [id=" + id + ", heading=" + heading + ", enabled=" + enabled + ", sectionOrder=" + sectionOrder + ", type="
 				+ type + "]";
+	}
+
+	public void addArticleSection(ArticleSection articleSection) {
+		// TODO Auto-generated method stub
+		this.articleSections.add(articleSection);
+	}
+
+	public void addBrandSection(BrandSection brandSection) {
+		// TODO Auto-generated method stub
+		this.brandSections.add(brandSection);
 	}
 }
