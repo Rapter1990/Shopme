@@ -14,9 +14,11 @@ import org.springframework.test.annotation.Rollback;
 
 import com.shopme.admin.repository.SectionRepository;
 import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.Category;
 import com.shopme.common.entity.article.Article;
 import com.shopme.common.entity.section.ArticleSection;
 import com.shopme.common.entity.section.BrandSection;
+import com.shopme.common.entity.section.CategorySection;
 import com.shopme.common.entity.section.Section;
 import com.shopme.common.entity.section.SectionType;
 
@@ -140,6 +142,30 @@ public class SectionRepositoryTests {
 
 			section.addArticleSection(articleSection);
 		}
+
+		Section savedSection = repo.save(section);
+
+		assertThat(savedSection).isNotNull();
+		assertThat(savedSection.getId()).isGreaterThan(0);		
+	}
+	
+	@Test
+	public void testAddCategorySection() {
+		Section section = new Section();
+		section.setHeading("Featured Categories");
+		section.setDescription("Check out these featured categories...");
+		section.setType(SectionType.CATEGORY);
+		section.setSectionOrder(3);
+
+		for (int i = 1; i <= 3; i++) {
+			CategorySection categorySection = new CategorySection();
+
+			Category category = new Category(i + 1);
+			categorySection.setCategory(category);
+			categorySection.setCategoryOrder(i);
+
+			section.addCategorySection(categorySection);
+		}	
 
 		Section savedSection = repo.save(section);
 

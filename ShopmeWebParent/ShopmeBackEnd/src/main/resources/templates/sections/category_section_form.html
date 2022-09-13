@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+
+	<div>
+		<h2>Home Page Customization | [[${pageTitle}]]</h2>
+	</div>	
+
+	<form th:action="@{/sections/save/category}" th:object="${section}" method="post" onsubmit="processBeforeSubmit()">
+		<input type="hidden" th:field="*{id}" />
+		<input type="hidden" th:field="*{type}" />
+		<input type="hidden" th:field="*{sectionOrder}" />
+
+		<div class="border border-secondary rounded p-3">	
+		  <div th:replace="sections/general_section_form :: content">General Section Form</div>
+
+		  <div class="form-group row">
+		  	<label class="col-sm-2 col-form-label">Categories:</label>
+		  	<div class="col-sm-10">
+		  		<div>
+					<select id="categories" multiple class="form-control" style="resize: vertical; height: 200px">
+						<option th:each="cat : ${listCategories}" th:value="${cat.id}" th:text="${cat.name}" />
+					</select>
+				</div>
+				<div>
+					<input type="button" class="btn btn-secondary m-3" id="buttonAddCategory" value="Add Category" />
+				</div>		  		
+		  	</div>
+		  </div>
+
+		  <div class="form-group row">
+		  	<label class="col-sm-2 col-form-label">Chosen Categories:</label>
+		  	<div class="col-sm-10">
+		  		<div>
+					<select multiple="multiple" id="chosenCategories" name="chosenCategories" class="form-control" style="resize: vertical; height: 150px">
+						<th:block th:each="catSection : ${section.categorySections}">
+						<option th:value="${catSection.category.id} + '-' + ${catSection.id}" th:text="${catSection.category.name}" />
+						</th:block>
+					</select>
+				</div>
+				<div class="m-2">
+					<a class="fas fa-trash icon-dark" id="linkRemoveCategory" href="" title="Remove this category" ></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="fas fa-chevron-up icon-dark" id="linkMoveCatUp" href="" title="Move this category up"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="fas fa-chevron-down icon-dark" id="linkMoveCatDown" href="" title="Move this category down"></a>					
+				</div>		  		
+		  	</div>
+		  </div>
+
+			<div>
+				<p class="text-center">
+					<input type="submit" value="Save" class="btn btn-primary m-3" />
+					<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+				</p>	
+			</div>			  
+		</div>
+	</form>
+
+
+	<div th:replace="fragments :: footer"></div>
+</div>	
+<script type="text/javascript">
+	contextPath = "[[@{/}]]";
+	moduleURL = "[[@{/sections}]]";			
+</script>
+<script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/category_section_form.js}"></script>
+</body>
+</html>

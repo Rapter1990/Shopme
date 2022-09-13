@@ -116,4 +116,9 @@ public class Section extends IdBasedEntity{
 		// TODO Auto-generated method stub
 		this.brandSections.add(brandSection);
 	}
+
+	public void addCategorySection(CategorySection categorySection) {
+		// TODO Auto-generated method stub
+		this.categorySections.add(categorySection);
+	}
 }
