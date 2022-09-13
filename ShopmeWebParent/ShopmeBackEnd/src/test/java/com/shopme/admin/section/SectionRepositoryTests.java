@@ -13,6 +13,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
 import com.shopme.admin.repository.SectionRepository;
+import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.article.Article;
+import com.shopme.common.entity.section.ArticleSection;
+import com.shopme.common.entity.section.BrandSection;
 import com.shopme.common.entity.section.Section;
 import com.shopme.common.entity.section.SectionType;
 
@@ -93,5 +97,53 @@ public class SectionRepositoryTests {
 		Optional<Section> findById = repo.findById(sectionId);
 
 		assertThat(findById).isNotPresent();
+	}
+	
+	@Test
+	public void testAddBrandSection() {
+		Section section = new Section();
+		section.setHeading("Featured Brands");
+		section.setDescription("Recommended brands for shopping...");
+		section.setType(SectionType.BRAND);
+		section.setSectionOrder(5);	
+
+		for (int i = 1; i <= 3; i++) {
+			BrandSection brandSection = new BrandSection();
+			Brand brand = new Brand();
+			brand.setId(i);
+
+			brandSection.setBrandOrder(i);
+			brandSection.setBrand(brand);
+
+			section.addBrandSection(brandSection);
+		}
+
+		Section savedSection = repo.save(section);
+
+		assertThat(savedSection).isNotNull();
+		assertThat(savedSection.getId()).isGreaterThan(0);		
+	}	
+
+	@Test
+	public void testAddArticleSection() {
+		Section section = new Section();
+		section.setHeading("Shopping Tips");
+		section.setDescription("Read these articles before shopping...");
+		section.setType(SectionType.ARTICLE);
+		section.setSectionOrder(6);	
+
+		for (int i = 1; i <= 3; i++) {
+			ArticleSection articleSection = new ArticleSection();
+
+			articleSection.setArticle(new Article(4 + i));
+			articleSection.setArticleOrder(i);
+
+			section.addArticleSection(articleSection);
+		}
+
+		Section savedSection = repo.save(section);
+
+		assertThat(savedSection).isNotNull();
+		assertThat(savedSection.getId()).isGreaterThan(0);		
 	}
 }
