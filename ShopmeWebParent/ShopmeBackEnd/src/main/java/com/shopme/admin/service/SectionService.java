@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.shopme.admin.repository.SectionRepository;
 import com.shopme.common.entity.section.Section;
 import com.shopme.common.exception.SectionNotFoundException;
+import com.shopme.common.exception.SectionUnmoveableException;
 
 @Service
 @Transactional
@@ -58,6 +59,52 @@ public class SectionService {
 		}
 
 		repo.updateEnabledStatus(id, enabled);
+	}
+	
+	public void moveSectionUp(Integer id) throws SectionNotFoundException, SectionUnmoveableException {
+		Section currentSection = repo.getSimpleSectionById(id);
+		if (currentSection == null) {
+			throw new SectionNotFoundException("Could not find any section with ID " + id);
+		}
+
+		List<Section> allSections = repo.getOnlySectionIDsSortedByOrder();
+
+		int currentSectionIndex = allSections.indexOf(currentSection);
+		if (currentSectionIndex == 0) {
+			throw new SectionUnmoveableException("The section ID " + id + " is already in the first position");
+		}
+
+		int previousSectionIndex = currentSectionIndex - 1;
+		Section previousSection = allSections.get(previousSectionIndex);
+
+		currentSection.setSectionOrder(previousSectionIndex + 1);		
+		previousSection.setSectionOrder(currentSectionIndex + 1);
+
+		repo.updateSectionPosition(currentSection.getSectionOrder(), currentSection.getId());
+		repo.updateSectionPosition(previousSection.getSectionOrder(), previousSection.getId());
+	}
+
+	public void moveSectionDown(Integer id) throws SectionNotFoundException, SectionUnmoveableException {
+		Section currentSection = repo.getSimpleSectionById(id);
+		if (currentSection == null) {
+			throw new SectionNotFoundException("Could not find any section with ID " + id);
+		}
+
+		List<Section> allSections = repo.getOnlySectionIDsSortedByOrder();
+
+		int currentSectionIndex = allSections.indexOf(currentSection);
+		if (currentSectionIndex == allSections.size() - 1) {
+			throw new SectionUnmoveableException("The section ID " + id + " is already in the last position");
+		}
+
+		int nextSectionIndex = currentSectionIndex + 1;
+		Section nextSection = allSections.get(nextSectionIndex);
+
+		currentSection.setSectionOrder(nextSectionIndex + 1);		
+		nextSection.setSectionOrder(currentSectionIndex + 1);
+
+		repo.updateSectionPosition(currentSection.getSectionOrder(), currentSection.getId());
+		repo.updateSectionPosition(nextSection.getSectionOrder(), nextSection.getId());
 	}
 
 }
