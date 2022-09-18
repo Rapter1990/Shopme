@@ -5,9 +5,11 @@ import javax.servlet.http.HttpServletRequest;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.article.Article;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.entity.section.ArticleSection;
 import com.shopme.common.entity.section.BrandSection;
 import com.shopme.common.entity.section.CategorySection;
+import com.shopme.common.entity.section.ProductSection;
 import com.shopme.common.entity.section.Section;
 
 public class SectionUtil {
@@ -82,5 +84,29 @@ public class SectionUtil {
 
 			}
 		}		
+	}
+	
+	public static void addProductsToSection(Section section, HttpServletRequest request) {
+		String[] productIds = request.getParameterValues("productId");
+		String[] productSectionIds = request.getParameterValues("productSectionId");
+
+		if (productIds != null && productIds.length > 0) {
+			for (int i = 0; i < productIds.length; i++) {
+				ProductSection productSection = new ProductSection();
+
+				if (productSectionIds != null && productSectionIds.length > 0) {
+					if (i < productSectionIds.length) {
+						Integer productSectionId = Integer.valueOf(productSectionIds[i]);
+						productSection.setId(productSectionId);
+					}
+				}
+
+				productSection.setProductOrder(i);
+				Integer productId = Integer.valueOf(productIds[i]);
+				productSection.setProduct(new Product(productId));
+
+				section.addProductSection(productSection);
+			}
+		}
 	}
 }

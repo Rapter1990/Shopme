@@ -16,9 +16,11 @@ import com.shopme.admin.repository.SectionRepository;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.article.Article;
+import com.shopme.common.entity.product.Product;
 import com.shopme.common.entity.section.ArticleSection;
 import com.shopme.common.entity.section.BrandSection;
 import com.shopme.common.entity.section.CategorySection;
+import com.shopme.common.entity.section.ProductSection;
 import com.shopme.common.entity.section.Section;
 import com.shopme.common.entity.section.SectionType;
 
@@ -166,6 +168,30 @@ public class SectionRepositoryTests {
 
 			section.addCategorySection(categorySection);
 		}	
+
+		Section savedSection = repo.save(section);
+
+		assertThat(savedSection).isNotNull();
+		assertThat(savedSection.getId()).isGreaterThan(0);		
+	}
+	
+	@Test
+	public void testAddProductSection() {
+		Section section = new Section();
+		section.setHeading("Featured Products");
+		section.setDescription("Check out these best-selling items...");
+		section.setType(SectionType.PRODUCT);
+		section.setSectionOrder(4);		
+
+		for (int i = 1; i <= 3; i++) {
+			ProductSection productSection = new ProductSection();
+			Product product = new Product(i);
+
+			productSection.setProduct(product);
+			productSection.setProductOrder(i);
+
+			section.addProductSection(productSection);
+		}
 
 		Section savedSection = repo.save(section);
 

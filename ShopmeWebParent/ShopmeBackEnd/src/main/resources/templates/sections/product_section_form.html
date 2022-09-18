@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+
+	<div>
+		<h2>Home Page Customization | [[${pageTitle}]]</h2>
+	</div>	
+
+	<form th:action="@{/sections/save/product}" th:object="${section}" method="post">
+		<input type="hidden" th:field="*{id}" />
+		<input type="hidden" th:field="*{type}" />
+		<input type="hidden" th:field="*{sectionOrder}" />
+
+		<div class="border border-secondary rounded p-3">	
+		  <div th:replace="sections/general_section_form :: content">General Section Form</div>
+
+		  <div class="form-group row">
+		  	<label class="col-sm-2 col-form-label">Products:</label>
+		  	<div class="col-sm-10">
+		  		<a th:href="@{'/orders/search_product'}" id="addProduct" class="btn btn-success">Add a Product</a>
+		  	</div>
+		  </div>
+
+		  <div class="row" id="productList">
+		  	<th:block th:each="productSection, status : ${section.productSections}">
+			<div class="col-sm-2" th:id="'col' + ${status.count}" draggable="true" ondragstart="dragProduct(event)" th:with="product = ${productSection.product}">
+				<input type="hidden" name="productId" th:value="${product.id}" class="product-id-hidden" />
+				<input type="hidden" name="productSectionId" th:value="${productSection.id}" />
+				<div class="mt-1">
+					<a class="fas fa-trash icon-dark link-remove" href="" th:colNumber="${status.count}"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="fas fa-chevron-left icon-dark link-move-left" href="" title="Move this product to the left" th:colNumber="${status.count}"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="fas fa-chevron-right icon-dark link-move-right" href="" title="Move this product to the right" th:colNumber="${status.count}"></a>
+				</div>
+				<div><img th:src="@{${product.mainImagePath}}" height="100px" /></div>
+				<div>
+					<b>[[${product.name}]]</b>
+				</div>
+			</div>		  	
+		  	</th:block>
+		  </div>
+
+			<div>
+				<p class="text-center">
+					<input type="submit" value="Save" class="btn btn-primary m-3" />
+					<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+				</p>	
+			</div>			  
+		</div>
+	</form>
+
+	<div class="modal fade text-center" id="addProductModal">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="modalTitle">Add Product</h4>
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <div class="embed-responsive embed-responsive-16by9">
+	        <iframe class="embed-responsive-item"></iframe>
+	      </div>
+
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+
+	<div th:replace="fragments :: footer"></div>
+</div>	
+<script type="text/javascript">
+	contextPath = "[[@{/}]]";
+	moduleURL = "[[@{/sections}]]";
+
+</script>
+<script th:src="@{/js/common_form.js}"></script>
+<script th:src="@{/js/product_section_form.js}"></script>
+</body>
+</html>
