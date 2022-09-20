@@ -67,6 +67,14 @@ public class Section extends IdBasedEntity{
 		this.enabled = enabled;
 		this.type = type;
 	}
+	
+	public Section(Integer id, String heading, SectionType type, int order, boolean enabled) {
+		this.id = id;
+		this.heading = heading;
+		this.type = type;
+		this.sectionOrder = order;
+		this.enabled = enabled;
+	}
 
 	public Section(Integer id) {
 		this.id = id;
