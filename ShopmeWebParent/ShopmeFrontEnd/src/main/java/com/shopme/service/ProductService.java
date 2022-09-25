@@ -72,5 +72,11 @@ public class ProductService implements IProductService{
 			throw new ProductNotFoundException("Could not find any product with ID " + id);
 		}
 	}
+	
+	public Page<Product> listByBrand(int pageNum, Integer brandId) {
+		Pageable pageable = PageRequest.of(pageNum - 1, PRODUCTS_PER_PAGE);
+
+		return repo.listByBrand(brandId, pageable);
+	}	
 
 }
