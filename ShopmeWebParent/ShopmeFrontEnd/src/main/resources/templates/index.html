@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: page_head('Shopme', 'none')" />
+<head>
+	<head th:replace="fragments :: page_head('Shopme', 'tag')" />
+	<link th:href="@{/star-rating/css/star-rating.css}" media="all" rel="stylesheet" type="text/css" />
+	<script th:src="@{/star-rating/js/star-rating.js}" type="text/javascript"></script>
+	<link rel="stylesheet" th:href="@{/star-rating/themes/krajee-svg/theme.css}" media="all" type="text/css"/>
+	<script th:src="@{/star-rating/themes/krajee-svg/theme.js}" type="text/javascript"></script>	
+</head>
 <body>
 	<div class="container-fluid">
 		<div th:replace="navigation :: header_menu"></div>
 		<div th:replace="navigation :: search_nav"></div>
-		<div>
-			<h1>Shopping by Categories</h1>
-		</div>
 		
-		<div class="row">
-			<div class="col-sm-2" th:each="cat : ${listCategories}">
-				<div><img th:src="@{${cat.imagePath}}" width="80" /></div>
-				<div>
-					<a th:href="@{'/c/' + ${cat.alias}}">[[${cat.name}]]</a>
-				</div>
+		<th:block th:each="section : ${listSections}">	
+			<div class="row mt-3">
+				<div class="col"><h2>[[${section.heading}]]</h2></div>
 			</div>
-		</div>
+			
+			<div class="row" th:unless="${#lists.isEmpty(section.brandSections)}">
+				<div th:replace="homepage/brand_section :: content">Brand Section</div>	
+			</div>	
+			
+		</th:block>
 	
+	    <div>&nbsp;</div>
 		<div th:replace="navigation :: footer_menu"></div>
 	</div>
+	
+<script type="text/javascript">
+$(document).ready(function(){	
+    $('.kv-ltr-theme-svg-star').rating({
+    	displayOnly: true,
+        hoverOnClear: false,
+        showCaption: false,
+        theme: 'krajee-svg'
+    });		
+});
+</script>	
 </body>
 </html>

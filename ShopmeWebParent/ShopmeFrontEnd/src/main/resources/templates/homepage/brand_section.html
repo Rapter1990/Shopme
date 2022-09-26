@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-1" th:each="brandSection : ${section.brandSections}" th:with="brand = ${brandSection.brand}">
+			<div><img th:src="@{${brand.logoPath}}" width="80" /></div>
+			<div>
+				<a th:href="@{'/brand/' + ${brand.id}}">[[${brand.name}]]</a>
+			</div>
+		</div>			
+	</div>
+</body>
+</html>
