@@ -13,7 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.shopme.common.entity.Category;
+import com.shopme.common.entity.section.Section;
 import com.shopme.service.CategoryService;
+import com.shopme.service.SectionService;
+import com.shopme.util.SectionUtil;
 
 @Controller
 public class MainController {
@@ -23,16 +26,26 @@ public class MainController {
 	@Autowired 
 	private CategoryService categoryService;
 	
+	@Autowired 
+	private SectionService sectionService;
+	
 
 	@GetMapping("")
 	public String viewHomePage(Model model) {
 		
 		LOGGER.info("MainController | viewHomePage is called");
 		
-		List<Category> listCategories = categoryService.listNoChildrenCategories();
-		model.addAttribute("listCategories", listCategories);
+		List<Section> listSections = sectionService.listEnabledSections();
+		model.addAttribute("listSections", listSections);
+
+		LOGGER.info("MainController | viewHomePage | listSections : " + listSections.size());
 		
-		LOGGER.info("MainController | viewHomePage | listCategories : " + listCategories.size());
+		if (SectionUtil.hasAllCategoriesSection(listSections)) {
+			List<Category> listCategories = categoryService.listNoChildrenCategories();
+			model.addAttribute("listCategories", listCategories);
+			LOGGER.info("MainController | viewHomePage | listCategories : " + listCategories.size());
+		}
+	
 		
 		return "index";
 	}
