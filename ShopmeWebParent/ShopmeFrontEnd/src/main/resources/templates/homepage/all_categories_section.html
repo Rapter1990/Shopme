@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>	
+	<div th:fragment="content" th:remove="tag">
+		<div class="col" th:each="cat : ${listCategories}">
+			<div><img th:src="@{${cat.imagePath}}" width="80" /></div>
+			<div>
+				<a th:href="@{'/c/' + ${cat.alias}}">[[${cat.name}]]</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

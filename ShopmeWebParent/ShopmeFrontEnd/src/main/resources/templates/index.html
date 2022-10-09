@@ -17,6 +17,19 @@
 				<div class="col"><h2>[[${section.heading}]]</h2></div>
 			</div>
 			
+			<div class="row" th:if="${section.description != ''}">
+				<th:block th:unless="${section.type.toString() == 'Text'}">
+					<div class="col"><h6>[[${section.description}]]</h6></div>
+				</th:block>
+				<th:block th:if="${section.type.toString() == 'Text'}">
+					<div th:utext="${section.description}" class="col border p-2 m-2"></div>
+				</th:block>
+			</div>
+			
+			<div class="row" th:if="${section.type.toString() == 'All_Categories'}">
+				<div th:replace="homepage/all_categories_section :: content">All Categories Section</div>	
+			</div>
+			
 			<div class="row" th:unless="${#lists.isEmpty(section.brandSections)}">
 				<div th:replace="homepage/brand_section :: content">Brand Section</div>	
 			</div>
