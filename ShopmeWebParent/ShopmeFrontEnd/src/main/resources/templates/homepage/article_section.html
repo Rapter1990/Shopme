@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2" th:each="articleSection : ${section.articleSections}" th:with="article = ${articleSection.article}">
+			<div>
+				<a th:href="@{'/a/' + ${article.alias}}">[[${article.title}]]</a>
+			</div>
+		</div>			
+	</div>
+</body>
+</html>
