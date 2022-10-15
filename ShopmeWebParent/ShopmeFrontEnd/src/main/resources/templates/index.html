@@ -30,9 +30,6 @@
 				<div th:replace="homepage/all_categories_section :: content">All Categories Section</div>	
 			</div>
 			
-			<div class="row" th:unless="${#lists.isEmpty(section.brandSections)}">
-				<div th:replace="homepage/brand_section :: content">Brand Section</div>	
-			</div>
 			
 			<div class="row" th:unless="${#lists.isEmpty(section.productSections)}">
 				<div th:replace="homepage/product_section :: content">Product Section</div>	
@@ -40,6 +37,10 @@
 	
 			<div class="row" th:unless="${#lists.isEmpty(section.categorySections)}">
 				<div th:replace="homepage/category_section :: content">Category Section</div>	
+			</div>
+			
+			<div class="row" th:unless="${#lists.isEmpty(section.brandSections)}">
+				<div th:replace="homepage/brand_section :: content">Brand Section</div>	
 			</div>
 			
 			<div class="row" th:unless="${#lists.isEmpty(section.articleSections)}">
