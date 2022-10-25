@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>Categories: [[${summary.totalCategories}]]</b>
+				</div>
+				<div class="card-body">
+					<div><a th:href="@{/categories/new}">Add Category</a></div>
+					<div>Root Categories: <b>[[${summary.rootCategoriesCount}]]</b></div>
+					<div>Enabled: <b>[[${summary.enabledCategoriesCount}]]</b></div>
+					<div>Disabled: <b>[[${summary.disabledCategoriesCount}]]</b></div>
+					<div><a th:href="@{/categories}">View All</a></div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>

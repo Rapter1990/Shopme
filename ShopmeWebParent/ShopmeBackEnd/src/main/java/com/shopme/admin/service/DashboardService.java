@@ -1,5 +1,7 @@
 package com.shopme.admin.service;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -15,9 +17,26 @@ public class DashboardService {
 	private EntityManager entityManager;
 	
 	public DashboardInfo loadSummary() {
-		DashboardInfo summary = new DashboardInfo();
-		Query query = entityManager.createQuery("(SELECT COUNT(DISTINCT u.id) AS totalUsers FROM User u)");
 		
+		DashboardInfo summary = new DashboardInfo();
+		
+		Query query = entityManager.createQuery("SELECT "
+				+ "(SELECT COUNT(DISTINCT u.id) AS totalUsers FROM User u),"
+				+ "(SELECT COUNT(DISTINCT c.id) AS totalCategories FROM Category c), "
+				+ "(SELECT COUNT(DISTINCT b.id) AS totalBrands FROM Brand b), "
+				+ "st.value as siteName,"
+				+ "FROM Setting st WHERE st.key='site_name'"
+				);
+		
+		List<Object[]> entityCounts = query.getResultList();
+		Object[] arrayCounts = entityCounts.get(0);
+		
+		int count = 0;
+		
+		summary.setTotalUsers((Long) arrayCounts[count++]);
+		summary.setTotalCategories((Long) arrayCounts[count++]);
+		summary.setTotalBrands((Long) arrayCounts[count++]);
+				
 		return summary;
 	}
 }

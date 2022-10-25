@@ -18,6 +18,16 @@
 				sec:authentication="principal.fullname"></a>	
 			<span sec:authentication="principal.authorities"></span>		
 		</div>
+		
+		<div class="row m-1">
+		  <th:block>
+		    <div th:replace="dashboard/user_summary :: content" />
+			<div th:replace="dashboard/category_summary :: content" />
+			<div th:replace="dashboard/brand_summary :: content" />
+		  </th:block>
+		  
+		</div>
+		
 
 		<div th:replace="fragments :: footer"></div>
 

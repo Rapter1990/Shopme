@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>Users: [[${summary.totalUsers}]]</b>							
+				</div>
+				<div class="card-body">
+					<div><a th:href="@{/users/new}">Add User</a></div>
+					<div><a th:href="@{'/users/page/1?sortField=enabled&sortDir=desc'}">Enabled: <b>[[${summary.enabledUsersCount}]]</b></a></div>
+					<div><a th:href="@{'/users/page/1?sortField=enabled&sortDir=asc'}">Disabled: <b>[[${summary.disabledUsersCount}]]</b></a></div>
+					<div><a th:href="@{/users}">View All</a></div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>
