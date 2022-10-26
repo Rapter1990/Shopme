@@ -1,0 +1,22 @@
+@@ -0,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>Questions: [[${summary.totalQuestions}]]</b>
+				</div>
+				<div class="card-body">
+					<div><a th:href="@{/questions}">View All</a></div>
+					<div><a th:href="@{'/questions/page/1?sortField=approved&sortDir=desc'}">Approved: <b>[[${summary.approvedQuestionsCount}]]</b></a></div>
+					<div><a th:href="@{'/questions/page/1?sortField=approved&sortDir=asc'}">UnApproved: <b>[[${summary.unapprovedQuestionsCount}]]</b></a></div>
+					<div>Answered: <b>[[${summary.answeredQuestionsCount}]]</b></div>
+					<div>UnAnswered: <b>[[${summary.unansweredQuestionsCount}]]</b></div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>
