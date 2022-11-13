@@ -28,6 +28,8 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT q.id) AS totalQuestions FROM Question q), "
 				+ "(SELECT COUNT(DISTINCT r.id) AS totalReviews FROM Review r), "
 				+ "(SELECT COUNT(DISTINCT cu.id) AS totalCustomers FROM Customer cu), "
+				+ "(SELECT COUNT(DISTINCT o.id) AS totalOrders FROM Order o), "
+				+ "(SELECT COUNT(DISTINCT sr.id) AS totalShippingRates FROM ShippingRate sr), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
