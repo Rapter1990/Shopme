@@ -30,6 +30,7 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT cu.id) AS totalCustomers FROM Customer cu), "
 				+ "(SELECT COUNT(DISTINCT o.id) AS totalOrders FROM Order o), "
 				+ "(SELECT COUNT(DISTINCT sr.id) AS totalShippingRates FROM ShippingRate sr), "
+				+ "(SELECT COUNT(DISTINCT a.id) AS totalArticles FROM Article a), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -42,6 +43,13 @@ public class DashboardService {
 		summary.setTotalUsers((Long) arrayCounts[count++]);
 		summary.setTotalCategories((Long) arrayCounts[count++]);
 		summary.setTotalBrands((Long) arrayCounts[count++]);
+		summary.setTotalProducts((Long) arrayCounts[count++]);
+		summary.setTotalQuestions((Long) arrayCounts[count++]);
+		summary.setTotalReviews((Long) arrayCounts[count++]);
+		summary.setTotalCustomers((Long) arrayCounts[count++]);
+		summary.setTotalOrders((Long) arrayCounts[count++]);
+		summary.setTotalShippingRates((Long) arrayCounts[count++]);
+		summary.setTotalArticles((Long) arrayCounts[count++]);
 				
 		return summary;
 	}

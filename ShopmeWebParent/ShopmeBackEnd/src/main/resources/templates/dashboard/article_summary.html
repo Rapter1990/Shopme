@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>Articles: [[${summary.totalArticles}]]</b>
+				</div>
+				<div class="card-body">
+					<div><a th:href="@{/articles/new}">Create New</a></div>
+					<div><a th:href="@{/articles}">View All</a></div>
+					<div>Menu-Bound: <b>[[${summary.menuBoundArticlesCount}]]</b></div>
+					<div>Free: <b>[[${summary.freeArticlesCount}]]</b></div>
+					<div>Published: <b>[[${summary.publishedArticlesCount}]]</b></div>
+					<div>Unpublished: <b>[[${summary.unpublishedArticlesCount}]]</b></div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>
