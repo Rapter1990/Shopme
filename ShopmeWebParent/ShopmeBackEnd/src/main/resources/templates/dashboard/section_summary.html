@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>Storefront Sections: [[${summary.totalSections}]]</b>
+				</div>
+				<div class="card-body">
+					<div><a th:href="@{/sections/new/text}">Add Text Section</a></div>
+					<div><a th:href="@{/sections/new/product}">Add Product Section</a></div>
+					<div><a th:href="@{/sections/new/category}">Add Category Section</a></div>
+					<div>Enabled: <b>[[${summary.enabledSectionsCount}]]</b></div>
+					<div>Disabled: <b>[[${summary.disabledSectionsCount}]]</b></div>					
+					<div><a th:href="@{/sections}">View All</a></div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>

@@ -31,6 +31,8 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT o.id) AS totalOrders FROM Order o), "
 				+ "(SELECT COUNT(DISTINCT sr.id) AS totalShippingRates FROM ShippingRate sr), "
 				+ "(SELECT COUNT(DISTINCT a.id) AS totalArticles FROM Article a), "
+				+ "(SELECT COUNT(DISTINCT m.id) AS totalMenuItems FROM Menu m), "
+				+ "(SELECT COUNT(DISTINCT se.id) AS totalSections FROM Section se), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
