@@ -33,6 +33,8 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT a.id) AS totalArticles FROM Article a), "
 				+ "(SELECT COUNT(DISTINCT m.id) AS totalMenuItems FROM Menu m), "
 				+ "(SELECT COUNT(DISTINCT se.id) AS totalSections FROM Section se), "
+				+ "(SELECT COUNT(DISTINCT u.id) AS disabledUsers FROM User u WHERE u.enabled=false), "
+				+ "(SELECT COUNT(DISTINCT u.id) AS enabledUsers FROM User u WHERE u.enabled=true), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
