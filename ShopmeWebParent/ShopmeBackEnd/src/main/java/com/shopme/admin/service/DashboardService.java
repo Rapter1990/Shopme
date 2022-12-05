@@ -38,6 +38,8 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT c.id) AS rootCategories FROM Category c WHERE c.parent is null), "
 				+ "(SELECT COUNT(DISTINCT c.id) AS enabledCategories FROM Category c WHERE c.enabled=true), "
 				+ "(SELECT COUNT(DISTINCT c.id) AS disabledCategories FROM Category c WHERE c.enabled=false), "
+				+ "(SELECT COUNT(DISTINCT p.id) AS enabledProducts FROM Product p WHERE p.enabled=true), "
+				+ "(SELECT COUNT(DISTINCT p.id) AS disabledProducts FROM Product p WHERE p.enabled=false), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -57,6 +59,18 @@ public class DashboardService {
 		summary.setTotalOrders((Long) arrayCounts[count++]);
 		summary.setTotalShippingRates((Long) arrayCounts[count++]);
 		summary.setTotalArticles((Long) arrayCounts[count++]);
+		summary.setTotalMenuItems((Long) arrayCounts[count++]);
+		summary.setTotalSections((Long) arrayCounts[count++]);
+		
+		summary.setDisabledUsersCount((Long) arrayCounts[count++]);
+		summary.setEnabledUsersCount((Long) arrayCounts[count++]);
+		
+		summary.setRootCategoriesCount((Long) arrayCounts[count++]);
+		summary.setEnabledCategoriesCount((Long) arrayCounts[count++]);
+		summary.setDisabledCategoriesCount((Long) arrayCounts[count++]);
+		
+		summary.setEnabledProductsCount((Long) arrayCounts[count++]);
+		summary.setDisabledProductsCount((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
