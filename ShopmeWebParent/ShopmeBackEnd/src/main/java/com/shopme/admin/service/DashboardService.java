@@ -42,6 +42,8 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT p.id) AS disabledProducts FROM Product p WHERE p.enabled=false), "
 				+ "(SELECT COUNT(DISTINCT p.id) AS inStockProducts FROM Product p WHERE p.inStock=true), "
 				+ "(SELECT COUNT(DISTINCT p.id) AS outOfStockProducts FROM Product p WHERE p.inStock=false), "
+				+ "(SELECT COUNT(DISTINCT q.id) AS approvedQuestions FROM Question q WHERE q.approved=true), "
+				+ "(SELECT COUNT(DISTINCT q.id) AS unapprovedQuestions FROM Question q WHERE q.approved=false), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -74,9 +76,11 @@ public class DashboardService {
 		summary.setEnabledProductsCount((Long) arrayCounts[count++]);
 		summary.setDisabledProductsCount((Long) arrayCounts[count++]);
 		
-		
 		summary.setInStockProductsCount((Long) arrayCounts[count++]);
 		summary.setOutOfStockProductsCount((Long) arrayCounts[count++]);
+		
+		summary.setApprovedQuestionsCount((Long) arrayCounts[count++]);
+		summary.setUnapprovedQuestionsCount((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
