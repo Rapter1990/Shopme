@@ -48,6 +48,7 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT q.id) AS unansweredQuestions FROM Question q WHERE q.answer is null), "
 				+ "(SELECT COUNT(DISTINCT cu.id) AS enabledCustomers FROM Customer cu WHERE cu.enabled=true), "
 				+ "(SELECT COUNT(DISTINCT cu.id) AS disabledCustomers FROM Customer cu WHERE cu.enabled=false), "
+				+ "(SELECT COUNT(DISTINCT sr.id) AS codShippingRates FROM ShippingRate sr WHERE sr.codSupported=true), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -90,6 +91,8 @@ public class DashboardService {
 		
 		summary.setEnabledCustomersCount((Long) arrayCounts[count++]);
 		summary.setDisabledCustomersCount((Long) arrayCounts[count++]);
+		
+		summary.setCodShippingRateCount((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
