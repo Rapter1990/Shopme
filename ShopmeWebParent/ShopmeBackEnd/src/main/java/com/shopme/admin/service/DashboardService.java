@@ -49,6 +49,11 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT cu.id) AS enabledCustomers FROM Customer cu WHERE cu.enabled=true), "
 				+ "(SELECT COUNT(DISTINCT cu.id) AS disabledCustomers FROM Customer cu WHERE cu.enabled=false), "
 				+ "(SELECT COUNT(DISTINCT sr.id) AS codShippingRates FROM ShippingRate sr WHERE sr.codSupported=true), "
+				+ "(SELECT COUNT(DISTINCT o.id) AS newOrders FROM Order o WHERE o.status = 'NEW'), "
+				+ "(SELECT COUNT(DISTINCT o.id) AS deliveredOrders FROM Order o WHERE o.status = 'DELIVERED'), "
+				+ "(SELECT COUNT(DISTINCT o.id) AS processingOrders FROM Order o WHERE o.status = 'PROCESSING'), "
+				+ "(SELECT COUNT(DISTINCT o.id) AS shippingOrders FROM Order o WHERE o.status = 'SHIPPING'), "
+				+ "(SELECT COUNT(DISTINCT o.id) AS cancelledOrders FROM Order o WHERE o.status = 'CANCELLED'), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -93,6 +98,12 @@ public class DashboardService {
 		summary.setDisabledCustomersCount((Long) arrayCounts[count++]);
 		
 		summary.setCodShippingRateCount((Long) arrayCounts[count++]);
+		
+		summary.setNewOrdersCount((Long) arrayCounts[count++]);
+		summary.setDeliveredOrdersCount((Long) arrayCounts[count++]);
+		summary.setProcessingOrdersCount((Long) arrayCounts[count++]);
+		summary.setShippingOrdersCount((Long) arrayCounts[count++]);
+		summary.setCancelledOrdersCount((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
