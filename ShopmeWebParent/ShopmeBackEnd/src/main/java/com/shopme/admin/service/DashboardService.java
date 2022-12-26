@@ -54,6 +54,10 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT o.id) AS processingOrders FROM Order o WHERE o.status = 'PROCESSING'), "
 				+ "(SELECT COUNT(DISTINCT o.id) AS shippingOrders FROM Order o WHERE o.status = 'SHIPPING'), "
 				+ "(SELECT COUNT(DISTINCT o.id) AS cancelledOrders FROM Order o WHERE o.status = 'CANCELLED'), "
+				+ "(SELECT COUNT(DISTINCT m.id) AS headerMenuItems FROM Menu m WHERE m.type=0), "
+				+ "(SELECT COUNT(DISTINCT m.id) AS footerMenuItems FROM Menu m WHERE m.type=1), "
+				+ "(SELECT COUNT(DISTINCT m.id) AS enabledMenuItems FROM Menu m WHERE m.enabled=1), "
+				+ "(SELECT COUNT(DISTINCT m.id) AS disabledMenuItems FROM Menu m WHERE m.enabled=0), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -104,6 +108,11 @@ public class DashboardService {
 		summary.setProcessingOrdersCount((Long) arrayCounts[count++]);
 		summary.setShippingOrdersCount((Long) arrayCounts[count++]);
 		summary.setCancelledOrdersCount((Long) arrayCounts[count++]);
+		
+		summary.setHeaderMenuItemsCount((Long) arrayCounts[count++]);
+		summary.setFooterMenuItemsCount((Long) arrayCounts[count++]);
+		summary.setEnabledMenuItemsCount((Long) arrayCounts[count++]);
+		summary.setDisabledMenuItemsCount((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
