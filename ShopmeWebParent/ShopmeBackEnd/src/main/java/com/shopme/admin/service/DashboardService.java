@@ -58,6 +58,10 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT m.id) AS footerMenuItems FROM Menu m WHERE m.type=1), "
 				+ "(SELECT COUNT(DISTINCT m.id) AS enabledMenuItems FROM Menu m WHERE m.enabled=1), "
 				+ "(SELECT COUNT(DISTINCT m.id) AS disabledMenuItems FROM Menu m WHERE m.enabled=0), "
+				+ "(SELECT COUNT(DISTINCT a.id) AS menuBoundArticles FROM Article a WHERE a.type=0), "
+				+ "(SELECT COUNT(DISTINCT a.id) AS freeArticles FROM Article a WHERE a.type=1), "
+				+ "(SELECT COUNT(DISTINCT a.id) AS publishedArticles FROM Article a WHERE a.published=1), "
+				+ "(SELECT COUNT(DISTINCT a.id) AS unpublishedArticles FROM Article a WHERE a.published=0), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -113,6 +117,12 @@ public class DashboardService {
 		summary.setFooterMenuItemsCount((Long) arrayCounts[count++]);
 		summary.setEnabledMenuItemsCount((Long) arrayCounts[count++]);
 		summary.setDisabledMenuItemsCount((Long) arrayCounts[count++]);
+		
+		summary.setMenuBoundArticlesCount((Long) arrayCounts[count++]);
+		summary.setFreeArticlesCount((Long) arrayCounts[count++]);
+		
+		summary.setPublishedArticlesCount((Long) arrayCounts[count++]);
+		summary.setUnpublishedArticlesCount((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
