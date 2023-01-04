@@ -62,6 +62,9 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT a.id) AS freeArticles FROM Article a WHERE a.type=1), "
 				+ "(SELECT COUNT(DISTINCT a.id) AS publishedArticles FROM Article a WHERE a.published=1), "
 				+ "(SELECT COUNT(DISTINCT a.id) AS unpublishedArticles FROM Article a WHERE a.published=0), "
+				+ "(SELECT COUNT(DISTINCT r.product.id) AS reviewedProducts FROM Review r), "
+				+ "(SELECT COUNT(DISTINCT c.id) AS totalCountries FROM Country c), "
+				+ "(SELECT COUNT(DISTINCT s.id) AS totalStates FROM State s), "
 				+ "st.value as siteName,"
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
@@ -123,6 +126,11 @@ public class DashboardService {
 		
 		summary.setPublishedArticlesCount((Long) arrayCounts[count++]);
 		summary.setUnpublishedArticlesCount((Long) arrayCounts[count++]);
+		
+		summary.setReviewedProductsCount((Long) arrayCounts[count++]);
+
+		summary.setTotalCountries((Long) arrayCounts[count++]);
+		summary.setTotalStates((Long) arrayCounts[count++]);
 				
 		return summary;
 	}
