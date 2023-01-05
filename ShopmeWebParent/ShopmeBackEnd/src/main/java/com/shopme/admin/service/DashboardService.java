@@ -66,6 +66,8 @@ public class DashboardService {
 				+ "(SELECT COUNT(DISTINCT c.id) AS totalCountries FROM Country c), "
 				+ "(SELECT COUNT(DISTINCT s.id) AS totalStates FROM State s), "
 				+ "st.value as siteName,"
+				+ "(SELECT cr.name AS currencyName FROM Currency cr JOIN Setting st ON cr.id = st.value AND st.key='CURRENCY_ID'),"
+				+ "(SELECT st.value as currencySymbol FROM Setting st WHERE st.key='currency_symbol'), "
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
 		
