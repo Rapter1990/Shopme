@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-4 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>General Information</b>
+					&nbsp;&nbsp;&nbsp;
+					<a th:href="@{/settings#general}">Edit</a>
+				</div>
+				<div class="card-body">
+					<div>Site Name: <b>[[${summary.siteName}]]</b></div>
+					<div>Currency Name: <b>[[${summary.currencyName}]]</b></div>
+					<div>Currency Symbol: <b>[[${summary.currencySymbol}]]</b></div>
+					<div>Decimal Point Type: [[${summary.decimalPointType}]]</div>
+					<div>Decimal Digits: [[${summary.decimalDigits}]]</div>
+					<div>Thousands Point Type: [[${summary.thousandPointType}]]</div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>

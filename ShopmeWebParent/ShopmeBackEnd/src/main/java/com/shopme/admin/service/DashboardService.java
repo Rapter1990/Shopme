@@ -68,6 +68,8 @@ public class DashboardService {
 				+ "st.value as siteName,"
 				+ "(SELECT cr.name AS currencyName FROM Currency cr JOIN Setting st ON cr.id = st.value AND st.key='CURRENCY_ID'),"
 				+ "(SELECT st.value as currencySymbol FROM Setting st WHERE st.key='currency_symbol'), "
+				+ "(SELECT st.value as decimalPointType FROM Setting st WHERE st.key='decimal_point_type'), "
+				+ "(SELECT st.value as decimalDigits FROM Setting st WHERE st.key='decimal_digits'), "
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
 		
@@ -133,6 +135,12 @@ public class DashboardService {
 
 		summary.setTotalCountries((Long) arrayCounts[count++]);
 		summary.setTotalStates((Long) arrayCounts[count++]);
+		
+		summary.setSiteName((String) arrayCounts[count++]);
+		summary.setCurrencyName((String) arrayCounts[count++]);
+		summary.setCurrencySymbol((String) arrayCounts[count++]);
+		summary.setDecimalPointType((String) arrayCounts[count++]);
+		summary.setDecimalDigits((String) arrayCounts[count++]);
 				
 		return summary;
 	}

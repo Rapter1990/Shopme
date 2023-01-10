@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="content" th:remove="tag">
+		<div class="col-sm-2 m-1">
+			<div class="card">
+				<div class="card-header">
+					<b>Settings</b>
+				</div>
+				<div class="card-body">
+					<div>Countries: <b>[[${summary.totalCountries}]]</b></div>
+					<div><a th:href="@{/settings#countries}">Manage Countries</a></div>
+					<div>States: <b>[[${summary.totalStates}]]</b></div>
+					<div><a th:href="@{/settings#states}">Manage States</a></div>
+					<div>Mail Server: <b>[[${summary.mailServer}]]</b></div>
+					<div><a th:href="@{/settings#mailServer}">Configure Mail Server</a></div>
+				</div>
+			</div>			
+		</div>			
+	</div>
+</body>
+</html>
