@@ -70,6 +70,8 @@ public class DashboardService {
 				+ "(SELECT st.value as currencySymbol FROM Setting st WHERE st.key='currency_symbol'), "
 				+ "(SELECT st.value as decimalPointType FROM Setting st WHERE st.key='decimal_point_type'), "
 				+ "(SELECT st.value as decimalDigits FROM Setting st WHERE st.key='decimal_digits'), "
+				+ "(SELECT st.value as thousandsPointType FROM Setting st WHERE st.key='thousands_point_type'), "
+				+ "(SELECT st.value as mailServer FROM Setting st WHERE st.key='MAIL_HOST') "
 				+ "FROM Setting st WHERE st.key='site_name'"
 				);
 		
@@ -141,6 +143,9 @@ public class DashboardService {
 		summary.setCurrencySymbol((String) arrayCounts[count++]);
 		summary.setDecimalPointType((String) arrayCounts[count++]);
 		summary.setDecimalDigits((String) arrayCounts[count++]);
+		
+		summary.setThousandPointType((String) arrayCounts[count++]);
+		summary.setMailServer((String) arrayCounts[count++]);
 				
 		return summary;
 	}

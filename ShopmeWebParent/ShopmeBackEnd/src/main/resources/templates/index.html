@@ -20,14 +20,16 @@
 		</div>
 		
 		<div class="row m-1">
-		  <th:block>
-		    <div th:replace="dashboard/user_summary :: content" />
-			<div th:replace="dashboard/category_summary :: content" />
-			<div th:replace="dashboard/brand_summary :: content" />
-			<div th:replace="dashboard/product_summary :: content" />
-			<div th:replace="dashboard/question_summary :: content" />
-		  </th:block>
-		  
+			<th:block sec:authorize="hasAuthority('Admin')">
+				<div th:replace="dashboard/general_info :: content" />
+				<div th:replace="dashboard/user_summary :: content" />
+			</th:block>
+	
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+				<div th:replace="dashboard/category_summary :: content" />
+				<div th:replace="dashboard/brand_summary :: content" />
+			</th:block>
+			
 		</div>
 		
 
