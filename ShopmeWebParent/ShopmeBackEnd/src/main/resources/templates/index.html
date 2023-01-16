@@ -30,6 +30,15 @@
 				<div th:replace="dashboard/brand_summary :: content" />
 			</th:block>
 			
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor', 'Salesperson', 'Shipper')">
+				<div th:replace="dashboard/product_summary :: content" />
+			</th:block>
+	
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Assistant')">
+				<div th:replace="dashboard/question_summary :: content" />
+				<div th:replace="dashboard/review_summary :: content" />
+			</th:block>
+			
 		</div>
 		
 
