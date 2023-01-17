@@ -39,6 +39,15 @@
 				<div th:replace="dashboard/review_summary :: content" />
 			</th:block>
 			
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson')">
+				<div th:replace="dashboard/customer_summary :: content" />
+				<div th:replace="dashboard/shipping_rate_summary :: content" />
+			</th:block>							
+	
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Salesperson', 'Shipper')">
+				<div th:replace="dashboard/order_summary :: content" />
+			</th:block>
+			
 		</div>
 		
 
