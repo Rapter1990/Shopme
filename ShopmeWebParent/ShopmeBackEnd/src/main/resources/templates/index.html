@@ -48,6 +48,11 @@
 				<div th:replace="dashboard/order_summary :: content" />
 			</th:block>
 			
+			<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+				<div th:replace="dashboard/article_summary :: content" />
+				<div th:replace="dashboard/menu_summary :: content" />
+			</th:block>
+			
 		</div>
 		
 
