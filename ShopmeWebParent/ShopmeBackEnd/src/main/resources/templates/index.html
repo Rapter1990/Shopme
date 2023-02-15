@@ -53,6 +53,11 @@
 				<div th:replace="dashboard/menu_summary :: content" />
 			</th:block>
 			
+			<th:block sec:authorize="hasAuthority('Admin')">		
+				<div th:replace="dashboard/section_summary :: content" />
+				<div th:replace="dashboard/setting_summary :: content" />
+			</th:block>
+			
 		</div>
 		
 
