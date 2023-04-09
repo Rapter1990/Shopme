@@ -4,12 +4,15 @@ Shopme
 
 ### 📖 Information
 
-<ul style="list-style-type:disc">
-  <li></li>  
+<ul style="list-style-type:disc">  
   <li>Here is the explanation of the project
       <ul>
-        <li></li>
-        <li></li>
+        <li>Shopme is a Spring Boot App as Monolith architecture. It is an e-commerce example.</li>
+        <li>It covers both admin part and customer part</li>
+        <li>All images are stored in Amazon S3 Bucket</li>
+        <li>Admin part handle with implementing the process of CRUD for category, product and monitor the past orders with respect its role covering Admin, Editor, Saleperson, Shipper and Assistant</li>
+        <li>Admin part is based i18n for Turkish and English</li>
+        <li>Customer register the system and login it. Next, s/he makes an order and apply payment and show previous orders</li>
       </ul>
   </li>
 </ul>
